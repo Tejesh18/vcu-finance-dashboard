@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VCU Technology Services — Finance Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+:root{--gold:#F7C500;--gold-text:#856C00;--black:#212121;--white:#fff;--bg:#F4F4F4;--surface:#fff;--border:#E0E0E0;--text:#212121;--mid:#555;--dim:#888;--green:#2E7D32;--red:#C62828;--blue:#1565C0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;overflow:hidden}
+.header{background:var(--black);border-bottom:4px solid var(--gold);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:12px}
+.vcu{font-size:22px;font-weight:900;color:var(--gold);letter-spacing:-.5px}
+.sep{width:1px;height:20px;background:#444}
+.brand-title{font-size:13px;color:#bbb;font-weight:400}
+.live{font-size:11px;color:#888;display:flex;align-items:center;gap:5px}
+.dot{width:6px;height:6px;border-radius:50%;background:#4CAF50;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.kpi-row{background:var(--white);border-bottom:1px solid var(--border);padding:10px 28px;display:flex;flex-shrink:0}
+.kpi{flex:1;padding:0 18px;border-right:1px solid var(--border)}
+.kpi:first-child{padding-left:0}.kpi:last-child{border:none}
+.kl{font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.09em;margin-bottom:3px}
+.kv{font-size:19px;font-weight:700;line-height:1}
+.kv.gold{color:var(--gold-text)}.kv.green{color:var(--green)}.kv.red{color:var(--red)}
+.ks{font-size:10px;color:var(--dim);margin-top:1px}
+.tabs{background:var(--white);border-bottom:1px solid var(--border);padding:0 28px;display:flex;flex-shrink:0}
+.tab{padding:11px 16px;font-size:13px;color:var(--mid);cursor:pointer;border-bottom:3px solid transparent;transition:.12s;white-space:nowrap}
+.tab:hover{color:var(--text)}.tab.on{color:var(--black);font-weight:600;border-bottom-color:var(--gold)}
+.tab-n{display:inline-block;width:17px;height:17px;border-radius:50%;background:var(--border);text-align:center;line-height:17px;font-size:10px;font-weight:700;color:var(--dim);margin-right:5px}
+.tab.on .tab-n{background:var(--gold);color:var(--black)}
+.main{flex:1;overflow-y:auto;padding:22px 28px}
+.view{display:none}.view.on{display:block}
+.open-btn{display:inline-flex;align-items:center;gap:7px;background:var(--black);color:var(--white);font-size:13px;font-weight:600;padding:10px 20px;border-radius:5px;text-decoration:none;margin-bottom:18px;transition:background .12s}
+.open-btn:hover{background:#333}
+.open-btn svg{width:13px;height:13px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.metric{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:13px 15px;border-top:3px solid var(--border)}
+.metric.gold{border-top-color:var(--gold)}.metric.green{border-top-color:var(--green)}.metric.red{border-top-color:var(--red)}.metric.blue{border-top-color:var(--blue)}
+.ml{font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.mv{font-size:20px;font-weight:700;line-height:1;margin-bottom:2px}
+.metric.gold .mv{color:var(--gold-text)}.metric.green .mv{color:var(--green)}.metric.red .mv{color:var(--red)}.metric.blue .mv{color:var(--blue)}
+.ms{font-size:10px;color:var(--dim)}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.cc{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:14px 16px}
+.cc.full{grid-column:1/-1}
+.ct{font-size:11px;font-weight:600;color:var(--mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.cw{position:relative;height:170px}
+.sh{font-size:10px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.slist{display:flex;flex-direction:column;gap:6px}
+.srow{background:var(--white);border:1px solid var(--border);border-radius:5px;padding:9px 13px;display:flex;align-items:center;gap:9px}
+.sdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sn{font-size:12px;color:var(--text);font-weight:500}
+.sd{font-size:10.5px;color:var(--dim);margin-top:1px}
+.loading{text-align:center;padding:40px;color:var(--dim);font-size:13px}
+.footer{background:var(--white);border-top:1px solid var(--border);padding:7px 28px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.fl{font-size:10px;color:var(--dim)}
+.fr a{font-size:10px;color:var(--blue);text-decoration:none}
+.fr a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">
+    <span class="vcu">VCU</span><div class="sep"></div>
+    <span class="brand-title">Technology Services — Finance Dashboard</span>
+  </div>
+  <div class="live"><div class="dot"></div>Live data · Google Drive</div>
+</div>
+
+<div class="kpi-row">
+  <div class="kpi"><div class="kl">FY26 Total Spend</div><div class="kv gold" id="k1">—</div><div class="ks">Through June 2026</div></div>
+  <div class="kpi"><div class="kl">FY27 Budget</div><div class="kv" id="k2">—</div><div class="ks">Approved allocation</div></div>
+  <div class="kpi"><div class="kl">FY26 Utilization</div><div class="kv green" id="k3">—</div><div class="ks">vs permanent budget</div></div>
+  <div class="kpi"><div class="kl">Contracts Expiring</div><div class="kv red" id="k4">—</div><div class="ks">Within 90 days</div></div>
+  <div class="kpi"><div class="kl">Active Contracts</div><div class="kv" id="k5">—</div><div class="ks">All departments</div></div>
+  <div class="kpi"><div class="kl">Total Contracts</div><div class="kv" id="k6">—</div><div class="ks">All vendors tracked</div></div>
+</div>
+
+<div class="tabs">
+  <div class="tab on" onclick="show(0,this)"><span class="tab-n">1</span>Executive Summary</div>
+  <div class="tab" onclick="show(1,this)"><span class="tab-n">2</span>Budget Deep Dive</div>
+  <div class="tab" onclick="show(2,this)"><span class="tab-n">3</span>Contract Management</div>
+  <div class="tab" onclick="show(3,this)"><span class="tab-n">4</span>Purchase Orders</div>
+  <div class="tab" onclick="show(4,this)"><span class="tab-n">5</span>Network & Telecom</div>
+</div>
+
+<div class="main">
+
+  <!-- VIEW 1 -->
+  <div class="view on" id="v0">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard1" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Executive Summary in Tableau
+    </a>
+    <div class="metrics">
+      <div class="metric gold"><div class="ml">FY26 Total Spend</div><div class="mv" id="m1">—</div><div class="ms">Across all TS departments</div></div>
+      <div class="metric green"><div class="ml">FY26 Utilization</div><div class="mv" id="m2">—</div><div class="ms">vs permanent budget</div></div>
+      <div class="metric blue"><div class="ml">FY27 Budget</div><div class="mv" id="m3">—</div><div class="ms">Approved allocation</div></div>
+      <div class="metric"><div class="ml">FY27 Spent So Far</div><div class="mv" id="m4">—</div><div class="ms">Through July 30, 2026</div></div>
+    </div>
+    <div class="charts">
+      <div class="cc"><div class="ct">Budget Utilization % by Fiscal Year</div><div class="cw"><canvas id="c1"></canvas></div></div>
+      <div class="cc"><div class="ct">Budget vs Actual Spend ($M)</div><div class="cw"><canvas id="c2"></canvas></div></div>
+    </div>
+    <div class="sh">Also available in Tableau</div>
+    <div class="slist">
+      <div class="srow"><div class="sdot" style="background:#1565C0"></div><div><div class="sn">FY27 Budget & Projections</div><div class="sd">Budget vs actual vs projected annual spend by department</div></div></div>
+      <div class="srow"><div class="sdot" style="background:#2E7D32"></div><div><div class="sn">Utilization % Trend Line</div><div class="sd">FY24-FY26 with 100% reference — shows over/under budget</div></div></div>
+    </div>
+  </div>
+
+  <!-- VIEW 2 -->
+  <div class="view" id="v1">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard2" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Budget Deep Dive in Tableau
+    </a>
+    <div class="metrics">
+      <div class="metric gold"><div class="ml">FY24 Total Spend</div><div class="mv" id="m5">—</div><div class="ms">All departments</div></div>
+      <div class="metric gold"><div class="ml">FY25 Total Spend</div><div class="mv" id="m6">—</div><div class="ms">All departments</div></div>
+      <div class="metric gold"><div class="ml">FY26 Total Spend</div><div class="mv" id="m7">—</div><div class="ms">All departments</div></div>
+      <div class="metric"><div class="ml">Categories Tracked</div><div class="mv">11</div><div class="ms">Standardized from 300+ raw</div></div>
+    </div>
+    <div class="charts">
+      <div class="cc"><div class="ct">Spend by Category — FY26</div><div class="cw"><canvas id="c3"></canvas></div></div>
+      <div class="cc"><div class="ct">Monthly Trend — FY24 to FY26</div><div class="cw"><canvas id="c4"></canvas></div></div>
+    </div>
+    <div class="sh">Also available in Tableau</div>
+    <div class="slist">
+      <div class="srow"><div class="sdot" style="background:#856C00"></div><div><div class="sn">Spend by Division & Department</div><div class="sd">40+ departments ranked by spend with FY filter</div></div></div>
+    </div>
+  </div>
+
+  <!-- VIEW 3 -->
+  <div class="view" id="v2">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard3" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Contract Management in Tableau
+    </a>
+    <div class="metrics">
+      <div class="metric red"><div class="ml">Expiring in 90 Days</div><div class="mv" id="m8">—</div><div class="ms">Needs immediate attention</div></div>
+      <div class="metric green"><div class="ml">Active Contracts</div><div class="mv" id="m9">—</div><div class="ms">Currently active</div></div>
+      <div class="metric blue"><div class="ml">Total Contracts</div><div class="mv" id="m10">—</div><div class="ms">All vendors tracked</div></div>
+      <div class="metric red"><div class="ml">Soonest Expiry</div><div class="mv" id="m11" style="font-size:13px">—</div><div class="ms" id="m11s">Loading...</div></div>
+    </div>
+    <div class="charts">
+      <div class="cc"><div class="ct">Contract Status</div><div class="cw"><canvas id="c5"></canvas></div></div>
+      <div class="cc"><div class="ct">Top 10 by Annual Cost</div><div class="cw"><canvas id="c6"></canvas></div></div>
+    </div>
+    <div class="sh">Expiring Soon — Next 90 Days</div>
+    <div class="slist" id="expiring-list"><div class="loading">Loading contracts...</div></div>
+  </div>
+
+  <!-- VIEW 4 -->
+  <div class="view" id="v3">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard4" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Purchase Orders in Tableau
+    </a>
+    <div class="metrics">
+      <div class="metric gold"><div class="ml">TS POs (FY26-27)</div><div class="mv" id="m12">—</div><div class="ms">Across all departments</div></div>
+      <div class="metric blue"><div class="ml">Telecom POs</div><div class="mv" id="m13">—</div><div class="ms">FY24 through FY27</div></div>
+      <div class="metric"><div class="ml">Total PO Amount</div><div class="mv" id="m14">—</div><div class="ms">TS POs FY26-27</div></div>
+      <div class="metric"><div class="ml">Open Balance</div><div class="mv" id="m15">—</div><div class="ms">Amount not yet received</div></div>
+    </div>
+    <div class="charts">
+      <div class="cc"><div class="ct">TS PO Amount by Department</div><div class="cw"><canvas id="c7"></canvas></div></div>
+      <div class="cc"><div class="ct">Telecom Spend by FY</div><div class="cw"><canvas id="c8"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- VIEW 5 -->
+  <div class="view" id="v4">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard5" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Network & Telecom in Tableau
+    </a>
+    <div class="metrics">
+      <div class="metric red"><div class="ml">Largest Open Balance</div><div class="mv" id="m16" style="font-size:14px">—</div><div class="ms">Network vendor</div></div>
+      <div class="metric gold"><div class="ml">Network PO Total</div><div class="mv" id="m17">—</div><div class="ms">FY26-27</div></div>
+      <div class="metric blue"><div class="ml">JV Entries</div><div class="mv" id="m18">—</div><div class="ms">FY24 through FY27</div></div>
+      <div class="metric"><div class="ml">JV Total Amount</div><div class="mv" id="m19">—</div><div class="ms">All years combined</div></div>
+    </div>
+    <div class="charts">
+      <div class="cc"><div class="ct">Network Open Balances by Vendor</div><div class="cw"><canvas id="c9"></canvas></div></div>
+      <div class="cc"><div class="ct">JV Log Amount by FY</div><div class="cw"><canvas id="c10"></canvas></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="fl">VCU Technology Services · Fiscal & Administrative Services · Built by Tejesh Annavarapu · Summer Internship 2026</div>
+  <div class="fr"><a href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard1" target="_blank">Open Full Dashboard in Tableau ↗</a></div>
+</div>
+
+<script>
+// Google Drive file IDs
+const FILES = {
+  exp_clean:   '1ae7GOecvnJDhcXb9D_gzGPE-CaBtZXEq',
+  exp_monthly: '1v1a-IlRhE9446ZNICFodfZySOdukrP5U',
+  contracts:   '18H-Wl0N-ZU-jE9df0FkWmXaZNZVW5mqK',
+  pos:         '1Yedmy9zlhW5HKJyWLxpa1cMCCzITSt5I',
+  telecom:     '1txhA-UUpBL54996Hyd0frsURUYnZbk8M',
+  network:     '1le52MNbSPRMmuSXREkg_j3oNrthw3_KJ',
+  jv:          '11y2LFPLLxxsTTOlfnkc5r2SJ6Tj5a6et',
+  fy27:        '1xvhvmo81mZcYDmK3bdWjYmZyDrnN-VLG',
+};
+
+function driveURL(id) {
+  return `https://api.allorigins.win/raw?url=${encodeURIComponent('https://drive.google.com/uc?export=download&id=' + id)}`;
+}
+
+function csv(id) {
+  return new Promise((res, rej) => {
+    Papa.parse(driveURL(id), {
+      download: true, header: true, skipEmptyLines: true,
+      complete: r => res(r.data),
+      error: rej
+    });
+  });
+}
+
+function fmt(n) {
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return '$' + (n/1e3).toFixed(0) + 'K';
+  return '$' + n.toFixed(0);
+}
+
+function num(s) { return parseFloat(String(s).replace(/[$,]/g,'')) || 0; }
+
+Chart.defaults.color = '#888';
+Chart.defaults.font.family = "'Segoe UI', Arial, sans-serif";
+Chart.defaults.font.size = 11;
+
+const charts = {};
+function makeChart(id, type, data, opts) {
+  if (charts[id]) charts[id].destroy();
+  charts[id] = new Chart(document.getElementById(id), { type, data, options: { responsive: true, maintainAspectRatio: false, ...opts } });
+}
+
+function show(i, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('v' + i).classList.add('on');
+}
+
+async function loadAll() {
+  try {
+    const [exp, expM, con, pos, tel, net, jv, fy27] = await Promise.all([
+      csv(FILES.exp_clean), csv(FILES.exp_monthly), csv(FILES.contracts),
+      csv(FILES.pos), csv(FILES.telecom), csv(FILES.network),
+      csv(FILES.jv), csv(FILES.fy27)
+    ]);
+
+    // ── EXPENDITURES ─────────────────────────────────────
+    const fy26exp = exp.filter(r => r.FY === 'FY26');
+    const fy25exp = exp.filter(r => r.FY === 'FY25');
+    const fy24exp = exp.filter(r => r.FY === 'FY24');
+
+    const totalFY = fy => exp.filter(r => r.FY === fy).reduce((s,r) => s + num(r.Expenditure), 0);
+    const budgetFY = fy => exp.filter(r => r.FY === fy).reduce((s,r) => s + num(r.Perm_Budget), 0);
+
+    const t26 = totalFY('FY26'), b26 = budgetFY('FY26');
+    const t25 = totalFY('FY25'), b25 = budgetFY('FY25');
+    const t24 = totalFY('FY24'), b24 = budgetFY('FY24');
+    const util26 = b26 > 0 ? (t26/b26*100).toFixed(1) : '—';
+
+    // ── FY27 ─────────────────────────────────────────────
+    const fy27Budget = fy27.reduce((s,r) => s + num(r.Budget), 0);
+    const fy27Spent = fy27.reduce((s,r) => s + num(r.Expenses), 0);
+
+    // KPI strip
+    document.getElementById('k1').textContent = fmt(t26);
+    document.getElementById('k2').textContent = fmt(fy27Budget);
+    document.getElementById('k3').textContent = util26 + '%';
+
+    // View 1 metrics
+    document.getElementById('m1').textContent = fmt(t26);
+    document.getElementById('m2').textContent = util26 + '%';
+    document.getElementById('m3').textContent = fmt(fy27Budget);
+    document.getElementById('m4').textContent = fmt(fy27Spent);
+
+    // View 2 metrics
+    document.getElementById('m5').textContent = fmt(t24);
+    document.getElementById('m6').textContent = fmt(t25);
+    document.getElementById('m7').textContent = fmt(t26);
+
+    // C1 — Utilization
+    makeChart('c1', 'bar', {
+      labels: ['FY24', 'FY25', 'FY26'],
+      datasets: [{
+        data: [b24>0?(t24/b24*100).toFixed(1):0, b25>0?(t25/b25*100).toFixed(1):0, util26],
+        backgroundColor: ['#C62828','#C62828','#2E7D32'], borderRadius: 4
+      }]
+    }, { plugins:{legend:{display:false}}, scales:{y:{min:70,max:135,grid:{color:'#F0F0F0'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} });
+
+    // C2 — Budget vs Actual
+    makeChart('c2', 'bar', {
+      labels: ['FY24', 'FY25', 'FY26'],
+      datasets: [
+        { label:'Budget', data: [+(b24/1e6).toFixed(1), +(b25/1e6).toFixed(1), +(b26/1e6).toFixed(1)], backgroundColor:'#BDBDBD', borderRadius:4 },
+        { label:'Actual', data: [+(t24/1e6).toFixed(1), +(t25/1e6).toFixed(1), +(t26/1e6).toFixed(1)], backgroundColor:'#F7C500', borderRadius:4 },
+      ]
+    }, { plugins:{legend:{position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
+
+    // C3 — Category breakdown FY26
+    const cats = {};
+    fy26exp.forEach(r => { const c = r.Category_Group||'Other'; cats[c] = (cats[c]||0) + num(r.Expenditure); });
+    const catSorted = Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,6);
+    makeChart('c3', 'bar', {
+      labels: catSorted.map(e=>e[0]),
+      datasets: [{ data: catSorted.map(e=>+(e[1]/1e6).toFixed(2)), backgroundColor:'#1565C0', borderRadius:4 }]
+    }, { indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'M'}},y:{grid:{display:false}}} });
+
+    // C4 — Monthly trend
+    const months = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
+    const monthNums = {Jul:1,Aug:2,Sep:3,Oct:4,Nov:5,Dec:6,Jan:7,Feb:8,Mar:9,Apr:10,May:11,Jun:12};
+    const byFYMonth = (data, fy) => {
+      const d = {}; months.forEach(m => d[m]=0);
+      data.filter(r=>r.FY===fy).forEach(r => { if(r.Month_Name && d[r.Month_Name]!==undefined) d[r.Month_Name]+=num(r.Expenditure); });
+      let cum=0; return months.map(m => { cum+=d[m]; return +(cum/1e6).toFixed(2); });
+    };
+    makeChart('c4', 'line', {
+      labels: months,
+      datasets: [
+        { label:'FY24', data: byFYMonth(expM,'FY24'), borderColor:'#BDBDBD', tension:.3, pointRadius:0, borderWidth:1.5 },
+        { label:'FY25', data: byFYMonth(expM,'FY25'), borderColor:'#757575', tension:.3, pointRadius:0, borderWidth:1.5 },
+        { label:'FY26', data: byFYMonth(expM,'FY26'), borderColor:'#F7C500', tension:.3, pointRadius:0, borderWidth:2.5 },
+      ]
+    }, { plugins:{legend:{position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
+
+    // ── CONTRACTS ─────────────────────────────────────────
+    const active = con.filter(r=>r.Status==='Active').length;
+    const expiring = con.filter(r=>r.Status==='Expiring Soon').length;
+    const expired = con.filter(r=>r.Status==='Expired').length;
+    const unknown = con.filter(r=>r.Status==='Unknown').length;
+    const total = con.length;
+
+    document.getElementById('k4').textContent = expiring;
+    document.getElementById('k5').textContent = active;
+    document.getElementById('k6').textContent = total;
+    document.getElementById('m8').textContent = expiring;
+    document.getElementById('m9').textContent = active;
+    document.getElementById('m10').textContent = total;
+
+    const soonSorted = con.filter(r=>r.Status==='Expiring Soon').sort((a,b)=>num(a.Days_Until_Expiry)-num(b.Days_Until_Expiry));
+    if(soonSorted.length>0) {
+      document.getElementById('m11').textContent = soonSorted[0].Vendor||'—';
+      document.getElementById('m11s').textContent = soonSorted[0].Product||'';
+    }
+
+    // C5 — Contract status
+    makeChart('c5', 'bar', {
+      labels:['Active','Expired','Expiring Soon','Unknown'],
+      datasets:[{data:[active,expired,expiring,unknown],backgroundColor:['#2E7D32','#BDBDBD','#C62828','#F7C500'],borderRadius:4}]
+    }, { plugins:{legend:{display:false}}, scales:{y:{grid:{color:'#F0F0F0'}},x:{grid:{display:false}}} });
+
+    // C6 — Top vendors
+    const vendors = {};
+    con.forEach(r => { const v=r.Vendor||'Other'; vendors[v]=(vendors[v]||0)+num(r.Annual_Cost); });
+    const topV = Object.entries(vendors).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    makeChart('c6', 'bar', {
+      labels: topV.map(e=>e[0].substring(0,15)),
+      datasets:[{data:topV.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1565C0',borderRadius:4}]
+    }, { indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}} });
+
+    // Expiring list
+    const el = document.getElementById('expiring-list');
+    el.innerHTML = soonSorted.slice(0,8).map(r => `
+      <div class="srow">
+        <div class="sdot" style="background:${num(r.Days_Until_Expiry)<30?'#C62828':'#F7C500'}"></div>
+        <div style="flex:1">
+          <div class="sn">${r.Vendor} — ${r.Product||''}</div>
+          <div class="sd">${r.Department||''} · Renewal: ${r.Renewal_Date||'Unknown'} · ${num(r.Days_Until_Expiry)|0} days</div>
+        </div>
+        <div style="font-size:12px;font-weight:600;color:#C62828">$${(num(r.Annual_Cost)/1e3).toFixed(0)}K/yr</div>
+      </div>`).join('');
+
+    // ── PURCHASE ORDERS ───────────────────────────────────
+    const poTotal = pos.reduce((s,r)=>s+num(r.Amount),0);
+    const poBalance = pos.reduce((s,r)=>s+num(r.Ending_Balance),0);
+    const telTotal = tel.length;
+    document.getElementById('m12').textContent = pos.length;
+    document.getElementById('m13').textContent = telTotal;
+    document.getElementById('m14').textContent = fmt(poTotal);
+    document.getElementById('m15').textContent = fmt(poBalance);
+
+    // C7 — PO by dept
+    const depts = {};
+    pos.forEach(r=>{const d=r.Department||'Other';depts[d]=(depts[d]||0)+num(r.Amount);});
+    const deptSorted = Object.entries(depts).sort((a,b)=>b[1]-a[1]);
+    makeChart('c7','bar',{
+      labels:deptSorted.map(e=>e[0].substring(0,20)),
+      datasets:[{data:deptSorted.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1565C0',borderRadius:4}]
+    },{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
+
+    // C8 — Telecom by FY
+    const fyTel = {};
+    tel.forEach(r=>{const f=r.FY||'Unknown';fyTel[f]=(fyTel[f]||0)+num(r.Amount);});
+    const fyTelSorted = Object.entries(fyTel).sort((a,b)=>a[0].localeCompare(b[0]));
+    makeChart('c8','bar',{
+      labels:fyTelSorted.map(e=>e[0]),
+      datasets:[{data:fyTelSorted.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#856C00',borderRadius:4}]
+    },{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+
+    // ── NETWORK ───────────────────────────────────────────
+    const netTotal = net.reduce((s,r)=>s+num(r.Amount),0);
+    const netBal = net.reduce((s,r)=>s+num(r.Ending_Balance),0);
+    const jvTotal = jv.reduce((s,r)=>s+num(r.Amount),0);
+
+    const netByVendor = {};
+    net.forEach(r=>{const v=r.Vendor||'Other';netByVendor[v]=(netByVendor[v]||0)+num(r.Ending_Balance);});
+    const topNet = Object.entries(netByVendor).sort((a,b)=>b[1]-a[1]);
+
+    document.getElementById('m16').textContent = topNet.length>0?topNet[0][0]:'—';
+    document.getElementById('m17').textContent = fmt(netTotal);
+    document.getElementById('m18').textContent = jv.length;
+    document.getElementById('m19').textContent = fmt(jvTotal);
+
+    // C9 — Network balances
+    makeChart('c9','bar',{
+      labels:topNet.map(e=>e[0].substring(0,15)),
+      datasets:[{data:topNet.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#00695C',borderRadius:4}]
+    },{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+
+    // C10 — JV by FY
+    const jvByFY = {};
+    jv.forEach(r=>{const f=r.FY||'Unknown';jvByFY[f]=(jvByFY[f]||0)+num(r.Amount);});
+    const jvSorted = Object.entries(jvByFY).sort((a,b)=>a[0].localeCompare(b[0]));
+    makeChart('c10','bar',{
+      labels:jvSorted.map(e=>e[0]),
+      datasets:[{data:jvSorted.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#1565C0',borderRadius:4}]
+    },{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#F0F0F0'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+
+  } catch(e) {
+    console.error('Error loading data:', e);
+    document.querySelectorAll('.kv,.mv').forEach(el => { if(el.textContent==='—') el.textContent='N/A'; });
+  }
+}
+
+loadAll();
+</script>
+</body>
+</html>
