@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VCU Technology Services — Finance Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #F7C500;
+  --gold-dark: #C49A00;
+  --black: #1A1A1A;
+  --white: #FFFFFF;
+  --gray-50: #FAFAFA;
+  --gray-100: #F4F4F4;
+  --gray-200: #E8E8E8;
+  --gray-300: #D0D0D0;
+  --gray-500: #888888;
+  --gray-700: #444444;
+  --green: #15803D;
+  --green-bg: #F0FDF4;
+  --red: #B91C1C;
+  --red-bg: #FEF2F2;
+  --blue: #1D4ED8;
+  --blue-bg: #EFF6FF;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  background: var(--gray-100);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--black);
+  border-bottom: 3px solid var(--gold);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-vcu {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.logo-sep {
+  width: 1px;
+  height: 18px;
+  background: #3A3A3A;
+}
+
+.logo-text {
+  font-size: 13px;
+  color: #AAAAAA;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #777;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.kpi-cell {
+  flex: 1;
+  padding: 10px 16px;
+  border-right: 1px solid var(--gray-200);
+}
+
+.kpi-cell:first-child { padding-left: 0; }
+.kpi-cell:last-child { border-right: none; }
+
+.kpi-label {
+  font-size: 9.5px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.kpi-val {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--black);
+}
+
+.kpi-val.gold { color: var(--gold-dark); }
+.kpi-val.green { color: var(--green); }
+.kpi-val.red { color: var(--red); }
+
+.kpi-note {
+  font-size: 9.5px;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+/* ── TABS ── */
+.tabs {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  padding: 0 24px;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-500);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.12s, border-color 0.12s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab:hover { color: var(--black); }
+
+.tab.active {
+  color: var(--black);
+  border-bottom-color: var(--gold);
+}
+
+.tab-badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray-500);
+  transition: background 0.12s, color 0.12s;
+}
+
+.tab.active .tab-badge {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+/* ── OPEN BUTTON ── */
+.open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: background 0.12s;
+  letter-spacing: 0.01em;
+}
+
+.open-btn:hover { background: #333; }
+
+.open-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ── METRIC CARDS ── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.metric-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  padding: 12px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+.metric-card.gold::after { background: var(--gold); }
+.metric-card.green::after { background: var(--green); }
+.metric-card.red::after { background: var(--red); }
+.metric-card.blue::after { background: var(--blue); }
+
+.metric-label {
+  font-size: 9.5px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.metric-card.gold .metric-value { color: var(--gold-dark); }
+.metric-card.green .metric-value { color: var(--green); }
+.metric-card.red .metric-value { color: var(--red); }
+.metric-card.blue .metric-value { color: var(--blue); }
+
+.metric-sub {
+  font-size: 10px;
+  color: var(--gray-500);
+}
+
+/* ── CHARTS ── */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.charts-grid.three { grid-template-columns: 2fr 1fr; }
+
+.chart-panel {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.chart-panel.full { grid-column: 1 / -1; }
+
+.chart-panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+}
+
+.chart-area {
+  position: relative;
+  height: 160px;
+}
+
+/* ── TABLE ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.data-table th {
+  background: var(--gray-100);
+  padding: 7px 10px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.data-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--black);
+}
+
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--gray-50); }
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badge-red { background: var(--red-bg); color: var(--red); }
+.badge-green { background: var(--green-bg); color: var(--green); }
+.badge-gold { background: #FFFBEB; color: var(--gold-dark); }
+.badge-gray { background: var(--gray-100); color: var(--gray-500); }
+
+/* ── TABLE PANEL ── */
+.table-panel {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.table-panel-header {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  background: var(--gray-50);
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--white);
+  border-top: 1px solid var(--gray-200);
+  padding: 7px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.footer-left { font-size: 10px; color: var(--gray-500); }
+
+.footer-right a {
+  font-size: 10px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.footer-right a:hover { text-decoration: underline; }
+
+.loading-msg {
+  text-align: center;
+  padding: 30px;
+  color: var(--gray-500);
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">
+    <span class="logo-vcu">VCU</span>
+    <div class="logo-sep"></div>
+    <span class="logo-text">Technology Services — Finance Dashboard</span>
+  </div>
+  <div class="header-right">
+    <div class="live-dot"></div>
+    Live data · Updated July 31, 2026
+  </div>
+</div>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi-cell">
+    <div class="kpi-label">FY26 Total Spend</div>
+    <div class="kpi-val gold" id="k-spend">—</div>
+    <div class="kpi-note">All TS departments</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">FY27 Budget</div>
+    <div class="kpi-val" id="k-fy27">—</div>
+    <div class="kpi-note">Approved allocation</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">FY26 Utilization</div>
+    <div class="kpi-val green" id="k-util">—</div>
+    <div class="kpi-note">vs permanent budget</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Contracts Expiring</div>
+    <div class="kpi-val red" id="k-exp">—</div>
+    <div class="kpi-note">Within 90 days</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Active Contracts</div>
+    <div class="kpi-val" id="k-active">—</div>
+    <div class="kpi-note">All departments</div>
+  </div>
+  <div class="kpi-cell">
+    <div class="kpi-label">Data Sources</div>
+    <div class="kpi-val">8</div>
+    <div class="kpi-note">Live · Google Drive</div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="switchTab(0, this)">
+    <span class="tab-badge">1</span>Executive Summary
+  </div>
+  <div class="tab" onclick="switchTab(1, this)">
+    <span class="tab-badge">2</span>Budget Deep Dive
+  </div>
+  <div class="tab" onclick="switchTab(2, this)">
+    <span class="tab-badge">3</span>Contract Management
+  </div>
+  <div class="tab" onclick="switchTab(3, this)">
+    <span class="tab-badge">4</span>Purchase Orders
+  </div>
+  <div class="tab" onclick="switchTab(4, this)">
+    <span class="tab-badge">5</span>Network & Telecom
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- VIEW 1: Executive Summary -->
+  <div class="view active" id="view-0">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard1" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open in Tableau — Executive Summary
+    </a>
+    <div class="metrics">
+      <div class="metric-card gold">
+        <div class="metric-label">FY26 Total Spend</div>
+        <div class="metric-value" id="m-spend">—</div>
+        <div class="metric-sub">Across all TS departments</div>
+      </div>
+      <div class="metric-card green">
+        <div class="metric-label">FY26 Utilization</div>
+        <div class="metric-value" id="m-util">—</div>
+        <div class="metric-sub">First time under budget in 3 years</div>
+      </div>
+      <div class="metric-card blue">
+        <div class="metric-label">FY27 Budget</div>
+        <div class="metric-value" id="m-fy27b">—</div>
+        <div class="metric-sub">Approved as of July 2026</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">FY27 Spent So Far</div>
+        <div class="metric-value" id="m-fy27s">—</div>
+        <div class="metric-sub">Through July 30, 2026</div>
+      </div>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Budget vs Actual Spend ($M)</div>
+        <div class="chart-area"><canvas id="chart-bva"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">Budget Utilization % by FY</div>
+        <div class="chart-area"><canvas id="chart-util"></canvas></div>
+      </div>
+    </div>
+    <div class="table-panel">
+      <div class="table-panel-header">FY27 Budget by Department (Top 10 by Budget)</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Budget</th>
+            <th>Spent So Far</th>
+            <th>Commitments</th>
+            <th>Remaining</th>
+          </tr>
+        </thead>
+        <tbody id="fy27-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- VIEW 2: Budget Deep Dive -->
+  <div class="view" id="view-1">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard2" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open in Tableau — Budget Deep Dive
+    </a>
+    <div class="metrics">
+      <div class="metric-card gold">
+        <div class="metric-label">FY24 Total</div>
+        <div class="metric-value" id="m-fy24">—</div>
+        <div class="metric-sub">All departments</div>
+      </div>
+      <div class="metric-card gold">
+        <div class="metric-label">FY25 Total</div>
+        <div class="metric-value" id="m-fy25">—</div>
+        <div class="metric-sub">All departments</div>
+      </div>
+      <div class="metric-card gold">
+        <div class="metric-label">FY26 Total</div>
+        <div class="metric-value" id="m-fy26">—</div>
+        <div class="metric-sub">All departments</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Top Category</div>
+        <div class="metric-value" style="font-size:14px">Salaries</div>
+        <div class="metric-sub">85–90% every year</div>
+      </div>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Monthly Spend Trend — FY24 to FY26</div>
+        <div class="chart-area"><canvas id="chart-monthly"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">Spend by Category — FY26</div>
+        <div class="chart-area"><canvas id="chart-cat"></canvas></div>
+      </div>
+    </div>
+    <div class="table-panel">
+      <div class="table-panel-header">Top Departments by FY26 Spend</div>
+      <table class="data-table">
+        <thead><tr><th>Department</th><th>Division</th><th>FY24</th><th>FY25</th><th>FY26</th></tr></thead>
+        <tbody id="dept-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- VIEW 3: Contract Management -->
+  <div class="view" id="view-2">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard3" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open in Tableau — Contract Management
+    </a>
+    <div class="metrics">
+      <div class="metric-card red">
+        <div class="metric-label">Expiring in 90 Days</div>
+        <div class="metric-value" id="m-expiring">—</div>
+        <div class="metric-sub">Needs attention</div>
+      </div>
+      <div class="metric-card green">
+        <div class="metric-label">Active Contracts</div>
+        <div class="metric-value" id="m-active">—</div>
+        <div class="metric-sub">Currently active</div>
+      </div>
+      <div class="metric-card blue">
+        <div class="metric-label">Total Contracts</div>
+        <div class="metric-value" id="m-total-con">—</div>
+        <div class="metric-sub">All vendors tracked</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Annual Contract Spend</div>
+        <div class="metric-value" id="m-con-spend">—</div>
+        <div class="metric-sub">Active contracts only</div>
+      </div>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Contract Status Distribution</div>
+        <div class="chart-area"><canvas id="chart-status"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">Top 8 Vendors by Annual Cost</div>
+        <div class="chart-area"><canvas id="chart-vendors"></canvas></div>
+      </div>
+    </div>
+    <div class="table-panel">
+      <div class="table-panel-header">Contracts Expiring Within 90 Days — Sorted by Urgency</div>
+      <table class="data-table">
+        <thead><tr><th>Vendor</th><th>Product</th><th>Department</th><th>Annual Cost</th><th>Renewal Date</th><th>Days Left</th></tr></thead>
+        <tbody id="expiring-table"><tr><td colspan="6" class="loading-msg">Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- VIEW 4: Purchase Orders -->
+  <div class="view" id="view-3">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard4" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open in Tableau — Purchase Orders
+    </a>
+    <div class="metrics">
+      <div class="metric-card gold">
+        <div class="metric-label">TS POs (FY26-27)</div>
+        <div class="metric-value" id="m-po-count">—</div>
+        <div class="metric-sub">All departments</div>
+      </div>
+      <div class="metric-card blue">
+        <div class="metric-label">Total PO Amount</div>
+        <div class="metric-value" id="m-po-amount">—</div>
+        <div class="metric-sub">FY26-27</div>
+      </div>
+      <div class="metric-card red">
+        <div class="metric-label">Open Balance</div>
+        <div class="metric-value" id="m-po-balance">—</div>
+        <div class="metric-sub">Not yet received</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Telecom POs</div>
+        <div class="metric-value" id="m-tel-count">—</div>
+        <div class="metric-sub">FY24 through FY27</div>
+      </div>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Telecom Spend by Fiscal Year ($M)</div>
+        <div class="chart-area"><canvas id="chart-telecom"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">TS PO Amount by Department</div>
+        <div class="chart-area"><canvas id="chart-po-dept"></canvas></div>
+      </div>
+    </div>
+    <div class="table-panel">
+      <div class="table-panel-header">Purchase Orders — FY26-27 (Sorted by Ending Balance)</div>
+      <table class="data-table">
+        <thead><tr><th>Department</th><th>Vendor</th><th>PO Number</th><th>Amount</th><th>Received</th><th>Balance</th></tr></thead>
+        <tbody id="po-table"><tr><td colspan="6" class="loading-msg">Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- VIEW 5: Network & Telecom -->
+  <div class="view" id="view-4">
+    <a class="open-btn" href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard5" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open in Tableau — Network & Telecom
+    </a>
+    <div class="metrics">
+      <div class="metric-card gold">
+        <div class="metric-label">Network PO Total</div>
+        <div class="metric-value" id="m-net-total">—</div>
+        <div class="metric-sub">FY26-27</div>
+      </div>
+      <div class="metric-card red">
+        <div class="metric-label">Open Network Balance</div>
+        <div class="metric-value" id="m-net-balance">—</div>
+        <div class="metric-sub">Not yet received</div>
+      </div>
+      <div class="metric-card blue">
+        <div class="metric-label">JV Entries</div>
+        <div class="metric-value" id="m-jv-count">—</div>
+        <div class="metric-sub">FY24 through FY27</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">JV Total Amount</div>
+        <div class="metric-value" id="m-jv-amount">—</div>
+        <div class="metric-sub">All years combined</div>
+      </div>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Network Open Balances by Vendor</div>
+        <div class="chart-area"><canvas id="chart-net"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">Journal Voucher Amount by FY</div>
+        <div class="chart-area"><canvas id="chart-jv"></canvas></div>
+      </div>
+    </div>
+    <div class="table-panel">
+      <div class="table-panel-header">Network Purchase Orders — Open Balances</div>
+      <table class="data-table">
+        <thead><tr><th>Department</th><th>Vendor</th><th>PO Number</th><th>Amount</th><th>Received</th><th>Balance</th></tr></thead>
+        <tbody id="net-table"><tr><td colspan="6" class="loading-msg">Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">VCU Technology Services · Fiscal & Administrative Services · Built by Tejesh Annavarapu · Summer Internship 2026</div>
+  <div class="footer-right">
+    <a href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard1" target="_blank">Open Full Dashboard in Tableau ↗</a>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ──────────────────────────────────────────────────────────
+const IDS = {
+  exp_clean:   '1ae7GOecvnJDhcXb9D_gzGPE-CaBtZXEq',
+  exp_monthly: '1v1a-IlRhE9446ZNICFodfZySOdukrP5U',
+  contracts:   '18H-Wl0N-ZU-jE9df0FkWmXaZNZVW5mqK',
+  pos:         '1Yedmy9zlhW5HKJyWLxpa1cMCCzITSt5I',
+  telecom:     '1txhA-UUpBL54996Hyd0frsURUYnZbk8M',
+  network:     '1le52MNbSPRMmuSXREkg_j3oNrthw3_KJ',
+  jv:          '11y2LFPLLxxsTTOlfnkc5r2SJ6Tj5a6et',
+  fy27:        '1xvhvmo81mZcYDmK3bdWjYmZyDrnN-VLG',
+};
+
+const PROXY = 'https://api.allorigins.win/raw?url=';
+const driveURL = id => PROXY + encodeURIComponent(`https://drive.google.com/uc?export=download&id=${id}`);
+
+// ── HELPERS ─────────────────────────────────────────────────────────
+const num = s => parseFloat(String(s||0).replace(/[$,\s]/g,'')) || 0;
+
+function fmt(n, decimals=1) {
+  if (Math.abs(n) >= 1e6) return '$' + (n/1e6).toFixed(decimals) + 'M';
+  if (Math.abs(n) >= 1e3) return '$' + (n/1e3).toFixed(0) + 'K';
+  return '$' + n.toFixed(0);
+}
+
+function set(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+
+async function fetchCSV(id) {
+  const url = driveURL(id);
+  const resp = await fetch(url);
+  const text = await resp.text();
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h => h.replace(/"/g,'').trim());
+  return lines.slice(1).map(line => {
+    const vals = line.match(/(".*?"|[^,]+)(?=,|$)/g) || [];
+    const obj = {};
+    headers.forEach((h,i) => obj[h] = (vals[i]||'').replace(/"/g,'').trim());
+    return obj;
+  });
+}
+
+// ── CHARTS ──────────────────────────────────────────────────────────
+Chart.defaults.color = '#888';
+Chart.defaults.font.family = "'Segoe UI', Arial, sans-serif";
+Chart.defaults.font.size = 11;
+
+const chartInstances = {};
+
+function makeChart(id, type, data, options={}) {
+  if (chartInstances[id]) chartInstances[id].destroy();
+  const ctx = document.getElementById(id);
+  if (!ctx) return;
+  chartInstances[id] = new Chart(ctx, {
+    type,
+    data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      ...options
+    }
+  });
+}
+
+// ── TAB SWITCHING ────────────────────────────────────────────────────
+function switchTab(i, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('view-' + i).classList.add('active');
+}
+
+// ── LOAD ALL DATA ────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const [exp, expM, con, pos, tel, net, jv, fy27] = await Promise.all([
+      fetchCSV(IDS.exp_clean),
+      fetchCSV(IDS.exp_monthly),
+      fetchCSV(IDS.contracts),
+      fetchCSV(IDS.pos),
+      fetchCSV(IDS.telecom),
+      fetchCSV(IDS.network),
+      fetchCSV(IDS.jv),
+      fetchCSV(IDS.fy27),
+    ]);
+
+    // ── EXPENDITURES ─────────────────────────────────────────────────
+    const fyTotal = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Expenditure), 0);
+    const fyBudget = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Perm_Budget), 0);
+
+    const t24=fyTotal('FY24'), b24=fyBudget('FY24');
+    const t25=fyTotal('FY25'), b25=fyBudget('FY25');
+    const t26=fyTotal('FY26'), b26=fyBudget('FY26');
+    const util26 = b26>0 ? (t26/b26*100).toFixed(1)+'%' : '—';
+
+    set('k-spend', fmt(t26));
+    set('k-util', util26);
+    set('m-spend', fmt(t26));
+    set('m-util', util26);
+    set('m-fy24', fmt(t24));
+    set('m-fy25', fmt(t25));
+    set('m-fy26', fmt(t26));
+
+    // Budget vs Actual chart
+    makeChart('chart-bva', 'bar', {
+      labels: ['FY24', 'FY25', 'FY26'],
+      datasets: [
+        { label:'Budget', data:[+(b24/1e6).toFixed(1),+(b25/1e6).toFixed(1),+(b26/1e6).toFixed(1)], backgroundColor:'#D0D0D0', borderRadius:4 },
+        { label:'Actual', data:[+(t24/1e6).toFixed(1),+(t25/1e6).toFixed(1),+(t26/1e6).toFixed(1)], backgroundColor:'#F7C500', borderRadius:4 },
+      ]
+    }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
+
+    // Utilization chart
+    const utils = [b24?+(t24/b24*100).toFixed(1):0, b25?+(t25/b25*100).toFixed(1):0, b26?+(t26/b26*100).toFixed(1):0];
+    makeChart('chart-util', 'bar', {
+      labels: ['FY24','FY25','FY26'],
+      datasets: [{ data:utils, backgroundColor:utils.map(u=>u>100?'#B91C1C':'#15803D'), borderRadius:4 }]
+    }, { scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} });
+
+    // Monthly trend
+    const months = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
+    const buildTrend = fy => {
+      const byMonth = {};
+      months.forEach(m => byMonth[m]=0);
+      expM.filter(r=>r.FY===fy).forEach(r => { if(r.Month_Name && byMonth[r.Month_Name]!==undefined) byMonth[r.Month_Name]+=num(r.Expenditure); });
+      let cum=0;
+      return months.map(m => { cum+=byMonth[m]; return cum>0?+(cum/1e6).toFixed(2):null; });
+    };
+
+    makeChart('chart-monthly', 'line', {
+      labels: months,
+      datasets: [
+        { label:'FY24', data:buildTrend('FY24'), borderColor:'#D0D0D0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+        { label:'FY25', data:buildTrend('FY25'), borderColor:'#888', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+        { label:'FY26', data:buildTrend('FY26'), borderColor:'#F7C500', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
+      ]
+    }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
+
+    // Category breakdown FY26
+    const cats = {};
+    exp.filter(r=>r.FY==='FY26').forEach(r => { const c=r.Category_Group||'Other'; cats[c]=(cats[c]||0)+num(r.Expenditure); });
+    const catArr = Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,7);
+    makeChart('chart-cat', 'bar', {
+      labels: catArr.map(e=>e[0]),
+      datasets:[{data:catArr.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#1D4ED8',borderRadius:4}]
+    },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},y:{grid:{display:false},ticks:{font:{size:10}}}} });
+
+    // Dept table
+    const deptData = {};
+    ['FY24','FY25','FY26'].forEach(fy => {
+      exp.filter(r=>r.FY===fy).forEach(r => {
+        if(!deptData[r.Department]) deptData[r.Department]={FY24:0,FY25:0,FY26:0,Division:r.Division||'—'};
+        deptData[r.Department][fy]+=num(r.Expenditure);
+      });
+    });
+    const deptArr = Object.entries(deptData).sort((a,b)=>b[1].FY26-a[1].FY26).slice(0,10);
+    document.getElementById('dept-table').innerHTML = deptArr.map(([dept,d])=>`
+      <tr>
+        <td>${dept}</td>
+        <td style="color:#888;font-size:11px">${d.Division}</td>
+        <td>${fmt(d.FY24)}</td>
+        <td>${fmt(d.FY25)}</td>
+        <td><strong>${fmt(d.FY26)}</strong></td>
+      </tr>`).join('');
+
+    // ── FY27 ─────────────────────────────────────────────────────────
+    const fy27Budget = fy27.reduce((s,r)=>s+num(r.Budget),0);
+    const fy27Spent = fy27.reduce((s,r)=>s+num(r.Expenses),0);
+
+    set('k-fy27', fmt(fy27Budget));
+    set('m-fy27b', fmt(fy27Budget));
+    set('m-fy27s', fmt(fy27Spent));
+
+    const fy27Sorted = [...fy27].sort((a,b)=>num(b.Budget)-num(a.Budget)).slice(0,8);
+    document.getElementById('fy27-table').innerHTML = fy27Sorted.map(r=>{
+      const diff = num(r.Difference);
+      const diffColor = diff>=0?'#15803D':'#B91C1C';
+      return `<tr>
+        <td>${r.Department}</td>
+        <td>${fmt(num(r.Budget))}</td>
+        <td>${fmt(num(r.Expenses))}</td>
+        <td>${fmt(num(r.Commitments))}</td>
+        <td style="color:${diffColor};font-weight:600">${fmt(diff)}</td>
+      </tr>`;
+    }).join('');
+
+    // ── CONTRACTS ────────────────────────────────────────────────────
+    const active = con.filter(r=>r.Status==='Active');
+    const expiring = con.filter(r=>r.Status==='Expiring Soon');
+    const expired = con.filter(r=>r.Status==='Expired');
+    const unknown = con.filter(r=>r.Status==='Unknown');
+    const activeSpend = active.reduce((s,r)=>s+num(r.Annual_Cost),0);
+
+    set('k-exp', expiring.length);
+    set('k-active', active.length);
+    set('m-expiring', expiring.length);
+    set('m-active', active.length);
+    set('m-total-con', con.length);
+    set('m-con-spend', fmt(activeSpend));
+
+    makeChart('chart-status', 'bar', {
+      labels:['Active','Expired','Expiring Soon','Unknown'],
+      datasets:[{data:[active.length,expired.length,expiring.length,unknown.length],backgroundColor:['#15803D','#D0D0D0','#B91C1C','#F7C500'],borderRadius:4}]
+    },{ scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}} });
+
+    const vendorSpend={};
+    con.forEach(r=>{const v=r.Vendor||'Other';vendorSpend[v]=(vendorSpend[v]||0)+num(r.Annual_Cost);});
+    const topV=Object.entries(vendorSpend).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    makeChart('chart-vendors','bar',{
+      labels:topV.map(e=>e[0].substring(0,14)),
+      datasets:[{data:topV.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
+
+    const expSorted = expiring.sort((a,b)=>num(a.Days_Until_Expiry)-num(b.Days_Until_Expiry));
+    document.getElementById('expiring-table').innerHTML = expSorted.map(r=>{
+      const days = Math.round(num(r.Days_Until_Expiry));
+      const badgeClass = days<=30?'badge-red':days<=60?'badge-gold':'badge-green';
+      return `<tr>
+        <td><strong>${r.Vendor}</strong></td>
+        <td>${r.Product||'—'}</td>
+        <td style="font-size:11px;color:#888">${r.Department||'—'}</td>
+        <td>${fmt(num(r.Annual_Cost))}/yr</td>
+        <td>${r.Renewal_Date||'—'}</td>
+        <td><span class="status-badge ${badgeClass}">${days} days</span></td>
+      </tr>`;
+    }).join('');
+
+    // ── PURCHASE ORDERS ──────────────────────────────────────────────
+    const poAmount=pos.reduce((s,r)=>s+num(r.Amount),0);
+    const poBalance=pos.reduce((s,r)=>s+num(r.Ending_Balance),0);
+
+    set('m-po-count', pos.length);
+    set('m-po-amount', fmt(poAmount));
+    set('m-po-balance', fmt(poBalance));
+    set('m-tel-count', tel.length);
+
+    const telByFY={};
+    tel.forEach(r=>{const f=r.FY||'?';telByFY[f]=(telByFY[f]||0)+num(r.Amount);});
+    const telArr=Object.entries(telByFY).sort((a,b)=>a[0].localeCompare(b[0]));
+    makeChart('chart-telecom','bar',{
+      labels:telArr.map(e=>e[0]),
+      datasets:[{data:telArr.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#C49A00',borderRadius:4}]
+    },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+
+    const poDepts={};
+    pos.forEach(r=>{const d=r.Department||'Other';poDepts[d]=(poDepts[d]||0)+num(r.Amount);});
+    const poArr=Object.entries(poDepts).sort((a,b)=>b[1]-a[1]);
+    makeChart('chart-po-dept','bar',{
+      labels:poArr.map(e=>e[0].substring(0,18)),
+      datasets:[{data:poArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
+
+    const poSorted=[...pos].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,10);
+    document.getElementById('po-table').innerHTML = poSorted.map(r=>`
+      <tr>
+        <td style="font-size:11px">${r.Department||'—'}</td>
+        <td><strong>${r.Vendor||'—'}</strong></td>
+        <td style="font-size:11px;color:#888">${r.PO_Number||'—'}</td>
+        <td>${fmt(num(r.Amount))}</td>
+        <td>${fmt(num(r.Amount_Received))}</td>
+        <td style="color:${num(r.Ending_Balance)>0?'#B91C1C':'#15803D'};font-weight:600">${fmt(num(r.Ending_Balance))}</td>
+      </tr>`).join('');
+
+    // ── NETWORK ──────────────────────────────────────────────────────
+    const netTotal=net.reduce((s,r)=>s+num(r.Amount),0);
+    const netBal=net.reduce((s,r)=>s+num(r.Ending_Balance),0);
+    const jvTotal=jv.reduce((s,r)=>s+num(r.Amount),0);
+
+    set('m-net-total', fmt(netTotal));
+    set('m-net-balance', fmt(netBal));
+    set('m-jv-count', jv.length);
+    set('m-jv-amount', fmt(jvTotal));
+
+    const netVendors={};
+    net.forEach(r=>{const v=r.Vendor||'Other';netVendors[v]=(netVendors[v]||0)+num(r.Ending_Balance);});
+    const netArr=Object.entries(netVendors).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]);
+    makeChart('chart-net','bar',{
+      labels:netArr.map(e=>e[0].substring(0,14)),
+      datasets:[{data:netArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+
+    const jvByFY={};
+    jv.forEach(r=>{const f=r.FY||'?';jvByFY[f]=(jvByFY[f]||0)+num(r.Amount);});
+    const jvArr=Object.entries(jvByFY).sort((a,b)=>a[0].localeCompare(b[0]));
+    makeChart('chart-jv','bar',{
+      labels:jvArr.map(e=>e[0]),
+      datasets:[{data:jvArr.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#1D4ED8',borderRadius:4}]
+    },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+
+    const netSorted=[...net].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,8);
+    document.getElementById('net-table').innerHTML = netSorted.map(r=>`
+      <tr>
+        <td style="font-size:11px">${r.Department||'—'}</td>
+        <td><strong>${r.Vendor||'—'}</strong></td>
+        <td style="font-size:11px;color:#888">${r.PO_Number||'—'}</td>
+        <td>${fmt(num(r.Amount))}</td>
+        <td>${fmt(num(r.Amount_Received))}</td>
+        <td style="color:#B91C1C;font-weight:600">${fmt(num(r.Ending_Balance))}</td>
+      </tr>`).join('');
+
+  } catch(err) {
+    console.error('Data load error:', err);
+    // Fall back to static numbers
+    set('k-spend','$28.9M'); set('k-util','87%'); set('k-exp','13');
+    set('k-active','95'); set('k-fy27','$34.5M');
+    set('m-spend','$28.9M'); set('m-util','87%');
+    set('m-fy27b','$34.5M'); set('m-fy27s','$3.5M');
+    set('m-fy24','$33.7M'); set('m-fy25','$32.3M'); set('m-fy26','$28.9M');
+    set('m-expiring','13'); set('m-active','95'); set('m-total-con','207'); set('m-con-spend','$8.2M');
+    set('m-po-count','28'); set('m-po-amount','$1.0M'); set('m-po-balance','$410K'); set('m-tel-count','459');
+    set('m-net-total','$1.0M'); set('m-net-balance','$409K'); set('m-jv-count','402'); set('m-jv-amount','$5.2M');
+
+    // Static charts as fallback
+    makeChart('chart-bva','bar',{labels:['FY24','FY25','FY26'],datasets:[{label:'Budget',data:[29.2,25.9,33.2],backgroundColor:'#D0D0D0',borderRadius:4},{label:'Actual',data:[33.7,32.3,28.9],backgroundColor:'#F7C500',borderRadius:4}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-util','bar',{labels:['FY24','FY25','FY26'],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#B91C1C','#B91C1C','#15803D'],borderRadius:4}]},{scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
+    makeChart('chart-monthly','line',{labels:['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'FY24',data:[1.6,3.3,5.8,8.2,11.0,14.0,17.5,21.0,25.5,28.0,31.5,33.7],borderColor:'#D0D0D0',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY25',data:[1.5,3.8,5.9,7.9,10.5,13.8,17.2,21.0,25.2,27.8,30.8,32.3],borderColor:'#888',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY26',data:[1.7,4.2,6.2,8.6,11.1,14.5,18.4,22.0,25.5,28.2,null,null],borderColor:'#F7C500',tension:.3,pointRadius:0,borderWidth:2.5,fill:false}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-cat','bar',{labels:['Salaries','Fringes','Bonus/OT','Software','Other'],datasets:[{data:[52,19,12,9,8],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}}});
+    makeChart('chart-status','bar',{labels:['Active','Expired','Expiring Soon','Unknown'],datasets:[{data:[95,77,13,22],backgroundColor:['#15803D','#D0D0D0','#B91C1C','#F7C500'],borderRadius:4}]},{scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}}});
+    makeChart('chart-vendors','bar',{labels:['SHI','Cas Severn','Instructure','Ellucian','Mythics','Avante','SHI Intl','Carahsoft'],datasets:[{data:[365,340,290,270,240,235,220,200],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
+    makeChart('chart-telecom','bar',{labels:['FY2024','FY2025','FY2026','FY2027'],datasets:[{data:[2.1,2.3,2.6,9.0],backgroundColor:'#C49A00',borderRadius:4}]},{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-net','bar',{labels:['SEGRA','MASO','Level 3'],datasets:[{data:[220,140,45],backgroundColor:'#0D9488',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+    makeChart('chart-jv','bar',{labels:['FY2024','FY2025','FY2026','FY2027'],datasets:[{data:[1.8,2.1,1.3,0.04],backgroundColor:'#1D4ED8',borderRadius:4}]},{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+
+    ['fy27-table','dept-table','expiring-table','po-table','net-table'].forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.innerHTML = '<tr><td colspan="6" class="loading-msg" style="color:#B91C1C">Could not load live data — open Tableau for full details</td></tr>';
+    });
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>
