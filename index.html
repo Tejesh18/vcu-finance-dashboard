@@ -514,7 +514,7 @@ html, body {
       <div class="view-toggle" onclick="hideTableau(0)">Hide Tableau embed</div>
     </div>
     <div class="summary-content" id="summary-0">
-    <div class="view-toggle" onclick="showTableau(0)">Show live Tableau embed above ↑</div>
+    <div class="view-toggle" id="tbtn-0" onclick="showTableau(0)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">FY26 Total Spend</div>
@@ -577,7 +577,7 @@ html, body {
       <div class="view-toggle" onclick="hideTableau(1)">Hide Tableau embed</div>
     </div>
     <div class="summary-content" id="summary-1">
-    <div class="view-toggle" onclick="showTableau(1)">Show live Tableau embed above ↑</div>
+    <div class="view-toggle" id="tbtn-1" onclick="showTableau(1)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">FY24 Total</div>
@@ -632,7 +632,7 @@ html, body {
       <div class="view-toggle" onclick="hideTableau(2)">Hide Tableau embed</div>
     </div>
     <div class="summary-content" id="summary-2">
-    <div class="view-toggle" onclick="showTableau(2)">Show live Tableau embed above ↑</div>
+    <div class="view-toggle" id="tbtn-2" onclick="showTableau(2)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card red">
         <div class="metric-label">Expiring in 90 Days</div>
@@ -687,7 +687,7 @@ html, body {
       <div class="view-toggle" onclick="hideTableau(3)">Hide Tableau embed</div>
     </div>
     <div class="summary-content" id="summary-3">
-    <div class="view-toggle" onclick="showTableau(3)">Show live Tableau embed above ↑</div>
+    <div class="view-toggle" id="tbtn-3" onclick="showTableau(3)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">TS POs (FY26-27)</div>
@@ -742,7 +742,7 @@ html, body {
       <div class="view-toggle" onclick="hideTableau(4)">Hide Tableau embed</div>
     </div>
     <div class="summary-content" id="summary-4">
-    <div class="view-toggle" onclick="showTableau(4)">Show live Tableau embed above ↑</div>
+    <div class="view-toggle" id="tbtn-4" onclick="showTableau(4)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">Network PO Total</div>
@@ -869,7 +869,6 @@ function switchTab(i, el) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('view-' + i).classList.add('active');
-  if (tableauOK) showTableau(i);
 }
 
 // ── TABLEAU EMBED ────────────────────────────────────────────────────
@@ -900,10 +899,12 @@ function hideTableau(i) {
   if (wrap) wrap.style.display = 'none';
 }
 
-// A cross-origin iframe can't be inspected from this page (browsers block that
-// for security), so we can't tell "logged in" from "not logged in" inside it.
-// What we CAN detect is whether prod.tableau.vcu.edu is reachable at all, which
-// is the actual documented failure mode when off the VCU network/VPN.
+// The Tableau embed is opt-in, never automatic — every viewer needs their own
+// Tableau login (most CIOs/directors won't have one), so auto-loading it would
+// put a login wall in front of people who just want to see the numbers. The
+// charts below are the default view for everyone. We still probe reachability
+// so we can hide the "view Tableau" link entirely for anyone off the VCU
+// network, since clicking it there could only ever show a blank frame.
 async function probeTableau() {
   try {
     await Promise.race([
@@ -913,13 +914,11 @@ async function probeTableau() {
     tableauOK = true;
   } catch (e) {
     tableauOK = false;
-    console.warn('Tableau reachability probe failed — showing summary fallback:', e.message);
+    console.warn('Tableau unreachable — hiding the embed option:', e.message);
   }
   console.log('Tableau reachable:', tableauOK);
-  const activeView = document.querySelector('.view.active');
-  if (activeView && tableauOK) {
-    const idx = parseInt(activeView.id.replace('view-', ''), 10);
-    showTableau(idx);
+  if (!tableauOK) {
+    document.querySelectorAll('[id^="tbtn-"]').forEach(el => { el.style.display = 'none'; });
   }
 }
 probeTableau();
