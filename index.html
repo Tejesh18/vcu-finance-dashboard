@@ -442,7 +442,7 @@ html, body {
   </div>
   <div class="header-right">
     <div class="live-dot"></div>
-    Live data · Updated July 31, 2026
+    <span id="data-as-of">Live data · loading…</span>
   </div>
 </div>
 
@@ -847,7 +847,31 @@ Chart.defaults.font.size = 11;
 
 const chartInstances = {};
 
-function makeChart(id, type, data, options={}) {
+// Draws each bar's value directly above it. Used where color alone can't
+// carry the meaning (e.g. red/green pairs a colorblind viewer can't tell
+// apart) — the label is the reliable signal, color is just reinforcement.
+const barValuePlugin = {
+  id: 'barValuePlugin',
+  afterDatasetsDraw(chart) {
+    const { ctx } = chart;
+    chart.data.datasets.forEach((dataset, dsIndex) => {
+      if (!dataset.valueSuffix && dataset.valueSuffix !== '') return;
+      const meta = chart.getDatasetMeta(dsIndex);
+      meta.data.forEach((bar, i) => {
+        const val = dataset.data[i];
+        if (val == null) return;
+        ctx.save();
+        ctx.fillStyle = '#1A1A1A';
+        ctx.font = '700 11px Segoe UI, Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(val + dataset.valueSuffix, bar.x, bar.y - 8);
+        ctx.restore();
+      });
+    });
+  }
+};
+
+function makeChart(id, type, data, options={}, plugins=[]) {
   if (chartInstances[id]) chartInstances[id].destroy();
   const ctx = document.getElementById(id);
   if (!ctx) return;
@@ -859,7 +883,8 @@ function makeChart(id, type, data, options={}) {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       ...options
-    }
+    },
+    plugins
   });
 }
 
@@ -937,6 +962,19 @@ async function loadData() {
       fetchCSV(IDS.fy27),
     ]);
 
+    // ── DATA FRESHNESS (computed from the data itself, never hardcoded) ──
+    const allDates = [
+      ...exp.map(r => r.Date), ...fy27.map(r => r.As_Of),
+    ].filter(Boolean).sort();
+    const latestDate = allDates.length ? allDates[allDates.length - 1] : null;
+    if (latestDate) {
+      const d = new Date(latestDate + 'T00:00:00');
+      const label = isNaN(d) ? latestDate : d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      set('data-as-of', `Live data · source current through ${label}`);
+    } else {
+      set('data-as-of', 'Live data');
+    }
+
     // ── EXPENDITURES ─────────────────────────────────────────────────
     const fyTotal = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Expenditure), 0);
     const fyBudget = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Perm_Budget), 0);
@@ -958,17 +996,20 @@ async function loadData() {
     makeChart('chart-bva', 'bar', {
       labels: ['FY24', 'FY25', 'FY26'],
       datasets: [
-        { label:'Budget', data:[+(b24/1e6).toFixed(1),+(b25/1e6).toFixed(1),+(b26/1e6).toFixed(1)], backgroundColor:'#D0D0D0', borderRadius:4 },
-        { label:'Actual', data:[+(t24/1e6).toFixed(1),+(t25/1e6).toFixed(1),+(t26/1e6).toFixed(1)], backgroundColor:'#F7C500', borderRadius:4 },
+        { label:'Budget', data:[+(b24/1e6).toFixed(1),+(b25/1e6).toFixed(1),+(b26/1e6).toFixed(1)], backgroundColor:'#444444', borderRadius:4 },
+        { label:'Actual', data:[+(t24/1e6).toFixed(1),+(t25/1e6).toFixed(1),+(t26/1e6).toFixed(1)], backgroundColor:'#C49A00', borderRadius:4 },
       ]
     }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
 
-    // Utilization chart
+    // Utilization chart — red/green alone is a colorblind trap (deuteranopia
+    // can't tell these hues apart), so every bar also gets its % printed
+    // directly on it via barValuePlugin. Color here is a reinforcing cue,
+    // not the only signal.
     const utils = [b24?+(t24/b24*100).toFixed(1):0, b25?+(t25/b25*100).toFixed(1):0, b26?+(t26/b26*100).toFixed(1):0];
     makeChart('chart-util', 'bar', {
       labels: ['FY24','FY25','FY26'],
-      datasets: [{ data:utils, backgroundColor:utils.map(u=>u>100?'#B91C1C':'#15803D'), borderRadius:4 }]
-    }, { scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} });
+      datasets: [{ data:utils, backgroundColor:utils.map(u=>u>100?'#d03b3b':'#0ca30c'), borderRadius:4, valueSuffix:'%' }]
+    }, { scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} }, [barValuePlugin]);
 
     // Monthly trend
     const months = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
@@ -983,9 +1024,9 @@ async function loadData() {
     makeChart('chart-monthly', 'line', {
       labels: months,
       datasets: [
-        { label:'FY24', data:buildTrend('FY24'), borderColor:'#D0D0D0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
-        { label:'FY25', data:buildTrend('FY25'), borderColor:'#888', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
-        { label:'FY26', data:buildTrend('FY26'), borderColor:'#F7C500', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
+        { label:'FY24', data:buildTrend('FY24'), borderColor:'#B0B0B0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+        { label:'FY25', data:buildTrend('FY25'), borderColor:'#737373', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+        { label:'FY26', data:buildTrend('FY26'), borderColor:'#C49A00', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
       ]
     }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
 
@@ -1053,16 +1094,16 @@ async function loadData() {
 
     makeChart('chart-status', 'bar', {
       labels:['Active','Expired','Expiring Soon','Unknown'],
-      datasets:[{data:[active.length,expired.length,expiring.length,unknown.length],backgroundColor:['#15803D','#D0D0D0','#B91C1C','#F7C500'],borderRadius:4}]
-    },{ scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}} });
+      datasets:[{data:[active.length,expired.length,expiring.length,unknown.length],backgroundColor:['#0ca30c','#444444','#d03b3b','#C49A00'],borderRadius:4,valueSuffix:''}]
+    },{ scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}} },[barValuePlugin]);
 
     const vendorSpend={};
     con.forEach(r=>{const v=r.Vendor||'Other';vendorSpend[v]=(vendorSpend[v]||0)+num(r.Annual_Cost);});
     const topV=Object.entries(vendorSpend).sort((a,b)=>b[1]-a[1]).slice(0,8);
     makeChart('chart-vendors','bar',{
-      labels:topV.map(e=>e[0].substring(0,14)),
+      labels:topV.map(e=>e[0]),
       datasets:[{data:topV.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}});
 
     const expSorted = expiring.sort((a,b)=>num(a.Days_Until_Expiry)-num(b.Days_Until_Expiry));
     document.getElementById('expiring-table').innerHTML = expSorted.map(r=>{
@@ -1099,9 +1140,9 @@ async function loadData() {
     pos.forEach(r=>{const d=r.Department||'Other';poDepts[d]=(poDepts[d]||0)+num(r.Amount);});
     const poArr=Object.entries(poDepts).sort((a,b)=>b[1]-a[1]);
     makeChart('chart-po-dept','bar',{
-      labels:poArr.map(e=>e[0].substring(0,18)),
+      labels:poArr.map(e=>e[0]),
       datasets:[{data:poArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}});
 
     const poSorted=[...pos].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,10);
     document.getElementById('po-table').innerHTML = poSorted.map(r=>`
@@ -1128,9 +1169,9 @@ async function loadData() {
     net.forEach(r=>{const v=r.Vendor||'Other';netVendors[v]=(netVendors[v]||0)+num(r.Ending_Balance);});
     const netArr=Object.entries(netVendors).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]);
     makeChart('chart-net','bar',{
-      labels:netArr.map(e=>e[0].substring(0,14)),
+      labels:netArr.map(e=>e[0]),
       datasets:[{data:netArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}});
 
     const jvByFY={};
     jv.forEach(r=>{const f=r.FY||'?';jvByFY[f]=(jvByFY[f]||0)+num(r.Amount);});
@@ -1153,6 +1194,7 @@ async function loadData() {
 
   } catch(err) {
     console.error('Data load error:', err);
+    set('data-as-of', 'Could not load live data — showing last known static figures');
     // Fall back to static numbers
     set('k-spend','$28.9M'); set('k-util','87%'); set('k-exp','13');
     set('k-active','95'); set('k-fy27','$34.5M');
@@ -1164,11 +1206,11 @@ async function loadData() {
     set('m-net-total','$1.0M'); set('m-net-balance','$409K'); set('m-jv-count','402'); set('m-jv-amount','$5.2M');
 
     // Static charts as fallback
-    makeChart('chart-bva','bar',{labels:['FY24','FY25','FY26'],datasets:[{label:'Budget',data:[29.2,25.9,33.2],backgroundColor:'#D0D0D0',borderRadius:4},{label:'Actual',data:[33.7,32.3,28.9],backgroundColor:'#F7C500',borderRadius:4}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
-    makeChart('chart-util','bar',{labels:['FY24','FY25','FY26'],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#B91C1C','#B91C1C','#15803D'],borderRadius:4}]},{scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
-    makeChart('chart-monthly','line',{labels:['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'FY24',data:[1.6,3.3,5.8,8.2,11.0,14.0,17.5,21.0,25.5,28.0,31.5,33.7],borderColor:'#D0D0D0',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY25',data:[1.5,3.8,5.9,7.9,10.5,13.8,17.2,21.0,25.2,27.8,30.8,32.3],borderColor:'#888',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY26',data:[1.7,4.2,6.2,8.6,11.1,14.5,18.4,22.0,25.5,28.2,null,null],borderColor:'#F7C500',tension:.3,pointRadius:0,borderWidth:2.5,fill:false}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-bva','bar',{labels:['FY24','FY25','FY26'],datasets:[{label:'Budget',data:[29.2,25.9,33.2],backgroundColor:'#444444',borderRadius:4},{label:'Actual',data:[33.7,32.3,28.9],backgroundColor:'#C49A00',borderRadius:4}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-util','bar',{labels:['FY24','FY25','FY26'],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#d03b3b','#d03b3b','#0ca30c'],borderRadius:4,valueSuffix:'%'}]},{scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
+    makeChart('chart-monthly','line',{labels:['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'FY24',data:[1.6,3.3,5.8,8.2,11.0,14.0,17.5,21.0,25.5,28.0,31.5,33.7],borderColor:'#B0B0B0',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY25',data:[1.5,3.8,5.9,7.9,10.5,13.8,17.2,21.0,25.2,27.8,30.8,32.3],borderColor:'#737373',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY26',data:[1.7,4.2,6.2,8.6,11.1,14.5,18.4,22.0,25.5,28.2,null,null],borderColor:'#C49A00',tension:.3,pointRadius:0,borderWidth:2.5,fill:false}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
     makeChart('chart-cat','bar',{labels:['Salaries','Fringes','Bonus/OT','Software','Other'],datasets:[{data:[52,19,12,9,8],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}}});
-    makeChart('chart-status','bar',{labels:['Active','Expired','Expiring Soon','Unknown'],datasets:[{data:[95,77,13,22],backgroundColor:['#15803D','#D0D0D0','#B91C1C','#F7C500'],borderRadius:4}]},{scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}}});
+    makeChart('chart-status','bar',{labels:['Active','Expired','Expiring Soon','Unknown'],datasets:[{data:[95,77,13,22],backgroundColor:['#0ca30c','#444444','#d03b3b','#C49A00'],borderRadius:4,valueSuffix:''}]},{scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}}});
     makeChart('chart-vendors','bar',{labels:['SHI','Cas Severn','Instructure','Ellucian','Mythics','Avante','SHI Intl','Carahsoft'],datasets:[{data:[365,340,290,270,240,235,220,200],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
     makeChart('chart-telecom','bar',{labels:['FY2024','FY2025','FY2026','FY2027'],datasets:[{data:[2.1,2.3,2.6,9.0],backgroundColor:'#C49A00',borderRadius:4}]},{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
     makeChart('chart-net','bar',{labels:['SEGRA','MASO','Level 3'],datasets:[{data:[220,140,45],backgroundColor:'#0D9488',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
