@@ -10,10 +10,13 @@
  * 2. In the editor, click "Services" (+ icon in left sidebar) -> add "Drive API"
  *    (this lets us convert Felita's raw .xlsx into a temporary Google Sheet so
  *    we can read it — Apps Script can't open .xlsx files directly).
- * 3. Make a private copy of the Chart of Accounts as a Google Sheet (File ->
- *    Import in Drive, "Create new spreadsheet"), then paste its ID into
- *    CONFIG.chartOfAccountsSheetId below. Keep that sheet un-shared — it's
- *    only read by this script under your own account, never published anywhere.
+ * 3. The Chart of Accounts is restricted data, so its ID is NOT in this file
+ *    (this file lives in a public repo). Set it via Project Settings (gear
+ *    icon, left sidebar) -> Script Properties -> Add property:
+ *      CHART_OF_ACCOUNTS_SHEET_ID = the ID from the sheet's URL
+ *      CHART_OF_ACCOUNTS_TAB_NAME = exact tab name (only if not the first tab)
+ *    It's read directly under your own Google account's existing access —
+ *    never copied anywhere, never committed to the repo.
  * 4. Fill in CONFIG below with your real file/sheet IDs (defaults here are the
  *    known ones from the project).
  * 5. Run `refreshAll` once manually (Run button) — Google will ask you to
@@ -37,12 +40,22 @@ const CONFIG = {
   networkSheetId: '1MQryERd37hWGRiJwdZkimcAlbXQuaj4-kmI51eynIjc',
   jvSheetId: '1VpswBHv8Zx2g-xLY9K0lU9HoQsquuuXquIVu5VlekEk',
   fy27SheetId: '1NE9_S_7Y1csvLmb3ZlNI1JTBnbBlklIglVwXWBNmsLw',
-  chartOfAccountsSheetId: 'PASTE_YOUR_PRIVATE_COPY_ID_HERE',
+  // Chart of Accounts is restricted data — its ID lives in Script Properties,
+  // never in this file (this file is committed to a public repo). Set it via
+  // Project Settings (gear icon) -> Script Properties -> Add property:
+  //   CHART_OF_ACCOUNTS_SHEET_ID = <the sheet's ID from its URL>
+  //   CHART_OF_ACCOUNTS_TAB_NAME = <exact tab name, if not the first tab>
+  chartOfAccountsSheetId: null,
+  chartOfAccountsTabName: null,
   outputFolderName: 'TS Finance Dashboard - Data Sources',
 };
 
 // ===================== ENTRY POINT =====================
 function refreshAll() {
+  const props = PropertiesService.getScriptProperties();
+  CONFIG.chartOfAccountsSheetId = props.getProperty('CHART_OF_ACCOUNTS_SHEET_ID');
+  CONFIG.chartOfAccountsTabName = props.getProperty('CHART_OF_ACCOUNTS_TAB_NAME');
+
   const folder = getOutputFolder_();
   const orgMap = loadChartOfAccounts_(); // Org code -> {dept, subdept, mbu}
 
@@ -140,11 +153,11 @@ function openLiveSheet_(sheetId, tabName) {
 // Replaces the hand-typed dept_map / po_dept_map / network_dept_map / division_map
 // dictionaries from the notebook with a lookup against VCU's actual chart of accounts.
 function loadChartOfAccounts_() {
-  if (!CONFIG.chartOfAccountsSheetId || CONFIG.chartOfAccountsSheetId.indexOf('PASTE') === 0) {
-    Logger.log('Chart of Accounts not configured — falling back to raw Org codes as department names.');
+  if (!CONFIG.chartOfAccountsSheetId) {
+    Logger.log('Chart of Accounts not configured (see Script Properties setup in the file header) — falling back to raw Org codes as department names.');
     return {};
   }
-  const rows = openLiveSheet_(CONFIG.chartOfAccountsSheetId);
+  const rows = openLiveSheet_(CONFIG.chartOfAccountsSheetId, CONFIG.chartOfAccountsTabName);
   const headers = rows[0];
   const orgCol = headers.indexOf('Org');       // code column (odd Org appears twice: code, then desc)
   const orgDescCol = orgCol + 1;
