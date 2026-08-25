@@ -908,12 +908,14 @@ async function probeTableau() {
   try {
     await Promise.race([
       fetch('https://prod.tableau.vcu.edu/favicon.ico', { mode: 'no-cors', cache: 'no-store' }),
-      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 3000)),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 6000)),
     ]);
     tableauOK = true;
   } catch (e) {
     tableauOK = false;
+    console.warn('Tableau reachability probe failed — showing summary fallback:', e.message);
   }
+  console.log('Tableau reachable:', tableauOK);
   const activeView = document.querySelector('.view.active');
   if (activeView && tableauOK) {
     const idx = parseInt(activeView.id.replace('view-', ''), 10);
