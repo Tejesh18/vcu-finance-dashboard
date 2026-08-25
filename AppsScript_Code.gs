@@ -179,14 +179,41 @@ function loadChartOfAccounts_() {
   return map;
 }
 
+// Known typos in the source Chart of Accounts, fixed for display only —
+// the underlying VCU data is untouched, this just corrects what shows up
+// on the dashboard.
+const DEPT_NAME_FIXUPS = {
+  'Network Infrastruture Maintenance': 'Network Infrastructure Maintenance',
+};
+
 function lookupDept_(orgMap, code, fallback) {
   const entry = orgMap[String(code).trim()];
-  return entry ? entry.subdept : (fallback || String(code));
+  if (!entry) return fallback || String(code);
+  return DEPT_NAME_FIXUPS[entry.subdept] || entry.subdept;
 }
+
+// The Chart of Accounts' "Dept" field (~9 values, VCU's own grouping) is NOT
+// the same thing as this dashboard's 6 custom divisions (Central Services,
+// Network & Infrastructure, Technical Support Services, Application Services,
+// Information Security, Academic Technology) — that grouping was designed for
+// this dashboard specifically and has no equivalent in VCU's chart of accounts.
+// This maps the former onto the latter.
+const COA_DEPT_TO_DIVISION = {
+  'Telecommunications Services': 'Network & Infrastructure',
+  'Network Services': 'Network & Infrastructure',
+  'Technology Services': 'Central Services',
+  'Central Services': 'Central Services',
+  'Technology Support Services': 'Technical Support Services',
+  'Administrative Systems': 'Application Services',
+  'Application Services': 'Application Services',
+  'Information Security': 'Information Security',
+  'Academic Technologies': 'Academic Technology',
+};
 
 function lookupDivision_(orgMap, code, fallback) {
   const entry = orgMap[String(code).trim()];
-  return entry ? entry.dept : (fallback || 'Other');
+  if (!entry) return fallback || 'Other';
+  return COA_DEPT_TO_DIVISION[entry.dept] || fallback || 'Other';
 }
 
 // ===================== 1. EXPENDITURES (raw Excel) =====================
