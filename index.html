@@ -402,6 +402,33 @@ html, body {
   color: var(--gray-500);
   font-size: 12px;
 }
+
+/* ── TABLEAU EMBED ── */
+.tableau-frame-wrap { display: none; margin-bottom: 16px; }
+
+.tableau-frame-wrap iframe {
+  width: 100%;
+  height: 640px;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  display: block;
+  background: var(--white);
+}
+
+.tableau-note {
+  font-size: 10.5px;
+  color: var(--gray-500);
+  margin-bottom: 6px;
+}
+
+.view-toggle {
+  font-size: 11px;
+  color: var(--blue);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-bottom: 14px;
+  display: inline-block;
+}
 </style>
 </head>
 <body>
@@ -481,6 +508,13 @@ html, body {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Open in Tableau — Executive Summary
     </a>
+    <div class="tableau-frame-wrap" id="tableau-0">
+      <div class="tableau-note">Live Tableau embed — requires VCU network access and an active Tableau login.</div>
+      <iframe id="tframe-0" loading="lazy" title="Executive Summary — Tableau"></iframe>
+      <div class="view-toggle" onclick="showSummary(0)">Switch to quick summary view</div>
+    </div>
+    <div class="summary-content" id="summary-0">
+    <div class="view-toggle" onclick="showTableau(0)">Try live Tableau embed instead ↗</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">FY26 Total Spend</div>
@@ -528,6 +562,7 @@ html, body {
         <tbody id="fy27-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
       </table>
     </div>
+    </div>
   </div>
 
   <!-- VIEW 2: Budget Deep Dive -->
@@ -536,6 +571,13 @@ html, body {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Open in Tableau — Budget Deep Dive
     </a>
+    <div class="tableau-frame-wrap" id="tableau-1">
+      <div class="tableau-note">Live Tableau embed — requires VCU network access and an active Tableau login.</div>
+      <iframe id="tframe-1" loading="lazy" title="Budget Deep Dive — Tableau"></iframe>
+      <div class="view-toggle" onclick="showSummary(1)">Switch to quick summary view</div>
+    </div>
+    <div class="summary-content" id="summary-1">
+    <div class="view-toggle" onclick="showTableau(1)">Try live Tableau embed instead ↗</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">FY24 Total</div>
@@ -575,6 +617,7 @@ html, body {
         <tbody id="dept-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
       </table>
     </div>
+    </div>
   </div>
 
   <!-- VIEW 3: Contract Management -->
@@ -583,6 +626,13 @@ html, body {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Open in Tableau — Contract Management
     </a>
+    <div class="tableau-frame-wrap" id="tableau-2">
+      <div class="tableau-note">Live Tableau embed — requires VCU network access and an active Tableau login.</div>
+      <iframe id="tframe-2" loading="lazy" title="Contract Management — Tableau"></iframe>
+      <div class="view-toggle" onclick="showSummary(2)">Switch to quick summary view</div>
+    </div>
+    <div class="summary-content" id="summary-2">
+    <div class="view-toggle" onclick="showTableau(2)">Try live Tableau embed instead ↗</div>
     <div class="metrics">
       <div class="metric-card red">
         <div class="metric-label">Expiring in 90 Days</div>
@@ -622,6 +672,7 @@ html, body {
         <tbody id="expiring-table"><tr><td colspan="6" class="loading-msg">Loading...</td></tr></tbody>
       </table>
     </div>
+    </div>
   </div>
 
   <!-- VIEW 4: Purchase Orders -->
@@ -630,6 +681,13 @@ html, body {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Open in Tableau — Purchase Orders
     </a>
+    <div class="tableau-frame-wrap" id="tableau-3">
+      <div class="tableau-note">Live Tableau embed — requires VCU network access and an active Tableau login.</div>
+      <iframe id="tframe-3" loading="lazy" title="Purchase Orders — Tableau"></iframe>
+      <div class="view-toggle" onclick="showSummary(3)">Switch to quick summary view</div>
+    </div>
+    <div class="summary-content" id="summary-3">
+    <div class="view-toggle" onclick="showTableau(3)">Try live Tableau embed instead ↗</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">TS POs (FY26-27)</div>
@@ -669,6 +727,7 @@ html, body {
         <tbody id="po-table"><tr><td colspan="6" class="loading-msg">Loading...</td></tr></tbody>
       </table>
     </div>
+    </div>
   </div>
 
   <!-- VIEW 5: Network & Telecom -->
@@ -677,6 +736,13 @@ html, body {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       Open in Tableau — Network & Telecom
     </a>
+    <div class="tableau-frame-wrap" id="tableau-4">
+      <div class="tableau-note">Live Tableau embed — requires VCU network access and an active Tableau login.</div>
+      <iframe id="tframe-4" loading="lazy" title="Network &amp; Telecom — Tableau"></iframe>
+      <div class="view-toggle" onclick="showSummary(4)">Switch to quick summary view</div>
+    </div>
+    <div class="summary-content" id="summary-4">
+    <div class="view-toggle" onclick="showTableau(4)">Try live Tableau embed instead ↗</div>
     <div class="metrics">
       <div class="metric-card gold">
         <div class="metric-label">Network PO Total</div>
@@ -715,6 +781,7 @@ html, body {
         <thead><tr><th>Department</th><th>Vendor</th><th>PO Number</th><th>Amount</th><th>Received</th><th>Balance</th></tr></thead>
         <tbody id="net-table"><tr><td colspan="6" class="loading-msg">Loading...</td></tr></tbody>
       </table>
+    </div>
     </div>
   </div>
 
@@ -802,7 +869,58 @@ function switchTab(i, el) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('view-' + i).classList.add('active');
+  if (tableauOK) showTableau(i); else showSummary(i);
 }
+
+// ── TABLEAU EMBED ────────────────────────────────────────────────────
+const DASH_URLS = [
+  'https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard1?:embed=y&:showVizHome=no&:tabs=no',
+  'https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard2?:embed=y&:showVizHome=no&:tabs=no',
+  'https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard3?:embed=y&:showVizHome=no&:tabs=no',
+  'https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard4?:embed=y&:showVizHome=no&:tabs=no',
+  'https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard5?:embed=y&:showVizHome=no&:tabs=no',
+];
+
+// tableauOK: null = not checked yet, true = VCU network reachable, false = unreachable
+let tableauOK = null;
+
+function showTableau(i) {
+  const frame = document.getElementById('tframe-' + i);
+  if (frame && !frame.src) frame.src = DASH_URLS[i];
+  const wrap = document.getElementById('tableau-' + i);
+  const summary = document.getElementById('summary-' + i);
+  if (wrap) wrap.style.display = 'block';
+  if (summary) summary.style.display = 'none';
+}
+
+function showSummary(i) {
+  const wrap = document.getElementById('tableau-' + i);
+  const summary = document.getElementById('summary-' + i);
+  if (wrap) wrap.style.display = 'none';
+  if (summary) summary.style.display = 'block';
+}
+
+// A cross-origin iframe can't be inspected from this page (browsers block that
+// for security), so we can't tell "logged in" from "not logged in" inside it.
+// What we CAN detect is whether prod.tableau.vcu.edu is reachable at all, which
+// is the actual documented failure mode when off the VCU network/VPN.
+async function probeTableau() {
+  try {
+    await Promise.race([
+      fetch('https://prod.tableau.vcu.edu/favicon.ico', { mode: 'no-cors', cache: 'no-store' }),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 3000)),
+    ]);
+    tableauOK = true;
+  } catch (e) {
+    tableauOK = false;
+  }
+  const activeView = document.querySelector('.view.active');
+  if (activeView && tableauOK) {
+    const idx = parseInt(activeView.id.replace('view-', ''), 10);
+    showTableau(idx);
+  }
+}
+probeTableau();
 
 // ── LOAD ALL DATA ────────────────────────────────────────────────────
 async function loadData() {
