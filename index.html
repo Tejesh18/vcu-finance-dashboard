@@ -460,7 +460,7 @@ html, body {
   </div>
   <div class="kpi-cell">
     <div class="kpi-label">FY26 Utilization</div>
-    <div class="kpi-val green" id="k-util">—</div>
+    <div class="kpi-val" id="k-util">—</div>
     <div class="kpi-note">vs permanent budget</div>
   </div>
   <div class="kpi-cell">
@@ -521,10 +521,10 @@ html, body {
         <div class="metric-value" id="m-spend">—</div>
         <div class="metric-sub">Across all TS departments</div>
       </div>
-      <div class="metric-card green">
+      <div class="metric-card" id="m-util-card">
         <div class="metric-label">FY26 Utilization</div>
         <div class="metric-value" id="m-util">—</div>
-        <div class="metric-sub">First time under budget in 3 years</div>
+        <div class="metric-sub" id="m-util-sub">vs. permanent budget</div>
       </div>
       <div class="metric-card blue">
         <div class="metric-label">FY27 Budget</div>
@@ -1077,17 +1077,24 @@ async function loadData() {
     const t24=fyTotal('FY24'), b24=fyBudget('FY24');
     const t25=fyTotal('FY25'), b25=fyBudget('FY25');
     const t26=fyTotal('FY26'), b26=fyBudget('FY26');
-    // NOT computed live: Perm_Budget is unreliable at the source (flagged
-    // in the project's own notes before today, confirmed again during
-    // testing — inconsistent duplication across category rows makes any
-    // live FY24-26 budget/utilization sum untrustworthy). Using the one
-    // manually-verified figure instead of risking a misleading live number.
-    const util26 = '87%';
+    // Perm_Budget is known-unreliable at the source (flagged in the
+    // project's own notes before today) — the % itself is an approximation,
+    // not a precise figure. We still show it live rather than a hardcoded
+    // guess, but the caption and color reflect over/under dynamically
+    // instead of asserting a fixed claim that may not match the number.
+    const util26Num = b26>0 ? (t26/b26*100) : null;
+    const util26 = util26Num!=null ? util26Num.toFixed(1)+'%' : '—';
+    const overBudget26 = util26Num!=null && util26Num > 100;
 
     set('k-spend', fmt(t26));
     set('k-util', util26);
     set('m-spend', fmt(t26));
     set('m-util', util26);
+    const kUtilEl = document.getElementById('k-util');
+    if (kUtilEl) kUtilEl.className = 'kpi-val ' + (overBudget26 ? 'red' : 'green');
+    const mUtilCard = document.getElementById('m-util-card');
+    if (mUtilCard) mUtilCard.className = 'metric-card ' + (overBudget26 ? 'red' : 'green');
+    set('m-util-sub', overBudget26 ? 'Over permanent budget for FY26' : 'Under permanent budget for FY26');
     set('m-fy24', fmt(t24));
     set('m-fy25', fmt(t25));
     set('m-fy26', fmt(t26));
@@ -1096,10 +1103,9 @@ async function loadData() {
     makeChart('chart-bva', 'bar', {
       labels: ['FY24', 'FY25', 'FY26'],
       datasets: [
-        // Budget bars use manually-verified figures, not live b24/b25/b26 —
-        // same Perm_Budget reliability issue noted above. Actual (spend) is
-        // live and verified accurate.
-        { label:'Budget', data:[29.2,25.9,33.2], backgroundColor:'#444444', borderRadius:4 },
+        // Budget bars are live (same Perm_Budget approximation caveat as
+        // above). Actual (spend) is live and separately verified accurate.
+        { label:'Budget', data:[+(b24/1e6).toFixed(1),+(b25/1e6).toFixed(1),+(b26/1e6).toFixed(1)], backgroundColor:'#444444', borderRadius:4 },
         { label:'Actual', data:[+(t24/1e6).toFixed(1),+(t25/1e6).toFixed(1),+(t26/1e6).toFixed(1)], backgroundColor:'#C49A00', borderRadius:4 },
       ]
     }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
@@ -1108,8 +1114,9 @@ async function loadData() {
     // can't tell these hues apart), so every bar also gets its % printed
     // directly on it via barValuePlugin. Color here is a reinforcing cue,
     // not the only signal.
-    // Not computed live — same Perm_Budget reliability issue as util26 above.
-    const utils = [115.3, 124.5, 87.4];
+    // Live, same Perm_Budget-reliability caveat as util26 above — treat as
+    // approximate, not precise.
+    const utils = [b24?+(t24/b24*100).toFixed(1):0, b25?+(t25/b25*100).toFixed(1):0, b26?+(t26/b26*100).toFixed(1):0];
     makeChart('chart-util', 'bar', {
       labels: ['FY24','FY25','FY26'],
       datasets: [{ data:utils, backgroundColor:utils.map(u=>u>100?'#d03b3b':'#0ca30c'), borderRadius:4, valueSuffix:'%' }]
