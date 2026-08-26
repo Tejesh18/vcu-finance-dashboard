@@ -808,8 +808,15 @@ const IDS = {
   fy27:        '1xvhvmo81mZcYDmK3bdWjYmZyDrnN-VLG',
 };
 
-const PROXY = 'https://api.allorigins.win/raw?url=';
-const driveURL = id => PROXY + encodeURIComponent(`https://drive.google.com/uc?export=download&id=${id}`);
+// Multiple CORS proxies in fallback order — if one is down (they're free,
+// shared, third-party services with no uptime guarantee), the next is tried
+// automatically instead of the whole site failing.
+const PROXIES = [
+  raw => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(raw),
+  raw => 'https://corsproxy.io/?url=' + encodeURIComponent(raw),
+  raw => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(raw),
+];
+const driveRawURL = id => `https://drive.google.com/uc?export=download&id=${id}`;
 
 // ── HELPERS ─────────────────────────────────────────────────────────
 const num = s => parseFloat(String(s||0).replace(/[$,\s]/g,'')) || 0;
@@ -853,18 +860,29 @@ function parseCsvLine_(line) {
 }
 
 async function fetchCSV(id) {
-  const url = driveURL(id);
-  const resp = await fetch(url);
-  const text = await resp.text();
-  const lines = text.trim().split('\n');
-  if (lines.length < 2) return [];
-  const headers = parseCsvLine_(lines[0]).map(h => h.trim());
-  return lines.slice(1).map(line => {
-    const vals = parseCsvLine_(line);
-    const obj = {};
-    headers.forEach((h,i) => obj[h] = (vals[i]||'').trim());
-    return obj;
-  });
+  const raw = driveRawURL(id);
+  let lastErr = null;
+  for (const buildUrl of PROXIES) {
+    try {
+      const resp = await fetch(buildUrl(raw));
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const text = await resp.text();
+      if (!text || text.trim().length === 0) throw new Error('empty response');
+      const lines = text.trim().split('\n');
+      if (lines.length < 2) return [];
+      const headers = parseCsvLine_(lines[0]).map(h => h.trim());
+      return lines.slice(1).map(line => {
+        const vals = parseCsvLine_(line);
+        const obj = {};
+        headers.forEach((h,i) => obj[h] = (vals[i]||'').trim());
+        return obj;
+      });
+    } catch (e) {
+      lastErr = e;
+      console.warn('Proxy failed, trying next:', buildUrl(raw).split('?')[0], e.message);
+    }
+  }
+  throw lastErr || new Error('All proxies failed for ' + id);
 }
 
 // ── CHARTS ──────────────────────────────────────────────────────────
