@@ -1,0 +1,467 @@
+FY,Department,Date,PR_Number,Vendor,Amount,Amount_Received,Ending_Balance,Receiver_Date,Budget_Code
+FY2027,Telecommunications,Mon May 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,CM R10 Upgrade,2098869.17,0,2098869.17,,383100
+FY2027,Telecommunications,Fri Dec 13 2024 00:00:00 GMT-0500 (Eastern Standard Time),,ConvergeOne,3589344,2357155.59,1232188.4100000001,Tue Dec 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),383100
+FY2027,Telecommunications,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),,RingCentral,131752,74881.92,56870.08,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Thu Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),,RingCentral,240164.46999999997,37436.119999999995,202728.34999999998,Tue Jul 22 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Thu Feb 06 2025 00:00:00 GMT-0500 (Eastern Standard Time),,Level 3 Communication (CenturyLink),110353.32,46321.06000000001,64032.259999999995,Wed May 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),,North Tech Inc,569.34,0,569.34,,383000
+FY2027,Telecommunications,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),,ConvergeOne,2195,2151.1,43.90000000000009,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Mon Mar 02 2026 00:00:00 GMT-0500 (Eastern Standard Time),,Graybar,588.1,79.2,508.90000000000003,Partial,383000
+FY2027,Telecommunications,Wed Mar 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,Lumen (Level 3 Communications LLC),8700,7123.19,1576.8100000000004,,383000
+FY2027,Telecommunications,Tue Apr 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,ConvergeOne,9965.68,6551.97,3413.71,,383000
+FY2027,Telecommunications,Thu May 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,ConvergeOne,1347.3,1320.38,26.919999999999845,Thu May 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Thu May 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,ConvergeOne,31662.01,5016.37,26645.64,Tue Jul 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Thu Jun 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),CANCELLED,SHI,72.76,0,0,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218105303,Ramtel,619.28,619.28,0,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120036,Mansfield Oil,3000,84.03,2915.97,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218111729,VITA ACCT 2206,20000,6513.71,13486.29,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218113330,VITA ACCT 2236,168000,28888.51,139111.49,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218114155,VITA ACCT 0236,144000,25088.24,118911.76,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218116211,VITA ACCT 0206,60000,9597.87,50402.13,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218117897,Verizon acct 1-47,600000,42116.35,557883.65,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218121221,Verizon acct 1-82,785000,65358.57,719641.43,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218124718,Verizon acct 1-94,100000,12008.79,87991.20999999999,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218126922,Verizon acct 951-660-515-0001-07,280000,29743.01,250256.99,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218129122,Verizon acct 1-71,55000,5130,49870,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218129937,Verizon acct 1-48,15500,998.44,14501.56,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218131377,Verizon acct 1-81,22000,0,22000,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218135301,Verizon acct 1-49,11000,636.23,10363.77,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218137895,Verizon acct F1728255,15000,646.47,14353.53,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218138391,Verizon acct 6000062647,2500,131.72,2368.28,,383000
+FY2027,Telecommunications,Tue Jul 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218221267,ConvergeOne,57542.46,0,57542.46,,383000
+FY2027,Telecommunications,Tue Jul 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218221613,Lumen (Level 3 Communications LLC),250000,3688.27,246311.73,Tue Jul 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2027,Telecommunications,Tue Jul 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218224273,RingCentral-SoD,100000,4152.05,95847.95,,383000
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218493234,Verizon Y0802324,150000,33998.71,116001.29000000001,,383000
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218505453,Verizon Y2391602,75000,15620.11,59379.89,,
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218504713,Verizon Y2715748,25000,4634.16,20365.84,,383000
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218506671,Verizon 1-56,45000,3217.7,41782.3,,383000
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218508811,Verizon 1-53,20000,2827.68,17172.32,,
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218509551,Verizon SV851850,5000,973.64,4026.36,,
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218509982,Verizon SV851849,9500,1746.06,7753.9400000000005,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218546598,Verizon SV851848,12000,1404.37,10595.630000000001,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218547180,Verizon 1-77,35000,7364.81,27635.19,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218547821,Verizon 1-61,9500,756.04,8743.96,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218548851,Verizon 557-118-116-0001-07,2000,123.18,1876.82,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218550121,Comcast,35000,5562.6,29437.4,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218551192,Brightspeed,50000,0,50000,,
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218553737,Firefold,389,389,0,Mon Jul 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218553662,WW Grainger Inc,96.3,96.3,0,Mon Jul 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218602318,Mid-South Telecom,751.6,751.6,0,Thu Jul 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218607858,CDWG,1374,1374,0,Thu Jul 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Thu Jul 16 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218654097,Ramtel,5601.76,0,5601.76,,
+FY2027,Telecommunications,Fri Jul 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218708988,Amazon,45.99,45.99,0,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219168117,SHI,47.03,47.03,0,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Fri Jul 31 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219276169,RGH Enterprises Inc,72.22,72.22,0,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2027,Telecommunications,Thu Aug 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219503894,Telesource Services Inc,2915,0,2915,,
+FY2027,Telecommunications,Thu Aug 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219803800,ConvergeOne,14000,0,14000,,
+FY2027,Telecommunications,Thu Aug 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219805255,Dell,6437.68,0,6437.68,,
+FY2027,Telecommunications,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220293597,ConvergeOne,31662.01,0,31662.01,,
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0255172 ,PCR 2025-2026,136295.4,124937.45,11357.949999999997,,383000/600207
+FY2026,Telecommunications,Tue Jan 20 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0318919,PCR 2026-2027,143110.17,143110.17,0,Mon Feb 23 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Mon May 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0337075,CM R10 Upgrade,2094018.85,0,2094018.85,,383100
+FY2026,Telecommunications,Fri Dec 13 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0259666,ConvergeOne,3589344,2357155.59,1232188.4100000001,Tue Dec 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),383100
+FY2026,Telecommunications,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0225701,RingCentral,131752,74881.92,56870.08,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Feb 06 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0265940,Level 3 Communication (CenturyLink),110353.32,46321.06000000001,64032.259999999995,Wed May 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Dec 19 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0260277,ConvergeOne,261835.53,170797,91038.53,Tue May 26 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Feb 25 2026 00:00:00 GMT-0500 (Eastern Standard Time),212777730,Level 3 Communication (CenturyLink),259304.4,0,259304.4,,383000
+FY2026,Telecommunications,Sun Jul 27 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289234,VITA,18450,18632.06,-182.0600000000013,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289235 ,VITA,329550.19,318363.08,11187.109999999986,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289012 ,Verizon,600000,524350.4,75649.59999999998,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289003 ,Verizon,775000,765672.52,9327.479999999981,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289002 ,Verizon,100000,70983.68,29016.320000000007,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289001,Verizon,280000,238883.07,41116.92999999999,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289000 ,Verizon,55000,30780,24220,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288999,Verizon,15500,12001.1,3498.8999999999996,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289212,Verizon,22000,4107.27,17892.73,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289211,Verizon,11000,7603.74,3396.26,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289209 ,Verizon,15000,8288.99,6711.01,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289075,Verizon,2500,1418.66,1081.34,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289208 ,Verizon,150000,129465.81,20534.190000000002,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289207,Verizon,75000,59916.96,15083.04,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289206,Verizon,25000,20303.27,4696.73,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289205,Verizon,45000,31977.98,13022.02,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289204,Verizon,20000,7827.99,12172.01,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289150,Verizon,5000,4076.28,923.7199999999998,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289149,Verizon,9500,6961.9,2538.1000000000004,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289203,Verizon,12000,8447.89,3552.1100000000006,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289202,Verizon,31804.51,31804.51,0,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289200 ,Verizon,9500,7529.97,1970.0299999999997,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289229 ,Verizon,2000,1477.75,522.25,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289253,Comcast,35000,23090.1,11909.900000000001,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289251 ,Brightspeed,50000,6525.07,43474.93,,383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289193,Mansfield Oil,3000,789.95,2210.05,,383000
+FY2026,Telecommunications,Fri Jun 27 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288492,Scannex LLC,1757.2,1757.2,0,Wed Feb 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Jun 24 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0287999,Treasurer of Virginia Tech,4950,0,4950,,383000
+FY2026,Telecommunications,Wed Jun 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288010,ConvergeOne,1295.2,1277.64,17.559999999999945,Mon Jan 05 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Fri Jun 27 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288492,Scannex LLC,1757.2,1757.2,0,Mon Jul 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288886,ConvergeOne,56.5,56.5,0,Mon Jul 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2026,Telecommunications,Wed Jul 02 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0289050,Zoro,522.15,522.15,0,Tue Jul 15 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Tue Jul 02 0205 00:00:00 GMT-0456 (Eastern Daylight Time),P0289236,ConvergeOne,55792.43,54676.58,1115.8499999999985,Mon Jul 21 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Jul 10 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0290284,Grainger,45.46,45.46,0,Mon Jul 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Jul 10 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0290814,ConvergeOne,21994.5,21994.5,0,Sun Aug 03 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Jul 23 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0292020,RGH Enterprises,49.04,49.04,0,Wed Aug 13 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Jul 23 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0292150 ,Firefold,240.5,240.5,0,Tue Jul 29 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Jul 24 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0292279 ,Graybar,371.85,371.85,0,Partial 7/29/25,383000
+FY2026,Telecommunications,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0292489,Telquest International,4279.06,4279.06,0,,383000
+FY2026,Telecommunications,Wed Jul 30 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0293204,Mid-South Telcom - change order to update shipping,354.31,354.31,0,Tue Aug 12 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Jul 30 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0293211 ,Telquest International,3159.2,3159.2,0,Tue Aug 12 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Aug 07 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0294416,ConvergeOne,596,584.08,11.919999999999959,Thu Aug 21 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Fri Aug 08 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0294652,Grainger,54.5,54.5,0,Tue Aug 12 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Fri Aug 08 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0294779,Firefold,172,172,0,Thu Aug 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Fri Aug 08 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0294788 ,Ramtel,789.07,0,789.07,,383000
+FY2026,Telecommunications,Tue Aug 12 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0295228,RGH Enterprises,37.14,37.14,0,Mon Aug 18 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Aug 20 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0296486,ConvergeOne,2935,2876.3,58.69999999999982,Tue Oct 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Aug 27 2025 00:00:00 GMT-0400 (Eastern Daylight Time),,CDWG - past order - late payment by CC,590.93,0,590.93,,383000
+FY2026,Telecommunications,Tue Sep 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0299569 ,ConvergeOne,14000,14000,0,Tue Sep 16 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Tue Sep 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0299357,Graybar,396.11,396.11,0,Partial 9/11/25,383000
+FY2026,Telecommunications,Mon Sep 15 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0300510,Firefold,343,343,0,Partial 9/23,383000
+FY2026,Telecommunications,Tue Sep 16 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0300705,ConvergeOne,2061.16,2061.16,0,,383000
+FY2026,Telecommunications,Thu Sep 18 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0301366,Mid-South Telcom,918.5,918.5,0,partial 9/30,383000
+FY2026,Telecommunications,Thu Sep 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0303284 ,ConvergeOne,22143.5,22143.5,0,Fri Oct 31 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Mon Sep 29 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0303285,ConvergeOne,23540.47,23069.66,470.8100000000013,Mon Oct 13 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Oct 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0304783,ConvergeOne,11803,11566.94,236.0599999999995,Tue Dec 30 2025 00:00:00 GMT-0500 (Eastern Standard Time),383100
+FY2026,Telecommunications,Thu Oct 16 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0306031,RedSky,200,200,0,Thu Oct 16 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Fri Oct 17 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0306107,Graybar,832.12,832.12,0,Partial 10/21/25,383000
+FY2026,Telecommunications,Wed Oct 29 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0308119,Telquest International,2835.63,2835.63,0,Fri Nov 14 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Fri Oct 31 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0308553,Amazon,249.75,249.75,0,Mon Nov 10 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Mon Nov 03 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0308746,Telquest International,3009.45,3009.45,0,Partial 11/13/25,383000
+FY2026,Telecommunications,Wed Nov 05 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0308930 ,CDWG,882.22,882.22,0,Mon Nov 10 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Nov 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0310036,ConvergeOne,5602,5489.96,112.03999999999996,Tue Dec 02 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Nov 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0310047 ,Ramtel,5554.8,5554.8,0,Thu Dec 11 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Mon Nov 17 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0311008,RedSky,200,200,0,Tue Nov 18 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Nov 18 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0311070,RGH Enterprises,67.66,67.66,0,Fri Nov 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Nov 19 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0311325,Mid-South Telecom,571.2,571.2,0,Fri Dec 19 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Fri Dec 05 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0313431 ,ConvergeOne,21800,21800,0,Thu Dec 18 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Dec 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),,G-Tel Enterprises,951,0,951,,383000
+FY2026,Telecommunications,Wed Dec 10 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0313979,RedSky,400,400,0,Wed Dec 10 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Dec 10 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0314070,ConvergeOne,1916.43,0,1916.43,,383000
+FY2026,Telecommunications,Wed Dec 10 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0314071 ,Ramtel,993.2,993.2,0,Wed Jan 14 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Dec 16 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0314949,ConvergeOne,39639.6,38846.81,792.7900000000009,Wed Jan 21 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0315911,Firefold,261,261,0,Thu Jan 22 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0315900 ,W W Grainger Inc,34.36,34.36,0,Thu Jan 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0315899,North Tech Inc,569.34,0,569.34,,383000
+FY2026,Telecommunications,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0315944,ConvergeOne,2195,0,2195,,383000
+FY2026,Telecommunications,Thu Jan 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0316329 ,Telquest International,5152.96,5152.96,0,Thu Jan 22 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Sun Jan 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0316578,TSRC,21.09,21.09,0,Thu Jan 22 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Jan 14 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0317985,ConvergeOne,26828,0,26828,,383000
+FY2026,Telecommunications,Thu Jan 15 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0317398,RedSky,200,200,0,Thu Jan 15 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Jan 21 2026 00:00:00 GMT-0500 (Eastern Standard Time),211301575,Amazon,54.99,54.99,0,Fri Jan 09 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Thu Jan 22 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0318483,On Hold Marketing,280,280,0,Thu Jan 22 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Fri Jan 30 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0319417 ,Amazon,199.8,199.8,0,Mon Feb 09 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Fri Jan 30 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0319422 ,Telquest International,3763.07,3763.07,0,Mon Feb 23 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Thu Feb 05 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0320383 ,Amazon,87.63,87.63,0,Mon Mar 02 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Wed Feb 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0321509,Mid-South Telecom,421.4,421.4,0,Thu Feb 26 2026 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Fri Feb 20 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0323097,RedWing Shoes,135.29,135.29,0,Tue Mar 10 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Feb 25 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0323882,Graybar,10.9,10.9,0,Mon Mar 02 1936 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2026,Telecommunications,Mon Mar 02 2026 00:00:00 GMT-0500 (Eastern Standard Time),P0324591 ,Graybar,588.1,79.2,508.90000000000003,Partial,383000
+FY2026,Telecommunications,Tue Mar 10 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0325921 ,Telquest	International,3632.79,3632.79,0,Thu Mar 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Mar 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0328131 ,CXtec,24900,24900,0,Mon Apr 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Tue Mar 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0327021 ,RGH Enterprises Inc,70.08,70.08,0,Thu Mar 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Wed Mar 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0327578,Lumen (Level 3 Communications LLC),8700,7123.19,1576.8100000000004,,383000
+FY2026,Telecommunications,Mon Mar 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0327962,Ramtel,5591.32,5591.32,0,Mon Apr 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Mar 26 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0328728,W W Grainger Inc,43,43,0,Mon Apr 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Mon Mar 30 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0329260,Telequest,4895.28,4895.28,0,Mon Apr 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Mon Apr 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0331682 ,Amazon,785.25,785.25,0,Tue Apr 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Fri Apr 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0332564,Richmond Express,300,125.10000000000001,174.89999999999998,,383000
+FY2026,Telecommunications,Tue Apr 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0333058,ConvergeOne,9965.68,0,9965.68,,383000
+FY2026,Telecommunications,Wed Apr 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0333332,Mid-South Telecom,661.2,661.2,0,Mon May 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Tue May 05 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0335644,Dell,5736.75,5736.75,0,,383000
+FY2026,Telecommunications,Thu May 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0336042,ConvergeOne,1347.3,1320.38,26.919999999999845,Thu May 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Tue May 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0336781 ,B&H Photo,170.24,170.24,0,Thu May 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu May 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0337156 ,SHI,51,51,0,Thu May 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu May 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0337795,ConvergeOne,31662.01,0,31662.01,,383000
+FY2026,Telecommunications,Fri May 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0337411 ,Amazon,222.75,222.75,0,Tue May 26 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Mon May 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0337637 ,Telquest International,4124.3,4124.3,0,Thu May 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Fri May 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0338640 ,Amazon,37.99,37.99,0,Thu May 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu May 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0339232,ConvergeOne,1176,1176,0,Mon Jun 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu May 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0339239,ConvergeOne,78.85,78.85,0,Mon Jun 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Jun 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0341546,RedSky Technologies,200,200,0,Thu Jun 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2026,Telecommunications,Thu Jun 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),P0341651 ,SHI,25.73,25.73,0,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,121/7/2023,P0205922,PCR,129805.2,129290.1,515.0999999999913,,383000
+FY2025,Telecommunications,Fri Dec 13 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0259666,ConvergeOne,3589344,1196754.05,2392589.95,Fri Mar 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),383100
+FY2025,Telecommunications,Thu Mar 31 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0122882,ConvergeOne,3238487.52,1081084.32,2157403.2,Mon Jun 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Sep 30 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0147151,ConvergeOne,4531.25,0,0,,383000
+FY2025,Telecommunications,Thu Dec 15 2022 00:00:00 GMT-0500 (Eastern Standard Time),P0157075,ConvergeOne,3175.2,1587.6,1587.6,Tue Jan 03 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Jan 29 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0164894,ConvergeOne,15189.6,0,15189.6,Wed Jan 29 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Mon Apr 24 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0175974,CenturyLink,21010.68,0,21010.68,,383000
+FY2025,Telecommunications,Mon Apr 24 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0175966,CenturyLink,23828.04,0,23828.04,,383000
+FY2025,Telecommunications,Mon Apr 24 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0175975,CenturyLink,19434.6,0,19434.6,,383000
+FY2025,Telecommunications,Wed Apr 26 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0174017,ConvergeOne,7498.46,1780,5718.46,Tue Jun 27 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Jun 07 2023 00:00:00 GMT-0400 (Eastern Daylight Time),,ConvergeOne,6439,0,6439,,383100
+FY2025,Telecommunications,Mon Aug 07 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0189361,CenturyLink,110353.32,3396.48,106956.84000000001,Mon Jan 27 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Feb 06 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0265940,Level 3 Communication (CenturyLink),112353.32,29079.11,83274.21,Thu May 29 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Thu Jan 25 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0210995,CenturyLink,1120,0,1120,,383000
+FY2025,Telecommunications,Mon Apr 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0222727,ConvergeOne,75425,75425,0,Tue Sep 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Apr 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0225621,ConvergeOne,22669,22669,0,Tue Sep 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Apr 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0225701,RingCentral,116752,36785.47,79966.53,Thu Jun 05 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Apr 29 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226512,Graybar,618.51,0,618.51,Partial 5/6,
+FY2025,Telecommunications,Tue Apr 30 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226665,ConvergeOne,20554,15125,5429,Fri Feb 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Tue Apr 30 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226836,RingCentral,89998,10326.8,79671.2,Thu Jun 05 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Thu May 16 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0229161 ,ConvergeOne,277.48,277.48,0,Wed Sep 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Jun 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0232568,ConvergeOne,53727.69,52653.14,1074.550000000003,Mon Jun 24 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Thu Jun 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0234729,SHI,51.85,0,51.85,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235073,VITA,13500,11576.02,1923.9799999999996,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235295,VITA,348900,293055.06,55844.94,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235366 ,Verizon,750000,551927.43,198072.56999999995,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235365 ,Verizon,775000,734674.47,40325.53000000003,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235294,Verizon,130000,81668.48,48331.520000000004,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235287 ,Verizon,260000,254876.01,5123.989999999991,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235286,Verizon,55000,30780,24220,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235288,Verizon,15500,12826.68,2673.3199999999997,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235293,Verizon,22000,15383.87,6616.129999999999,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235285 ,Verizon,11000,7567.05,3432.95,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235289,Verizon,15000,10666.28,4333.719999999999,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235135 ,Verizon,5000,1134.75,3865.25,,383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235284,Verizon,175000,116275.24,58724.759999999995,Mon Jul 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Jul 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235290,Verizon,52218.69,52218.69,0,Mon Jul 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235292,Verizon,24000,20221.9,3778.0999999999985,Mon Jul 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235283,Verizon,45000,28577.11,16422.89,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235291,Verizon,20000,10704.78,9295.22,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235197,Verizon,5000,4002.46,997.54,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235198,Verizon,9500,6920.63,2579.37,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235281,Verizon,12000,8338.23,3661.7700000000004,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235282,Verizon,30000,27111.58,2888.4199999999983,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235233,Verizon,9500,6659.67,2840.33,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235234 ,Verizon,1650,1441.81,208.19000000000005,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235297,Comcast,40000,26740.23,13259.77,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235296 ,Brightspeed,100000,34024.37,65975.63,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235258 ,Verizon - Account disconnect/cancelled 5/2/25,3000,2201.25,798.75,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235259,Verizon - Account disconnect/cancelled 5/18/25,3000,2349.76,650.2399999999998,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235260 ,Verizon - Account disconnect/cancelled 5/15/25,1200,866.63,333.37,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235261 ,Verizon - Account disconnect/cancelled 5/17/25,800,514.91,285.09000000000003,,383000
+FY2025,Telecommunications,Tue Jul 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235425 ,Mansfield Oil,3000,1590.64,1409.36,,383000
+FY2025,Telecommunications,Mon Jul 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0235733,ConvergeOne,2865,2807.7,57.30000000000018,Mon Aug 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Jul 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0236649,Call One,5131.02,5131.02,0,Wed Jul 17 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Jul 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0236648,Mid-South Telecom,705.8,705.8,0,Partial 7/23/24,383000
+FY2025,Telecommunications,Wed Jul 17 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0237480,Dell,2514.02,2514.02,0,Mon Jul 29 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Jul 19 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0237726,ConvergeOne,21800,21800,0,Mon Jul 29 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Jul 19 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0237654 ,W W Grainger Inc,47,47,0,Wed Jul 24 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Sat Jul 20 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0238743,TSRC,74.37,73.37,1,Thu Aug 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Jul 29 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0238745 ,Ramtel,456.64,456.64,0,Tue Aug 20 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Aug 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0239601,Dell,334.55,334.55,0,Mon Aug 05 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Aug 05 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0239710,Ramtel,5397.4,5397.4,0,Tue Aug 13 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Aug 05 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0239752,Dell,316.79,316.79,0,Mon Aug 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Aug 09 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0240675,ConvergeOne,21838,0,21838,,383000
+FY2025,Telecommunications,Mon Aug 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0240879,Graybar,1854.7,1854.7,0,Thu Aug 22 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Aug 21 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0242307,ConvergeOne,7754,7754,0,Thu May 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Thu Aug 22 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0242599,Dell,102.18,102.18,0,Tue Aug 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2025,Telecommunications,Fri Aug 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0242820,RGH Enterprises,35.82,35.82,0,Tue Aug 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Aug 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0242821 ,TSRC,34,34,0,Tue Aug 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Aug 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0242825 ,CXtec,1280.2,1280.2,0,Mon Sep 09 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Aug 26 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0243183,ConvergeOne,1515,1515,0,Mon Sep 09 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Aug 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0243348,Graybar,78.6,78.6,0,Mon Sep 09 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Aug 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0243811 ,Call One,2293.4,2293.4,0,Thu Oct 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Sep 09 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0245205,Mid-South Telecom,177,177,0,Tue Oct 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Thu Sep 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0245968,Dell,55.49,55.49,0,Thu Sep 26 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Sep 17 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0246675 ,CXtec,1105.95,1105.95,0,partial 9/19/24,383000
+FY2025,Telecommunications,Tue Sep 17 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0246690,SHI,155.56,0,155.56,,383000
+FY2025,Telecommunications,Wed Sep 18 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0246893 ,Call One,3241.64,3241.64,0,Thu Sep 26 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Sep 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0247466,Amazon,86.95,86.95,0,Fri Sep 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Sep 24 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0247818 ,Mid-South Telecom,186.2,186.2,0,Tue Oct 01 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Sep 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0247892,RedSky Technologies,200,200,0,Fri Oct 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Sep 30 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0248631,Dell,200,200,0,Thu Oct 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Oct 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0249100,ConvergeOne,23212.25,22846,366.25,,Fri Oct 18 2024 00:00:00 GMT-0400 (Eastern Daylight Time)
+FY2025,Telecommunications,Fri Oct 11 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0251156 ,ConvergeOne,29378.43,29378.43,0,Mon Oct 21 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Oct 14 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0250826,W W Grainger Inc,43,43,0,Tue Oct 15 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Oct 16 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0251263,Call One,115,115,0,Thu Nov 21 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Fri Oct 18 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0251696 ,Amazon,1095.36,1095.36,0,10/21/2024partial,383000
+FY2025,Telecommunications,Mon Oct 21 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0251835 ,On Hold Marketing,216,216,0,,383000
+FY2025,Telecommunications,Thu Oct 24 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0252516,TSRC,58.94,0,58.94,,383000
+FY2025,Telecommunications,Wed Nov 13 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0255319,Mid-South Telecom,673.15,673.15,0,Wed Dec 11 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Nov 14 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0255584,ConvergeOne,5323.1,5216.64,106.46000000000004,Tue Dec 03 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Tue Nov 19 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0256284,Call One,4791.88,4791.88,0,Mon Dec 02 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Nov 20 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0256418,ConvergeOne,2098,2098,0,Thu Dec 19 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Nov 20 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0256490 ,Call One,1548.75,1548.75,0,Mon Dec 02 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Dec 04 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0258003 ,W W Grainger Inc,204.47,204.47,0,,383000
+FY2025,Telecommunications,Wed Dec 04 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0258004 ,TSRC,141.57,141.57,0,Fri Dec 06 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Dec 04 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0257979,ConvergeOne,1825.05,1788.55,36.5,Tue Jan 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Dec 05 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0258638,ConvergeOne,21800,21800,0,Tue Jan 14 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Dec 19 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0260277,ConvergeOne,255633,83506.78,172126.22,Tue Jan 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Jan 02 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0260458,Call One,1552.2,1552.2,0,Mon Jan 13 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Jan 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0261057 ,Ramtel,5353.56,5353.56,0,Tue Feb 25 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Tue Jan 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0262506,CXtec,3535.48,3535.48,3535.48,Thu Jan 23 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Tue Jan 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0262696 ,"Retrotel, Inc",3110,3110,3535.48,Mon May 05 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Jan 22 2025 00:00:00 GMT-0500 (Eastern Standard Time),196640750,RFP: CallCenter PlaceHolder,10001,0,10001,,383000
+FY2025,Telecommunications,Mon Jan 27 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0263576,Firefold,357.5,357.5,0,Wed Jan 29 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Fri Feb 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0266044,PCR,10817.1,10817.1,0,Fri Feb 07 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Feb 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0266881,On Hold Marketing,280,280,0,Wed Feb 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Mon Feb 17 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0267524,ConvergeOne,14900,14900,0,Fri Feb 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Feb 19 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0267743,Firefold,238,238,0,Tue Feb 25 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Wed Feb 19 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0267753,CallOne,7055.15,6353.15,702,Tue Feb 25 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Thu Feb 20 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0267906,Amazon,519.96,519.96,0,Tue Feb 25 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Fri Feb 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0268053 ,Amazon,1146.25,1146.25,0,Partial 2/27/25,383000
+FY2025,Telecommunications,Fri Feb 21 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0268115 ,Mid-South Telecom,700.1,700.1,0,Thu Feb 27 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Mon Feb 24 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0268629,ConvergeOne,21800,21800,0,Thu Mar 06 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Fri Feb 28 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0269301 ,Telquest International Inc,1679.6,1679.6,0,3/37/25,383000
+FY2025,Telecommunications,Fri Feb 28 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0269326,ConvergeOne,1198,1198,0,Thu May 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Feb 28 2025 00:00:00 GMT-0500 (Eastern Standard Time),P0269340,SHI,25.65,25.65,0,Tue Mar 11 2025 00:00:00 GMT-0400 (Eastern Daylight Time),
+FY2025,Telecommunications,Tue Mar 11 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0270942 ,Scannex LLC,1757.2,1757.2,0,Wed Feb 12 2025 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2025,Telecommunications,Fri Mar 28 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0274074,RGH Enterprises,43.26,43.26,0,Mon Jul 07 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon Mar 31 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0274153,CDWG,3710.74,3710.74,0,Thu Apr 10 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Thu Apr 03 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0274831,Ramtel,5430.61,5430.61,0,Thu Apr 10 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Apr 08 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0275696 ,Ramtel,692.88,692.88,0,Thu May 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Apr 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0275878,Amazon,16.99,16.99,0,Fri Apr 11 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Apr 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0275839,Mid-South Telecom,822.2,822.2,0,Thu Apr 17 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Apr 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0275959 ,WW Grainger,43,43,0,Thu Apr 10 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Apr 09 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0275969,Amazon,125.24,125.24,0,Mon Apr 21 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri Apr 11 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0276392,Graybar,594.42,594.42,0,Partial 4/17/25,383000
+FY2025,Telecommunications,Mon Apr 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0276574 ,Telquest International,239.92,239.92,0,Thu Apr 17 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed Apr 23 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0278188,RGH Enterprises Inc,32.33,32.33,0,Wed Apr 24 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon May 12 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0281446,RedSky Technologies,200,200,0,Mon May 12 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed May 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0281990 ,CXtec,490,490,0,Thu May 22 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Mon May 19 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0282765,ConvergeOne,1120,1097.6,22.40000000000009,Mon Aug 11 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Wed May 21 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0283267,ConvergeOne,1176,1152.48,23.519999999999982,Thu Jun 05 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri May 30 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0284438,Amazon,53.45,53.45,0,Thu Jun 05 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Fri May 30 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0284475,Telquest International,6203.9,6203.9,0,Partial receipt 6.3,383000
+FY2025,Telecommunications,Wed Jun 11 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0286188 ,Mid-South Telecom,667,667,0,Tue Jun 24 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2025,Telecommunications,Tue Jun 24 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0287999,Treasurer of Virginia Tech,4950,0,4950,,383000
+FY2025,Telecommunications,Wed Jun 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288010,ConvergeOne,1295.2,0,1295.2,,383000
+FY2025,Telecommunications,Fri Jun 27 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0288492,Scannex LLC,1757.2,0,1757.2,Mon Jul 14 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Nov 04 2020 00:00:00 GMT-0500 (Eastern Standard Time),P0067694,PCR,370872,361060,9812,,383000
+FY2024,Telecommunications,121/7/2023,P0205922,PCR,129805.2,53570.4,76234.79999999999,,38300
+FY2024,Telecommunications,Mon Oct 19 2020 00:00:00 GMT-0400 (Eastern Daylight Time),P0065094,ConvergeOne,3249132.55,2011073.47,1238059.0799999998,Wed Dec 14 2022 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Tue Nov 30 2021 00:00:00 GMT-0500 (Eastern Standard Time),P0109027,ConvergeOne,341450,0,341450,,383000
+FY2024,Telecommunications,Thu Mar 31 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0122882,ConvergeOne,3238487.52,1081084.32,2157403.2,Mon Jun 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Jun 27 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0135247,ConvergeOne,15687,0,15687,,
+FY2024,Telecommunications,Sun Jul 24 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0137538,ConvergeOne,5894.12,0,5894.12,,383000
+FY2024,Telecommunications,Fri Sep 30 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0147151,ConvergeOne,4531.25,4350,181.25,,383000
+FY2024,Telecommunications,Tue Oct 18 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0150867,ConvergeOne,23386.92,22123.92,1263,Mon Jan 09 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Dec 15 2022 00:00:00 GMT-0500 (Eastern Standard Time),P0157075,ConvergeOne,3175.2,1587.6,1587.6,Tue Jan 03 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Wed Jan 25 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0161446,ConvergeOne,17218.75,0,17218.75,,383000
+FY2024,Telecommunications,Tue Feb 21 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0164894,ConvergeOne,54136,38878.81999999999,15257.180000000008,Mon Dec 18 2023 00:00:00 GMT-0500 (Eastern Standard Time),383100
+FY2024,Telecommunications,Wed Mar 29 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0169933,ConvergeOne,1120,0,1120,,383000
+FY2024,Telecommunications,Fri Apr 21 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0174359,ConvergeOne,77229.08,50655.5,26573.58,Thu Sep 28 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383100
+FY2024,Telecommunications,Mon Apr 24 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0175974,CenturyLink,21010.68,0,21010.68,,383000
+FY2024,Telecommunications,Mon Apr 24 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0175966,CenturyLink,23828.04,0,23828.04,,383000
+FY2024,Telecommunications,Mon Apr 24 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0175975,CenturyLink,19434.6,0,19434.6,,383000
+FY2024,Telecommunications,Wed Apr 26 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0174017,ConvergeOne,7498.46,1780,5718.46,Tue Jun 27 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri May 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0176527,Ramtel,5002.26,4938.56,63.69999999999982,,383000
+FY2024,Telecommunications,Tue May 23 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0177936,Retrotel Inc,2231,2231,0,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Jun 07 2023 00:00:00 GMT-0400 (Eastern Daylight Time),,ConvergeOne,6439,0,6439,,383100
+FY2024,Telecommunications,Fri Jun 09 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0180445,CDWG,219.66,0,219.66,,383000
+FY2024,Telecommunications,Mon Jun 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0180588 ,Dell,3317.16,3317.16,0,Partial 6/20/23,383000
+FY2024,Telecommunications,Mon Jun 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0181040,ConvergeOne,14900,14900,0,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Jun 22 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0181920,ConvergeOne,4960,0,4960,,383000
+FY2024,Telecommunications,Mon Jun 26 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0182364,Call One,2671.22,2671.22,0,Partial 7/18/23,383000
+FY2024,Telecommunications,Tue Jun 27 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0182543,ConvergeOne,1922,0,1922,,383000
+FY2024,Telecommunications,Thu Jun 29 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0182861,Mid-South Telecom,1270.32,1270.32,0,7/17 partial ,383000
+FY2024,Telecommunications,Mon Jul 03 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0183126,Mansfield Oil,3500,1409.61,2090.3900000000003,,383000
+FY2024,Telecommunications,Thu Jun 08 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0180157,Ramtel,5262.8,5262.8,0,Mon Jul 03 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Jul 10 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0183826,ConvergeOne,4348,1076,3272,,383000
+FY2024,Telecommunications,Wed Jul 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184107,ConvergeOne,9520,9520,0,Wed Sep 27 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Jul 12 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184143,Firefold,634.95,634.95,0,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri Jul 14 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184522 ,Encompass,63,63,0,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184803,TSRC,182.83,182.83,0,Thu Jul 20 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184829,ConvergeOne,51813.88,51813.88,0,Wed Aug 02 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184815,Verizon,3000,2618.7,381.3000000000002,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184851 ,Verizon,3000,2485.39,514.6100000000001,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184848,VITA 2206 increased from $5K to $6300,6300,6177.43,122.56999999999971,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184860,VITA,345000,294477.37,50522.630000000005,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184934,Verizon,750000,583306.12,166693.88,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184933 ,Verizon,775000,727843.02,47156.97999999998,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184951,Verizon,130000,97607.19,32392.809999999998,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184954,Verizon,252000,243437.58,8562.420000000013,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184953 ,Verizon,55000,30780,24220,,383000
+FY2024,Telecommunications,Mon Jul 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0184960 ,Verizon,15000,11460,3540,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185043,Verizon,22000,16009.12,5990.879999999999,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185077,Verizon,11000,7566.51,3433.49,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185075,Verizon,22000,11272.45,10727.55,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185090,Verizon,5000,1707.26,3292.74,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185116,Verizon,215000,144707.5,70292.5,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185117,Verizon,50000,44589.61,5410.389999999999,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185118,Verizon,24000,21658.32,2341.6800000000003,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185148,Verizon,45000,38084.33,6915.669999999998,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185145,Verizon,30000,15398.81,14601.19,,383000
+FY2024,Telecommunications,Tue Jul 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185147,Verizon,14000,2620.93,11379.07,,383000
+FY2024,Telecommunications,Tue Jul 19 2022 00:00:00 GMT-0400 (Eastern Daylight Time),P0185305 ,Verizon,9500,6265.88,3234.12,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185315,Verizon,12000,8219.04,3780.959999999999,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185378,Verizon,24418.07,24418.07,0,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185381,Verizon,6302.66,6302.66,0,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185380 ,Verizon,1500,1402.65,97.34999999999991,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185523,Comcast,28000,25823.24,2176.7599999999984,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185434,Brightspeed,100000,70703.66,29296.339999999997,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185406 ,Verizon,1200,937.11,262.89,,383000
+FY2024,Telecommunications,Wed Jul 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0185405,Verizon,800,553.53,246.47000000000003,,383000
+FY2024,Telecommunications,Wed Jul 26 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0186220,Call One,2944,2944,0,Partial 8/22/23,383000
+FY2024,Telecommunications,Fri Aug 04 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0187541,Graybar,361.4,361.4,0,Partial 8/14/23,383000
+FY2024,Telecommunications,Fri Aug 04 2023 00:00:00 GMT-0400 (Eastern Daylight Time),,Payphone.com GTEL,738.8,738.8,0,,383000
+FY2024,Telecommunications,Fri Aug 04 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0187605,"Retrotel, Inc.",345,345,0,Thu Aug 31 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Aug 07 0223 00:00:00 GMT-0456 (Eastern Daylight Time),P0187743,CovergeOne,3564,0,3564,,383000
+FY2024,Telecommunications,Mon Aug 07 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0189361,CenturyLink,110353.32,0,110353.32,,383000
+FY2024,Telecommunications,Thu Aug 10 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0188358,CXtec,516.84,516.84,0,Partial (missing 1),383000
+FY2024,Telecommunications,Mon Aug 14 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0188792 ,ConvergeOne,8550.5,8550.5,0,Tue Aug 29 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Aug 14 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0188793 ,Ramtel,555.4,441.5,0,total charges were less ,383000
+FY2024,Telecommunications,Fri Aug 18 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0189625,CDWG,2199.31,2199.31,0,Tue Aug 29 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Aug 22 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0190007 ,Comcast,2109.72,2109.72,0,,383000
+FY2024,Telecommunications,Wed Aug 30 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0191421,CXtec,4950.04,4950.04,0,Thu Sep 07 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Aug 30 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0191429,Amazon,210.93,210.93,0,Wed Sep 06 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Sep 06 2023 00:00:00 GMT-0400 (Eastern Daylight Time),,Mid-South Telecom,646.6,646.6,0,Mon Sep 25 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Sep 06 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0192134,Call One,4056.25,4056.25,0,,383000
+FY2024,Telecommunications,Mon Sep 11 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0193912,ConvergeOne,85571.79,0,85571.79,,383000
+FY2024,Telecommunications,Fri Sep 15 2023 00:00:00 GMT-0400 (Eastern Daylight Time),,Hillas Packaging,31.07,31.07,0,,383000
+FY2024,Telecommunications,Tue Sep 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0194227 ,Amazon,198.75,198.75,0,Tue Sep 26 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Sep 25 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0194992 ,ConvergeOne,63300,63300,0,Tue Oct 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Oct 03 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0196312,W.W. Grainger,55,55,0,Thu Oct 05 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Oct 04 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0196597,ConvergeOne,21358.74,21358.74,0,Fri Oct 13 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Oct 11 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0197764,Amazon,148.93,148.93,0,Thu Oct 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri Oct 13 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0198090,Mid-South Telecom,609,609,0,Thu Oct 19 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri Jun 09 2023 00:00:00 GMT-0400 (Eastern Daylight Time),P0180445,CDWG,219.66,219.66,0,Tue Oct 17 2023 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Nov 06 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0201448,Call One,5185.55,5185.55,0,Partial 11/10/23,383000
+FY2024,Telecommunications,Thu Nov 09 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0202038 ,TSRC,245.99,245.99,0,Tue Nov 21 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Nov 09 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0202072,ConvergeOne,5343.63,5343.63,0,Mon Dec 18 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Wed Nov 29 2023 00:00:00 GMT-0500 (Eastern Standard Time),,ShowMeCables,589.41,0,589.41,,383000
+FY2024,Telecommunications,Wed Nov 29 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0204576,ConvergeOne,21800,21800,0,Thu Dec 07 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Nov 30 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0204444,Amazon,335.93,335.93,0,Tue Jan 02 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Dec 07 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0205614 ,Mid-South Telecom,531.6,531.6,0,Thu Dec 14 2023 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Dec 14 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0206757 ,ConvergeOne,8043.43,8043.43,0,Partial 1/2/24,383000
+FY2024,Telecommunications,Thu Dec 14 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0206841 ,CDWG,5448.94,5448.94,0,Thu Jan 04 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Tue Dec 19 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0207199,Amazon,103.67,103.67,0,Tue Jan 02 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Tue Dec 19 2023 00:00:00 GMT-0500 (Eastern Standard Time),P0207198,ConvergeOne,1575,1575,0,Tue Mar 26 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383100
+FY2024,Telecommunications,Tue Jan 02 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0207495,Global Equipment Company (Global Industrial),291.93,291.93,0,Tue Jan 09 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Wed Jan 03 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0207734 ,ConvergeOne,1738.41,1738.41,0,Tue Jan 16 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Fri Jan 05 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0208029 ,TSRC,31.83,31.83,0,Partial 1/9/24,383000
+FY2024,Telecommunications,Fri Jan 05 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0208030,Call One,3541.5,3541.5,0,Partial 1/10/24,383000
+FY2024,Telecommunications,Mon Jan 08 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0208226 ,Newegg,39.64,39.64,0,Thu Jan 25 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Mon Jan 15 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0210201,CDWG,245.06,245.06,0,Wed Feb 07 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Mon Jan 22 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0210365,ConvergeOne,7460,7460,0,Tue Jan 30 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Jan 25 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0210995,CenturyLink,1120,0,1120,,383000
+FY2024,Telecommunications,Fri Jan 26 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0211242,Mid-South Telecom,545.4,545.4,0,Tue Feb 06 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Tue Jan 30 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0161396,CDWG,3013.58,0,3013.58,,383000
+FY2024,Telecommunications,Wed Jan 31 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0212098 ,Graybar,520.51,236.3,284.21,Partial 2.6.24,383000
+FY2024,Telecommunications,Wed Jan 31 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0212100,W.W. Grainger,53,53,0,Thu Feb 01 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Wed Feb 07 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0213131,CDWG,122.53,122.53,0,Fri Feb 09 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Feb 08 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0213944,ConvergeOne,14900,14900,0,Thu Feb 22 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Wed Feb 21 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0215479,TSRC,67.26,67.26,0,Thu Feb 22 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Thu Feb 22 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0215704,RGH Enterprises,33.54,0,0,,383000
+FY2024,Telecommunications,Thu Feb 29 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0216984,Ramtel,693.84,561.02,132.82000000000005,Tue Apr 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Mar 06 2024 00:00:00 GMT-0500 (Eastern Standard Time),P01217911,RedSky,100,100,0,Thu Mar 07 2024 00:00:00 GMT-0500 (Eastern Standard Time),383000
+FY2024,Telecommunications,Tue Mar 12 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0218863,Dell,64.74,64.74,0,Fri Mar 15 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Mar 19 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0219903,Mid-South Telecom,1281.7,1281.7,0,Thu Mar 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Mar 21 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0220461,Call One,4796.9,4796.9,0,Thu Mar 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Mar 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0220740 ,Call One,2067,2067,0,Thu Mar 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Mar 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0221480,Amazon,74.99,74.99,0,Tue Apr 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Mar 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0221543,Call One,1054,1054,0,Tue Apr 02 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Apr 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0222727,ConvergeOne,75425,0,75425,,383000
+FY2024,Telecommunications,Mon Apr 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0223063,SHI,25.85,25.85,0,Tue Apr 09 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri Apr 19 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0225054,RGH Enterprises,61.73,61.75,-0.020000000000003126,Thu Apr 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri Apr 19 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0225055 ,TSRC,86.86,86.86,0,Thu Apr 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Apr 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0225621,ConvergeOne,22669,0,22669,,383000
+FY2024,Telecommunications,Tue Apr 23 2024 00:00:00 GMT-0400 (Eastern Daylight Time),185809562,RingCentral,103752,0,103752,,383000
+FY2024,Telecommunications,Mon Apr 29 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226512,Graybar,618.51,0,618.51,Partial 5/6,
+FY2024,Telecommunications,Tue Apr 30 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226763,Firefold,353,353,0,Tue May 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Apr 30 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226665,ConvergeOne,21838,0,21838,,383000
+FY2024,Telecommunications,Tue Apr 30 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0226836,RingCentral,74998,0,74998,,383000
+FY2024,Telecommunications,Tue May 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0227692,ConvergeOne,7807.43,7578.43,229,partial 5/21/24,383000
+FY2024,Telecommunications,Wed May 08 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0227909,ConvergeOne,1120,0,1120,,383000
+FY2024,Telecommunications,Thu May 16 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0229161 ,ConvergeOne,277.48,0,277.48,,383000
+FY2024,Telecommunications,Wed May 22 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0230176,Call One,4896.4,4896.4,0,,383000
+FY2024,Telecommunications,Wed May 29 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0230815,CDWG,5939.94,5939.94,0,Tue Jun 11 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Jun 04 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0231612,Mid-South Telecom,667,667,0,Fri Jun 28 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Jun 04 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0231611 ,WW Grainger,47,47,0,,383000
+FY2024,Telecommunications,Fri Jun 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0232263 ,B&H Photo,134.25,134.25,0,Thu Jun 13 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Fri Jun 07 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0232262 ,CDWG,355.8,355.8,0,Tue Jun 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Mon Jun 10 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0232568,ConvergeOne,53727.69,52653.14,1074.550000000003,Mon Jun 24 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Tue Jun 11 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0232639,Firefold,34.6,34.6,0,Thu Jun 13 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Wed Jun 26 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0234462,Ramtel,132.82,132.82,0,Wed Jun 26 2024 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Jun 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time),P0234729,SHI,51.85,51.85,0,Tue Jun 17 2025 00:00:00 GMT-0400 (Eastern Daylight Time),383000
+FY2024,Telecommunications,Thu Nov 14 2024 00:00:00 GMT-0500 (Eastern Standard Time),P0255584 ,ConvergeOne,5323.1,0,5323.1,,383000

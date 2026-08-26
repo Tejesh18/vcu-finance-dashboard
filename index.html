@@ -797,7 +797,25 @@ html, body {
 
 <script>
 // ── CONFIG ──────────────────────────────────────────────────────────
-const IDS = {
+// Data files live in this same repo (data/*.csv) — same-origin fetch,
+// no CORS proxy needed or possible to go down. Refreshed by copying fresh
+// exports from the automated pipeline; see AppsScript_Code.gs's
+// pushCsvsToGitHub_() for the fully-automated version of this.
+const FILES = {
+  exp_clean:   'data/expenditures_clean.csv',
+  exp_monthly: 'data/expenditures_monthly.csv',
+  contracts:   'data/contracts_clean.csv',
+  pos:         'data/purchase_orders_clean.csv',
+  telecom:     'data/telecom_pos_clean.csv',
+  network:     'data/network_pos_clean.csv',
+  jv:          'data/jv_log_clean.csv',
+  fy27:        'data/fy27_budget.csv',
+};
+
+// Drive IDs kept only as a last-resort fallback if the same-origin file in
+// this repo is somehow unavailable — normally unused, since FILES above is
+// same-origin and doesn't depend on any external proxy.
+const DRIVE_IDS = {
   exp_clean:   '1v1a-IlRhE9446ZNICFodfZySOdukrP5U',
   exp_monthly: '1ae7GOecvnJDhcXb9D_gzGPE-CaBtZXEq',
   contracts:   '18H-Wl0N-ZU-jE9df0FkWmXaZNZVW5mqK',
@@ -807,16 +825,24 @@ const IDS = {
   jv:          '1le52MNbSPRMmuSXREkg_j3oNrthw3_KJ',
   fy27:        '1xvhvmo81mZcYDmK3bdWjYmZyDrnN-VLG',
 };
-
-// Multiple CORS proxies in fallback order — if one is down (they're free,
-// shared, third-party services with no uptime guarantee), the next is tried
-// automatically instead of the whole site failing.
 const PROXIES = [
   raw => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(raw),
   raw => 'https://corsproxy.io/?url=' + encodeURIComponent(raw),
   raw => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(raw),
 ];
 const driveRawURL = id => `https://drive.google.com/uc?export=download&id=${id}`;
+
+function parseCsvText_(text) {
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return [];
+  const headers = parseCsvLine_(lines[0]).map(h => h.trim());
+  return lines.slice(1).map(line => {
+    const vals = parseCsvLine_(line);
+    const obj = {};
+    headers.forEach((h,i) => obj[h] = (vals[i]||'').trim());
+    return obj;
+  });
+}
 
 // ── HELPERS ─────────────────────────────────────────────────────────
 const num = s => parseFloat(String(s||0).replace(/[$,\s]/g,'')) || 0;
@@ -859,8 +885,22 @@ function parseCsvLine_(line) {
   return result;
 }
 
-async function fetchCSV(id) {
-  const raw = driveRawURL(id);
+async function fetchCSV(key) {
+  // Primary: same-origin file in this repo — no CORS, no proxy, no
+  // external dependency to go down.
+  try {
+    const resp = await fetch(FILES[key] + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const text = await resp.text();
+    if (!text || text.trim().length === 0) throw new Error('empty response');
+    return parseCsvText_(text);
+  } catch (e) {
+    console.warn('Local file fetch failed, falling back to Drive+proxy:', key, e.message);
+  }
+
+  // Fallback: Drive via CORS proxy chain, only reached if the file above
+  // is somehow missing.
+  const raw = driveRawURL(DRIVE_IDS[key]);
   let lastErr = null;
   for (const buildUrl of PROXIES) {
     try {
@@ -868,21 +908,13 @@ async function fetchCSV(id) {
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       const text = await resp.text();
       if (!text || text.trim().length === 0) throw new Error('empty response');
-      const lines = text.trim().split('\n');
-      if (lines.length < 2) return [];
-      const headers = parseCsvLine_(lines[0]).map(h => h.trim());
-      return lines.slice(1).map(line => {
-        const vals = parseCsvLine_(line);
-        const obj = {};
-        headers.forEach((h,i) => obj[h] = (vals[i]||'').trim());
-        return obj;
-      });
+      return parseCsvText_(text);
     } catch (e) {
       lastErr = e;
       console.warn('Proxy failed, trying next:', buildUrl(raw).split('?')[0], e.message);
     }
   }
-  throw lastErr || new Error('All proxies failed for ' + id);
+  throw lastErr || new Error('All sources failed for ' + key);
 }
 
 // ── CHARTS ──────────────────────────────────────────────────────────
@@ -997,14 +1029,14 @@ probeTableau();
 async function loadData() {
   try {
     const [expRaw, expMRaw, con, pos, tel, net, jv, fy27] = await Promise.all([
-      fetchCSV(IDS.exp_clean),
-      fetchCSV(IDS.exp_monthly),
-      fetchCSV(IDS.contracts),
-      fetchCSV(IDS.pos),
-      fetchCSV(IDS.telecom),
-      fetchCSV(IDS.network),
-      fetchCSV(IDS.jv),
-      fetchCSV(IDS.fy27),
+      fetchCSV('exp_clean'),
+      fetchCSV('exp_monthly'),
+      fetchCSV('contracts'),
+      fetchCSV('pos'),
+      fetchCSV('telecom'),
+      fetchCSV('network'),
+      fetchCSV('jv'),
+      fetchCSV('fy27'),
     ]);
 
     // Safety-net filter: the raw source data contains summary/total rows

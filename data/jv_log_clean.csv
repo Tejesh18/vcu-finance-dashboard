@@ -1,0 +1,412 @@
+FY,Date,HD_Number,Department,Amount,JV_Number,Budget_Code,Comment
+FY2027,Mon Jul 13 2026 03:00:00 GMT-0400 (Eastern Daylight Time),741682 Quote A,CHS Administration,1761.3,J0939651,386106,
+FY2027,Wed Jul 15 2026 03:00:00 GMT-0400 (Eastern Daylight Time),614605,Parking and Transportation,5373.6,J0939963,323709,
+FY2027,Wed Jul 22 2026 03:00:00 GMT-0400 (Eastern Daylight Time),742635,Internal Medicine,2254.5,J0940670,145689,
+FY2027,Fri Jul 24 2026 03:00:00 GMT-0400 (Eastern Daylight Time),742492,Neuroscience and Anatomy,3439.5,J0940948,648821,
+FY2027,Thu Jul 30 2026 03:00:00 GMT-0400 (Eastern Daylight Time),720176,VCU Libraries,8666.3,J0941619 ,112117,
+FY2027,Tue Aug 04 2026 03:00:00 GMT-0400 (Eastern Daylight Time),737719,Construction and Inspection,177.9,J0941988,774696,
+FY2027,Thu Aug 06 2026 03:00:00 GMT-0400 (Eastern Daylight Time),744302,Parking and Transportation,2142.06,J0942201,323111,
+FY2027,Mon Aug 17 2026 03:00:00 GMT-0400 (Eastern Daylight Time),748036 Quote B,Academic Operations,584.75,J0943140,130941,
+FY2027,Mon Aug 17 2026 03:00:00 GMT-0400 (Eastern Daylight Time),748036 Quote B,Academic Technology,923.2,J0943170,130941,
+FY2027,Thu Aug 20 2026 03:00:00 GMT-0400 (Eastern Daylight Time),601068 - CO1,Construction and Inspection,12312,J0943603,771082,
+FY2027,Thu Aug 20 2026 03:00:00 GMT-0400 (Eastern Daylight Time),749886,School of Pharmacy,90,J0943663,147126,
+FY2027,Tue Aug 25 2026 03:00:00 GMT-0400 (Eastern Daylight Time),741677,FMD Planning & Design,1852.5,J0944084,776686,2026-03350
+FY2027,Tue Aug 25 2026 03:00:00 GMT-0400 (Eastern Daylight Time),732004,Construction and Inspection,172.863,J0944088,776556,20024-02816
+FY2026,Tue Jul 01 2025 03:00:00 GMT-0400 (Eastern Daylight Time),635011,Technology Services,72,J0895536,363501,Posted
+FY2026,Wed Jul 09 2025 03:00:00 GMT-0400 (Eastern Daylight Time),653732,Facilities Operations,10654.26,J0896021,163104,Posted
+FY2026,Mon Jul 14 2025 03:00:00 GMT-0400 (Eastern Daylight Time),641389 - CO1,Engineering and Utilities,1966.3,J0896451 ,333200,Posted
+FY2026,Fri Jul 18 2025 03:00:00 GMT-0400 (Eastern Daylight Time),633118 (Revised),Athletics,34191.02,J0897065,362150,Posted
+FY2026,Tue Jul 22 2025 03:00:00 GMT-0400 (Eastern Daylight Time),655982,Construction and Inspection,9171.3,J0897287,776471,Posted
+FY2026,Tue Jul 22 2025 03:00:00 GMT-0400 (Eastern Daylight Time),664322,Deans Office Engineering,180,J0897308,137788,Posted
+FY2026,Wed Jul 23 2025 03:00:00 GMT-0400 (Eastern Daylight Time),660272,VCU Police,1945.48,J0897381,123001,Posted
+FY2026,Mon Jul 28 2025 03:00:00 GMT-0400 (Eastern Daylight Time),642552,Animal Care Facility,959.49,J0897799,411266,Posted
+FY2026,Tue Jul 29 2025 03:00:00 GMT-0400 (Eastern Daylight Time),652334,Epidemiology,2617.9,J0897872,567193,Posted
+FY2026,Tue Jul 29 2025 03:00:00 GMT-0400 (Eastern Daylight Time),660187,Dentistry,381.83,J0897902,144110,Posted
+FY2026,Thu Jul 31 2025 03:00:00 GMT-0400 (Eastern Daylight Time),626470 - CO1,Construction and Inspection,1654.14,J0898169,776504,Posted
+FY2026,Thu Jul 31 2025 03:00:00 GMT-0400 (Eastern Daylight Time),659318,Athletics,1778.4,J0898198,362150,Posted
+FY2026,Wed Aug 06 2025 03:00:00 GMT-0400 (Eastern Daylight Time),661812,FMD,2605.6,J0898860,776558,
+FY2026,Mon Aug 11 2025 03:00:00 GMT-0400 (Eastern Daylight Time),666086,Technology Services,443.92,J0899167,363501,Posted
+FY2026,Mon Aug 11 2025 03:00:00 GMT-0400 (Eastern Daylight Time),666545,Physics,199.19,J0899235,132109,Posted
+FY2026,Tue Aug 12 2025 03:00:00 GMT-0400 (Eastern Daylight Time),666715,School of Business,200.89,J0899368,642508,Posted
+FY2026,Mon Aug 18 2025 03:00:00 GMT-0400 (Eastern Daylight Time),669283,Mathematical Sciences,271,J0899731,132107,Posted
+FY2026,Mon Aug 18 2025 03:00:00 GMT-0400 (Eastern Daylight Time),668716,Parking and Transportation,5220.06,J0899787 ,323709,Posted
+FY2026,Mon Aug 18 2025 03:00:00 GMT-0400 (Eastern Daylight Time),660898,Engineering and Utilities,658.88,J0899796,163696,Posted
+FY2026,Tue Aug 19 2025 03:00:00 GMT-0400 (Eastern Daylight Time),605492 - CO1,FMD Planning & Design,28550.73,J0899848,771083,Posted
+FY2026,Fri Aug 22 2025 03:00:00 GMT-0400 (Eastern Daylight Time),661812,FMD,2605.6,J0900378,776588,Posted
+FY2026,Tue Aug 26 2025 03:00:00 GMT-0400 (Eastern Daylight Time),669624,Deans Office Engineering,327,J0900679,137105,Posted
+FY2026,Wed Aug 27 2025 03:00:00 GMT-0400 (Eastern Daylight Time),667307,VCU College of Humanities and Sciences,457.6,J0900869,132157,Posted
+FY2026,Thu Aug 28 2025 03:00:00 GMT-0400 (Eastern Daylight Time),671245,Recreation and Well-Being,4514.39,J0901095 ,386267,Posted
+FY2026,Thu Sep 04 2025 03:00:00 GMT-0400 (Eastern Daylight Time),661196,Telecommunications Services,1686.06,J0901897,383000,Posted
+FY2026,Thu Sep 04 2025 03:00:00 GMT-0400 (Eastern Daylight Time),661585,Telecommunications Services,2073.66,J0901904,383000,Posted
+FY2026,Fri Sep 05 2025 03:00:00 GMT-0400 (Eastern Daylight Time),676028,School of Dentistry Endodontics,532.43,J0902029,297322,Posted
+FY2026,Fri Sep 12 2025 03:00:00 GMT-0400 (Eastern Daylight Time),664518,School of Dentistry,2216.42,J0902811,T33908,Posted
+FY2026,Tue Sep 16 2025 03:00:00 GMT-0400 (Eastern Daylight Time),675809,School of Dentistry,263.24,J0903242,194325,Posted
+FY2026,Fri Sep 19 2025 03:00:00 GMT-0400 (Eastern Daylight Time),643708,FMD Planning & Design,4104,J0903789,771092,Posted
+FY2026,Wed Sep 24 2025 03:00:00 GMT-0400 (Eastern Daylight Time),679243,Info Tech School of Dentistry,1476.3,J0904338,146821,Posted
+FY2026,Thu Sep 25 2025 03:00:00 GMT-0400 (Eastern Daylight Time),678159,Telecommunications Services,13773.14,J0904561,383100,Posted
+FY2026,Fri Sep 26 2025 03:00:00 GMT-0400 (Eastern Daylight Time),681017,Anatomy,704.16,J0904610,294043,Posted
+FY2026,Fri Sep 26 2025 03:00:00 GMT-0400 (Eastern Daylight Time),679018,FMD Planning & Design,598.79,J0904704,776613,Posted
+FY2026,Mon Sep 29 2025 03:00:00 GMT-0400 (Eastern Daylight Time),680974,Info Tech School of Dentistry,298.09,J0904809,412316,Posted
+FY2026,Tue Sep 30 2025 03:00:00 GMT-0400 (Eastern Daylight Time),669131 Penthouse,Construction and Inspection,7712.44,J0904908,774739,Posted
+FY2026,Tue Sep 30 2025 03:00:00 GMT-0400 (Eastern Daylight Time),669131 Basement,Construction and Inspection,3051,J0904931,774739,Posted
+FY2026,Thu Oct 09 2025 03:00:00 GMT-0400 (Eastern Daylight Time),682202,Info Tech School of Dentistry,578.14,J0905982,194333,Posted
+FY2026,Thu Oct 09 2025 03:00:00 GMT-0400 (Eastern Daylight Time),651738,Parking and Transportation,522,J0906199,323709,Posted
+FY2026,Thu Oct 09 2025 03:00:00 GMT-0400 (Eastern Daylight Time),668463,Business Services,5265.66,J0906352 ,329600,Posted
+FY2026,Sat Oct 11 2025 03:00:00 GMT-0400 (Eastern Daylight Time),681381,Deans Office AHP,426.53,J0906696,141005,Posted
+FY2026,Tue Oct 14 2025 03:00:00 GMT-0400 (Eastern Daylight Time),605490,FMD Planning and Design,71874.61,J0906787,771083,Posted
+FY2026,Wed Oct 15 2025 03:00:00 GMT-0400 (Eastern Daylight Time),680887,FMD Planning and Design,4679.7,J0907028,776589,Posted
+FY2026,Tue Oct 21 2025 03:00:00 GMT-0400 (Eastern Daylight Time),608925,Deans Office Engineering,1780,J0907540,137695,Posted
+FY2026,Mon Oct 27 2025 03:00:00 GMT-0400 (Eastern Daylight Time),610710,FMD Planning & Design,60531.74,J0908176,649308,Posted
+FY2026,Tue Oct 28 2025 03:00:00 GMT-0400 (Eastern Daylight Time),687196,FMD Planning and Design,125.85,J0908384,776583,Posted
+FY2026,Wed Oct 28 2026 03:00:00 GMT-0400 (Eastern Daylight Time),601758,Construction and Inspection,734.23,J0908482,776583,Posted
+FY2026,Thu Oct 30 2025 03:00:00 GMT-0400 (Eastern Daylight Time),610710 Lot B,FMD Planning & Design,6726,J0908886,649308,Posted
+FY2026,Wed Nov 05 2025 03:00:00 GMT-0500 (Eastern Standard Time),681706,Telecommunications Services,1254,J0909382,383000,Posted
+FY2026,Wed Nov 12 2025 03:00:00 GMT-0500 (Eastern Standard Time),686236,Telecommunications Services,15291,J0910037,383100,Posted
+FY2026,Thu Nov 13 2025 03:00:00 GMT-0500 (Eastern Standard Time),681581,Engineering and Utilities,2057.1,J0910294 ,327650,Posted
+FY2026,Mon Nov 17 2025 03:00:00 GMT-0500 (Eastern Standard Time),689998,Department of Focused Inquiry,412.53,J0910495,130012,Posted
+FY2026,Mon Nov 17 2025 03:00:00 GMT-0500 (Eastern Standard Time),641389 - CO2,Engineering and Utilities,1326.62,J0910505,333200,Posted
+FY2026,Wed Nov 19 2025 03:00:00 GMT-0500 (Eastern Standard Time),669131 - CO1,Construction and Inspection,2308.5,J0910795,774739,Posted
+FY2026,Mon Dec 01 2025 03:00:00 GMT-0500 (Eastern Standard Time),696577,Info Tech - SoD,298.38,J0911994,123456,Posted
+FY2026,Tue Dec 02 2025 03:00:00 GMT-0500 (Eastern Standard Time),688398,Deans Office Engineering,441.76,J0912124,509319,Posted
+FY2026,Wed Dec 03 2025 03:00:00 GMT-0500 (Eastern Standard Time),698006,Internal Medicine,549.38,J0912256,145690,Posted
+FY2026,Tue Dec 09 2025 03:00:00 GMT-0500 (Eastern Standard Time),694043,Construction Management,888.06,J0912865,774638,Posted
+FY2026,Tue Dec 09 2025 03:00:00 GMT-0500 (Eastern Standard Time),692924 B,Technology Services,494.46,J0912903,132110,Posted
+FY2026,Tue Dec 09 2025 03:00:00 GMT-0500 (Eastern Standard Time),692924 A,Technology Support Services,10353.48,J0912939,146054,Posted
+FY2026,Thu Dec 11 2025 03:00:00 GMT-0500 (Eastern Standard Time),690939,Facilities Operations,1963.26,J0913344,690939,Posted
+FY2026,Tue Dec 16 2025 03:00:00 GMT-0500 (Eastern Standard Time),682375 (REV),College of Engineering - East,10072.08,J0913859,137112,Posted
+FY2026,Thu Dec 18 2025 03:00:00 GMT-0500 (Eastern Standard Time),694127,Technology Services,203.87,J0914225,363501,Posted
+FY2026,Thu Dec 18 2025 03:00:00 GMT-0500 (Eastern Standard Time),638005,VCU Telecommunications,3133.86,J0914263,383000,Posted
+FY2026,Mon Jan 05 2026 03:00:00 GMT-0500 (Eastern Standard Time),694119,Technology Services,226.72,J0914574,363501,Posted
+FY2026,Tue Jan 06 2026 03:00:00 GMT-0500 (Eastern Standard Time),698203,Business Services,158.88,J0914679,329600,Posted
+FY2026,Tue Jan 06 2026 03:00:00 GMT-0500 (Eastern Standard Time),692646,School of Dentistry - IT,490.2,J0914731,144109,Posted
+FY2026,Fri Jan 16 2026 03:00:00 GMT-0500 (Eastern Standard Time),701121,School of Dentistry-IT,760.59,J0915917,640017,Posted
+FY2026,Tue Jan 20 2026 03:00:00 GMT-0500 (Eastern Standard Time),643708,Facilities Mgmt-Planning & Design,534839.66,J0916270,771092,FMD Project #005.653125 Posted
+FY2026,Tue Jan 20 2026 03:00:00 GMT-0500 (Eastern Standard Time),696122,Construction & Inspection,270.32,J0916304,774757,Posted
+FY2026,Thu Jan 22 2026 03:00:00 GMT-0500 (Eastern Standard Time),700175,College of Engineering - East,3208.5,J0916697,147466,Posted
+FY2026,Thu Jan 22 2026 03:00:00 GMT-0500 (Eastern Standard Time),700820,Nephrology MCVP,777.06,J0916772 ,145690,Posted
+FY2026,Tue Jan 27 2026 03:00:00 GMT-0500 (Eastern Standard Time),323224,Parking and Transportation,3475.86,J0917101,323224,Posted
+FY2026,Mon Feb 16 2026 03:00:00 GMT-0500 (Eastern Standard Time),703662,Internal Medicine,2663.13,J0919662,A35564 ,Changed index to A35563 per email req by A.Eddy 2/19/26
+FY2026,Tue Feb 17 2026 03:00:00 GMT-0500 (Eastern Standard Time),705509,University Renovations,111.34,J0919798,774730,Posted
+FY2026,Wed Mar 04 2026 03:00:00 GMT-0500 (Eastern Standard Time),610710 - CO1,Construction and Inspection,8016.48,J0922292,649308,Posted
+FY2026,Wed Mar 04 2026 03:00:00 GMT-0500 (Eastern Standard Time),713984,University Libraries,840.85,J0922615,713984,Posted
+FY2026,Fri Mar 06 2026 03:00:00 GMT-0500 (Eastern Standard Time),705989 - Option B,Mathematical Sciences,2610.6,J0922692,132116,Posted
+FY2026,Wed Mar 11 2026 03:00:00 GMT-0400 (Eastern Daylight Time),666412,Engineering and Utilities,999,J0923119,163696,Posted
+FY2026,Wed Mar 11 2026 03:00:00 GMT-0400 (Eastern Daylight Time),711759 - Part 1,Denzin & Sant’Angelo Labs,1335.08,J0923120,649155,Posted
+FY2026,Wed Mar 11 2026 03:00:00 GMT-0400 (Eastern Daylight Time),711759 - Part 2,Denzin & Sant’Angelo Labs,657.58,J0923122,649155,Posted
+FY2026,Wed Mar 11 2026 03:00:00 GMT-0400 (Eastern Daylight Time),711270,Center for Translational Science,1113.78,J0923126,110257,Posted
+FY2026,Thu Mar 12 2026 03:00:00 GMT-0400 (Eastern Daylight Time),681708,Telecommunications Services,1254,J0923142,383000,Posted
+FY2026,Thu Mar 12 2026 03:00:00 GMT-0400 (Eastern Daylight Time),605490 Ph1A - CO1,FMD Planning and Design,3906.52,J0923170,771083,Posted
+FY2026,Mon Mar 16 2026 03:00:00 GMT-0400 (Eastern Daylight Time),717518,VP Enterprise Mktg and Comm,699.41,J0923404,110390,Posted
+FY2026,Thu Mar 19 2026 03:00:00 GMT-0400 (Eastern Daylight Time),608326,Construction and Inspection,2850,J0923824,774661,Posted
+FY2026,Thu Mar 19 2026 03:00:00 GMT-0400 (Eastern Daylight Time),608326 - CO1,Construction and Inspection,595.51,J0923829,774661,Posted
+FY2026,Mon Mar 23 2026 03:00:00 GMT-0400 (Eastern Daylight Time),714807 - Part 1,Deans Office Engineering,1027.46,J0924125,146309,Posted
+FY2026,Mon Mar 23 2026 03:00:00 GMT-0400 (Eastern Daylight Time),714807 - Part 2,Deans Office Engineering,1027,J0924129,137102,Posted
+FY2026,Thu Mar 26 2026 03:00:00 GMT-0400 (Eastern Daylight Time),707128,L. D. Wilder School of Government and Public Affairs,951.9,J0924652,132110,Posted
+FY2026,Mon Apr 06 2026 03:00:00 GMT-0400 (Eastern Daylight Time),722938,Student Affairs,39020.52,J0925566 ,377100,Posted
+FY2026,Thu Apr 16 2026 03:00:00 GMT-0400 (Eastern Daylight Time),718946,Technology Services/Media Support,778.34,J0927236 ,121011,Posted
+FY2026,Thu Apr 16 2026 03:00:00 GMT-0400 (Eastern Daylight Time),723068,Technology Services / Media Support,94.92,J0927320,1-12000,Posted
+FY2026,Wed Apr 22 2026 03:00:00 GMT-0400 (Eastern Daylight Time),724161,School of Medicine / Internal Medicine,675.6,J0927931,145690,Posted
+FY2026,Mon May 04 2026 03:00:00 GMT-0400 (Eastern Daylight Time),720731,School of Medicine - Microbio. & Immun.,617.05,J0929391,143107,Posted
+FY2026,Wed May 06 2026 03:00:00 GMT-0400 (Eastern Daylight Time),728667,School of Medcine / Micro. And Immun.,536.94,J0929713,143107,Posted
+FY2026,Wed May 06 2026 03:00:00 GMT-0400 (Eastern Daylight Time),729979,College of Engineering/Deans Office Engineering,102.6,J0929799,137163,Posted
+FY2026,Fri May 08 2026 03:00:00 GMT-0400 (Eastern Daylight Time),720243,Planning and Design,1412.46,J0930172,776629,Posted
+FY2026,Wed May 13 2026 03:00:00 GMT-0400 (Eastern Daylight Time),687089,University Renovations,16818.06,J0930932,360051,Posted
+FY2026,Thu May 28 2026 03:00:00 GMT-0400 (Eastern Daylight Time),727598,Business Services,2941.12,J0932956,375500,Posted
+FY2026,Fri May 29 2026 03:00:00 GMT-0400 (Eastern Daylight Time),720246A,FM Planning and Design,4993.2,J0933135,776629,Posted
+FY2026,Fri May 29 2026 03:00:00 GMT-0400 (Eastern Daylight Time),720246B,FM Planning and Design,1744.2,J0933142,776629,Posted
+FY2026,Tue Jun 02 2026 03:00:00 GMT-0400 (Eastern Daylight Time),610710 CO2,Construction Management - Facilities,6773.4,J0933583 ,649308,Posted
+FY2026,Wed Jun 03 2026 03:00:00 GMT-0400 (Eastern Daylight Time),734395,School of Pharmacy,399,J0933652,147026,Posted
+FY2026,Wed Jun 03 2026 03:00:00 GMT-0400 (Eastern Daylight Time),776624,Construction and Inspection,10604.28, J0933775,776624,Posted
+FY2026,Thu Jun 04 2026 03:00:00 GMT-0400 (Eastern Daylight Time),735658,Housing,263.71,J0934027,130012,Posted
+FY2026,Thu Jun 04 2026 03:00:00 GMT-0400 (Eastern Daylight Time),720961,Facilities Operations,106.09,J0934035,165402,Posted
+FY2026,Fri Jun 05 2026 03:00:00 GMT-0400 (Eastern Daylight Time),703175,School of Pharmacy,18466.73,J0934211,147011,Posted
+FY2026,Mon Jun 08 2026 03:00:00 GMT-0400 (Eastern Daylight Time),722720,Research Information Systems,910,J0934352,110112,Posted
+FY2026,Wed Jun 10 2026 03:00:00 GMT-0400 (Eastern Daylight Time),734556,School of Business,2095.32,J0934726,133308,Posted
+FY2026,Wed Jun 10 2026 03:00:00 GMT-0400 (Eastern Daylight Time),687089 CO1,VCU - Facilities Management,717.06,J0934749,360051,Posted
+FY2026,Thu Jun 11 2026 03:00:00 GMT-0400 (Eastern Daylight Time),732105,Engineering and Utilities,1017.06,J0935118,163696,Posted
+FY2026,Tue Jun 16 2026 03:00:00 GMT-0400 (Eastern Daylight Time),717660,Construction and Inspection,71.08,J0935990,776614,Posted
+FY2026,Wed Jun 17 2026 03:00:00 GMT-0400 (Eastern Daylight Time),724674,Parking and Transportation,399,J0936235,323112,Per email from VCU PARKFINANCE  changed index to 323112 Posted
+FY2026,Thu Jun 18 2026 03:00:00 GMT-0400 (Eastern Daylight Time),734395 CREDIT,School of Pharmacy,-399,J0936476,147026,Posted
+FY2026,Thu Jun 18 2026 03:00:00 GMT-0400 (Eastern Daylight Time),734395,School of Pharmacy,173.37,J0936486 ,147026,Posted
+FY2025,Mon Jul 01 2024 03:00:00 GMT-0400 (Eastern Daylight Time),577204,Technology Services,94,J0851227,134112,
+FY2025,Mon Jul 01 2024 03:00:00 GMT-0400 (Eastern Daylight Time),576479,School of Pharmacy,2155.45,J0851255,147126,
+FY2025,Tue Jul 02 2024 03:00:00 GMT-0400 (Eastern Daylight Time),574758,IT Tech School of Dentistry,1006.99,J0851306,146821,
+FY2025,Wed Jul 03 2024 03:00:00 GMT-0400 (Eastern Daylight Time),567332,Construction & Inspection,2423,J0851456,776299,
+FY2025,Tue Jul 09 2024 03:00:00 GMT-0400 (Eastern Daylight Time),442907 CO3,University Renovations,1463.76,J0851966,776403,
+FY2025,Thu Jul 11 2024 03:00:00 GMT-0400 (Eastern Daylight Time),578983,Robertson School,1369.3,J0852167,640289,
+FY2025,Fri Jul 12 2024 03:00:00 GMT-0400 (Eastern Daylight Time),579236 - B,da Vinci Center for Innovation,377.99,J0852365,133024,
+FY2025,Mon Jul 15 2024 03:00:00 GMT-0400 (Eastern Daylight Time),579236 - A,da Vinci Center for Innovation,752.1,J0852367,133024,
+FY2025,Wed Jul 17 2024 03:00:00 GMT-0400 (Eastern Daylight Time),578659,Parking and Transportation,7839.78,J0852613,323331,
+FY2025,Fri Jul 19 2024 03:00:00 GMT-0400 (Eastern Daylight Time),561544 - CO1,Business Services,815.36,J0852997,363300,
+FY2025,Mon Jul 22 2024 03:00:00 GMT-0400 (Eastern Daylight Time),582361,Parking and Transportation,6566.4,J0853085,323221,
+FY2025,Mon Jul 22 2024 03:00:00 GMT-0400 (Eastern Daylight Time),579420,Technology Services,628.07,J0853109,363501,
+FY2025,Mon Jul 22 2024 03:00:00 GMT-0400 (Eastern Daylight Time),575235,Parking and Transportation,6201.6,J0853120,323114,
+FY2025,Tue Jul 23 2024 03:00:00 GMT-0400 (Eastern Daylight Time),573825,VCU Libraries,614.65,J0853193,112000,posted
+FY2025,Mon Jul 29 2024 03:00:00 GMT-0400 (Eastern Daylight Time),574916,Research Information Systems,556.53,J0853794,294634,posted
+FY2025,Mon Jul 29 2024 03:00:00 GMT-0400 (Eastern Daylight Time),569386,Student Affairs Vice Provost,5998.68,J0853852,377100,posted
+FY2025,Wed Jul 31 2024 03:00:00 GMT-0400 (Eastern Daylight Time),555833,Info Sec SoD,11918.05,J0854040,194303,posted
+FY2025,Wed Aug 07 2024 03:00:00 GMT-0400 (Eastern Daylight Time),586628,VCU Libraries,3186.6,J0854777,112000,posted
+FY2025,Wed Aug 07 2024 03:00:00 GMT-0400 (Eastern Daylight Time),584609,VCU Libraries,4306.24,J0854788,112000,posted
+FY2025,Thu Aug 08 2024 03:00:00 GMT-0400 (Eastern Daylight Time),585583,Student Commons,1630.2,J0854873,377100,posted
+FY2025,Fri Aug 09 2024 03:00:00 GMT-0400 (Eastern Daylight Time),583359,Parking and Transportation,5950.8,J0855009,323112,posted
+FY2025,Wed Aug 14 2024 03:00:00 GMT-0400 (Eastern Daylight Time),590994,Athletics,105.01,J0855433,362100,posted
+FY2025,Mon Aug 19 2024 03:00:00 GMT-0400 (Eastern Daylight Time),585139,College of Engineering,819.26,J0855893,146309,posted
+FY2025,Mon Aug 19 2024 03:00:00 GMT-0400 (Eastern Daylight Time),593113,College of Humanities and Sciences,1311.15,J0855978,132112,posted
+FY2025,Tue Aug 20 2024 03:00:00 GMT-0400 (Eastern Daylight Time),588964,Massey Cancer Center,543.23,J0856009,A35564,posted
+FY2025,Tue Aug 20 2024 03:00:00 GMT-0400 (Eastern Daylight Time),588471,Rice Rivers City,2119.26,J0856137,640250,posted
+FY2025,Wed Aug 21 2024 03:00:00 GMT-0400 (Eastern Daylight Time),578173,Construction and Inspection,11264.34,J0856237,774606,posted
+FY2025,Wed Aug 21 2024 03:00:00 GMT-0400 (Eastern Daylight Time),578176,Construction and Inspection,23713.57,J0856262,774606,posted
+FY2025,Mon Aug 26 2024 03:00:00 GMT-0400 (Eastern Daylight Time),591893,Construction and Inspection,2321.34,J0856751,173351,posted
+FY2025,Tue Aug 27 2024 03:00:00 GMT-0400 (Eastern Daylight Time),587141 B,School of Dentistry,1762.9,J0856955,146821,posted
+FY2025,Wed Aug 28 2024 03:00:00 GMT-0400 (Eastern Daylight Time),587141 Part 1,School of Dentistry,3787,J0857052,144101,posted
+FY2025,Wed Aug 28 2024 03:00:00 GMT-0400 (Eastern Daylight Time),587141 Part 2,School of Dentistry,3665.34,J0857078,146821,posted
+FY2025,Wed Sep 18 2024 03:00:00 GMT-0400 (Eastern Daylight Time),601618,Massey Cancer Center,375.16,J0859705,A35564,posted
+FY2025,Tue Sep 24 2024 03:00:00 GMT-0400 (Eastern Daylight Time),601389,Engineering and Utilities,1492.67,J0860651,333200,posted
+FY2025,Tue Sep 24 2024 03:00:00 GMT-0400 (Eastern Daylight Time),603316,Facilities Operations,63.84,J0860791,173303,posted
+FY2025,Tue Sep 24 2024 03:00:00 GMT-0400 (Eastern Daylight Time),522280 - CO1,University Renovations,718.2,J0860795,360051,FMD proj 2023-02542  Posted
+FY2025,Wed Sep 25 2024 03:00:00 GMT-0400 (Eastern Daylight Time),607180,L. Douglas Wilder School of Government,316.86,J0860993,132110,posted
+FY2025,Mon Sep 30 2024 03:00:00 GMT-0400 (Eastern Daylight Time),599661,Engineering and Utilities,1825.12,J0861520,333200,Posted
+FY2025,Wed Oct 02 2024 03:00:00 GMT-0400 (Eastern Daylight Time),598091,University Housing,329.45,J0861791,327130,Posted
+FY2025,Wed Oct 02 2024 03:00:00 GMT-0400 (Eastern Daylight Time),609123,Sports Medicine,240.86,J0861893,110180,Posted
+FY2025,Thu Oct 03 2024 03:00:00 GMT-0400 (Eastern Daylight Time),602379,Technology Services,486.7,J0861951,123002,Posted
+FY2025,Mon Oct 07 2024 03:00:00 GMT-0400 (Eastern Daylight Time),569187,Technology Services,484.32,J0862337,138109,Posted
+FY2025,Tue Oct 15 2024 03:00:00 GMT-0400 (Eastern Daylight Time),601073,Provost and VP Academic Affairs,314.97,J0863321,130188,Posted
+FY2025,Thu Oct 31 2024 03:00:00 GMT-0400 (Eastern Daylight Time),602301,Business Services,1287.06,J0865270,321100,Posted
+FY2025,Thu Oct 31 2024 03:00:00 GMT-0400 (Eastern Daylight Time),570678,Technology Services,72,J0865333,363501,Posted
+FY2025,Thu Oct 31 2024 03:00:00 GMT-0400 (Eastern Daylight Time),609406 Option 2,Community Services Programs,1470.6,J0865407,110387,Posted
+FY2025,Wed Nov 06 2024 03:00:00 GMT-0500 (Eastern Standard Time),606702,School of Engineering,492.88,J0865763,137103,Posted
+FY2025,Mon Nov 11 2024 03:00:00 GMT-0500 (Eastern Standard Time),607977,School of Business,1409.88,J0866322,133308,Posted
+FY2025,Wed Nov 13 2024 03:00:00 GMT-0500 (Eastern Standard Time),605416,Parking and Transportation,1401.06,J0866609,323221,Posted
+FY2025,Thu Nov 14 2024 03:00:00 GMT-0500 (Eastern Standard Time),609167,Technology Services,72,J0866836,363501,Posted
+FY2025,Mon Nov 18 2024 03:00:00 GMT-0500 (Eastern Standard Time),606022,Technology Services,72,J0867183,363601,Posted
+FY2025,Wed Nov 20 2024 03:00:00 GMT-0500 (Eastern Standard Time),606105,Telecommunications Services,717.06,J0867684,383000,Posted
+FY2025,Mon Dec 02 2024 03:00:00 GMT-0500 (Eastern Standard Time),602379 Credit,Technology Services,-486.7,J0868646,123002,Posted
+FY2025,Wed Dec 04 2024 03:00:00 GMT-0500 (Eastern Standard Time),603042,Internal Medicine - Cardiology,1133.13,J0868970,411491,Posted
+FY2025,Mon Dec 09 2024 03:00:00 GMT-0500 (Eastern Standard Time),613396 - Part 1,School of Engineering,300,J0869477,146309,Posted
+FY2025,Mon Dec 09 2024 03:00:00 GMT-0500 (Eastern Standard Time),613396 - Part 2,School of Engineering,298.22,J0869481,137163,Posted
+FY2025,Tue Dec 10 2024 03:00:00 GMT-0500 (Eastern Standard Time),608939,University Housing,205760.51,J0869738,327161,Posted
+FY2025,Thu Dec 12 2024 03:00:00 GMT-0500 (Eastern Standard Time),605492,FMD Planning and Design,130506.99,J0869926,771083,Posted
+FY2025,Tue Jan 07 2025 03:00:00 GMT-0500 (Eastern Standard Time),614497,Student Housing,215.56,J0871263,327504,Posted
+FY2025,Thu Jan 16 2025 03:00:00 GMT-0500 (Eastern Standard Time),609846,Dental,4843.43,J0872373,144160,Posted
+FY2025,Tue Jan 21 2025 03:00:00 GMT-0500 (Eastern Standard Time),620272,Forensic Science,101.54,J0872622,132002,Posted
+FY2025,Tue Jan 21 2025 03:00:00 GMT-0500 (Eastern Standard Time),612839,School of Dentistry,281.92,J0872657,194329,Posted
+FY2025,Tue Jan 21 2025 03:00:00 GMT-0500 (Eastern Standard Time),620202,School of Medicine,330.5,J0872710,146864,Posted
+FY2025,Tue Jan 21 2025 03:00:00 GMT-0500 (Eastern Standard Time),617699,School of Medicine,1450.38,J0872713,292207,Posted
+FY2025,Wed Jan 22 2025 03:00:00 GMT-0500 (Eastern Standard Time),601067,FMD Planning and Design,4136.32,J0872890,653145,Posted
+FY2025,Thu Jan 23 2025 03:00:00 GMT-0500 (Eastern Standard Time),601068,FMD Planning and Design,1083200.26,J0872968,771082,Posted
+FY2025,Wed Feb 05 2025 03:00:00 GMT-0500 (Eastern Standard Time),618546,Technology Services,1368,J0874755,110387,Posted
+FY2025,Mon Feb 10 2025 03:00:00 GMT-0500 (Eastern Standard Time),617424,Business Services,591.66,J0875400,363300,Posted
+FY2025,Tue Feb 18 2025 03:00:00 GMT-0500 (Eastern Standard Time),608626,FMD Planning and Design,3297.66,J0876516,776499,Posted
+FY2025,Mon Mar 03 2025 03:00:00 GMT-0500 (Eastern Standard Time),625937,VCU da Vinci Center for Innovation,101.54,J0878350,647356,Posted
+FY2025,Mon Mar 04 1935 03:00:00 GMT-0500 (Eastern Standard Time),630544,L. Douglas Wilder School of Government,314.11,J0878447,132110,Posted
+FY2025,Wed Mar 05 2025 03:00:00 GMT-0500 (Eastern Standard Time),631502,School of Engineering,503.84,J0878531,297038,Posted
+FY2025,Wed Mar 05 2025 03:00:00 GMT-0500 (Eastern Standard Time),626470,University Renovations,3482.31,J0878535,776504,Posted
+FY2025,Mon Mar 10 2025 03:00:00 GMT-0400 (Eastern Daylight Time),635606,School of Dentistry,566.66,J0879077,144160,Posted
+FY2025,Tue Mar 11 2025 03:00:00 GMT-0400 (Eastern Daylight Time),620355,Business Services,418.87,J0879218,239600,Posted
+FY2025,Fri Mar 14 2025 03:00:00 GMT-0400 (Eastern Daylight Time),634403,Parking and Transportation,198.96,J0879593,323333,Posted
+FY2025,Thu Mar 20 2025 03:00:00 GMT-0400 (Eastern Daylight Time),624064,Construction & Inspection,5892.55,J0880273,774622,Posted
+FY2025,Thu Mar 20 2025 03:00:00 GMT-0400 (Eastern Daylight Time),630960,Parking and Transportation,2490.9,J0880313 ,323551,Posted
+FY2025,Fri Mar 21 2025 03:00:00 GMT-0400 (Eastern Daylight Time),601758,Construction and Inspection,2386.28,J0880391,776495,Posted
+FY2025,Mon Mar 24 2025 03:00:00 GMT-0400 (Eastern Daylight Time),628867,VCU Business Services,2161.62,J0880702,329600,Posted
+FY2025,Mon Mar 25 2024 03:00:00 GMT-0400 (Eastern Daylight Time),636151,VCU Business Services,102,J0880770,321110,Posted
+FY2025,Thu Apr 03 2025 03:00:00 GMT-0400 (Eastern Daylight Time),605384,VCU Business Services,2016.66,J0882091,329600,Posted
+FY2025,Tue Apr 08 2025 03:00:00 GMT-0400 (Eastern Daylight Time),628212,Academic Technologies,290.42,J0882681,110200,Posted
+FY2025,Wed Apr 09 2025 03:00:00 GMT-0400 (Eastern Daylight Time),626285,Student Commons,38770,J0882899 ,377102,Posted
+FY2025,Wed Apr 09 2025 03:00:00 GMT-0400 (Eastern Daylight Time),626286,Student Commons,15508,J0882992,365502,Posted
+FY2025,Mon Apr 21 2025 03:00:00 GMT-0400 (Eastern Daylight Time),603530,Construction and Inspection,1544.7,J0884558,776532,Posted
+FY2025,Tue Apr 22 2025 03:00:00 GMT-0400 (Eastern Daylight Time),634523,Media Support Services,108.29,J0884801,PR8189,Posted
+FY2025,Wed Apr 23 2025 03:00:00 GMT-0400 (Eastern Daylight Time),614606,Parking and Transportation,381920.52,J0884861,PR8206,Posted
+FY2025,Wed Apr 23 2025 03:00:00 GMT-0400 (Eastern Daylight Time),614605,Parking and Transportation,66269.1,J0884930,PR8206,Posted
+FY2025,Fri Apr 25 2025 03:00:00 GMT-0400 (Eastern Daylight Time),644258,Parking and Transportation,135,J0885380,323111,Posted
+FY2025,Mon Apr 28 2025 03:00:00 GMT-0400 (Eastern Daylight Time),637842,FMD Engineering and Utilities,430.93,J0885455,776197,Posted
+FY2025,Mon Apr 28 2025 03:00:00 GMT-0400 (Eastern Daylight Time),631039,Student Commons,189.78,J0885582,377100,Posted
+FY2025,Tue Apr 29 2025 03:00:00 GMT-0400 (Eastern Daylight Time),606043,Construction and Inspection,450.3,J0885656,173351,Posted
+FY2025,Tue Apr 29 2025 03:00:00 GMT-0400 (Eastern Daylight Time),641115,Engineering and Utilities,266.32,J0885694,333200,Posted
+FY2025,Mon May 05 2025 03:00:00 GMT-0400 (Eastern Daylight Time),614605,Parking and Transportation,66269.1,J0886561,correct index to charge 771100,Posted
+FY2025,Mon May 05 2025 03:00:00 GMT-0400 (Eastern Daylight Time),614606,Parking and Transportation,381920.52,J0886563,correct index to charge 771101,Posted
+FY2025,Fri May 23 2025 03:00:00 GMT-0400 (Eastern Daylight Time),636981,Library Services,3358.14,J0889071,112000,Posted
+FY2025,Fri May 23 2025 03:00:00 GMT-0400 (Eastern Daylight Time),631618,University Renovations,1782.63,J0889109,360051,Posted
+FY2025,Thu May 30 1935 04:00:00 GMT-0400 (Eastern Daylight Time),642050,School of Dentistry,395.45,J0889991,412313,Posted
+FY2025,Tue Jun 03 2025 03:00:00 GMT-0400 (Eastern Daylight Time),606032,Technology Support Services,72,J0890104,363501,Posted
+FY2025,Wed Jun 04 2025 03:00:00 GMT-0400 (Eastern Daylight Time),651962,Human Resources,162,J0890561 ,123301,Posted
+FY2025,Thu Jun 05 2025 03:00:00 GMT-0400 (Eastern Daylight Time),602222,School of Dentistry,278.13,J0890733,194106,Posted
+FY2025,Thu Jun 05 2025 03:00:00 GMT-0400 (Eastern Daylight Time),637832,Engineering and Utilities,135,J0890849 ,776294,Posted
+FY2025,Tue Jun 10 2025 03:00:00 GMT-0400 (Eastern Daylight Time),630968,Athletics,310.83,J0891494,362150,Posted
+FY2025,Fri Jun 13 2025 03:00:00 GMT-0400 (Eastern Daylight Time),609432,School of Business,1207.71,J0892152,133308,Posted
+FY2025,Tue Jun 24 2025 03:00:00 GMT-0400 (Eastern Daylight Time),639146,Technology Services,72,J0893492,639146,Posted
+FY2025,Wed Jun 25 2025 03:00:00 GMT-0400 (Eastern Daylight Time),654128,School of Business,1067.57,J0894060,133308,
+FY2024,Mon Jul 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),475661,School of Business,213.37,J0804957,133308,posted
+FY2024,Mon Jul 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),469806,Technology Services,190.58,J0804959,138002,posted
+FY2024,Mon Jul 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),450418,Technology Services,63403.95,J0805021,882098,posted
+FY2024,Wed Jul 05 2023 03:00:00 GMT-0400 (Eastern Daylight Time),469334,College of Engineering,963.3,J0805153,147454,posted
+FY2024,Thu Jul 06 2023 03:00:00 GMT-0400 (Eastern Daylight Time),450679,FM Physical Plant,1304.64,J0805227,165402,posted
+FY2024,Thu Jul 06 2023 03:00:00 GMT-0400 (Eastern Daylight Time),455352,FMD Planning and Design,4104,J0805308,771083,posted
+FY2024,Mon Jul 10 2023 03:00:00 GMT-0400 (Eastern Daylight Time),463577,Facilities Management,8207.94,J0805528,771066,posted
+FY2024,Tue Jul 11 2023 03:00:00 GMT-0400 (Eastern Daylight Time),459121,SoPharmacy,408.46,J0805628,147003,posted
+FY2024,Tue Jul 11 2023 03:00:00 GMT-0400 (Eastern Daylight Time),469206,SoArts,2336.79,J0805650,131127,posted
+FY2024,Tue Jul 11 2023 03:00:00 GMT-0400 (Eastern Daylight Time),458132,FMD Planning and Design,798,J0805682,771082,posted
+FY2024,Thu Jul 13 2023 03:00:00 GMT-0400 (Eastern Daylight Time),440062,Telecommunications,1458.06,J0805978,383000,posted
+FY2024,Thu Jul 13 2023 03:00:00 GMT-0400 (Eastern Daylight Time),450413,Technology Services,55150.9,J0805981,327161,posted
+FY2024,Tue Jul 18 2023 03:00:00 GMT-0400 (Eastern Daylight Time),480408,School of Medicine,837.82,J0806383,143108,posted
+FY2024,Tue Jul 18 2023 03:00:00 GMT-0400 (Eastern Daylight Time),477972,L. Douglas Wilder Schl of Gov & Public Affairs,1767,J0806491,130033,posted
+FY2024,Wed Jul 19 2023 03:00:00 GMT-0400 (Eastern Daylight Time),476857,School of Dentistry,538.9,J0806618,194106,posted
+FY2024,Thu Jul 20 2023 03:00:00 GMT-0400 (Eastern Daylight Time),481918,College of Humanities and Sciences,228.64,J0806731,132107,posted
+FY2024,Mon Jul 24 2023 03:00:00 GMT-0400 (Eastern Daylight Time),482741,Athletics,285,J0807208,362100,posted
+FY2024,Wed Jul 26 2023 03:00:00 GMT-0400 (Eastern Daylight Time),479137,Construction & Inspection,456,J0807490,653145,posted
+FY2024,Wed Jul 26 2023 03:00:00 GMT-0400 (Eastern Daylight Time),482002,Massey Cancer Center,154.24,J0807609,A35563,posted
+FY2024,Mon Jul 31 2023 03:00:00 GMT-0400 (Eastern Daylight Time),458903,Student Affairs Vice President,15865.82,J0807887,377100,posted
+FY2024,Tue Aug 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time),452329,VCU Facilities Management,13044.3,J0808126,771081,posted
+FY2024,Tue Aug 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time),483228,School of Dentistry,1329.82,J0808157,412316,posted
+FY2024,Thu Aug 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),486312,VCU Libraries,102.65,J0808471,112000,posted
+FY2024,Mon Aug 07 2023 03:00:00 GMT-0400 (Eastern Daylight Time),486641,TSS/Desktop Support,657.71,J0808691,PR8189,posted
+FY2024,Thu Aug 10 2023 03:00:00 GMT-0400 (Eastern Daylight Time),488298,Technology Support Services,152.29,J0808974,138110,posted
+FY2024,Thu Aug 10 2023 03:00:00 GMT-0400 (Eastern Daylight Time),486089,Construction & Inspection,792.3,J0809066,776251,posted
+FY2024,Thu Aug 10 2023 03:00:00 GMT-0400 (Eastern Daylight Time),485540,Construction & Inspection,6029.46,J0809094,776473,posted
+FY2024,Mon Aug 14 2023 03:00:00 GMT-0400 (Eastern Daylight Time),439839,School of Education,19248.08,J0809317,T33835,posted
+FY2024,Tue Aug 15 2023 03:00:00 GMT-0400 (Eastern Daylight Time),447727,Student Affairs Provost,4132.5,J0809476,377100,posted
+FY2024,Wed Aug 16 2023 03:00:00 GMT-0400 (Eastern Daylight Time),467274,Technology Services,226.86,J0809664,130101,posted
+FY2024,Thu Aug 24 2023 03:00:00 GMT-0400 (Eastern Daylight Time),459121 - Option B,School of Pharmacy,2010.79,J0810597,147126,posted
+FY2024,Mon Aug 28 2023 03:00:00 GMT-0400 (Eastern Daylight Time),653145,University Housing,461.27,J0810779,327190,posted
+FY2024,Mon Aug 28 2023 03:00:00 GMT-0400 (Eastern Daylight Time),439839 - CO1,School of Education,1383.96,J0810885,T33835,posted
+FY2024,Tue Aug 29 2023 03:00:00 GMT-0400 (Eastern Daylight Time),486531,Technology Services,168.58,J0811021,138110,posted
+FY2024,Tue Aug 29 2023 03:00:00 GMT-0400 (Eastern Daylight Time),489701,School of Education,327.33,J0811032,135150,posted
+FY2024,Wed Aug 30 2023 03:00:00 GMT-0400 (Eastern Daylight Time),475813,Construction & Inspection,406,J0811155,776368,posted
+FY2024,Wed Aug 30 2023 03:00:00 GMT-0400 (Eastern Daylight Time),403926,Construction & Inspection,399,J0811161,776293,posted
+FY2024,Thu Aug 31 2023 03:00:00 GMT-0400 (Eastern Daylight Time),493294,Construction & Inspection,855,J0811315,771066,posted
+FY2024,Fri Sep 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time),438608 Lot M CO2,Parking and Transportation,5278.2,J0811564,323333,posted
+FY2024,Tue Sep 05 2023 03:00:00 GMT-0400 (Eastern Daylight Time),438608 Lot K CO2,Parking and Transportation,5768.4,J0811667,323113,posted
+FY2024,Tue Sep 05 2023 03:00:00 GMT-0400 (Eastern Daylight Time),438608 Lot J CO2,Parking and Transportation,9310.38,J0811680,323112,posted
+FY2024,Tue Sep 05 2023 03:00:00 GMT-0400 (Eastern Daylight Time),438608 Lot L CO2,Parking and Transportation,8485.02,J0811685,323111,posted
+FY2024,Thu Sep 14 2023 03:00:00 GMT-0400 (Eastern Daylight Time),497097,Construction Management,2137.5,J0812775,771074,posted
+FY2024,Mon Sep 18 2023 03:00:00 GMT-0400 (Eastern Daylight Time),494658,Technology Services,1083,J0813174,138110,posted
+FY2024,Mon Sep 18 2023 03:00:00 GMT-0400 (Eastern Daylight Time),489111 - Option A,Deans Office Engineering,646.36,J0813236,146345,posted
+FY2024,Tue Sep 19 2023 03:00:00 GMT-0400 (Eastern Daylight Time),123364 - CO4,Construction and Inspection,7723.5,J0813360,771066,posted
+FY2024,Tue Sep 19 2023 03:00:00 GMT-0400 (Eastern Daylight Time),493579,Technology Services,486,J0813386,138110,posted
+FY2024,919/23,123364 STEM ISP CO3,Facilities Management,26733,J0813407,771066,posted
+FY2024,Tue Sep 19 2023 03:00:00 GMT-0400 (Eastern Daylight Time),494757,School of Medicine,3371.67,J0813409,145107,posted
+FY2024,Wed Sep 20 2023 03:00:00 GMT-0400 (Eastern Daylight Time),458903 - CO1,Student Affairs Vice Provost,1592.27,J0813524,377100,posted
+FY2024,Mon Sep 25 2023 03:00:00 GMT-0400 (Eastern Daylight Time),497097 - CO1,Construction Management,1653,J0814060,771074,posted
+FY2024,Wed Sep 27 2023 03:00:00 GMT-0400 (Eastern Daylight Time),502912,Construction & Inspection,547.2,J0814337,776425,posted
+FY2024,Wed Sep 27 2023 03:00:00 GMT-0400 (Eastern Daylight Time),502462,School of Medicine,241.05,J0814339,145117,posted
+FY2024,Mon Oct 02 2023 03:00:00 GMT-0400 (Eastern Daylight Time),503902,Telecommunications Services,3426.75,J0814999,383000,posted
+FY2024,Tue Oct 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),442907 - Quote A,FMD Planning and Design,11381.76,J0815185,776403,posted
+FY2024,Tue Oct 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),442907 - Quote B,FMD Planning and Design,13623,J0815195,776403,posted
+FY2024,Tue Oct 03 2023 03:00:00 GMT-0400 (Eastern Daylight Time),458355,FMD Planning and Design,6780.51,J0815247,776425,posted
+FY2024,Wed Oct 04 2023 03:00:00 GMT-0400 (Eastern Daylight Time),450823,FM Physical Plant,3512.42,J0815374,165402,posted
+FY2024,Thu Oct 05 2023 03:00:00 GMT-0400 (Eastern Daylight Time),484891,Business Services,3456.06,J0815518,329600,posted
+FY2024,Thu Oct 05 2023 03:00:00 GMT-0400 (Eastern Daylight Time),499041,Recreation and Well-Being,237.48,J0815538,386266,posted
+FY2024,Mon Oct 09 2023 03:00:00 GMT-0400 (Eastern Daylight Time),504080,Deans Office Engineering,539.3,J0815737,137103,posted
+FY2024,Mon Oct 09 2023 03:00:00 GMT-0400 (Eastern Daylight Time),504679,Goodwin Research Lab,274.4,J0815822,A35563,posted
+FY2024,Mon Oct 09 2023 03:00:00 GMT-0400 (Eastern Daylight Time),504325,Animal Care Facility,2810.15,J0815872 ,294713,posted
+FY2024,Tue Oct 10 2023 03:00:00 GMT-0400 (Eastern Daylight Time),494658 - CO1,Technology Services,426.36,J0816002,138110,posted
+FY2024,Wed Oct 11 2023 03:00:00 GMT-0400 (Eastern Daylight Time),481942,FMD Planning and Design,12552.4,J0816071,776490,posted
+FY2024,Wed Oct 18 2023 03:00:00 GMT-0400 (Eastern Daylight Time),508462,School of Pharmacy,238.59,J0817006,147008,posted
+FY2024,Tue Oct 24 2023 03:00:00 GMT-0400 (Eastern Daylight Time),512510 Rev. 1,University Student Commons,313.2,J0817535,377100,posted
+FY2024,Wed Oct 25 2023 03:00:00 GMT-0400 (Eastern Daylight Time),509148,School of Dentistry,537.56,J0817846,144101,posted
+FY2024,Mon Oct 30 2023 03:00:00 GMT-0400 (Eastern Daylight Time),439839CO2,SOE Spec Ed & DP PPD,1133.16,J0818217,T17228,Wed Nov 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time)
+FY2024,Mon Oct 30 2023 03:00:00 GMT-0400 (Eastern Daylight Time),510723,University Renovations,1013.46,J0818240,776186,posted
+FY2024,Mon Oct 30 2023 03:00:00 GMT-0400 (Eastern Daylight Time),393429,Parking and Transportation,12316.06,J0818320,323114,posted
+FY2024,Wed Nov 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time),307280 ISP CO2,Construction Management,15823.2,J0818718,771074,Wed Nov 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time)
+FY2024,Wed Nov 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time),513108,Construction & Inspection,445.35,J0818720,774602,Wed Nov 01 2023 03:00:00 GMT-0400 (Eastern Daylight Time)
+FY2024,Thu Nov 02 2023 03:00:00 GMT-0400 (Eastern Daylight Time),438608 Lot A CO3,Parking and Transportation,171,J0918941,323114,Thu Nov 02 2023 03:00:00 GMT-0400 (Eastern Daylight Time)
+FY2024,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608  Lot E  CO3,Parking and Transportation,684,J0819168,323224,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608 Lot F  CO3,Parking and Transportation,513,J0819196,323221,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608  Lot G  CO3,Parking and Transportation,849.3,J0819201,323331,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608 Lot H CO3,Parking and Transportation,342,J0819238,323332,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608 Lot I  CO3,Parking and Transportation,513,J0819239,323556,Mon Nov 06 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608 Lot J  CO3,Parking and Transportation,684,J0819381,323112,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608 Lot K  CO3,Parking and Transportation,342,J0819396,323113,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608  Lot L  CO3,Parking and Transportation,684,J0819417,323111,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608 Lot M CO3,Parking and Transportation,513,J0819420,323333,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438068  Lot B  CO3,Parking and Transportation,171,J0819435,323116,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438068  Lot C  CO3,Parking and Transportation,513,J0819455,323115,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time),438608  Lot D  CO3,Parking and Transportation,684,J0819458,323224,Wed Nov 08 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time),493525,Construction and Inspection,405.33,J0819510,360051,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time),493042  Option  A,Construction and Inspection,1226.83,J0819522,360051,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time),493042 Option B,Construction and Inspection,14498.37,J0819561,360051,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time),492001,VCU Police IT,405.33,J0819648,365500,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time),508637,Engineering and Utilities,7711.5,J0819649,333200,Thu Nov 09 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time),442907 Lot A  CO1,University Renovations,1710,J0819945,776403,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time),512098,College of Humanities and Sciences,290.7,J0819961,132941,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time),513145,School of Medicine,443.8,J0819970,553044,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time),510475,Athletics,908.02,J0820058,361220,Tue Nov 14 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Wed Nov 15 2023 03:00:00 GMT-0500 (Eastern Standard Time),516347,SOE Spec Ed & DP PPD,265.44,J0820247,T33835,Wed Nov 15 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Fri Nov 17 2023 03:00:00 GMT-0500 (Eastern Standard Time),516074,Human Resources,1981.86,J0820575,123301,posted
+FY2024,Fri Nov 17 2023 03:00:00 GMT-0500 (Eastern Standard Time),513581,School of Dentistry,486.99,J0820576,194330,Fri Nov 17 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Mon Nov 27 2023 03:00:00 GMT-0500 (Eastern Standard Time),492000,VCU Police IT,333.95,J0821334,123001,Mon Nov 27 2023 03:00:00 GMT-0500 (Eastern Standard Time)
+FY2024,Tue Nov 28 2023 03:00:00 GMT-0500 (Eastern Standard Time),450418,VCU Network Services,1350,J0821432,882098,posted
+FY2024,Mon Nov 20 2023 03:00:00 GMT-0500 (Eastern Standard Time),513556,Construction & Inspection,501.6,J0821884,774578,posted
+FY2024,Wed Dec 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),519171 - Option A,College of Engineering,1596.7,J0822454,648241,posted
+FY2024,Wed Dec 06 2023 03:00:00 GMT-0500 (Eastern Standard Time),519171 Option B,Colllege of Engineering,1825.71,J0822456,146309,posted
+FY2024,Mon Dec 11 2023 03:00:00 GMT-0500 (Eastern Standard Time),479605,Construction and Inspection,72,J0823008,776186,posted
+FY2024,Tue Dec 12 2023 03:00:00 GMT-0500 (Eastern Standard Time),522793,University Renovations,484.5,J0823181,360051,posted
+FY2024,Tue Dec 12 2023 03:00:00 GMT-0500 (Eastern Standard Time),523799,Technology Services,337.9,J0823283,133308,posted
+FY2024,Wed Dec 13 2023 03:00:00 GMT-0500 (Eastern Standard Time),521923,Construction and Inspection,7269.78,J0823371,776373,posted
+FY2024,Thu Dec 14 2023 03:00:00 GMT-0500 (Eastern Standard Time),492002,VCU Police,765.33,J0823533,PR8141,posted
+FY2024,Thu Dec 14 2023 03:00:00 GMT-0500 (Eastern Standard Time),522954,Technology Services,295.72,J0823597,144101,posted
+FY2024,Mon Dec 18 2023 03:00:00 GMT-0500 (Eastern Standard Time),518573,Telecommunications,18000.42,J0823838,383100,posted
+FY2024,Fri Dec 22 2023 03:00:00 GMT-0500 (Eastern Standard Time),481942 - CO1,FMD Planning and Design,5583.72,J0824588,776489,posted
+FY2024,Wed Jan 03 2024 03:00:00 GMT-0500 (Eastern Standard Time),524274,VCU Libraries,618.71,J0824853,112000,posted
+FY2024,Thu Jan 04 2024 03:00:00 GMT-0500 (Eastern Standard Time),526668,SoD Oral and Facial Surgery,246.34,J0824982,194329,posted
+FY2024,Thu Jan 04 2024 03:00:00 GMT-0500 (Eastern Standard Time),508637 - CO1,Utilities and Engineering,3676.5,J0824984,333200,posted
+FY2024,Fri Jan 05 2024 03:00:00 GMT-0500 (Eastern Standard Time),506687,Construction & Inspection,72,J0825013,774666,posted
+FY2024,Thu Jan 11 2024 03:00:00 GMT-0500 (Eastern Standard Time),481942 - C02,FMD Planning and Design,665.76,J0825636,776490,posted
+FY2024,Fri Jan 12 2024 03:00:00 GMT-0500 (Eastern Standard Time),508541,Construction and Inspection,1000.35,J0825801,771066,posted
+FY2024,Tue Jan 16 2024 03:00:00 GMT-0500 (Eastern Standard Time),519295,Technology Services,749.87,J0826039,321100,posted
+FY2024,Tue Jan 16 2024 03:00:00 GMT-0500 (Eastern Standard Time),519268,Technology Services,1121.71,J0826055,321100,posted
+FY2024,Wed Jan 17 2024 03:00:00 GMT-0500 (Eastern Standard Time),525119 East,Parking and Transportation,2131.8,J0826149,323224,posted
+FY2024,Wed Jan 17 2024 03:00:00 GMT-0500 (Eastern Standard Time),525119  West,Parking and Transportation,2131.8,J0826153,323224,posted
+FY2024,Wed Jan 17 2024 03:00:00 GMT-0500 (Eastern Standard Time),450876,Construction & Inspection,72,J0826157,776186,posted
+FY2024,Fri Jan 19 2024 03:00:00 GMT-0500 (Eastern Standard Time),525116,Athletics,570,J0826722,362100,posted
+FY2024,Tue Jan 23 2024 03:00:00 GMT-0500 (Eastern Standard Time),532707,Parking and Transportation,4582.8,J0827091,323112,posted
+FY2024,Tue Jan 23 2024 03:00:00 GMT-0500 (Eastern Standard Time),532709,Parking and Transportation,6270,J0827110,323115,posted
+FY2024,Wed Jan 24 2024 03:00:00 GMT-0500 (Eastern Standard Time),526455,Student Commons,3370.5,J0827216,377102,posted
+FY2024,Thu Jan 25 2024 03:00:00 GMT-0500 (Eastern Standard Time),525105,Athletics,461.7,J0827434,362100,posted
+FY2024,Thu Jan 25 2024 03:00:00 GMT-0500 (Eastern Standard Time),532712,Parking and Transportation,2411.1,J0827535,323113,posted
+FY2024,Mon Jan 29 2024 03:00:00 GMT-0500 (Eastern Standard Time),521928,Construction & Inspection,10077.6,J0828064,776373,posted
+FY2024,Tue Jan 30 2024 03:00:00 GMT-0500 (Eastern Standard Time),533310 Option B,Center for Translational Sciences,1051.25,J0828148,290008,posted
+FY2024,Wed Jan 31 2024 03:00:00 GMT-0500 (Eastern Standard Time),528305,FMD Planning and Design,481.65,J0828370,776496,posted
+FY2024,Wed Feb 07 2024 03:00:00 GMT-0500 (Eastern Standard Time),533444,VCU Libraries,1017.87,J0829255,112000,posted
+FY2024,Fri Feb 09 2024 03:00:00 GMT-0500 (Eastern Standard Time),530373,Student Commons,4867.82,J0829698,365500,posted
+FY2024,Thu Feb 15 2024 03:00:00 GMT-0500 (Eastern Standard Time),539802,Construction & Inspection,834.27,J0830377,774622,posted
+FY2024,Wed Feb 21 2024 03:00:00 GMT-0500 (Eastern Standard Time),533444 B,VCU Libraries,1455.4,J0831229,112000,posted
+FY2024,Mon Feb 26 2024 03:00:00 GMT-0500 (Eastern Standard Time),492248,Network Services,90,J0831696,123154,posted
+FY2024,Mon Feb 26 2024 03:00:00 GMT-0500 (Eastern Standard Time),539745,Campus Card Svcs,72,J0831765,363501,posted
+FY2024,Tue Feb 27 2024 03:00:00 GMT-0500 (Eastern Standard Time),Credit 533444 B,VCU Libraires,-1455.4,J0831858 ,112000,posted
+FY2024,Wed Feb 28 2024 03:00:00 GMT-0500 (Eastern Standard Time),535400,Parking and Transportation,2821.5,J0831899,323114,posted
+FY2024,Mon Mar 04 2024 03:00:00 GMT-0500 (Eastern Standard Time),531610,Construction and Inspection,11353.26,J0832714,776293,posted
+FY2024,Mon Mar 04 2024 03:00:00 GMT-0500 (Eastern Standard Time),528305 - CO1,FMD Planning and Design,256.5,J0832815,776496,posted
+FY2024,Tue Mar 12 2024 03:00:00 GMT-0400 (Eastern Daylight Time),525612 - Option A,College of Humanities and Sciences,1439.32,J0833798,130924,posted
+FY2024,Fri Mar 15 2024 03:00:00 GMT-0400 (Eastern Daylight Time),528302,Facilities Management,81424.39,J0834500,774658,posted
+FY2024,Mon Mar 18 2024 03:00:00 GMT-0400 (Eastern Daylight Time),307280 CO3,Construction and Inspection,6099,J0834690 ,771074,posted
+FY2024,Tue Mar 19 2024 03:00:00 GMT-0400 (Eastern Daylight Time),548936,School of Dentistry,271.76,J0834894,194329,posted
+FY2024,Fri Mar 22 2024 03:00:00 GMT-0400 (Eastern Daylight Time),532717,VCU Libraries,328.5,J0835528,112000,posted
+FY2024,Thu Mar 28 2024 03:00:00 GMT-0400 (Eastern Daylight Time),550264,Student Commons,2899.59,J0836310,377100,posted
+FY2024,Mon Apr 01 2024 03:00:00 GMT-0400 (Eastern Daylight Time),547402,School of Arts,3402.73,J0836753,131127,posted
+FY2024,Tue Apr 02 2024 03:00:00 GMT-0400 (Eastern Daylight Time),546007,Parking and Transportation,15936.06,J0836850,546007,posted
+FY2024,Fri Apr 05 2024 03:00:00 GMT-0400 (Eastern Daylight Time),553374,School of Dentistry,237.2,J0837425,194106,posted
+FY2024,Tue Apr 09 2024 03:00:00 GMT-0400 (Eastern Daylight Time),555313,Schhol of Medicine,514.33,J0837828,649302,posted
+FY2024,Fri Apr 12 2024 03:00:00 GMT-0400 (Eastern Daylight Time),550264,Student Commons,2899.59,J0838403,377100,posted
+FY2024,Wed Apr 17 2024 03:00:00 GMT-0400 (Eastern Daylight Time),552799,VCU Libraries,1014.13,J0838837,112000,posted
+FY2024,Thu Apr 18 2024 03:00:00 GMT-0400 (Eastern Daylight Time),551339,School of Dentistry,2254.92,J0839071,194325,posted
+FY2024,Mon Apr 22 2024 03:00:00 GMT-0400 (Eastern Daylight Time),442907 CO2,University Renovations,1107.44,J0839481,776403,posted
+FY2024,Tue Apr 23 2024 03:00:00 GMT-0400 (Eastern Daylight Time),520399,Construction & Inspection,199.72,J0839559,774619,"JV in Banner lists incorrect project number as 520339 instead of 520399, posted 4/23/24 "
+FY2024,Tue Apr 23 2024 03:00:00 GMT-0400 (Eastern Daylight Time),540990,Technology Services,1434.22,J0839718,133308,posted
+FY2024,Mon Apr 29 2024 03:00:00 GMT-0400 (Eastern Daylight Time),528301 CO1,Facilities Management,13224,J0840430,774658,posted
+FY2024,Fri May 03 2024 03:00:00 GMT-0400 (Eastern Daylight Time),550605,Facilities Management-P&D,798,J0841158,774654,posted
+FY2024,Mon May 06 2024 03:00:00 GMT-0400 (Eastern Daylight Time),560197,School of Dentistry,565.1,J0841509,560197,posted
+FY2024,Mon May 06 2024 03:00:00 GMT-0400 (Eastern Daylight Time),512070,University Renovations,72,J0841549,776186,posted
+FY2024,Tue May 14 2024 03:00:00 GMT-0400 (Eastern Daylight Time),562605,Office of the Provost,442.95,J0842518,648668,posted
+FY2024,Tue May 14 2024 03:00:00 GMT-0400 (Eastern Daylight Time),565285,School of Business,521.04,J0842610,642285,posted
+FY2024,Tue May 21 2024 03:00:00 GMT-0400 (Eastern Daylight Time),552280,FMD Planning and Design,21024.93,J0843579,776497,posted
+FY2024,Wed May 22 2024 03:00:00 GMT-0400 (Eastern Daylight Time),561544,Business Services,40355.96,J0843709,321110,posted
+FY2024,Wed Jun 05 2024 03:00:00 GMT-0400 (Eastern Daylight Time),512930,Construciton and Inspection,72,J0845995,776186,posted
+FY2024,Wed Jun 05 2024 03:00:00 GMT-0400 (Eastern Daylight Time),513951,Construction and Inspection,72,J0846002,776186,posted
+FY2024,Fri Jun 07 2024 03:00:00 GMT-0400 (Eastern Daylight Time),541050,Technology Services,72,J0846291,363501,posted
+FY2024,Fri Jun 07 2024 03:00:00 GMT-0400 (Eastern Daylight Time),568876,School of Dentistry,454.61,J0846402,194106,posted
+FY2024,Mon Jun 10 2024 03:00:00 GMT-0400 (Eastern Daylight Time),546638,Telecommunications Services,7448.56,J0846555,383000,posted
+FY2024,Tue Jun 11 2024 03:00:00 GMT-0400 (Eastern Daylight Time),571060,School of Business,327.74,J0846806,133308,posted
+FY2024,Thu Jun 13 2024 03:00:00 GMT-0400 (Eastern Daylight Time),532718,Parking and Transportation,2086.2,J0847478,323556,posted
+FY2024,Thu Jun 13 2024 03:00:00 GMT-0400 (Eastern Daylight Time),532715,Parking and Transportation,10932.6,J0847568,323111,posted
+FY2024,Fri Jun 14 2024 03:00:00 GMT-0400 (Eastern Daylight Time),566051,Media Support Services,683.11,J0847768,123100,posted
+FY2024,Mon Jun 17 2024 03:00:00 GMT-0400 (Eastern Daylight Time),555826,Info Tech School of Dentistry,1767,J0847948,194303,posted
