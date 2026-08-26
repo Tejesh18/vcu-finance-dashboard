@@ -978,7 +978,7 @@ probeTableau();
 // ── LOAD ALL DATA ────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const [exp, expM, con, pos, tel, net, jv, fy27] = await Promise.all([
+    const [expRaw, expMRaw, con, pos, tel, net, jv, fy27] = await Promise.all([
       fetchCSV(IDS.exp_clean),
       fetchCSV(IDS.exp_monthly),
       fetchCSV(IDS.contracts),
@@ -988,6 +988,19 @@ async function loadData() {
       fetchCSV(IDS.jv),
       fetchCSV(IDS.fy27),
     ]);
+
+    // Safety-net filter: the raw source data contains summary/total rows
+    // (e.g. "Total FY 23-24", "exp. budget", "rev. budget") mixed in among
+    // real per-category spending — one org-wide total row landing under a
+    // single department can inflate that department's sum by millions.
+    // Filters out anything that looks like a summary row rather than a
+    // real spending category.
+    const isSummaryRow_ = cat => {
+      const c = String(cat || '').toLowerCase();
+      return c.startsWith('total') || c.includes('budget') || c === 'nan';
+    };
+    const exp = expRaw.filter(r => !isSummaryRow_(r.Category));
+    const expM = expMRaw.filter(r => !isSummaryRow_(r.Category));
 
     // ── DATA FRESHNESS (computed from the data itself, never hardcoded) ──
     const allDates = [
@@ -1004,6 +1017,11 @@ async function loadData() {
 
     // ── EXPENDITURES ─────────────────────────────────────────────────
     const fyTotal = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Expenditure), 0);
+    // KNOWN LIMITATION (pre-existing, not fixed here): Perm_Budget in the
+    // raw source is unreliable for FY-level totals — confirmed by the
+    // project's own earlier notes. This sum is an approximation; the FY27
+    // budget figures below (from Felita's dedicated budget file) are the
+    // reliable ones. Don't treat FY24-26 utilization % as precise.
     const fyBudget = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Perm_Budget), 0);
 
     const t24=fyTotal('FY24'), b24=fyBudget('FY24');
