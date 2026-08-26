@@ -825,17 +825,44 @@ function set(id, val) {
   if (el) el.textContent = val;
 }
 
+// Proper character-by-character CSV field parser — correctly handles empty
+// fields (consecutive commas), quoted fields with embedded commas, and
+// escaped quotes ("") — unlike a naive regex split, which silently drops
+// empty fields and misaligns every column after the gap.
+function parseCsvLine_(line) {
+  const result = [];
+  let cur = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { cur += '"'; i++; }
+        else { inQuotes = false; }
+      } else {
+        cur += ch;
+      }
+    } else {
+      if (ch === '"') inQuotes = true;
+      else if (ch === ',') { result.push(cur); cur = ''; }
+      else cur += ch;
+    }
+  }
+  result.push(cur);
+  return result;
+}
+
 async function fetchCSV(id) {
   const url = driveURL(id);
   const resp = await fetch(url);
   const text = await resp.text();
   const lines = text.trim().split('\n');
   if (lines.length < 2) return [];
-  const headers = lines[0].split(',').map(h => h.replace(/"/g,'').trim());
+  const headers = parseCsvLine_(lines[0]).map(h => h.trim());
   return lines.slice(1).map(line => {
-    const vals = line.match(/(".*?"|[^,]+)(?=,|$)/g) || [];
+    const vals = parseCsvLine_(line);
     const obj = {};
-    headers.forEach((h,i) => obj[h] = (vals[i]||'').replace(/"/g,'').trim());
+    headers.forEach((h,i) => obj[h] = (vals[i]||'').trim());
     return obj;
   });
 }
