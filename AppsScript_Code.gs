@@ -421,9 +421,24 @@ const CONTRACT_DEPT_SHEETS = ['InfoSec/EndPoint', 'Application Svcs', 'TS Admini
   'Technology Support Svcs', 'Academic Technologies', 'Network/UCC',
   'Administrative Systems', 'Central Maintenance'];
 
+// Calendar-day count to a date, not a raw millisecond/24h division. The old
+// version did `renewalDate - new Date()` and floored — but new Date() carries
+// today's actual time-of-day while renewalDate is midnight, so anything run
+// after midnight loses most of a day and undercounts by one (confirmed live:
+// a Sept 13 renewal checked on Sept 3 showed "9 days" instead of 10). This
+// zeroes both sides to midnight first so the count matches what a calendar
+// would show, regardless of what time the script happens to run.
+function daysUntil_(date) {
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  const startOfDate = new Date(date);
+  startOfDate.setHours(0, 0, 0, 0);
+  return Math.round((startOfDate - startOfToday) / 86400000);
+}
+
 function getContractStatus_(renewalDate) {
   if (!renewalDate) return 'Unknown';
-  const days = Math.floor((renewalDate - new Date()) / 86400000);
+  const days = daysUntil_(renewalDate);
   if (days < 0) return 'Expired';
   if (days <= 90) return 'Expiring Soon';
   return 'Active';
@@ -457,7 +472,7 @@ function processContracts_(folder) {
         Renewal_Date: renewalDate ? Utilities.formatDate(renewalDate, Session.getScriptTimeZone(), 'yyyy-MM-dd') : '',
         Funding_Source: row[5] || '',
         Status: getContractStatus_(renewalDate),
-        Days_Until_Expiry: renewalDate ? Math.floor((renewalDate - new Date()) / 86400000) : '',
+        Days_Until_Expiry: renewalDate ? daysUntil_(renewalDate) : '',
       });
     }
   });
