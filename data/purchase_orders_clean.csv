@@ -6,6 +6,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-23102,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220692547,P0354730,initMax,9477.5,0,9477.5,,123102,637037,
 1-23151,Thu Aug 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219515542,P0350036,Dell,1609.33,1609.33,0,Mon Aug 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,620097,Korbyt Player for Honors College
 1-23151,Tue Aug 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219959353,P0351804,Alertus,2751.36,2751.36,0,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,620097,Spare Driver
+1-23151,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220713893,P0354842,Intervision,5214,5214,0,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,600080,AdHoc Troubleshooting for Alertus System
 1-23152,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204394662,P0292610,Sycom,40000,39924.16,75.83999999999651,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,637037,Managed Cloud FinOps (7/25/25-7/25/26)
 1-23152,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218848230,P0349225,SANS,19912,19912,0,Tue Aug 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,638057,
 1-23152,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218887361,P0347668,Universal Background,500,0,500,,123152,6001857,Background Checks for Interns
@@ -39,7 +40,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38011,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218911118,P0347671,Amazon,204.78,204.78,0,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,July'26 Order
 1-38011,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219563110,P03501936,4Imprint,1589.78,1589.78,0,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Swag Order
 1-38011,Wed Aug 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219771276,P0351135,4AllPromos,2138.53,0,2138.53,,138011,620012,Swag Order
-1-38011,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),213713039,P0354730,B&B Printing,80.1,0,80.1,,138011,620012,
+1-38011,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),213713039,P0354730,B&B Printing,80.1,0,80.1,,138011,620012,Business Cards
 1-38017,Wed Mar 26 2025 00:00:00 GMT-0400 (Eastern Daylight Time),199394709,P0273495,Apple (Standing PO),31873.24,28225.879999999997,3647.360000000004,Tue Jun 09 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,To Pay fixIT Invoices for Remainder for FY25
 1-38017,Mon Aug 04 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204766461,P0293924,Dell (Standing PO for OOW),18500,8734.5,9765.5,Thu Aug 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,Blanket PO for OOW Parts
 1-38017,Wed Apr 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,P0330184,Insight Global LLC,61880,22515.64,39364.36,Mon Jul 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,600187,Temp help
