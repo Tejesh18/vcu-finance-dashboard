@@ -280,6 +280,23 @@ const SKIP_CATEGORIES = new Set([
   'technical support services', 'ts strategic communications', 'nan',
 ]);
 
+// SKIP_CATEGORIES above only catches an exact match, and real source data
+// has variants it doesn't anticipate — "Total FY 25-26" (not exactly "total
+// fy") and "exp. budget" (not in the list at all) both slipped through and
+// got summed in as if they were real spending line items, on top of the
+// actual categories they were meant to summarize. Confirmed against real
+// numbers: this alone inflated the computed FY26 total from a verified
+// $35.04M to $105.13M. This broader, pattern-based check is the real fix —
+// SKIP_CATEGORIES stays for the narrower cases (a division/department name
+// leaking in as a "category") that this pattern wouldn't catch.
+function isSkippedCategory_(cat) {
+  const c = String(cat).trim().toLowerCase();
+  if (!c || c === 'nan') return true;
+  if (c.startsWith('total')) return true;
+  if (c.includes('budget')) return true;
+  return SKIP_CATEGORIES.has(c);
+}
+
 function groupCategory_(cat) {
   const c = String(cat).toLowerCase();
   const has = (...keys) => keys.some(k => c.indexOf(k) !== -1);
@@ -354,7 +371,7 @@ function processExpenditures_(folder, orgMap) {
               if (isNaN(parseFloat(potential))) { category = String(potential).trim(); break; }
             }
           }
-          if (!category || SKIP_CATEGORIES.has(category.toLowerCase())) return;
+          if (!category || isSkippedCategory_(category)) return;
 
           const expenditure = parseFloat(data[r][monthCol]);
           if (isNaN(expenditure) || expenditure === 0) return;
