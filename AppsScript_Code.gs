@@ -258,9 +258,18 @@ function lookupDivision_(orgMap, code, fallback) {
 // (category 3 cols left of the date, Perm Budget 2 left, Current 1 left,
 // Balance 3 right) line up the same way in every block, so no separate parser
 // is needed — this just reads both files and merges the results.
+//
+// Tabs are matched by name pattern ("TS E&G FY##"), not an exact list, so
+// when Felita adds a new fiscal year (a "TS E&G FY28" tab, etc.) it's picked
+// up automatically — no code change needed, as long as she adds it as a new
+// tab in rawExcelIdNew rather than a whole new file. minFy/maxFy just fence
+// off which years each file is allowed to contribute, so the old file's
+// FY26 tab (superseded, no longer maintained) doesn't get double-counted
+// alongside the new file's FY26 tab.
+const FY_TAB_RE = /^TS E&G FY(\d{2})$/;
 const EXPENDITURE_SOURCES = [
-  { fileId: CONFIG.rawExcelId, sheetMap: { 'TS E&G FY24': 'FY24', 'TS E&G FY25': 'FY25' } },
-  { fileId: CONFIG.rawExcelIdNew, sheetMap: { 'TS E&G FY26': 'FY26', 'TS E&G FY27': 'FY27' } },
+  { fileId: CONFIG.rawExcelId, minFy: 0, maxFy: 25 },     // FY24/FY25 only — Felita stopped maintaining this file after FY25
+  { fileId: CONFIG.rawExcelIdNew, minFy: 26, maxFy: 99 }, // FY26 onward, open-ended
 ];
 
 const SKIP_CATEGORIES = new Set([
@@ -298,16 +307,24 @@ function processExpenditures_(folder, orgMap) {
 
   EXPENDITURE_SOURCES.forEach(source => {
     if (!source.fileId) return;
-    const sheets = readXlsxAsSheet_(source.fileId, Object.keys(source.sheetMap));
-    if (Object.keys(sheets).length === 0) {
-      Logger.log('WARNING: none of the expected tabs (%s) were found in file %s — check the tab names haven\'t changed.',
-        Object.keys(source.sheetMap).join(', '), source.fileId);
+    // Read every tab (no name filter), then match by pattern below — the
+    // expensive part of readXlsxAsSheet_ is the one-time xlsx->Sheet
+    // conversion of the whole file, not reading a few extra tabs afterward.
+    const allSheets = readXlsxAsSheet_(source.fileId, null);
+    const matchedNames = Object.keys(allSheets).filter(name => {
+      const m = name.match(FY_TAB_RE);
+      if (!m) return false;
+      const fyNum = parseInt(m[1], 10);
+      return fyNum >= source.minFy && fyNum <= source.maxFy;
+    });
+    if (matchedNames.length === 0) {
+      Logger.log('WARNING: no tabs matching "TS E&G FY##" (FY%s-FY%s) found in file %s — check the naming convention hasn\'t changed.',
+        source.minFy, source.maxFy, source.fileId);
     }
 
-    Object.keys(sheets).forEach(sheetName => {
-      const fy = source.sheetMap[sheetName];
-      if (!fy) return;
-      const data = sheets[sheetName];
+    matchedNames.forEach(sheetName => {
+      const fy = 'FY' + sheetName.match(FY_TAB_RE)[1];
+      const data = allSheets[sheetName];
 
       // Find columns that look like "a/o M/D/YY" month headers
       const monthCols = [];
