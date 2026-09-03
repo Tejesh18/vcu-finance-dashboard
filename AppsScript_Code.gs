@@ -268,8 +268,11 @@ function lookupDivision_(orgMap, code, fallback) {
 // alongside the new file's FY26 tab.
 const FY_TAB_RE = /^TS E&G FY(\d{2})$/;
 const EXPENDITURE_SOURCES = [
-  { fileId: CONFIG.rawExcelId, minFy: 0, maxFy: 25 },     // FY24/FY25 only — Felita stopped maintaining this file after FY25
-  { fileId: CONFIG.rawExcelIdNew, minFy: 26, maxFy: 99 }, // FY26 onward, open-ended
+  // FY24/FY25 only — Felita stopped maintaining this file after FY25, so
+  // it's frozen. cacheKey means: convert it once, cache the parsed rows,
+  // and skip the expensive xlsx conversion on every run after that.
+  { fileId: CONFIG.rawExcelId, minFy: 0, maxFy: 25, cacheKey: 'fy24_fy25' },
+  { fileId: CONFIG.rawExcelIdNew, minFy: 26, maxFy: 99 }, // actively maintained — always read fresh
 ];
 
 const SKIP_CATEGORIES = new Set([
@@ -319,27 +322,22 @@ function getFiscalMonth_(date) {
 }
 const MONTH_NAMES_ = { 1: 'Jul', 2: 'Aug', 3: 'Sep', 4: 'Oct', 5: 'Nov', 6: 'Dec', 7: 'Jan', 8: 'Feb', 9: 'Mar', 10: 'Apr', 11: 'May', 12: 'Jun' };
 
-function processExpenditures_(folder, orgMap) {
-  const allRows = [];
+// Parses whichever tabs (already read into `allSheets`) fall in [minFy,maxFy]
+// into row objects. Pulled out of processExpenditures_ so it can be reused
+// both for a fresh read and for the one-time build of a cached source.
+function parseExpenditureSheets_(allSheets, minFy, maxFy, orgMap) {
+  const rows = [];
+  const matchedNames = Object.keys(allSheets).filter(name => {
+    const m = name.match(FY_TAB_RE);
+    if (!m) return false;
+    const fyNum = parseInt(m[1], 10);
+    return fyNum >= minFy && fyNum <= maxFy;
+  });
+  if (matchedNames.length === 0) {
+    Logger.log('WARNING: no tabs matching "TS E&G FY##" (FY%s-FY%s) — check the naming convention hasn\'t changed.', minFy, maxFy);
+  }
 
-  EXPENDITURE_SOURCES.forEach(source => {
-    if (!source.fileId) return;
-    // Read every tab (no name filter), then match by pattern below — the
-    // expensive part of readXlsxAsSheet_ is the one-time xlsx->Sheet
-    // conversion of the whole file, not reading a few extra tabs afterward.
-    const allSheets = readXlsxAsSheet_(source.fileId, null);
-    const matchedNames = Object.keys(allSheets).filter(name => {
-      const m = name.match(FY_TAB_RE);
-      if (!m) return false;
-      const fyNum = parseInt(m[1], 10);
-      return fyNum >= source.minFy && fyNum <= source.maxFy;
-    });
-    if (matchedNames.length === 0) {
-      Logger.log('WARNING: no tabs matching "TS E&G FY##" (FY%s-FY%s) found in file %s — check the naming convention hasn\'t changed.',
-        source.minFy, source.maxFy, source.fileId);
-    }
-
-    matchedNames.forEach(sheetName => {
+  matchedNames.forEach(sheetName => {
       const fy = 'FY' + sheetName.match(FY_TAB_RE)[1];
       const data = allSheets[sheetName];
 
@@ -383,7 +381,7 @@ function processExpenditures_(folder, orgMap) {
           const date = new Date(dateMatch);
           if (isNaN(date)) return;
 
-          allRows.push({
+          rows.push({
             FY: fy,
             Department: lookupDept_(orgMap, currentDept, currentDept),
             Division: lookupDivision_(orgMap, currentDept, 'Other'),
@@ -400,7 +398,42 @@ function processExpenditures_(folder, orgMap) {
           });
         });
       }
-    });
+  });
+  return rows;
+}
+
+function processExpenditures_(folder, orgMap) {
+  let allRows = [];
+
+  EXPENDITURE_SOURCES.forEach(source => {
+    if (!source.fileId) return;
+
+    if (source.cacheKey) {
+      // Frozen, no-longer-maintained source (Felita confirmed she's not
+      // touching this file past FY25) -- convert once, cache the parsed
+      // rows, and skip the expensive xlsx conversion on every run after
+      // that. This matters in practice: adding a second raw Excel source
+      // doubled the pipeline's single most expensive step and pushed some
+      // runs past Apps Script's 30-minute execution ceiling (confirmed via
+      // a real failure-notification email: "Exceeded maximum execution
+      // time", twice in one day).
+      const cacheFileName = 'cache_' + source.cacheKey + '.json';
+      const existing = folder.getFilesByName(cacheFileName);
+      if (existing.hasNext()) {
+        allRows = allRows.concat(JSON.parse(existing.next().getBlob().getDataAsString()));
+        return;
+      }
+      Logger.log('%s: no cache yet, converting once (one-time cost).', source.cacheKey);
+      const allSheets = readXlsxAsSheet_(source.fileId, null);
+      const rows = parseExpenditureSheets_(allSheets, source.minFy, source.maxFy, orgMap);
+      folder.createFile(cacheFileName, JSON.stringify(rows), MimeType.PLAIN_TEXT);
+      allRows = allRows.concat(rows);
+      return;
+    }
+
+    // Actively-maintained source — always read fresh.
+    const allSheets = readXlsxAsSheet_(source.fileId, null);
+    allRows = allRows.concat(parseExpenditureSheets_(allSheets, source.minFy, source.maxFy, orgMap));
   });
 
   const headers = ['FY', 'Department', 'Division', 'Month', 'Category', 'Category_Group', 'Perm_Budget', 'Current_Budget', 'Expenditure', 'Balance', 'Date', 'Fiscal_Month', 'Month_Name'];
@@ -414,6 +447,21 @@ function processExpenditures_(folder, orgMap) {
   });
   const lastRows = allRows.filter(r => r.Date === lastDateByKey[r.FY + '|' + r.Department]);
   writeCsv_(folder, 'expenditures_clean.csv', headers, lastRows);
+}
+
+// Manual escape hatch: run this once from the Apps Script editor if the old
+// file's cache ever needs rebuilding (e.g. a parsing bug fix, or it turns
+// out someone did touch that file after all). refreshAll will rebuild the
+// cache fresh on its next run.
+function clearHistoricalExpenditureCache_() {
+  const folder = getOutputFolder_();
+  EXPENDITURE_SOURCES.forEach(source => {
+    if (!source.cacheKey) return;
+    const cacheFileName = 'cache_' + source.cacheKey + '.json';
+    const existing = folder.getFilesByName(cacheFileName);
+    while (existing.hasNext()) existing.next().setTrashed(true);
+    Logger.log('Cleared cache: %s', cacheFileName);
+  });
 }
 
 // ===================== 2. CONTRACTS =====================
