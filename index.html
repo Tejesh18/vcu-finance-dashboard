@@ -988,6 +988,12 @@ function makeChart(id, type, data, options={}, plugins=[]) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
+      // barValuePlugin draws each bar's value 8px above its top edge. Without
+      // this, a bar tall enough to reach near the top of the canvas clips
+      // its own label against the canvas edge (seen live: "90" on the
+      // Active bar rendering as a clipped "9-"). Reserving space up front
+      // fixes it regardless of how close any bar gets to the axis max.
+      layout: { padding: { top: 20 } },
       ...options
     },
     plugins
