@@ -1175,10 +1175,17 @@ async function loadData() {
     // Live, same Perm_Budget-reliability caveat as util26 above — treat as
     // approximate, not precise.
     const utils = [b24?+(t24/b24*100).toFixed(1):0, b25?+(t25/b25*100).toFixed(1):0, b26?+(t26/b26*100).toFixed(1):0];
+    // min:70 was hardcoded assuming utilization always sits in a 70-135%
+    // band, true for FY24-26 (fully or mostly closed years) but not for a
+    // fiscal year that's just started — a few months of spend against a
+    // full annual budget is naturally well under 70%, so that year's bar
+    // rendered as invisible (below the axis floor) rather than 0-height.
+    // min:0 with no fixed max scales correctly for a closed year or a
+    // freshly-started one alike.
     makeChart('chart-util', 'bar', {
       labels: [FY_PREV2, FY_PREV1, FY_CUR],
       datasets: [{ data:utils, backgroundColor:utils.map(u=>u>100?'#d03b3b':'#0ca30c'), borderRadius:4, valueSuffix:'%' }]
-    }, { scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} }, [barValuePlugin]);
+    }, { scales:{y:{min:0,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} }, [barValuePlugin]);
 
     // Monthly trend
     const months = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
@@ -1382,7 +1389,7 @@ async function loadData() {
 
     // Static charts as fallback
     makeChart('chart-bva','bar',{labels:[FY_PREV2,FY_PREV1,FY_CUR],datasets:[{label:'Budget',data:[29.2,25.9,33.2],backgroundColor:'#444444',borderRadius:4},{label:'Actual',data:[33.7,32.3,28.9],backgroundColor:'#C49A00',borderRadius:4}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
-    makeChart('chart-util','bar',{labels:[FY_PREV2,FY_PREV1,FY_CUR],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#d03b3b','#d03b3b','#0ca30c'],borderRadius:4,valueSuffix:'%'}]},{scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
+    makeChart('chart-util','bar',{labels:[FY_PREV2,FY_PREV1,FY_CUR],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#d03b3b','#d03b3b','#0ca30c'],borderRadius:4,valueSuffix:'%'}]},{scales:{y:{min:0,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
     makeChart('chart-monthly','line',{labels:['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:FY_PREV2,data:[1.6,3.3,5.8,8.2,11.0,14.0,17.5,21.0,25.5,28.0,31.5,33.7],borderColor:'#B0B0B0',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:FY_PREV1,data:[1.5,3.8,5.9,7.9,10.5,13.8,17.2,21.0,25.2,27.8,30.8,32.3],borderColor:'#737373',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:FY_CUR,data:[1.7,4.2,6.2,8.6,11.1,14.5,18.4,22.0,25.5,28.2,null,null],borderColor:'#C49A00',tension:.3,pointRadius:0,borderWidth:2.5,fill:false}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
     makeChart('chart-cat','bar',{labels:['Salaries','Fringes','Bonus/OT','Software','Other'],datasets:[{data:[52,19,12,9,8],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}}});
     makeChart('chart-status','bar',{labels:['Active','Expired','Expiring Soon','Unknown'],datasets:[{data:[95,77,13,22],backgroundColor:['#0ca30c','#444444','#d03b3b','#C49A00'],borderRadius:4,valueSuffix:''}]},{scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}}});
