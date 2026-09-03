@@ -3,6 +3,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-23102,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219163443,P0349254,IP Datasystems,699234.32,0,699234.32,,123102,700017/600187,
 1-23102,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219566119,P0350205,Facility Support,7224,0,7224,,123102,620097,GPU Server for SMO
 1-23102,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220288747,,IP Datasystems,599190.64,0,599190.64,,123102,700017/600187,Virtual Computer DAR
+1-23102,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220692547,,initMax,9477.5,0,9477.5,,123102,637037,
 1-23151,Thu Aug 06 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219515542,P0350036,Dell,1609.33,1609.33,0,Mon Aug 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,620097,Korbyt Player for Honors College
 1-23151,Tue Aug 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219959353,P0351804,Alertus,2751.36,2751.36,0,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,620097,Spare Driver
 1-23152,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204394662,P0292610,Sycom,40000,39924.16,75.83999999999651,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,637037,Managed Cloud FinOps (7/25/25-7/25/26)
