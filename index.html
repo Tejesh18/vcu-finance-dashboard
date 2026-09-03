@@ -1156,12 +1156,18 @@ async function loadData() {
 
     // Monthly trend
     const months = ['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'];
+    // Expenditure in the source data is already a year-to-date cumulative
+    // figure at each snapshot date (e.g. "as of Aug 31" already includes
+    // July + August combined) — confirmed directly against the raw sheet.
+    // Summing every department/category for a given month gives the correct
+    // org-wide cumulative total AS OF that month already; running a second
+    // cumulative sum on top of that (like the old code did) double-counts
+    // every prior month again each time and inflates later months by 5-7x.
     const buildTrend = fy => {
       const byMonth = {};
       months.forEach(m => byMonth[m]=0);
       expM.filter(r=>r.FY===fy).forEach(r => { if(r.Month_Name && byMonth[r.Month_Name]!==undefined) byMonth[r.Month_Name]+=num(r.Expenditure); });
-      let cum=0;
-      return months.map(m => { cum+=byMonth[m]; return cum>0?+(cum/1e6).toFixed(2):null; });
+      return months.map(m => byMonth[m]>0 ? +(byMonth[m]/1e6).toFixed(2) : null);
     };
 
     makeChart('chart-monthly', 'line', {
