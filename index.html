@@ -83,6 +83,16 @@ html, body {
   font-size: 11px;
   color: #777;
 }
+.header-right-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.5;
+}
+.pipeline-status {
+  font-size: 10px;
+  color: #999;
+}
 
 .live-dot {
   width: 6px;
@@ -442,7 +452,10 @@ html, body {
   </div>
   <div class="header-right">
     <div class="live-dot"></div>
-    <span id="data-as-of">Live data · loading…</span>
+    <div class="header-right-text">
+      <span id="data-as-of">Live data · loading…</span>
+      <span id="pipeline-status" class="pipeline-status"></span>
+    </div>
   </div>
 </div>
 
@@ -1053,6 +1066,36 @@ async function probeTableau() {
   }
 }
 probeTableau();
+
+// ── PIPELINE STATUS (separate from data freshness) ─────────────────────
+// "source current through [date]" (above) says how fresh the underlying
+// numbers are. This says whether the automated pipeline itself is still
+// actually running — the two can differ (e.g. the source data genuinely
+// hasn't been updated with a new month yet vs. the hourly Apps Script
+// trigger has stopped firing). Fetched independently of the main data
+// load so a missing/first-run-not-existing-yet file can't break anything.
+async function loadPipelineStatus() {
+  const el = document.getElementById('pipeline-status');
+  if (!el) return;
+  try {
+    const resp = await fetch('data/last_refresh.csv?t=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const rows = parseCsvText_(await resp.text());
+    if (!rows.length || !rows[0].Refreshed_At) throw new Error('no data yet');
+    const d = new Date(rows[0].Refreshed_At);
+    if (isNaN(d)) throw new Error('bad date');
+    const hoursAgo = (Date.now() - d.getTime()) / 3600000;
+    const label = d.toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+    // The trigger runs hourly — anything past ~3 hours means it's likely
+    // stopped, so flag it in text (not color alone) as well as color.
+    const stale = hoursAgo > 3;
+    el.textContent = 'Pipeline last ran ' + label + (stale ? ' — may be stalled' : '');
+    el.style.color = stale ? '#B91C1C' : '#999';
+  } catch (e) {
+    el.textContent = '';
+  }
+}
+loadPipelineStatus();
 
 // ── LOAD ALL DATA ────────────────────────────────────────────────────
 async function loadData() {

@@ -94,6 +94,15 @@ function refreshAll() {
 
   Logger.log(JSON.stringify(results, null, 2));
 
+  // Stamps when this run happened, separate from how fresh the underlying
+  // source data is (those can differ — the data might genuinely not have a
+  // new month yet even on a run that completes fine). The website reads
+  // this to show whether the pipeline itself is still actually running.
+  writeCsv_(folder, 'last_refresh.csv', ['Refreshed_At', 'All_Steps_OK'], [{
+    Refreshed_At: Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd'T'HH:mm:ssXXX"),
+    All_Steps_OK: Object.values(results).every(v => v === 'OK'),
+  }]);
+
   // Pushes the refreshed CSVs into the GitHub repo so the website picks them
   // up same-origin. Deliberately left outside the try/catch pattern above
   // and re-thrown below: if this fails (expired/revoked token, GitHub
