@@ -19,16 +19,27 @@
  *    never copied anywhere, never committed to the repo.
  * 4. Fill in CONFIG below with your real file/sheet IDs (defaults here are the
  *    known ones from the project).
- * 5. Run `refreshAll` once manually (Run button) — Google will ask you to
- *    authorize; click Allow. Check the Execution log for errors.
- * 6. Click the clock icon (Triggers) -> Add Trigger -> refreshAll -> Time-driven
- *    -> Minutes timer -> Every 5 minutes.
+ * 5. GITHUB_TOKEN (required, not optional): the website reads its data from
+ *    committed CSVs in this GitHub repo (data/*.csv), not from Drive
+ *    directly — pushCsvsToGitHub_() at the bottom is what keeps those
+ *    current. Create a classic GitHub Personal Access Token (Settings ->
+ *    Developer settings -> Personal access tokens -> Tokens (classic) ->
+ *    Generate new token (classic)), check the "repo" scope, and set
+ *    Expiration to "No expiration" (fine-grained tokens cap out at 1 year
+ *    and are more likely to need manual renewal). Add it as a Script
+ *    Property named GITHUB_TOKEN. Without this, refreshAll() still updates
+ *    Drive but the live website will silently stay on stale data.
+ * 6. Run `refreshAll` once manually (Run button) — Google will ask you to
+ *    authorize; click Allow. Check the Execution log for errors, including
+ *    a "GitHub push: OK" line confirming step 5 actually worked.
+ * 7. Click the clock icon (Triggers) -> Add Trigger -> refreshAll -> Time-driven
+ *    -> Hour timer -> Every hour. (Not every 5 minutes — a run can take
+ *    several minutes under real trigger conditions, and a 5-minute interval
+ *    causes runs to pile up and hit Google's 30-minute execution cap.)
  *
- * OPTIONAL: also push the refreshed CSVs into the GitHub repo so the website
- * reads them same-origin instead of through the Drive+proxy path. See
- * pushCsvsToGitHub_() at the bottom — needs a GitHub Personal Access Token
- * stored in Script Properties (Project Settings -> Script Properties), never
- * pasted into this code.
+ * If refreshAll ever fails (including a GitHub push failure — e.g. an
+ * expired/revoked token), Apps Script emails the account that owns this
+ * project automatically. That's the signal to come back and check the log.
  */
 
 // ===================== CONFIG =====================
@@ -82,10 +93,20 @@ function refreshAll() {
   });
 
   Logger.log(JSON.stringify(results, null, 2));
+
   // Pushes the refreshed CSVs into the GitHub repo so the website picks them
-  // up same-origin. Needs GITHUB_TOKEN set in Script Properties — if it's
-  // missing, pushCsvsToGitHub_ logs a warning and skips itself harmlessly.
-  pushCsvsToGitHub_(folder);
+  // up same-origin. Deliberately left outside the try/catch pattern above
+  // and re-thrown below: if this fails (expired/revoked token, GitHub
+  // outage), we want Apps Script's built-in failure-notification email to
+  // fire so it actually gets noticed, instead of the website silently
+  // sitting on stale data with nothing in the log to flag why.
+  try {
+    pushCsvsToGitHub_(folder);
+    Logger.log('GitHub push: OK');
+  } catch (e) {
+    Logger.log('GitHub push FAILED: %s', e.message);
+    throw e;
+  }
 }
 
 // ===================== SHARED HELPERS =====================
@@ -619,38 +640,61 @@ function processFy27_(folder, orgMap) {
 //   GITHUB_TOKEN = a GitHub Personal Access Token with "repo" scope
 function pushCsvsToGitHub_(folder) {
   const token = PropertiesService.getScriptProperties().getProperty('GITHUB_TOKEN');
-  if (!token) { Logger.log('GITHUB_TOKEN not set — skipping GitHub push.'); return; }
+  if (!token) { throw new Error('GITHUB_TOKEN not set in Script Properties — see file header for setup.'); }
 
   const owner = 'Tejesh18';
   const repo = 'vcu-finance-dashboard';
   const files = folder.getFilesByType(MimeType.CSV);
+  const failures = [];
 
   while (files.hasNext()) {
     const file = files.next();
     const path = 'data/' + file.getName();
     const content = Utilities.base64Encode(file.getBlob().getBytes());
-
     const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-    let sha = null;
+
     try {
+      let sha = null;
       const getResp = UrlFetchApp.fetch(apiUrl, {
         headers: { Authorization: 'token ' + token },
         muteHttpExceptions: true,
       });
-      if (getResp.getResponseCode() === 200) sha = JSON.parse(getResp.getContentText()).sha;
-    } catch (e) { /* file doesn't exist yet — that's fine */ }
+      if (getResp.getResponseCode() === 200) {
+        sha = JSON.parse(getResp.getContentText()).sha;
+      } else if (getResp.getResponseCode() !== 404) {
+        // 404 just means the file doesn't exist in the repo yet, which is
+        // fine (we'll create it below). Anything else — 401/403 from an
+        // expired or revoked token included — is a real problem.
+        throw new Error(`GET ${file.getName()} failed (${getResp.getResponseCode()}): ${getResp.getContentText()}`);
+      }
 
-    UrlFetchApp.fetch(apiUrl, {
-      method: 'put',
-      contentType: 'application/json',
-      headers: { Authorization: 'token ' + token },
-      payload: JSON.stringify({
-        message: 'Automated data refresh: ' + file.getName(),
-        content: content,
-        sha: sha || undefined,
-      }),
-      muteHttpExceptions: true,
-    });
-    Logger.log('Pushed %s to GitHub', file.getName());
+      const putResp = UrlFetchApp.fetch(apiUrl, {
+        method: 'put',
+        contentType: 'application/json',
+        headers: { Authorization: 'token ' + token },
+        payload: JSON.stringify({
+          message: 'Automated data refresh: ' + file.getName(),
+          content: content,
+          sha: sha || undefined,
+        }),
+        muteHttpExceptions: true,
+      });
+      const code = putResp.getResponseCode();
+      // muteHttpExceptions means a bad token or dropped permission returns a
+      // normal-looking response instead of throwing — this used to log
+      // "Pushed" regardless of whether it actually worked, so a token going
+      // bad would silently leave the website on stale data with no warning.
+      if (code === 200 || code === 201) {
+        Logger.log('Pushed %s to GitHub', file.getName());
+      } else {
+        throw new Error(`PUT ${file.getName()} failed (${code}): ${putResp.getContentText()}`);
+      }
+    } catch (e) {
+      failures.push(e.message);
+    }
+  }
+
+  if (failures.length) {
+    throw new Error('GitHub push failed for ' + failures.length + ' file(s): ' + failures.join(' | '));
   }
 }
