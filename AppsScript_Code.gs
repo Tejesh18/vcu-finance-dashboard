@@ -33,7 +33,8 @@
 
 // ===================== CONFIG =====================
 const CONFIG = {
-  rawExcelId: '1bPBamW_Tui3_ty6FImaqANNTsAy2KYXZ',              // Felita's raw Excel
+  rawExcelId: '1bPBamW_Tui3_ty6FImaqANNTsAy2KYXZ',              // Felita's raw Excel (FY24/FY25 only, kept for history)
+  rawExcelIdNew: '1iB0kOjFUDtPhD9SWxvGPsYmgwpq2ndjE',           // Felita's newer sheet (FY26/FY27, actively maintained)
   contractsSheetId: '1F9gtr5UnzdwNHqXJ7kRoQW1jUSCd-e-lJiSjFpw_Iw8',
   tsPosSheetId: '1Gb9Lo0DHTHcsHNoKFOWdw-kcjQWH-SSDk0wFmChplXM',
   telecomSheetId: '1rRUBJP4EKW9MAeXyKwUNo8j98_0cMI-0StdVd-inE50',
@@ -217,11 +218,18 @@ function lookupDivision_(orgMap, code, fallback) {
 }
 
 // ===================== 1. EXPENDITURES (raw Excel) =====================
-const FY_SHEET_MAP = {
-  'TS E&G FY24': 'FY24',
-  'TS E&G FY25': 'FY25',
-  'TS E&G FY26': 'FY26',
-};
+// FY24/FY25 only exist in Felita's original raw Excel (kept around purely for
+// history — she's not updating it anymore). FY26/FY27 come from her newer
+// sheet, which she does keep current. Same "a/o M/D/Y" wide layout in both —
+// the newer one just lays all 12 months of a fiscal year side-by-side per
+// department instead of one month per row, but the column offsets below
+// (category 3 cols left of the date, Perm Budget 2 left, Current 1 left,
+// Balance 3 right) line up the same way in every block, so no separate parser
+// is needed — this just reads both files and merges the results.
+const EXPENDITURE_SOURCES = [
+  { fileId: CONFIG.rawExcelId, sheetMap: { 'TS E&G FY24': 'FY24', 'TS E&G FY25': 'FY25' } },
+  { fileId: CONFIG.rawExcelIdNew, sheetMap: { 'TS E&G FY26': 'FY26', 'TS E&G FY27': 'FY27' } },
+];
 
 const SKIP_CATEGORIES = new Set([
   'total budget', 'personal services', 'central services', 'total fy',
@@ -254,71 +262,79 @@ function getFiscalMonth_(date) {
 const MONTH_NAMES_ = { 1: 'Jul', 2: 'Aug', 3: 'Sep', 4: 'Oct', 5: 'Nov', 6: 'Dec', 7: 'Jan', 8: 'Feb', 9: 'Mar', 10: 'Apr', 11: 'May', 12: 'Jun' };
 
 function processExpenditures_(folder, orgMap) {
-  const sheets = readXlsxAsSheet_(CONFIG.rawExcelId, Object.keys(FY_SHEET_MAP));
   const allRows = [];
 
-  Object.keys(sheets).forEach(sheetName => {
-    const fy = FY_SHEET_MAP[sheetName];
-    if (!fy) return;
-    const data = sheets[sheetName];
-
-    // Find columns that look like "a/o M/D/YY" month headers
-    const monthCols = [];
-    for (let r = 0; r < data.length; r++) {
-      for (let c = 0; c < data[r].length; c++) {
-        const val = String(data[r][c]);
-        if (val.indexOf('a/o') !== -1 && /\d+\/\d+\/\d+/.test(val)) {
-          if (!monthCols.some(m => m[0] === c)) monthCols.push([c, val.trim()]);
-        }
-      }
+  EXPENDITURE_SOURCES.forEach(source => {
+    if (!source.fileId) return;
+    const sheets = readXlsxAsSheet_(source.fileId, Object.keys(source.sheetMap));
+    if (Object.keys(sheets).length === 0) {
+      Logger.log('WARNING: none of the expected tabs (%s) were found in file %s — check the tab names haven\'t changed.',
+        Object.keys(source.sheetMap).join(', '), source.fileId);
     }
 
-    let currentDept = 'Unknown';
-    for (let r = 0; r < data.length; r++) {
-      for (const checkCol of [0, 1]) {
-        const cellVal = String(data[r][checkCol]).trim();
-        if (orgMap[cellVal]) { currentDept = cellVal; break; } // keep the Org code; resolve name at write-time
-      }
+    Object.keys(sheets).forEach(sheetName => {
+      const fy = source.sheetMap[sheetName];
+      if (!fy) return;
+      const data = sheets[sheetName];
 
-      monthCols.forEach(([monthCol, monthLabel]) => {
-        let category = null;
-        for (const offset of [-3, -2, -1]) {
-          const catCol = monthCol + offset;
-          if (catCol < 0) continue;
-          const potential = data[r][catCol];
-          if (potential !== '' && potential !== null && String(potential).trim() !== 'nan') {
-            if (isNaN(parseFloat(potential))) { category = String(potential).trim(); break; }
+      // Find columns that look like "a/o M/D/YY" month headers
+      const monthCols = [];
+      for (let r = 0; r < data.length; r++) {
+        for (let c = 0; c < data[r].length; c++) {
+          const val = String(data[r][c]);
+          if (val.indexOf('a/o') !== -1 && /\d+\/\d+\/\d+/.test(val)) {
+            if (!monthCols.some(m => m[0] === c)) monthCols.push([c, val.trim()]);
           }
         }
-        if (!category || SKIP_CATEGORIES.has(category.toLowerCase())) return;
+      }
 
-        const expenditure = parseFloat(data[r][monthCol]);
-        if (isNaN(expenditure) || expenditure === 0) return;
-        const permBudget = monthCol >= 2 ? parseFloat(data[r][monthCol - 2]) || 0 : 0;
-        const currentBudget = monthCol >= 1 ? parseFloat(data[r][monthCol - 1]) || 0 : 0;
-        const balance = parseFloat(data[r][monthCol + 3]) || 0;
+      let currentDept = 'Unknown';
+      for (let r = 0; r < data.length; r++) {
+        for (const checkCol of [0, 1]) {
+          const cellVal = String(data[r][checkCol]).trim();
+          if (orgMap[cellVal]) { currentDept = cellVal; break; } // keep the Org code; resolve name at write-time
+        }
 
-        const dateMatch = monthLabel.replace('a/o', '').trim();
-        const date = new Date(dateMatch);
-        if (isNaN(date)) return;
+        monthCols.forEach(([monthCol, monthLabel]) => {
+          let category = null;
+          for (const offset of [-3, -2, -1]) {
+            const catCol = monthCol + offset;
+            if (catCol < 0) continue;
+            const potential = data[r][catCol];
+            if (potential !== '' && potential !== null && String(potential).trim() !== 'nan') {
+              if (isNaN(parseFloat(potential))) { category = String(potential).trim(); break; }
+            }
+          }
+          if (!category || SKIP_CATEGORIES.has(category.toLowerCase())) return;
 
-        allRows.push({
-          FY: fy,
-          Department: lookupDept_(orgMap, currentDept, currentDept),
-          Division: lookupDivision_(orgMap, currentDept, 'Other'),
-          Month: monthLabel,
-          Category: category,
-          Category_Group: groupCategory_(category),
-          Perm_Budget: permBudget,
-          Current_Budget: currentBudget,
-          Expenditure: expenditure,
-          Balance: balance,
-          Date: Utilities.formatDate(date, Session.getScriptTimeZone(), 'yyyy-MM-dd'),
-          Fiscal_Month: getFiscalMonth_(date),
-          Month_Name: MONTH_NAMES_[getFiscalMonth_(date)],
+          const expenditure = parseFloat(data[r][monthCol]);
+          if (isNaN(expenditure) || expenditure === 0) return;
+          const permBudget = monthCol >= 2 ? parseFloat(data[r][monthCol - 2]) || 0 : 0;
+          const currentBudget = monthCol >= 1 ? parseFloat(data[r][monthCol - 1]) || 0 : 0;
+          const balance = parseFloat(data[r][monthCol + 3]) || 0;
+
+          const dateMatch = monthLabel.replace('a/o', '').trim();
+          const date = new Date(dateMatch);
+          if (isNaN(date)) return;
+
+          allRows.push({
+            FY: fy,
+            Department: lookupDept_(orgMap, currentDept, currentDept),
+            Division: lookupDivision_(orgMap, currentDept, 'Other'),
+            Month: monthLabel,
+            Category: category,
+            Category_Group: groupCategory_(category),
+            Perm_Budget: permBudget,
+            Current_Budget: currentBudget,
+            Expenditure: expenditure,
+            Balance: balance,
+            Date: Utilities.formatDate(date, Session.getScriptTimeZone(), 'yyyy-MM-dd'),
+            Fiscal_Month: getFiscalMonth_(date),
+            Month_Name: MONTH_NAMES_[getFiscalMonth_(date)],
+          });
         });
-      });
-    }
+      }
+    });
   });
 
   const headers = ['FY', 'Department', 'Division', 'Month', 'Category', 'Category_Group', 'Perm_Budget', 'Current_Budget', 'Expenditure', 'Balance', 'Date', 'Fiscal_Month', 'Month_Name'];

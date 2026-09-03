@@ -449,17 +449,17 @@ html, body {
 <!-- KPI STRIP -->
 <div class="kpi-strip">
   <div class="kpi-cell">
-    <div class="kpi-label">FY26 Total Spend</div>
+    <div class="kpi-label"><span class="fy-cur">FY26</span> Total Spend</div>
     <div class="kpi-val gold" id="k-spend">—</div>
     <div class="kpi-note">All TS departments</div>
   </div>
   <div class="kpi-cell">
-    <div class="kpi-label">FY27 Budget</div>
+    <div class="kpi-label"><span class="fy-cur">FY27</span> Budget</div>
     <div class="kpi-val" id="k-fy27">—</div>
     <div class="kpi-note">Approved allocation</div>
   </div>
   <div class="kpi-cell">
-    <div class="kpi-label">FY26 Utilization</div>
+    <div class="kpi-label"><span class="fy-cur">FY26</span> Utilization</div>
     <div class="kpi-val" id="k-util">—</div>
     <div class="kpi-note">vs permanent budget</div>
   </div>
@@ -517,24 +517,24 @@ html, body {
     <div class="view-toggle" id="tbtn-0" onclick="showTableau(0)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card gold">
-        <div class="metric-label">FY26 Total Spend</div>
+        <div class="metric-label"><span class="fy-cur">FY26</span> Total Spend</div>
         <div class="metric-value" id="m-spend">—</div>
         <div class="metric-sub">Across all TS departments</div>
       </div>
       <div class="metric-card" id="m-util-card">
-        <div class="metric-label">FY26 Utilization</div>
+        <div class="metric-label"><span class="fy-cur">FY26</span> Utilization</div>
         <div class="metric-value" id="m-util">—</div>
         <div class="metric-sub" id="m-util-sub">vs. permanent budget</div>
       </div>
       <div class="metric-card blue">
-        <div class="metric-label">FY27 Budget</div>
+        <div class="metric-label"><span class="fy-cur">FY27</span> Budget</div>
         <div class="metric-value" id="m-fy27b">—</div>
-        <div class="metric-sub">Approved as of July 2026</div>
+        <div class="metric-sub">Approved allocation</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">FY27 Spent So Far</div>
+        <div class="metric-label"><span class="fy-cur">FY27</span> Spent So Far</div>
         <div class="metric-value" id="m-fy27s">—</div>
-        <div class="metric-sub">Through July 30, 2026</div>
+        <div class="metric-sub">So far this fiscal year</div>
       </div>
     </div>
     <div class="charts-grid">
@@ -548,7 +548,7 @@ html, body {
       </div>
     </div>
     <div class="table-panel">
-      <div class="table-panel-header">FY27 Budget by Department (Top 10 by Budget)</div>
+      <div class="table-panel-header"><span class="fy-cur">FY27</span> Budget by Department (Top 10 by Budget)</div>
       <table class="data-table">
         <thead>
           <tr>
@@ -580,17 +580,17 @@ html, body {
     <div class="view-toggle" id="tbtn-1" onclick="showTableau(1)">View live Tableau embed (requires Tableau login) ↑</div>
     <div class="metrics">
       <div class="metric-card gold">
-        <div class="metric-label">FY24 Total</div>
+        <div class="metric-label"><span class="fy-prev2">FY24</span> Total</div>
         <div class="metric-value" id="m-fy24">—</div>
         <div class="metric-sub">All departments</div>
       </div>
       <div class="metric-card gold">
-        <div class="metric-label">FY25 Total</div>
+        <div class="metric-label"><span class="fy-prev1">FY25</span> Total</div>
         <div class="metric-value" id="m-fy25">—</div>
         <div class="metric-sub">All departments</div>
       </div>
       <div class="metric-card gold">
-        <div class="metric-label">FY26 Total</div>
+        <div class="metric-label"><span class="fy-cur">FY26</span> Total</div>
         <div class="metric-value" id="m-fy26">—</div>
         <div class="metric-sub">All departments</div>
       </div>
@@ -602,18 +602,18 @@ html, body {
     </div>
     <div class="charts-grid">
       <div class="chart-panel">
-        <div class="chart-panel-title">Monthly Spend Trend — FY24 to FY26</div>
+        <div class="chart-panel-title">Monthly Spend Trend — <span class="fy-prev2">FY24</span> to <span class="fy-cur">FY26</span></div>
         <div class="chart-area"><canvas id="chart-monthly"></canvas></div>
       </div>
       <div class="chart-panel">
-        <div class="chart-panel-title">Spend by Category — FY26</div>
+        <div class="chart-panel-title">Spend by Category — <span class="fy-cur">FY26</span></div>
         <div class="chart-area"><canvas id="chart-cat"></canvas></div>
       </div>
     </div>
     <div class="table-panel">
-      <div class="table-panel-header">Top Departments by FY26 Spend</div>
+      <div class="table-panel-header">Top Departments by <span class="fy-cur">FY26</span> Spend</div>
       <table class="data-table">
-        <thead><tr><th>Department</th><th>Division</th><th>FY24</th><th>FY25</th><th>FY26</th></tr></thead>
+        <thead><tr><th>Department</th><th>Division</th><th class="fy-prev2">FY24</th><th class="fy-prev1">FY25</th><th class="fy-cur">FY26</th></tr></thead>
         <tbody id="dept-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
       </table>
     </div>
@@ -831,6 +831,35 @@ const PROXIES = [
   raw => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(raw),
 ];
 const driveRawURL = id => `https://drive.google.com/uc?export=download&id=${id}`;
+
+// ── FISCAL YEAR (auto-computed from today's date) ──────────────────────
+// VCU's fiscal year runs July 1 – June 30 and is labeled by the year it
+// ends in (e.g. July 2025–June 2026 = "FY26"). Everything the dashboard
+// calls "current year" — the KPI strip, Budget vs Actual, Utilization,
+// the monthly trend, the dept table — is driven off these four values
+// instead of a hardcoded "FY26", so the whole dashboard rolls forward on
+// its own every July 1 without anyone needing to edit this file next year.
+const fyLabel_ = endYear => 'FY' + String(endYear).slice(-2);
+const FY_CUR_END = (new Date().getMonth() + 1) >= 7 ? new Date().getFullYear() + 1 : new Date().getFullYear();
+const FY_CUR = fyLabel_(FY_CUR_END);       // e.g. 'FY27' any time from Jul 2026 - Jun 2027
+const FY_PREV1 = fyLabel_(FY_CUR_END - 1); // e.g. 'FY26'
+const FY_PREV2 = fyLabel_(FY_CUR_END - 2); // e.g. 'FY25'
+// Note: the "budget preview" panel (m-fy27b/m-fy27s/fy27-table, sourced from
+// its own dedicated budget file — see fyBudget's caveat below) tracks this
+// SAME current year, not the year after it. It exists because Perm_Budget in
+// the main expenditures data is unreliable, not because it's forward-looking.
+
+// Fills in every "FY26 Total Spend"-style label in the HTML from the spans
+// below, tagged with a class instead of a hardcoded year. Runs immediately
+// (not inside loadData) so labels are correct even if the data fetch fails
+// and the dashboard falls back to static figures.
+function applyFYLabels() {
+  const set_ = (cls, val) => document.querySelectorAll('.' + cls).forEach(el => el.textContent = val);
+  set_('fy-prev2', FY_PREV2);
+  set_('fy-prev1', FY_PREV1);
+  set_('fy-cur', FY_CUR);
+}
+applyFYLabels();
 
 function parseCsvText_(text) {
   const lines = text.trim().split('\n');
@@ -1066,17 +1095,20 @@ async function loadData() {
     }
 
     // ── EXPENDITURES ─────────────────────────────────────────────────
+    // "t26/b26" etc below always mean "current FY / 1 back / 2 back" per
+    // FY_CUR/FY_PREV1/FY_PREV2 (auto-computed above) — the names are just
+    // left over from when FY26 happened to be current; they shift with it.
     const fyTotal = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Expenditure), 0);
     // KNOWN LIMITATION (pre-existing, not fixed here): Perm_Budget in the
     // raw source is unreliable for FY-level totals — confirmed by the
-    // project's own earlier notes. This sum is an approximation; the FY27
+    // project's own earlier notes. This sum is an approximation; the next-FY
     // budget figures below (from Felita's dedicated budget file) are the
-    // reliable ones. Don't treat FY24-26 utilization % as precise.
+    // reliable ones. Don't treat these utilization %s as precise.
     const fyBudget = fy => exp.filter(r => r.FY===fy).reduce((s,r) => s+num(r.Perm_Budget), 0);
 
-    const t24=fyTotal('FY24'), b24=fyBudget('FY24');
-    const t25=fyTotal('FY25'), b25=fyBudget('FY25');
-    const t26=fyTotal('FY26'), b26=fyBudget('FY26');
+    const t24=fyTotal(FY_PREV2), b24=fyBudget(FY_PREV2);
+    const t25=fyTotal(FY_PREV1), b25=fyBudget(FY_PREV1);
+    const t26=fyTotal(FY_CUR), b26=fyBudget(FY_CUR);
     // Perm_Budget is known-unreliable at the source (flagged in the
     // project's own notes before today) — the % itself is an approximation,
     // not a precise figure. We still show it live rather than a hardcoded
@@ -1094,14 +1126,14 @@ async function loadData() {
     if (kUtilEl) kUtilEl.className = 'kpi-val ' + (overBudget26 ? 'red' : 'green');
     const mUtilCard = document.getElementById('m-util-card');
     if (mUtilCard) mUtilCard.className = 'metric-card ' + (overBudget26 ? 'red' : 'green');
-    set('m-util-sub', overBudget26 ? 'Over permanent budget for FY26' : 'Under permanent budget for FY26');
+    set('m-util-sub', (overBudget26 ? 'Over' : 'Under') + ' permanent budget for ' + FY_CUR);
     set('m-fy24', fmt(t24));
     set('m-fy25', fmt(t25));
     set('m-fy26', fmt(t26));
 
     // Budget vs Actual chart
     makeChart('chart-bva', 'bar', {
-      labels: ['FY24', 'FY25', 'FY26'],
+      labels: [FY_PREV2, FY_PREV1, FY_CUR],
       datasets: [
         // Budget bars are live (same Perm_Budget approximation caveat as
         // above). Actual (spend) is live and separately verified accurate.
@@ -1118,7 +1150,7 @@ async function loadData() {
     // approximate, not precise.
     const utils = [b24?+(t24/b24*100).toFixed(1):0, b25?+(t25/b25*100).toFixed(1):0, b26?+(t26/b26*100).toFixed(1):0];
     makeChart('chart-util', 'bar', {
-      labels: ['FY24','FY25','FY26'],
+      labels: [FY_PREV2, FY_PREV1, FY_CUR],
       datasets: [{ data:utils, backgroundColor:utils.map(u=>u>100?'#d03b3b':'#0ca30c'), borderRadius:4, valueSuffix:'%' }]
     }, { scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}} }, [barValuePlugin]);
 
@@ -1135,15 +1167,15 @@ async function loadData() {
     makeChart('chart-monthly', 'line', {
       labels: months,
       datasets: [
-        { label:'FY24', data:buildTrend('FY24'), borderColor:'#B0B0B0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
-        { label:'FY25', data:buildTrend('FY25'), borderColor:'#737373', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
-        { label:'FY26', data:buildTrend('FY26'), borderColor:'#C49A00', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
+        { label:FY_PREV2, data:buildTrend(FY_PREV2), borderColor:'#B0B0B0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+        { label:FY_PREV1, data:buildTrend(FY_PREV1), borderColor:'#737373', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+        { label:FY_CUR, data:buildTrend(FY_CUR), borderColor:'#C49A00', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
       ]
     }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}} });
 
-    // Category breakdown FY26
+    // Category breakdown, current FY
     const cats = {};
-    exp.filter(r=>r.FY==='FY26').forEach(r => { const c=r.Category_Group||'Other'; cats[c]=(cats[c]||0)+num(r.Expenditure); });
+    exp.filter(r=>r.FY===FY_CUR).forEach(r => { const c=r.Category_Group||'Other'; cats[c]=(cats[c]||0)+num(r.Expenditure); });
     const catArr = Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,7);
     makeChart('chart-cat', 'bar', {
       labels: catArr.map(e=>e[0]),
@@ -1152,20 +1184,20 @@ async function loadData() {
 
     // Dept table
     const deptData = {};
-    ['FY24','FY25','FY26'].forEach(fy => {
+    [FY_PREV2, FY_PREV1, FY_CUR].forEach(fy => {
       exp.filter(r=>r.FY===fy).forEach(r => {
-        if(!deptData[r.Department]) deptData[r.Department]={FY24:0,FY25:0,FY26:0,Division:r.Division||'—'};
+        if(!deptData[r.Department]) deptData[r.Department]={[FY_PREV2]:0,[FY_PREV1]:0,[FY_CUR]:0,Division:r.Division||'—'};
         deptData[r.Department][fy]+=num(r.Expenditure);
       });
     });
-    const deptArr = Object.entries(deptData).sort((a,b)=>b[1].FY26-a[1].FY26).slice(0,10);
+    const deptArr = Object.entries(deptData).sort((a,b)=>b[1][FY_CUR]-a[1][FY_CUR]).slice(0,10);
     document.getElementById('dept-table').innerHTML = deptArr.map(([dept,d])=>`
       <tr>
         <td>${dept}</td>
         <td style="color:#888;font-size:11px">${d.Division}</td>
-        <td>${fmt(d.FY24)}</td>
-        <td>${fmt(d.FY25)}</td>
-        <td><strong>${fmt(d.FY26)}</strong></td>
+        <td>${fmt(d[FY_PREV2])}</td>
+        <td>${fmt(d[FY_PREV1])}</td>
+        <td><strong>${fmt(d[FY_CUR])}</strong></td>
       </tr>`).join('');
 
     // ── FY27 ─────────────────────────────────────────────────────────
@@ -1317,9 +1349,9 @@ async function loadData() {
     set('m-net-total','$1.0M'); set('m-net-balance','$409K'); set('m-jv-count','402'); set('m-jv-amount','$5.2M');
 
     // Static charts as fallback
-    makeChart('chart-bva','bar',{labels:['FY24','FY25','FY26'],datasets:[{label:'Budget',data:[29.2,25.9,33.2],backgroundColor:'#444444',borderRadius:4},{label:'Actual',data:[33.7,32.3,28.9],backgroundColor:'#C49A00',borderRadius:4}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
-    makeChart('chart-util','bar',{labels:['FY24','FY25','FY26'],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#d03b3b','#d03b3b','#0ca30c'],borderRadius:4,valueSuffix:'%'}]},{scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
-    makeChart('chart-monthly','line',{labels:['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'FY24',data:[1.6,3.3,5.8,8.2,11.0,14.0,17.5,21.0,25.5,28.0,31.5,33.7],borderColor:'#B0B0B0',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY25',data:[1.5,3.8,5.9,7.9,10.5,13.8,17.2,21.0,25.2,27.8,30.8,32.3],borderColor:'#737373',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:'FY26',data:[1.7,4.2,6.2,8.6,11.1,14.5,18.4,22.0,25.5,28.2,null,null],borderColor:'#C49A00',tension:.3,pointRadius:0,borderWidth:2.5,fill:false}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-bva','bar',{labels:[FY_PREV2,FY_PREV1,FY_CUR],datasets:[{label:'Budget',data:[29.2,25.9,33.2],backgroundColor:'#444444',borderRadius:4},{label:'Actual',data:[33.7,32.3,28.9],backgroundColor:'#C49A00',borderRadius:4}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+    makeChart('chart-util','bar',{labels:[FY_PREV2,FY_PREV1,FY_CUR],datasets:[{data:[115.3,124.5,87.4],backgroundColor:['#d03b3b','#d03b3b','#0ca30c'],borderRadius:4,valueSuffix:'%'}]},{scales:{y:{min:70,max:135,grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}});
+    makeChart('chart-monthly','line',{labels:['Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:FY_PREV2,data:[1.6,3.3,5.8,8.2,11.0,14.0,17.5,21.0,25.5,28.0,31.5,33.7],borderColor:'#B0B0B0',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:FY_PREV1,data:[1.5,3.8,5.9,7.9,10.5,13.8,17.2,21.0,25.2,27.8,30.8,32.3],borderColor:'#737373',tension:.3,pointRadius:0,borderWidth:1.5,fill:false},{label:FY_CUR,data:[1.7,4.2,6.2,8.6,11.1,14.5,18.4,22.0,25.5,28.2,null,null],borderColor:'#C49A00',tension:.3,pointRadius:0,borderWidth:2.5,fill:false}]},{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}},scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
     makeChart('chart-cat','bar',{labels:['Salaries','Fringes','Bonus/OT','Software','Other'],datasets:[{data:[52,19,12,9,8],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}}});
     makeChart('chart-status','bar',{labels:['Active','Expired','Expiring Soon','Unknown'],datasets:[{data:[95,77,13,22],backgroundColor:['#0ca30c','#444444','#d03b3b','#C49A00'],borderRadius:4,valueSuffix:''}]},{scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}}});
     makeChart('chart-vendors','bar',{labels:['SHI','Cas Severn','Instructure','Ellucian','Mythics','Avante','SHI Intl','Carahsoft'],datasets:[{data:[365,340,290,270,240,235,220,200],backgroundColor:'#1D4ED8',borderRadius:4}]},{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}}});
