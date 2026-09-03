@@ -82,8 +82,10 @@ function refreshAll() {
   });
 
   Logger.log(JSON.stringify(results, null, 2));
-  // Uncomment once GitHub push is configured (see bottom of file):
-  // pushCsvsToGitHub_(folder);
+  // Pushes the refreshed CSVs into the GitHub repo so the website picks them
+  // up same-origin. Needs GITHUB_TOKEN set in Script Properties — if it's
+  // missing, pushCsvsToGitHub_ logs a warning and skips itself harmlessly.
+  pushCsvsToGitHub_(folder);
 }
 
 // ===================== SHARED HELPERS =====================
