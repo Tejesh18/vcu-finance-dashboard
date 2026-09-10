@@ -11,9 +11,9 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-23152,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218848230,P0349225,SANS,19912,19912,0,Tue Aug 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,638057,
 1-23152,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218887361,P0347668,Universal Background,500,0,500,,123152,6001857,Background Checks for Interns
 1-23152,Thu Jul 30 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219227112,P0349184,Intervision,73200,6050.38,67149.62,Mon Aug 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,637037,Managed Cloud FinOps (7/25/26-7/25/27)
-1-23152,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219420348,P0349656,Dell,2157.74,0,2157.74,,123152,720027,Laptop for InfoSec Intern
-1-23152,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219562756,P0350210,Dell,16750.31,0,16750.31,,123152,720027/620097,Laptop for InfoSec Intern
-1-23152,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220387271,P0353389,Dell,758.98,0,758.98,,123152,620097,Monitors for Zach Boyle
+1-23152,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219420348,P0349656,Dell,2157.74,2157.74,0,Fri Aug 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,720027,Laptop for InfoSec Intern
+1-23152,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219562756,P0350210,Dell,16750.31,16750.31,0,Fri Aug 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,720027/620097,Laptop for InfoSec Intern
+1-23152,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220387271,P0353389,Dell,758.98,758.98,0,Tue Sep 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,620097,Monitors for Zach Boyle
 1-23156,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218560938,P0346359,Dell,450,450,0,Mon Jul 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123156,620097,SmartDocks for Tomekia & Felita
 1-38001,Thu Mar 26 2026 00:00:00 GMT-0400 (Eastern Daylight Time),214051182,P0330265,InterVision Systems LLC,10870.5,0,10870.5,,138001,620096,Trellis Lights Cabell
 1-38001,Thu May 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),2158/32210,P0335924,Dell,9800,0,9800,,138001,720007,Bundle Laptops 
@@ -22,7 +22,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38001,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),216994329,P0340425,InterVision Systems LLC,22997.5,0,22997.5,,138001,620096,(10) Meraki Cameras for Housing Project
 1-38001,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120707,P0344512 ,Mansfield Oil,500,53.81,446.19,,138011,620027,Fuel purchases 21277
 1-38001,Wed Jul 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218323628,P0345479,InterVision Systems LLC,3260.4,3260.4,0,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,Meraki Mounts
-1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,,InterVision Systems LLC,9528,0,9528,,138001,600187,VCU Cabell Trellis
+1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,P0347780,InterVision Systems LLC,9528,0,9528,,138001,600187,VCU Cabell Trellis
 1-38109,Thu Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),189664159,P0238461,AERC,2000,511.6,1488.4,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138109,620012,Battery P/U & HD Destruction
 1-38010,Tue Jul 15 2025 00:00:00 GMT-0400 (Eastern Daylight Time),203940868,P0290880,Verizon,1689.64,1559.6100000000001,130.02999999999997,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138010,630002,Mifi Charges for 7/1/2025-6/30/2026
 1-38010,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218621350,P0346609,Verizon,1689.67,239.94,1449.73,Mon Aug 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138010,630002,Mifi Charges for 7/1/2026-6/30/2027
