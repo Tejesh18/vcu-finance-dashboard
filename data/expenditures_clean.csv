@@ -1154,24 +1154,28 @@ FY27,Media Support Services,Academic Technology,a/o 8/31/26,Salaries,Salaries,17
 FY27,Media Support Services,Academic Technology,a/o 8/31/26,Fringes,Fringes,82044,82044,10788.9,-4137.4535999999935,2026-08-31,2,Aug
 FY27,Media Support Services,Academic Technology,a/o 8/31/26,Maintenance/Development,Software & Maintenance,0,0,-300,300,2026-08-31,2,Aug
 FY27,Media Support Services,Academic Technology,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,1080,1080,104.85,975.15,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,IT/Univ. Salaries,Salaries,1238845,1238845,136272.38,178167.64000000013,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Bonus Hourly/FT,Salaries,0,0,10500,-10500,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Fringes,Fringes,430100,430100,56709.26,15646.012739999976,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Technical/Contractual Services,Contractual & Services,43539,43539,5670,37869,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Supplies,Supplies & Printing,10000,10000,330.91,9669.09,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Postage/Printing,Supplies & Printing,0,0,64.2,-64.2,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,1520,1520,499.4,1020.6,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Training/Travel/Memberships,Training & Travel,8625,8625,30.9,8594.1,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Software,Software & Maintenance,340113,340113,167751.26,172361.74,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,IT/Univ. Salaries,Salaries,505058,505058,67635.53,-33989.22999999998,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Hourly,Salaries,0,0,3280,-3280,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Fringes,Fringes,169032,169032,26107.22,-39511.547900000005,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Training/Travel,Training & Travel,2875,2875,280,2595,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,-360,-360,74.95,-434.95,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,IT/Univ. Salaries,Salaries,405190,405190,34971,126682,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Fringes,Fringes,137840,137840,13487.3,30103.880999999994,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,IT/Univ. Salaries,Salaries,1238845,1238845,183538.77,89735.75,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Student/Hourly Wages,Salaries,28000,28000,124.2,27875.8,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Hourly Fringe,Salaries,2297,2297,39,2258,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Bonus Hourly/FT,Salaries,0,0,11000,-11000,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Fringes,Fringes,430100,430100,74935.57,-18511.345759999997,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Technical/Contractual Services,Contractual & Services,43539,43539,8910,34629,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Supplies,Supplies & Printing,10000,10000,687.1500000000001,9312.85,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Postage/Printing,Supplies & Printing,0,0,72.32,-72.32,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,1520,1520,746.3,773.7,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Tech & Computer Consulting,Equipment & Hardware,170000,170000,45305,124695,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Training/Travel/Memberships,Training & Travel,8625,8625,19942.9,-11317.900000000001,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Software,Software & Maintenance,340113,340113,180088.15,160024.85,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Hardware/RAMTech,Equipment & Hardware,20000,20000,18551.81,1448.1899999999987,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,IT/Univ. Salaries,Salaries,505058,505058,91083.84,-53051.97999999998,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Hourly,Salaries,0,0,4439.2,-4439.2,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Fringes,Fringes,169032,169032,35144.18,-46851.296180000005,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Training/Travel,Training & Travel,2875,2875,60,2815,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,-360,-360,149.9,-509.9,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,IT/Univ. Salaries,Salaries,405190,405190,47047.54,117811.66000000003,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Fringes,Fringes,137840,137840,18137.69,26694.290399999998,2026-08-31,2,Aug
 FY27,Information Security,Information Security,a/o 8/31/26,Printing,Supplies & Printing,0,0,0.11,-0.11,2026-08-31,2,Aug
-FY27,Information Security,Information Security,a/o 8/31/26,Telecomm,Telecomm & Network,1340,1340,134.8,1205.2,2026-08-31,2,Aug
+FY27,Information Security,Information Security,a/o 8/31/26,Telecomm,Telecomm & Network,1340,1340,269.6,1070.4,2026-08-31,2,Aug
 FY27,Information Security,Information Security,a/o 8/31/26,Internal charge,Recoveries & Revenue,0,0,-69722,69722,2026-08-31,2,Aug
 FY27,Technology Support Services,Technical Support Services,a/o 8/31/26,Supplies,Supplies & Printing,0,0,2804.16,-2804.16,2026-08-31,2,Aug
 FY27,Technology Support Services,Technical Support Services,a/o 8/31/26,Classified/Univ Salaries,Salaries,803531,803531,178880.59,-282484.55000000005,2026-08-31,2,Aug
