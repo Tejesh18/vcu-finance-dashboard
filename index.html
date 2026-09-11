@@ -115,6 +115,28 @@ html, body {
 .kpi-cell:first-child { padding-left: 0; }
 .kpi-cell:last-child { border-right: none; }
 
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-backdrop.open { display: flex; }
+.modal-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
 .kpi-cell.clickable { cursor: pointer; position: relative; }
 .kpi-cell.clickable:hover { background: var(--gray-50); }
 .sources-popover {
@@ -593,7 +615,7 @@ html, body {
       <div class="chart-area"><canvas id="chart-fy27-util"></canvas></div>
     </div>
     <div class="table-panel">
-      <div class="table-panel-header"><span class="fy-cur">FY27</span> Budget by Department (Top 10 by Budget)</div>
+      <div class="table-panel-header"><span class="fy-cur">FY27</span> Budget by Department (Top 10 by Budget) — click a row for detail</div>
       <table class="data-table">
         <thead>
           <tr>
@@ -663,22 +685,6 @@ html, body {
       </table>
     </div>
 
-    <div class="table-panel" id="dept-detail-panel" style="display:none">
-      <div class="table-panel-header">
-        <span id="dept-detail-title">Department detail</span>
-        <span class="view-toggle" style="float:right;font-weight:400" onclick="hideDeptDetail()">Close ✕</span>
-      </div>
-      <div class="charts-grid">
-        <div class="chart-panel">
-          <div class="chart-panel-title">Monthly Spend Trend</div>
-          <div class="chart-area"><canvas id="chart-dept-monthly"></canvas></div>
-        </div>
-        <div class="chart-panel">
-          <div class="chart-panel-title">Spend by Category — <span class="fy-cur">FY26</span></div>
-          <div class="chart-area"><canvas id="chart-dept-cat"></canvas></div>
-        </div>
-      </div>
-    </div>
     </div>
   </div>
 
@@ -719,7 +725,7 @@ html, body {
     </div>
     <div class="charts-grid">
       <div class="chart-panel">
-        <div class="chart-panel-title">Contract Status Distribution</div>
+        <div class="chart-panel-title">Contract Status Distribution — click a bar for the full list</div>
         <div class="chart-area"><canvas id="chart-status"></canvas></div>
       </div>
       <div class="chart-panel">
@@ -727,9 +733,29 @@ html, body {
         <div class="chart-area"><canvas id="chart-vendors"></canvas></div>
       </div>
     </div>
+    <div class="table-panel" id="status-detail-panel" style="display:none">
+      <div class="table-panel-header">
+        <span id="status-detail-title">Contracts</span>
+        <span class="view-toggle" style="float:right;font-weight:400" onclick="hideStatusDetail()">Close ✕</span>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Vendor</th><th>Product</th><th>Department</th><th>Annual Cost</th><th>Renewal Date</th><th>Funding Source</th></tr></thead>
+        <tbody id="status-detail-table"></tbody>
+      </table>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Active Contract Spend by Funding Source</div>
+        <div class="chart-area"><canvas id="chart-funding"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">Active Contract Spend by Department</div>
+        <div class="chart-area"><canvas id="chart-con-dept"></canvas></div>
+      </div>
+    </div>
     <div class="chart-panel" style="margin-bottom:20px">
-      <div class="chart-panel-title">Active Contract Spend by Funding Source</div>
-      <div class="chart-area"><canvas id="chart-funding"></canvas></div>
+      <div class="chart-panel-title">Contract Renewals by Month — Next 12 Months</div>
+      <div class="chart-area"><canvas id="chart-renewals"></canvas></div>
     </div>
     <div class="table-panel">
       <div class="table-panel-header">Contracts Expiring Within 90 Days — Sorted by Urgency</div>
@@ -854,6 +880,7 @@ html, body {
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Journal Voucher Amount by Department</div>
+      <div style="font-size:11px;color:#888;margin-bottom:8px">JVs move funds between TS and other university departments — some names here won't be TS teams</div>
       <div class="chart-area"><canvas id="chart-jv-dept"></canvas></div>
     </div>
     <div class="table-panel">
@@ -873,6 +900,31 @@ html, body {
   <div class="footer-left">VCU Technology Services · Fiscal & Administrative Services · Built by Tejesh Annavarapu · Summer Internship 2026</div>
   <div class="footer-right">
     <a href="https://prod.tableau.vcu.edu/t/TS-Technology-Services/views/VCUTSFinanceDashboard_17854504312350/Dashboard1" target="_blank">Open Full Dashboard in Tableau ↗</a>
+  </div>
+</div>
+
+<!-- DEPARTMENT DRILL-DOWN MODAL — a sibling of the tab views (not nested in
+     any single one) so it can be triggered from a department row on any
+     tab, not just the one it happens to be defined in. -->
+<div class="modal-backdrop" id="dept-modal-backdrop" onclick="hideDeptDetail()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="table-panel-header">
+      <span id="dept-detail-title">Department detail</span>
+      <span class="view-toggle" style="float:right;font-weight:400" onclick="hideDeptDetail()">Close ✕</span>
+    </div>
+    <div id="dept-detail-nodata" style="display:none;padding:24px 0;color:#888;font-size:13px">
+      No matching monthly detail found for this department name — the FY27 budget document and the expenditure data don't always use identical department names.
+    </div>
+    <div class="charts-grid" id="dept-detail-charts">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Monthly Spend Trend</div>
+        <div class="chart-area"><canvas id="chart-dept-monthly"></canvas></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-panel-title">Spend by Category — <span class="fy-cur">FY26</span></div>
+        <div class="chart-area"><canvas id="chart-dept-cat"></canvas></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -941,6 +993,53 @@ function applyFYLabels() {
   set_('fy-cur', FY_CUR);
 }
 applyFYLabels();
+
+// The FY27 budget-planning document and the expenditures data (via the
+// Chart of Accounts) use two different levels of granularity for
+// "department" — the budget doc has ~37 individual team/unit names, the
+// expenditures data only has the 10 broader groupings those teams roll up
+// into. This is a best-effort mapping from naming patterns and typical
+// IT-org structure — it has NOT been verified against VCU's actual org
+// chart, so treat entries as reasonable guesses, not ground truth. It's
+// only used to find a "closest match" for the exploratory drill-down
+// modal below — it never touches any KPI, total, or other displayed figure.
+const FY27_DEPT_MAP = {
+  'Admin. BI & Analytics': 'Administrative Systems',
+  'Admin. Systems': 'Administrative Systems',
+  'Adobe Creative Cloud': 'Application Services',
+  'Applic. Services': 'Application Services',
+  'Building Access': 'Technology Support Services',
+  'CIO': 'Central Services',
+  'Campus Card Serv.': 'Campus Card Services',
+  'Canon Student Print': 'Technology Support Services',
+  'Classroom Sppt. Serv.': 'Technology Support Services',
+  'Computing Sppt. Serv.': 'Technology Support Services',
+  'Desktop Services': 'Technology Support Services',
+  'Emergency Comm.': 'Network Services',
+  'Endpoint Computing': 'Technology Support Services',
+  'IT Serv. Mgmt.': 'Central Services',
+  'IT Support Ctr.': 'Technology Support Services',
+  'Instructional Computing Serv.': 'Academic Technologies',
+  'Learning Systems': 'Academic Technologies',
+  'Media Eng./Design': 'Media Support Services',
+  'Media Sppt. Projects': 'Media Support Services',
+  'Network Data': 'Network Services',
+  'Network Infra. Upgrade': 'Network Services',
+  'Network Infrastructure': 'Network Services',
+  'Network Operations': 'Network Services',
+  'Network Tech.': 'Network Services',
+  'Planning & Project Mgmt.': 'Central Services',
+  'STF': 'Academic Technologies',
+  'TAB Furnishings/Operations': 'Central Services',
+  'TS Administration': 'Central Services',
+  'TS Development': 'Application Services',
+  'TS Maintenance': 'Technology Support Services',
+  'TS Serv. Admin.': 'Central Services',
+  'UCC': 'Network Services',
+  'UCC - NOC': 'Network Services',
+  'Video/Teleconference': 'Media Support Services',
+  'fixIT': 'Technology Support Services',
+};
 
 function parseCsvText_(text) {
   const lines = text.trim().split('\n');
@@ -1090,6 +1189,7 @@ document.addEventListener('click', e => {
   const pop = document.getElementById('sources-popover');
   if (pop && pop.classList.contains('open') && !pop.contains(e.target)) pop.classList.remove('open');
 });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && window.hideDeptDetail) hideDeptDetail(); });
 
 function switchTab(i, el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -1350,30 +1450,60 @@ async function loadData() {
     // exp/expM/FY_* from this load, then exposed on window so the onclick
     // attributes above can reach it.
     window.showDeptDetail = function(dept) {
-      document.getElementById('dept-detail-title').textContent = dept + ' — detail';
-      const panel = document.getElementById('dept-detail-panel');
-      panel.style.display = '';
-      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      document.getElementById('dept-modal-backdrop').classList.add('open');
+
+      const buildFor = d => ({
+        trendPrev2: buildTrend(FY_PREV2, d, 1e3),
+        trendPrev1: buildTrend(FY_PREV1, d, 1e3),
+        trendCur: buildTrend(FY_CUR, d, 1e3),
+        cats: (() => {
+          const c = {};
+          exp.filter(r=>r.FY===FY_CUR && r.Department===d).forEach(r => { const g=r.Category_Group||'Other'; c[g]=(c[g]||0)+num(r.Expenditure); });
+          return Object.entries(c).sort((a,b)=>b[1]-a[1]);
+        })(),
+      });
+      const hasAny = res => res.trendPrev2.some(v=>v!=null) || res.trendPrev1.some(v=>v!=null) || res.trendCur.some(v=>v!=null) || res.cats.length>0;
+
+      // Try the exact name first (works for expenditure-sourced tables,
+      // which already share the same naming). If that comes up empty —
+      // typically an FY27-budget-doc name at finer granularity than the
+      // expenditures data uses — fall back to FY27_DEPT_MAP's best-effort
+      // "closest broader department" and say so plainly in the title,
+      // rather than silently attributing data to the wrong label.
+      let result = buildFor(dept);
+      let title = dept + ' — detail';
+      if (!hasAny(result) && FY27_DEPT_MAP[dept]) {
+        const mapped = FY27_DEPT_MAP[dept];
+        const mappedResult = buildFor(mapped);
+        if (hasAny(mappedResult)) {
+          result = mappedResult;
+          title = dept + ' — closest match: ' + mapped;
+        }
+      }
+      document.getElementById('dept-detail-title').textContent = title;
+
+      const { trendPrev2, trendPrev1, trendCur, cats: deptCatArr } = result;
+      const hasData = hasAny(result);
+      document.getElementById('dept-detail-nodata').style.display = hasData ? 'none' : '';
+      document.getElementById('dept-detail-charts').style.display = hasData ? '' : 'none';
+      if (!hasData) return;
 
       makeChart('chart-dept-monthly', 'line', {
         labels: months,
         datasets: [
-          { label:FY_PREV2, data:buildTrend(FY_PREV2, dept, 1e3), borderColor:'#B0B0B0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
-          { label:FY_PREV1, data:buildTrend(FY_PREV1, dept, 1e3), borderColor:'#737373', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
-          { label:FY_CUR, data:buildTrend(FY_CUR, dept, 1e3), borderColor:'#C49A00', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
+          { label:FY_PREV2, data:trendPrev2, borderColor:'#B0B0B0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+          { label:FY_PREV1, data:trendPrev1, borderColor:'#737373', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+          { label:FY_CUR, data:trendCur, borderColor:'#C49A00', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
         ]
       }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},x:{grid:{display:false}}} });
 
-      const deptCats = {};
-      exp.filter(r=>r.FY===FY_CUR && r.Department===dept).forEach(r => { const c=r.Category_Group||'Other'; deptCats[c]=(deptCats[c]||0)+num(r.Expenditure); });
-      const deptCatArr = Object.entries(deptCats).sort((a,b)=>b[1]-a[1]);
       makeChart('chart-dept-cat', 'bar', {
         labels: deptCatArr.map(e=>e[0]),
         datasets:[{data:deptCatArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
       },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}} });
     };
     window.hideDeptDetail = function() {
-      document.getElementById('dept-detail-panel').style.display = 'none';
+      document.getElementById('dept-modal-backdrop').classList.remove('open');
     };
 
     // ── FY27 ─────────────────────────────────────────────────────────
@@ -1388,7 +1518,8 @@ async function loadData() {
     document.getElementById('fy27-table').innerHTML = fy27Sorted.map(r=>{
       const diff = num(r.Difference);
       const diffColor = diff>=0?'#15803D':'#B91C1C';
-      return `<tr>
+      const deptSafe = String(r.Department).replace(/'/g,"\\'");
+      return `<tr style="cursor:pointer" onclick="showDeptDetail('${deptSafe}')" title="Click for detail on ${r.Department}">
         <td>${r.Department}</td>
         <td>${fmt(num(r.Budget))}</td>
         <td>${fmt(num(r.Expenses))}</td>
@@ -1402,9 +1533,14 @@ async function loadData() {
     // already over) their FY27 budget, sorted worst-first since that's the
     // useful reading order for spotting risk early.
     const fy27ByUtil = [...fy27Sorted].sort((a,b)=>num(b.Utilization_Pct)-num(a.Utilization_Pct));
+    // '#C49A00' (the site's decorative gold accent) was used here originally
+    // for the middle tier — validated (validate_palette.js) against '#0ca30c'
+    // green and found nearly indistinguishable for protanopia (ΔE 2.2, well
+    // under even the minimum legal 6-8 floor). '#fab219' is this palette's
+    // actual reserved "warning" status color and validates cleanly (ΔE 11.3).
     makeChart('chart-fy27-util','bar',{
       labels: fy27ByUtil.map(r=>r.Department),
-      datasets:[{data:fy27ByUtil.map(r=>num(r.Utilization_Pct)),backgroundColor:fy27ByUtil.map(r=>num(r.Utilization_Pct)>90?'#d03b3b':num(r.Utilization_Pct)>70?'#C49A00':'#0ca30c'),borderRadius:4,valueSuffix:'%'}]
+      datasets:[{data:fy27ByUtil.map(r=>num(r.Utilization_Pct)),backgroundColor:fy27ByUtil.map(r=>num(r.Utilization_Pct)>90?'#d03b3b':num(r.Utilization_Pct)>70?'#fab219':'#0ca30c'),borderRadius:4,valueSuffix:'%'}]
     },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}},[barValuePlugin]);
 
     // ── CONTRACTS ────────────────────────────────────────────────────
@@ -1421,10 +1557,38 @@ async function loadData() {
     set('m-total-con', con.length);
     set('m-con-spend', fmt(activeSpend));
 
+    // Clicking a bar reveals the full contract list for that status — before
+    // this, "Active"/"Expired"/"Unknown" were only ever shown as a count,
+    // with no way to actually see which contracts they were.
+    const statusGroups = { 'Active':active, 'Expired':expired, 'Expiring Soon':expiring, 'Unknown':unknown };
+    window.showStatusDetail = function(status) {
+      const rows = statusGroups[status] || [];
+      document.getElementById('status-detail-title').textContent = status + ' Contracts (' + rows.length + ')';
+      const sorted = [...rows].sort((a,b)=>num(b.Annual_Cost)-num(a.Annual_Cost));
+      document.getElementById('status-detail-table').innerHTML = sorted.map(r=>`
+        <tr>
+          <td><strong>${r.Vendor||'—'}</strong></td>
+          <td>${r.Product||'—'}</td>
+          <td style="font-size:11px;color:#888">${r.Department||'—'}</td>
+          <td>${fmt(num(r.Annual_Cost))}/yr</td>
+          <td>${r.Renewal_Date||'—'}</td>
+          <td style="font-size:11px;color:#888">${r.Funding_Source||'—'}</td>
+        </tr>`).join('') || '<tr><td colspan="6" class="loading-msg">No contracts in this status</td></tr>';
+      const panel = document.getElementById('status-detail-panel');
+      panel.style.display = '';
+      panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    };
+    window.hideStatusDetail = function() {
+      document.getElementById('status-detail-panel').style.display = 'none';
+    };
+
     makeChart('chart-status', 'bar', {
       labels:['Active','Expired','Expiring Soon','Unknown'],
       datasets:[{data:[active.length,expired.length,expiring.length,unknown.length],backgroundColor:['#0ca30c','#444444','#d03b3b','#C49A00'],borderRadius:4,valueSuffix:''}]
-    },{ scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}} },[barValuePlugin]);
+    },{
+      scales:{y:{grid:{color:'#F4F4F4'}},x:{grid:{display:false}}},
+      onClick:(evt, elements) => { if (elements.length) showStatusDetail(['Active','Expired','Expiring Soon','Unknown'][elements[0].index]); }
+    },[barValuePlugin]);
 
     const vendorSpend={};
     con.forEach(r=>{const v=r.Vendor||'Other';vendorSpend[v]=(vendorSpend[v]||0)+num(r.Annual_Cost);});
@@ -1443,6 +1607,41 @@ async function loadData() {
       labels:fundArr.map(e=>e[0]),
       datasets:[{data:fundArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
     },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+
+    // Department wasn't broken out for contracts before either.
+    const conDeptSpend={};
+    active.forEach(r=>{const d=r.Department||'Other';conDeptSpend[d]=(conDeptSpend[d]||0)+num(r.Annual_Cost);});
+    const conDeptArr=Object.entries(conDeptSpend).sort((a,b)=>b[1]-a[1]);
+    makeChart('chart-con-dept','bar',{
+      labels:conDeptArr.map(e=>e[0]),
+      datasets:[{data:conDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#C49A00',borderRadius:4}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+
+    // Renewals by month, next 12 months from today — the existing table only
+    // covers the next 90 days, so anything renewing in month 4-12 out had no
+    // visibility at all for planning purposes. Zero-renewal months are kept
+    // (not omitted) so the x-axis reads as a real timeline. A couple of rows
+    // in the source have malformed renewal dates (e.g. a typo'd 3-digit
+    // year) — filtering to the 12-month window naturally excludes those
+    // without needing to guess at the intended date.
+    const renewalByMonth = {};
+    const today = new Date();
+    const rangeEnd = new Date(today); rangeEnd.setMonth(rangeEnd.getMonth()+12);
+    con.forEach(r => {
+      const d = new Date(r.Renewal_Date);
+      if (isNaN(d) || d < today || d > rangeEnd) return;
+      const key = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+      renewalByMonth[key] = (renewalByMonth[key]||0)+1;
+    });
+    const renewalKeys = [];
+    for (let i=0;i<12;i++){
+      const d = new Date(today.getFullYear(), today.getMonth()+i, 1);
+      renewalKeys.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));
+    }
+    makeChart('chart-renewals','bar',{
+      labels: renewalKeys.map(k=>{ const [y,m]=k.split('-'); return new Date(y,m-1,1).toLocaleDateString('en-US',{month:'short',year:'2-digit'}); }),
+      datasets:[{data:renewalKeys.map(k=>renewalByMonth[k]||0),backgroundColor:'#1D4ED8',borderRadius:4,valueSuffix:''}]
+    },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{stepSize:1,precision:0}},x:{grid:{display:false}}}},[barValuePlugin]);
 
     const expSorted = expiring.sort((a,b)=>num(a.Days_Until_Expiry)-num(b.Days_Until_Expiry));
     document.getElementById('expiring-table').innerHTML = expSorted.map(r=>{
@@ -1565,10 +1764,15 @@ async function loadData() {
     const jvByDept={};
     jv.forEach(r=>{const d=r.Department||'Other';jvByDept[d]=(jvByDept[d]||0)+num(r.Amount);});
     const jvDeptArr=Object.entries(jvByDept).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,10);
+    // Every department in today's top 10 happens to be positive, so the red
+    // case never actually renders right now — but the moment a net-payer
+    // department enters the top 10, color alone would be the only signal.
+    // valueSuffix triggers barValuePlugin to print the actual number on
+    // each bar, same fix already applied to the other red/green chart here.
     makeChart('chart-jv-dept','bar',{
       labels:jvDeptArr.map(e=>e[0]),
-      datasets:[{data:jvDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:jvDeptArr.map(e=>e[1]>=0?'#0ca30c':'#d03b3b'),borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>16?l.slice(0,16)+'…':l;}}}}});
+      datasets:[{data:jvDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:jvDeptArr.map(e=>e[1]>=0?'#0ca30c':'#d03b3b'),borderRadius:4,valueSuffix:'K'}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>16?l.slice(0,16)+'…':l;}}}}},[barValuePlugin]);
 
     const netSorted=[...net].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,8);
     document.getElementById('net-table').innerHTML = netSorted.map(r=>`
