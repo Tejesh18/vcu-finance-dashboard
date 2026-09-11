@@ -115,6 +115,34 @@ html, body {
 .kpi-cell:first-child { padding-left: 0; }
 .kpi-cell:last-child { border-right: none; }
 
+.kpi-cell.clickable { cursor: pointer; position: relative; }
+.kpi-cell.clickable:hover { background: var(--gray-50); }
+.sources-popover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.14);
+  padding: 12px 14px;
+  width: 250px;
+  z-index: 50;
+  text-align: left;
+}
+.sources-popover.open { display: block; }
+.sources-popover .pop-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #888;
+  margin-bottom: 8px;
+}
+.sources-popover ol { margin: 0; padding-left: 18px; font-size: 12px; color: #333; line-height: 1.7; }
+
 .kpi-label {
   font-size: 9.5px;
   color: var(--gray-500);
@@ -473,10 +501,23 @@ html, body {
     <div class="kpi-val" id="k-active">—</div>
     <div class="kpi-note">All departments</div>
   </div>
-  <div class="kpi-cell">
+  <div class="kpi-cell clickable" onclick="toggleSourcesPopover(event)">
     <div class="kpi-label">Data Sources</div>
     <div class="kpi-val">8</div>
-    <div class="kpi-note">Live · Google Drive</div>
+    <div class="kpi-note">Live · Google Drive — click to view</div>
+    <div class="sources-popover" id="sources-popover">
+      <div class="pop-title">The 8 live sources</div>
+      <ol>
+        <li>Expenditures — historical (FY24–25)</li>
+        <li>Expenditures — current (FY26+)</li>
+        <li>Contracts</li>
+        <li>TS Purchase Orders</li>
+        <li>Telecom Purchase Orders</li>
+        <li>Network Purchase Orders</li>
+        <li>Journal Vouchers</li>
+        <li>Budget Plan (current FY)</li>
+      </ol>
+    </div>
   </div>
 </div>
 
@@ -547,6 +588,10 @@ html, body {
         <div class="chart-area"><canvas id="chart-util"></canvas></div>
       </div>
     </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Budget Utilization by Department (<span class="fy-cur">FY27</span>, Top 10 by Budget)</div>
+      <div class="chart-area"><canvas id="chart-fy27-util"></canvas></div>
+    </div>
     <div class="table-panel">
       <div class="table-panel-header"><span class="fy-cur">FY27</span> Budget by Department (Top 10 by Budget)</div>
       <table class="data-table">
@@ -611,11 +656,28 @@ html, body {
       </div>
     </div>
     <div class="table-panel">
-      <div class="table-panel-header">Top Departments by <span class="fy-cur">FY26</span> Spend</div>
+      <div class="table-panel-header">Top Departments by <span class="fy-cur">FY26</span> Spend — click a row for detail</div>
       <table class="data-table">
         <thead><tr><th>Department</th><th>Division</th><th class="fy-prev2">FY24</th><th class="fy-prev1">FY25</th><th class="fy-cur">FY26</th></tr></thead>
         <tbody id="dept-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
       </table>
+    </div>
+
+    <div class="table-panel" id="dept-detail-panel" style="display:none">
+      <div class="table-panel-header">
+        <span id="dept-detail-title">Department detail</span>
+        <span class="view-toggle" style="float:right;font-weight:400" onclick="hideDeptDetail()">Close ✕</span>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-panel">
+          <div class="chart-panel-title">Monthly Spend Trend</div>
+          <div class="chart-area"><canvas id="chart-dept-monthly"></canvas></div>
+        </div>
+        <div class="chart-panel">
+          <div class="chart-panel-title">Spend by Category — <span class="fy-cur">FY26</span></div>
+          <div class="chart-area"><canvas id="chart-dept-cat"></canvas></div>
+        </div>
+      </div>
     </div>
     </div>
   </div>
@@ -665,6 +727,10 @@ html, body {
         <div class="chart-area"><canvas id="chart-vendors"></canvas></div>
       </div>
     </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Active Contract Spend by Funding Source</div>
+      <div class="chart-area"><canvas id="chart-funding"></canvas></div>
+    </div>
     <div class="table-panel">
       <div class="table-panel-header">Contracts Expiring Within 90 Days — Sorted by Urgency</div>
       <table class="data-table">
@@ -704,10 +770,10 @@ html, body {
         <div class="metric-value" id="m-po-balance">—</div>
         <div class="metric-sub">Not yet received</div>
       </div>
-      <div class="metric-card">
+      <div class="metric-card" id="m-tel-card" onclick="toggleTelecomTable()" style="cursor:pointer" title="Click to see the individual telecom POs">
         <div class="metric-label">Telecom POs</div>
         <div class="metric-value" id="m-tel-count">—</div>
-        <div class="metric-sub">FY24 through FY27</div>
+        <div class="metric-sub" id="m-tel-sub">FY24 through FY27 — click to view</div>
       </div>
     </div>
     <div class="charts-grid">
@@ -719,6 +785,17 @@ html, body {
         <div class="chart-panel-title">TS PO Amount by Department</div>
         <div class="chart-area"><canvas id="chart-po-dept"></canvas></div>
       </div>
+    </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Purchase Order Amount by Month</div>
+      <div class="chart-area"><canvas id="chart-po-monthly"></canvas></div>
+    </div>
+    <div class="table-panel" id="telecom-table-panel" style="display:none">
+      <div class="table-panel-header">Telecom Purchase Orders <span class="view-toggle" style="float:right;font-weight:400" onclick="toggleTelecomTable()">Hide ↑</span></div>
+      <table class="data-table">
+        <thead><tr><th>FY</th><th>Vendor</th><th>Date</th><th>PR Number</th><th>Amount</th><th>Received</th><th>Balance</th></tr></thead>
+        <tbody id="telecom-table"><tr><td colspan="7" class="loading-msg">Loading...</td></tr></tbody>
+      </table>
     </div>
     <div class="table-panel">
       <div class="table-panel-header">Purchase Orders — FY26-27 (Sorted by Ending Balance)</div>
@@ -774,6 +851,10 @@ html, body {
         <div class="chart-panel-title">Journal Voucher Amount by FY</div>
         <div class="chart-area"><canvas id="chart-jv"></canvas></div>
       </div>
+    </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Journal Voucher Amount by Department</div>
+      <div class="chart-area"><canvas id="chart-jv-dept"></canvas></div>
     </div>
     <div class="table-panel">
       <div class="table-panel-header">Network Purchase Orders — Open Balances</div>
@@ -1001,11 +1082,33 @@ function makeChart(id, type, data, options={}, plugins=[]) {
 }
 
 // ── TAB SWITCHING ────────────────────────────────────────────────────
+function toggleSourcesPopover(e) {
+  e.stopPropagation();
+  document.getElementById('sources-popover').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  const pop = document.getElementById('sources-popover');
+  if (pop && pop.classList.contains('open') && !pop.contains(e.target)) pop.classList.remove('open');
+});
+
 function switchTab(i, el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('view-' + i).classList.add('active');
+}
+
+// Telecom POs card (Purchase Orders view) is clickable — reveals the
+// individual telecom PO line items below it. The table itself is always
+// populated during loadData(); this just toggles whether it's shown.
+function toggleTelecomTable() {
+  const panel = document.getElementById('telecom-table-panel');
+  const sub = document.getElementById('m-tel-sub');
+  if (!panel) return;
+  const showing = panel.style.display !== 'none';
+  panel.style.display = showing ? 'none' : '';
+  if (sub) sub.textContent = 'FY24 through FY27 — click to ' + (showing ? 'view' : 'hide');
+  if (!showing) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // ── TABLEAU EMBED ────────────────────────────────────────────────────
@@ -1196,11 +1299,13 @@ async function loadData() {
     // org-wide cumulative total AS OF that month already; running a second
     // cumulative sum on top of that (like the old code did) double-counts
     // every prior month again each time and inflates later months by 5-7x.
-    const buildTrend = fy => {
+    // dept and divisor are optional, added for the department drill-down
+    // below — existing calls (buildTrend(FY_CUR) etc.) are unaffected.
+    const buildTrend = (fy, dept, divisor=1e6) => {
       const byMonth = {};
       months.forEach(m => byMonth[m]=0);
-      expM.filter(r=>r.FY===fy).forEach(r => { if(r.Month_Name && byMonth[r.Month_Name]!==undefined) byMonth[r.Month_Name]+=num(r.Expenditure); });
-      return months.map(m => byMonth[m]>0 ? +(byMonth[m]/1e6).toFixed(2) : null);
+      expM.filter(r=>r.FY===fy && (!dept || r.Department===dept)).forEach(r => { if(r.Month_Name && byMonth[r.Month_Name]!==undefined) byMonth[r.Month_Name]+=num(r.Expenditure); });
+      return months.map(m => byMonth[m]>0 ? +(byMonth[m]/divisor).toFixed(2) : null);
     };
 
     makeChart('chart-monthly', 'line', {
@@ -1231,13 +1336,45 @@ async function loadData() {
     });
     const deptArr = Object.entries(deptData).sort((a,b)=>b[1][FY_CUR]-a[1][FY_CUR]).slice(0,10);
     document.getElementById('dept-table').innerHTML = deptArr.map(([dept,d])=>`
-      <tr>
+      <tr style="cursor:pointer" onclick="showDeptDetail('${dept.replace(/'/g,"\\'")}')" title="Click for detail on ${dept}">
         <td>${dept}</td>
         <td style="color:#888;font-size:11px">${d.Division}</td>
         <td>${fmt(d[FY_PREV2])}</td>
         <td>${fmt(d[FY_PREV1])}</td>
         <td><strong>${fmt(d[FY_CUR])}</strong></td>
       </tr>`).join('');
+
+    // Department drill-down — clicking any row above shows this dept's own
+    // monthly trend and category mix, instead of only ever seeing
+    // pre-aggregated totals. Defined here (not top-level) so it closes over
+    // exp/expM/FY_* from this load, then exposed on window so the onclick
+    // attributes above can reach it.
+    window.showDeptDetail = function(dept) {
+      document.getElementById('dept-detail-title').textContent = dept + ' — detail';
+      const panel = document.getElementById('dept-detail-panel');
+      panel.style.display = '';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      makeChart('chart-dept-monthly', 'line', {
+        labels: months,
+        datasets: [
+          { label:FY_PREV2, data:buildTrend(FY_PREV2, dept, 1e3), borderColor:'#B0B0B0', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+          { label:FY_PREV1, data:buildTrend(FY_PREV1, dept, 1e3), borderColor:'#737373', tension:.3, pointRadius:0, borderWidth:1.5, fill:false },
+          { label:FY_CUR, data:buildTrend(FY_CUR, dept, 1e3), borderColor:'#C49A00', tension:.3, pointRadius:0, borderWidth:2.5, fill:false },
+        ]
+      }, { plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:8}}}, scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},x:{grid:{display:false}}} });
+
+      const deptCats = {};
+      exp.filter(r=>r.FY===FY_CUR && r.Department===dept).forEach(r => { const c=r.Category_Group||'Other'; deptCats[c]=(deptCats[c]||0)+num(r.Expenditure); });
+      const deptCatArr = Object.entries(deptCats).sort((a,b)=>b[1]-a[1]);
+      makeChart('chart-dept-cat', 'bar', {
+        labels: deptCatArr.map(e=>e[0]),
+        datasets:[{data:deptCatArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
+      },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}} });
+    };
+    window.hideDeptDetail = function() {
+      document.getElementById('dept-detail-panel').style.display = 'none';
+    };
 
     // ── FY27 ─────────────────────────────────────────────────────────
     const fy27Budget = fy27.reduce((s,r)=>s+num(r.Budget),0);
@@ -1259,6 +1396,16 @@ async function loadData() {
         <td style="color:${diffColor};font-weight:600">${fmt(diff)}</td>
       </tr>`;
     }).join('');
+
+    // Utilization_Pct came straight from the source but was never actually
+    // shown anywhere — this surfaces which departments are closest to (or
+    // already over) their FY27 budget, sorted worst-first since that's the
+    // useful reading order for spotting risk early.
+    const fy27ByUtil = [...fy27Sorted].sort((a,b)=>num(b.Utilization_Pct)-num(a.Utilization_Pct));
+    makeChart('chart-fy27-util','bar',{
+      labels: fy27ByUtil.map(r=>r.Department),
+      datasets:[{data:fy27ByUtil.map(r=>num(r.Utilization_Pct)),backgroundColor:fy27ByUtil.map(r=>num(r.Utilization_Pct)>90?'#d03b3b':num(r.Utilization_Pct)>70?'#C49A00':'#0ca30c'),borderRadius:4,valueSuffix:'%'}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}},[barValuePlugin]);
 
     // ── CONTRACTS ────────────────────────────────────────────────────
     const active = con.filter(r=>r.Status==='Active');
@@ -1287,6 +1434,16 @@ async function loadData() {
       datasets:[{data:topV.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
     },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}});
 
+    // Funding_Source wasn't shown anywhere before — active-only, since an
+    // expired contract's funding source isn't a current budget commitment.
+    const fundingSpend={};
+    active.forEach(r=>{const f=r.Funding_Source||'Unspecified';fundingSpend[f]=(fundingSpend[f]||0)+num(r.Annual_Cost);});
+    const fundArr=Object.entries(fundingSpend).sort((a,b)=>b[1]-a[1]);
+    makeChart('chart-funding','bar',{
+      labels:fundArr.map(e=>e[0]),
+      datasets:[{data:fundArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+
     const expSorted = expiring.sort((a,b)=>num(a.Days_Until_Expiry)-num(b.Days_Until_Expiry));
     document.getElementById('expiring-table').innerHTML = expSorted.map(r=>{
       const days = Math.round(num(r.Days_Until_Expiry));
@@ -1310,6 +1467,24 @@ async function loadData() {
     set('m-po-balance', fmt(poBalance));
     set('m-tel-count', tel.length);
 
+    // Telecom PO detail table — hidden until the "Telecom POs" card above is
+    // clicked (toggleTelecomTable). Built here regardless of whether it's
+    // currently visible, so it's ready the moment someone clicks.
+    const telSorted = [...tel].sort((a,b)=> new Date(b.Date) - new Date(a.Date));
+    document.getElementById('telecom-table').innerHTML = telSorted.map(r=>{
+      const d = new Date(r.Date);
+      const dateLabel = isNaN(d) ? (r.Date||'—') : d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      return `<tr>
+        <td style="font-size:11px;color:#888">${r.FY||'—'}</td>
+        <td><strong>${r.Vendor||'—'}</strong></td>
+        <td style="font-size:11px">${dateLabel}</td>
+        <td style="font-size:11px;color:#888">${r.PR_Number||'—'}</td>
+        <td>${fmt(num(r.Amount))}</td>
+        <td>${fmt(num(r.Amount_Received))}</td>
+        <td style="color:${num(r.Ending_Balance)>0?'#B91C1C':'#15803D'};font-weight:600">${fmt(num(r.Ending_Balance))}</td>
+      </tr>`;
+    }).join('');
+
     const telByFY={};
     tel.forEach(r=>{const f=r.FY||'?';telByFY[f]=(telByFY[f]||0)+num(r.Amount);});
     const telArr=Object.entries(telByFY).sort((a,b)=>a[0].localeCompare(b[0]));
@@ -1325,6 +1500,24 @@ async function loadData() {
       labels:poArr.map(e=>e[0]),
       datasets:[{data:poArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
     },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}});
+
+    // Purchase Order Amount by Month — POs don't carry a fiscal-year label
+    // the way expenditures do, so this groups by actual calendar month
+    // (across whatever date range the PO data covers) rather than FY.
+    const poByMonth = {};
+    pos.forEach(r=>{
+      const d = new Date(r.Date);
+      if (isNaN(d)) return;
+      const key = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0');
+      poByMonth[key] = (poByMonth[key]||0) + num(r.Amount);
+    });
+    const poMonthKeys = Object.keys(poByMonth).sort();
+    makeChart('chart-po-monthly','bar',{
+      labels: poMonthKeys.map(k=>{
+        const [y,m]=k.split('-'); return new Date(y,m-1,1).toLocaleDateString('en-US',{month:'short',year:'2-digit'});
+      }),
+      datasets:[{data:poMonthKeys.map(k=>+(poByMonth[k]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
+    },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},x:{grid:{display:false}}}});
 
     const poSorted=[...pos].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,10);
     document.getElementById('po-table').innerHTML = poSorted.map(r=>`
@@ -1362,6 +1555,20 @@ async function loadData() {
       labels:jvArr.map(e=>e[0]),
       datasets:[{data:jvArr.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#1D4ED8',borderRadius:4}]
     },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},x:{grid:{display:false}}}});
+
+    // Department wasn't broken out for JVs before — only a total. JV amounts
+    // can be positive or negative (a transfer debits one department and
+    // credits another), so the sign is kept and colored rather than shown
+    // as an absolute value, and sorted by how much activity each department
+    // has (not by the raw signed total, which would bury a department with
+    // large offsetting transfers near zero).
+    const jvByDept={};
+    jv.forEach(r=>{const d=r.Department||'Other';jvByDept[d]=(jvByDept[d]||0)+num(r.Amount);});
+    const jvDeptArr=Object.entries(jvByDept).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,10);
+    makeChart('chart-jv-dept','bar',{
+      labels:jvDeptArr.map(e=>e[0]),
+      datasets:[{data:jvDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:jvDeptArr.map(e=>e[1]>=0?'#0ca30c':'#d03b3b'),borderRadius:4}]
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>16?l.slice(0,16)+'…':l;}}}}});
 
     const netSorted=[...net].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,8);
     document.getElementById('net-table').innerHTML = netSorted.map(r=>`
