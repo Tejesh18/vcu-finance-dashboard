@@ -337,11 +337,20 @@ html, body {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 16px;
+  align-items: start;
 }
 
 .charts-grid.three { grid-template-columns: 2fr 1fr; }
 
 .chart-panel {
+  /* Grid rows default to stretching every item to match the tallest one.
+     A horizontal bar chart with many categories now sizes its own
+     .chart-area to fit (see makeChart's barRows), which used to also
+     stretch a shorter sibling's panel taller than its actual chart,
+     leaving empty space below it (seen live: Telecom Spend next to PO
+     Amount by Department). align-items:start above plus align-self here
+     make each panel size to its own content instead of its row-mate's. */
+  align-self: start;
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: 6px;
@@ -723,15 +732,17 @@ html, body {
         <div class="metric-sub">Active contracts only</div>
       </div>
     </div>
-    <div class="charts-grid">
-      <div class="chart-panel">
-        <div class="chart-panel-title">Contract Status Distribution — click a bar for the full list</div>
-        <div class="chart-area"><canvas id="chart-status"></canvas></div>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title">Top 8 Vendors by Annual Cost</div>
-        <div class="chart-area"><canvas id="chart-vendors"></canvas></div>
-      </div>
+    <!-- Same reasoning as the Purchase Orders view: chart-status is always
+         exactly 4 bars, chart-vendors grows with data (up to 8) -- pairing
+         a fixed chart with a variable one risks the same height mismatch,
+         so these are stacked full-width instead of a 2-up grid. -->
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Contract Status Distribution — click a bar for the full list</div>
+      <div class="chart-area"><canvas id="chart-status"></canvas></div>
+    </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Top 8 Vendors by Annual Cost</div>
+      <div class="chart-area"><canvas id="chart-vendors"></canvas></div>
     </div>
     <div class="table-panel" id="status-detail-panel" style="display:none">
       <div class="table-panel-header">
@@ -802,15 +813,21 @@ html, body {
         <div class="metric-sub" id="m-tel-sub">FY24 through FY27 — click to view</div>
       </div>
     </div>
-    <div class="charts-grid">
-      <div class="chart-panel">
-        <div class="chart-panel-title">Telecom Spend by Fiscal Year ($M)</div>
-        <div class="chart-area"><canvas id="chart-telecom"></canvas></div>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title">TS PO Amount by Department</div>
-        <div class="chart-area"><canvas id="chart-po-dept"></canvas></div>
-      </div>
+    <!-- These three used to be paired 2-up in a grid, but chart-po-dept's
+         category count varies with the data (could be a handful or a
+         dozen+ departments) while chart-telecom is always exactly 4 bars —
+         pairing a variable-height chart with a fixed one meant one always
+         either got stretched with empty space below it, or (once that was
+         fixed) the two ended up visibly different heights side by side.
+         Full-width stacked avoids the mismatch entirely, and gives the
+         4-bar telecom chart more natural horizontal room besides. -->
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Telecom Spend by Fiscal Year ($M)</div>
+      <div class="chart-area"><canvas id="chart-telecom"></canvas></div>
+    </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">TS PO Amount by Department</div>
+      <div class="chart-area"><canvas id="chart-po-dept"></canvas></div>
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Purchase Order Amount by Month</div>
@@ -868,15 +885,16 @@ html, body {
         <div class="metric-sub">All years combined</div>
       </div>
     </div>
-    <div class="charts-grid">
-      <div class="chart-panel">
-        <div class="chart-panel-title">Network Open Balances by Vendor</div>
-        <div class="chart-area"><canvas id="chart-net"></canvas></div>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title">Journal Voucher Amount by FY</div>
-        <div class="chart-area"><canvas id="chart-jv"></canvas></div>
-      </div>
+    <!-- chart-net grows with the number of vendors carrying an open
+         balance, chart-jv is always exactly 4 fiscal years -- same
+         fixed-vs-variable mismatch as the other views, same fix. -->
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Network Open Balances by Vendor</div>
+      <div class="chart-area"><canvas id="chart-net"></canvas></div>
+    </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Journal Voucher Amount by FY</div>
+      <div class="chart-area"><canvas id="chart-jv"></canvas></div>
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Journal Voucher Amount by Department</div>
