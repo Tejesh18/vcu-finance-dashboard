@@ -1140,6 +1140,11 @@ const barValuePlugin = {
   id: 'barValuePlugin',
   afterDatasetsDraw(chart) {
     const { ctx } = chart;
+    // The original version always drew the label above the bar (bar.y - 8),
+    // which reads fine for a vertical bar (the label sits above its top edge)
+    // but looks like it's floating in the gap above the tip for a horizontal
+    // one, instead of sitting next to it. Branch on orientation instead.
+    const horizontal = chart.options.indexAxis === 'y';
     chart.data.datasets.forEach((dataset, dsIndex) => {
       if (!dataset.valueSuffix && dataset.valueSuffix !== '') return;
       const meta = chart.getDatasetMeta(dsIndex);
@@ -1149,18 +1154,35 @@ const barValuePlugin = {
         ctx.save();
         ctx.fillStyle = '#1A1A1A';
         ctx.font = '700 11px Segoe UI, Arial, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText(val + dataset.valueSuffix, bar.x, bar.y - 8);
+        if (horizontal) {
+          const negative = val < 0;
+          ctx.textAlign = negative ? 'right' : 'left';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(val + dataset.valueSuffix, bar.x + (negative ? -6 : 6), bar.y);
+        } else {
+          ctx.textAlign = 'center';
+          ctx.fillText(val + dataset.valueSuffix, bar.x, bar.y - 8);
+        }
         ctx.restore();
       });
     });
   }
 };
 
-function makeChart(id, type, data, options={}, plugins=[]) {
+// barRows: for a horizontal bar chart, pass the number of categories so the
+// container grows to fit all of them. Without this, .chart-area's fixed
+// 160px height leaves too little room per row once a chart has more than
+// ~6 categories, and Chart.js silently auto-skips every other label rather
+// than overflowing (seen live: only every other department name showing on
+// a 10-row chart). 26px/row is enough for a label + a bit of breathing room.
+function makeChart(id, type, data, options={}, plugins=[], barRows=null) {
   if (chartInstances[id]) chartInstances[id].destroy();
   const ctx = document.getElementById(id);
   if (!ctx) return;
+  if (barRows != null) {
+    const area = ctx.closest('.chart-area');
+    if (area) area.style.height = Math.max(160, barRows * 26) + 'px';
+  }
   chartInstances[id] = new Chart(ctx, {
     type,
     data,
@@ -1424,7 +1446,7 @@ async function loadData() {
     makeChart('chart-cat', 'bar', {
       labels: catArr.map(e=>e[0]),
       datasets:[{data:catArr.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},y:{grid:{display:false},ticks:{font:{size:10}}}} });
+    },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'M'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false}}} }, [], catArr.length);
 
     // Dept table
     const deptData = {};
@@ -1500,7 +1522,7 @@ async function loadData() {
       makeChart('chart-dept-cat', 'bar', {
         labels: deptCatArr.map(e=>e[0]),
         datasets:[{data:deptCatArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-      },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10}}}} });
+      },{ indexAxis:'y', scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false}}} }, [], deptCatArr.length);
     };
     window.hideDeptDetail = function() {
       document.getElementById('dept-modal-backdrop').classList.remove('open');
@@ -1514,7 +1536,7 @@ async function loadData() {
     set('m-fy27b', fmt(fy27Budget));
     set('m-fy27s', fmt(fy27Spent));
 
-    const fy27Sorted = [...fy27].sort((a,b)=>num(b.Budget)-num(a.Budget)).slice(0,8);
+    const fy27Sorted = [...fy27].sort((a,b)=>num(b.Budget)-num(a.Budget)).slice(0,10);
     document.getElementById('fy27-table').innerHTML = fy27Sorted.map(r=>{
       const diff = num(r.Difference);
       const diffColor = diff>=0?'#15803D':'#B91C1C';
@@ -1541,7 +1563,7 @@ async function loadData() {
     makeChart('chart-fy27-util','bar',{
       labels: fy27ByUtil.map(r=>r.Department),
       datasets:[{data:fy27ByUtil.map(r=>num(r.Utilization_Pct)),backgroundColor:fy27ByUtil.map(r=>num(r.Utilization_Pct)>90?'#d03b3b':num(r.Utilization_Pct)>70?'#fab219':'#0ca30c'),borderRadius:4,valueSuffix:'%'}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}},[barValuePlugin]);
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>v+'%'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}},[barValuePlugin],fy27ByUtil.length);
 
     // ── CONTRACTS ────────────────────────────────────────────────────
     const active = con.filter(r=>r.Status==='Active');
@@ -1596,7 +1618,7 @@ async function loadData() {
     makeChart('chart-vendors','bar',{
       labels:topV.map(e=>e[0]),
       datasets:[{data:topV.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}}, [], topV.length);
 
     // Funding_Source wasn't shown anywhere before — active-only, since an
     // expired contract's funding source isn't a current budget commitment.
@@ -1606,7 +1628,7 @@ async function loadData() {
     makeChart('chart-funding','bar',{
       labels:fundArr.map(e=>e[0]),
       datasets:[{data:fundArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false}}}}, [], fundArr.length);
 
     // Department wasn't broken out for contracts before either.
     const conDeptSpend={};
@@ -1615,7 +1637,7 @@ async function loadData() {
     makeChart('chart-con-dept','bar',{
       labels:conDeptArr.map(e=>e[0]),
       datasets:[{data:conDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#C49A00',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false}}}}, [], conDeptArr.length);
 
     // Renewals by month, next 12 months from today — the existing table only
     // covers the next 90 days, so anything renewing in month 4-12 out had no
@@ -1698,7 +1720,7 @@ async function loadData() {
     makeChart('chart-po-dept','bar',{
       labels:poArr.map(e=>e[0]),
       datasets:[{data:poArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>18?l.slice(0,18)+'…':l;}}}}}, [], poArr.length);
 
     // Purchase Order Amount by Month — POs don't carry a fiscal-year label
     // the way expenditures do, so this groups by actual calendar month
@@ -1745,7 +1767,7 @@ async function loadData() {
     makeChart('chart-net','bar',{
       labels:netArr.map(e=>e[0]),
       datasets:[{data:netArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}});
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}}, [], netArr.length);
 
     const jvByFY={};
     jv.forEach(r=>{const f=r.FY||'?';jvByFY[f]=(jvByFY[f]||0)+num(r.Amount);});
@@ -1772,7 +1794,7 @@ async function loadData() {
     makeChart('chart-jv-dept','bar',{
       labels:jvDeptArr.map(e=>e[0]),
       datasets:[{data:jvDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:jvDeptArr.map(e=>e[1]>=0?'#0ca30c':'#d03b3b'),borderRadius:4,valueSuffix:'K'}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},callback:function(v){const l=this.getLabelForValue(v);return l.length>16?l.slice(0,16)+'…':l;}}}}},[barValuePlugin]);
+    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>16?l.slice(0,16)+'…':l;}}}}},[barValuePlugin],jvDeptArr.length);
 
     const netSorted=[...net].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,8);
     document.getElementById('net-table').innerHTML = netSorted.map(r=>`
