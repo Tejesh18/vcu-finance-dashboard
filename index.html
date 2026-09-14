@@ -368,6 +368,25 @@ html, body {
   margin-bottom: 10px;
 }
 
+/* For an instructional note ("Click a bar for...") or a caveat under a
+   chart title — normal case and no letter-spacing on purpose, since that
+   uppercase/spaced style reads fine for a short label but turns a full
+   sentence into something that looks shouty and oversized. */
+.chart-hint {
+  font-size: 11px;
+  color: var(--gray-500);
+  margin: -4px 0 8px;
+}
+
+/* Same idea inside a .table-panel-header, which is also uppercase/spaced —
+   this resets both so an inline hint doesn't get shouted too. */
+.table-hint {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+  opacity: .8;
+}
+
 .chart-area {
   position: relative;
   height: 160px;
@@ -624,7 +643,7 @@ html, body {
       <div class="chart-area"><canvas id="chart-fy27-util"></canvas></div>
     </div>
     <div class="table-panel">
-      <div class="table-panel-header"><span class="fy-cur">FY27</span> Budget by Department (Top 10 by Budget) — click a row for detail</div>
+      <div class="table-panel-header"><span class="fy-cur">FY27</span> Budget by Department (Top 10 by Budget) <span class="table-hint">— click a row for detail</span></div>
       <table class="data-table">
         <thead>
           <tr>
@@ -687,7 +706,7 @@ html, body {
       </div>
     </div>
     <div class="table-panel">
-      <div class="table-panel-header">Top Departments by <span class="fy-cur">FY26</span> Spend — click a row for detail</div>
+      <div class="table-panel-header">Top Departments by <span class="fy-cur">FY26</span> Spend <span class="table-hint">— click a row for detail</span></div>
       <table class="data-table">
         <thead><tr><th>Department</th><th>Division</th><th class="fy-prev2">FY24</th><th class="fy-prev1">FY25</th><th class="fy-cur">FY26</th></tr></thead>
         <tbody id="dept-table"><tr><td colspan="5" class="loading-msg">Loading...</td></tr></tbody>
@@ -737,11 +756,13 @@ html, body {
          a fixed chart with a variable one risks the same height mismatch,
          so these are stacked full-width instead of a 2-up grid. -->
     <div class="chart-panel" style="margin-bottom:20px">
-      <div class="chart-panel-title">Contract Status Distribution — click a bar for the full list</div>
+      <div class="chart-panel-title">Contract Status Distribution</div>
+      <div class="chart-hint">Click a bar for the full list</div>
       <div class="chart-area"><canvas id="chart-status"></canvas></div>
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Top 8 Vendors by Annual Cost</div>
+      <div class="chart-hint">Click a vendor for their contracts</div>
       <div class="chart-area"><canvas id="chart-vendors"></canvas></div>
     </div>
     <div class="table-panel" id="status-detail-panel" style="display:none">
@@ -761,12 +782,24 @@ html, body {
       </div>
       <div class="chart-panel">
         <div class="chart-panel-title">Active Contract Spend by Department</div>
+        <div class="chart-hint">Click a department to see all its contracts</div>
         <div class="chart-area"><canvas id="chart-con-dept"></canvas></div>
       </div>
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Contract Renewals by Month — Next 12 Months</div>
+      <div class="chart-hint">Click a bar to see which contracts</div>
       <div class="chart-area"><canvas id="chart-renewals"></canvas></div>
+    </div>
+    <div class="table-panel" id="renewal-month-panel" style="display:none">
+      <div class="table-panel-header">
+        <span id="renewal-month-title">Renewals</span>
+        <span class="view-toggle" style="float:right;font-weight:400" onclick="hideRenewalMonth()">Close ✕</span>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Vendor</th><th>Product</th><th>Department</th><th>Annual Cost</th><th>Renewal Date</th></tr></thead>
+        <tbody id="renewal-month-table"></tbody>
+      </table>
     </div>
     <div class="table-panel">
       <div class="table-panel-header">Contracts Expiring Within 90 Days — Sorted by Urgency</div>
@@ -831,7 +864,18 @@ html, body {
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Purchase Order Amount by Month</div>
+      <div class="chart-hint">Click a bar to see which POs</div>
       <div class="chart-area"><canvas id="chart-po-monthly"></canvas></div>
+    </div>
+    <div class="table-panel" id="po-month-panel" style="display:none">
+      <div class="table-panel-header">
+        <span id="po-month-title">Purchase Orders</span>
+        <span class="view-toggle" style="float:right;font-weight:400" onclick="hidePoMonth()">Close ✕</span>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Department</th><th>Vendor</th><th>PO Number</th><th>Amount</th><th>Received</th><th>Balance</th></tr></thead>
+        <tbody id="po-month-table"></tbody>
+      </table>
     </div>
     <div class="table-panel" id="telecom-table-panel" style="display:none">
       <div class="table-panel-header">Telecom Purchase Orders <span class="view-toggle" style="float:right;font-weight:400" onclick="toggleTelecomTable()">Hide ↑</span></div>
@@ -890,7 +934,18 @@ html, body {
          fixed-vs-variable mismatch as the other views, same fix. -->
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Network Open Balances by Vendor</div>
+      <div class="chart-hint">Click a vendor for their POs</div>
       <div class="chart-area"><canvas id="chart-net"></canvas></div>
+    </div>
+    <div class="table-panel" id="net-vendor-panel" style="display:none">
+      <div class="table-panel-header">
+        <span id="net-vendor-title">Vendor</span>
+        <span class="view-toggle" style="float:right;font-weight:400" onclick="hideNetVendor()">Close ✕</span>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Department</th><th>PO Number</th><th>Date</th><th>Amount</th><th>Received</th><th>Balance</th></tr></thead>
+        <tbody id="net-vendor-table"></tbody>
+      </table>
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Journal Voucher Amount by FY</div>
@@ -898,7 +953,7 @@ html, body {
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Journal Voucher Amount by Department</div>
-      <div style="font-size:11px;color:#888;margin-bottom:8px">JVs move funds between TS and other university departments — some names here won't be TS teams</div>
+      <div class="chart-hint">JVs move funds between TS and other university departments — some names here won't be TS teams</div>
       <div class="chart-area"><canvas id="chart-jv-dept"></canvas></div>
     </div>
     <div class="table-panel">
@@ -1601,9 +1656,10 @@ async function loadData() {
     // this, "Active"/"Expired"/"Unknown" were only ever shown as a count,
     // with no way to actually see which contracts they were.
     const statusGroups = { 'Active':active, 'Expired':expired, 'Expiring Soon':expiring, 'Unknown':unknown };
-    window.showStatusDetail = function(status) {
-      const rows = statusGroups[status] || [];
-      document.getElementById('status-detail-title').textContent = status + ' Contracts (' + rows.length + ')';
+    // Shared by the status-bar click and the vendor-bar click below — same
+    // table, same columns, just a different subset of rows and a title.
+    function renderContractList(title, rows) {
+      document.getElementById('status-detail-title').textContent = title + ' (' + rows.length + ')';
       const sorted = [...rows].sort((a,b)=>num(b.Annual_Cost)-num(a.Annual_Cost));
       document.getElementById('status-detail-table').innerHTML = sorted.map(r=>`
         <tr>
@@ -1613,10 +1669,16 @@ async function loadData() {
           <td>${fmt(num(r.Annual_Cost))}/yr</td>
           <td>${r.Renewal_Date||'—'}</td>
           <td style="font-size:11px;color:#888">${r.Funding_Source||'—'}</td>
-        </tr>`).join('') || '<tr><td colspan="6" class="loading-msg">No contracts in this status</td></tr>';
+        </tr>`).join('') || '<tr><td colspan="6" class="loading-msg">No contracts found</td></tr>';
       const panel = document.getElementById('status-detail-panel');
       panel.style.display = '';
       panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
+    window.showStatusDetail = function(status) {
+      renderContractList(status + ' Contracts', statusGroups[status] || []);
+    };
+    window.showVendorContracts = function(vendor) {
+      renderContractList(vendor, con.filter(r => r.Vendor === vendor));
     };
     window.hideStatusDetail = function() {
       document.getElementById('status-detail-panel').style.display = 'none';
@@ -1636,7 +1698,10 @@ async function loadData() {
     makeChart('chart-vendors','bar',{
       labels:topV.map(e=>e[0]),
       datasets:[{data:topV.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}}, [], topV.length);
+    },{
+      indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{font:{size:10},autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}},
+      onClick:(evt, elements) => { if (elements.length) showVendorContracts(topV[elements[0].index][0]); }
+    }, [], topV.length);
 
     // Funding_Source wasn't shown anywhere before — active-only, since an
     // expired contract's funding source isn't a current budget commitment.
@@ -1652,10 +1717,19 @@ async function loadData() {
     const conDeptSpend={};
     active.forEach(r=>{const d=r.Department||'Other';conDeptSpend[d]=(conDeptSpend[d]||0)+num(r.Annual_Cost);});
     const conDeptArr=Object.entries(conDeptSpend).sort((a,b)=>b[1]-a[1]);
+    // Shows every contract for that department (any status), not just the
+    // active ones the bar itself totals -- more useful for actually managing
+    // a department's contracts than a status-filtered subset would be.
+    window.showDeptContracts = function(dept) {
+      renderContractList(dept, con.filter(r => r.Department === dept));
+    };
     makeChart('chart-con-dept','bar',{
       labels:conDeptArr.map(e=>e[0]),
       datasets:[{data:conDeptArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#C49A00',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false}}}}, [], conDeptArr.length);
+    },{
+      indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false}}},
+      onClick:(evt, elements) => { if (elements.length) showDeptContracts(conDeptArr[elements[0].index][0]); }
+    }, [], conDeptArr.length);
 
     // Renewals by month, next 12 months from today — the existing table only
     // covers the next 90 days, so anything renewing in month 4-12 out had no
@@ -1678,10 +1752,44 @@ async function loadData() {
       const d = new Date(today.getFullYear(), today.getMonth()+i, 1);
       renewalKeys.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));
     }
+    // Which actual contracts fall in a given "YYYY-MM" renewal month —
+    // computed once here so the click handler below doesn't need to
+    // re-scan con on every click.
+    const contractsByMonth = {};
+    con.forEach(r => {
+      const d = new Date(r.Renewal_Date);
+      if (isNaN(d)) return;
+      const key = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+      (contractsByMonth[key] = contractsByMonth[key] || []).push(r);
+    });
+    window.showRenewalMonth = function(key) {
+      const rows = (contractsByMonth[key]||[]).sort((a,b)=>num(b.Annual_Cost)-num(a.Annual_Cost));
+      const [y,m] = key.split('-');
+      const label = new Date(y,m-1,1).toLocaleDateString('en-US',{month:'long',year:'numeric'});
+      document.getElementById('renewal-month-title').textContent = 'Renewing in ' + label + ' (' + rows.length + ')';
+      document.getElementById('renewal-month-table').innerHTML = rows.map(r=>`
+        <tr>
+          <td><strong>${r.Vendor||'—'}</strong></td>
+          <td>${r.Product||'—'}</td>
+          <td style="font-size:11px;color:#888">${r.Department||'—'}</td>
+          <td>${fmt(num(r.Annual_Cost))}/yr</td>
+          <td>${r.Renewal_Date||'—'}</td>
+        </tr>`).join('') || '<tr><td colspan="5" class="loading-msg">No contracts renewing this month</td></tr>';
+      const panel = document.getElementById('renewal-month-panel');
+      panel.style.display = '';
+      panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    };
+    window.hideRenewalMonth = function() {
+      document.getElementById('renewal-month-panel').style.display = 'none';
+    };
+
     makeChart('chart-renewals','bar',{
       labels: renewalKeys.map(k=>{ const [y,m]=k.split('-'); return new Date(y,m-1,1).toLocaleDateString('en-US',{month:'short',year:'2-digit'}); }),
       datasets:[{data:renewalKeys.map(k=>renewalByMonth[k]||0),backgroundColor:'#1D4ED8',borderRadius:4,valueSuffix:''}]
-    },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{stepSize:1,precision:0}},x:{grid:{display:false}}}},[barValuePlugin]);
+    },{
+      scales:{y:{grid:{color:'#F4F4F4'},ticks:{stepSize:1,precision:0}},x:{grid:{display:false}}},
+      onClick:(evt, elements) => { if (elements.length) showRenewalMonth(renewalKeys[elements[0].index]); }
+    },[barValuePlugin]);
 
     const expSorted = expiring.sort((a,b)=>num(a.Days_Until_Expiry)-num(b.Days_Until_Expiry));
     document.getElementById('expiring-table').innerHTML = expSorted.map(r=>{
@@ -1751,12 +1859,44 @@ async function loadData() {
       poByMonth[key] = (poByMonth[key]||0) + num(r.Amount);
     });
     const poMonthKeys = Object.keys(poByMonth).sort();
+    const posByMonthKey = {};
+    pos.forEach(r => {
+      const d = new Date(r.Date);
+      if (isNaN(d)) return;
+      const key = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+      (posByMonthKey[key] = posByMonthKey[key] || []).push(r);
+    });
+    window.showPoMonth = function(key) {
+      const rows = (posByMonthKey[key]||[]).sort((a,b)=>num(b.Amount)-num(a.Amount));
+      const [y,m] = key.split('-');
+      const label = new Date(y,m-1,1).toLocaleDateString('en-US',{month:'long',year:'numeric'});
+      document.getElementById('po-month-title').textContent = label + ' (' + rows.length + ' POs)';
+      document.getElementById('po-month-table').innerHTML = rows.map(r=>`
+        <tr>
+          <td style="font-size:11px">${r.Department||'—'}</td>
+          <td><strong>${r.Vendor||'—'}</strong></td>
+          <td style="font-size:11px;color:#888">${r.PO_Number||'—'}</td>
+          <td>${fmt(num(r.Amount))}</td>
+          <td>${fmt(num(r.Amount_Received))}</td>
+          <td style="color:${num(r.Ending_Balance)>0?'#B91C1C':'#15803D'};font-weight:600">${fmt(num(r.Ending_Balance))}</td>
+        </tr>`).join('') || '<tr><td colspan="6" class="loading-msg">No POs this month</td></tr>';
+      const panel = document.getElementById('po-month-panel');
+      panel.style.display = '';
+      panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    };
+    window.hidePoMonth = function() {
+      document.getElementById('po-month-panel').style.display = 'none';
+    };
+
     makeChart('chart-po-monthly','bar',{
       labels: poMonthKeys.map(k=>{
         const [y,m]=k.split('-'); return new Date(y,m-1,1).toLocaleDateString('en-US',{month:'short',year:'2-digit'});
       }),
       datasets:[{data:poMonthKeys.map(k=>+(poByMonth[k]/1e3).toFixed(1)),backgroundColor:'#1D4ED8',borderRadius:4}]
-    },{scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},x:{grid:{display:false}}}});
+    },{
+      scales:{y:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},x:{grid:{display:false}}},
+      onClick:(evt, elements) => { if (elements.length) showPoMonth(poMonthKeys[elements[0].index]); }
+    });
 
     const poSorted=[...pos].sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance)).slice(0,10);
     document.getElementById('po-table').innerHTML = poSorted.map(r=>`
@@ -1782,10 +1922,32 @@ async function loadData() {
     const netVendors={};
     net.forEach(r=>{const v=r.Vendor||'Other';netVendors[v]=(netVendors[v]||0)+num(r.Ending_Balance);});
     const netArr=Object.entries(netVendors).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1]);
+    window.showNetVendor = function(vendor) {
+      const rows = net.filter(r => r.Vendor === vendor).sort((a,b)=>num(b.Ending_Balance)-num(a.Ending_Balance));
+      document.getElementById('net-vendor-title').textContent = vendor + ' (' + rows.length + ' POs)';
+      document.getElementById('net-vendor-table').innerHTML = rows.map(r=>`
+        <tr>
+          <td style="font-size:11px">${r.Department||'—'}</td>
+          <td style="font-size:11px;color:#888">${r.PO_Number||'—'}</td>
+          <td style="font-size:11px">${r.Date||'—'}</td>
+          <td>${fmt(num(r.Amount))}</td>
+          <td>${fmt(num(r.Amount_Received))}</td>
+          <td style="color:${num(r.Ending_Balance)>0?'#B91C1C':'#15803D'};font-weight:600">${fmt(num(r.Ending_Balance))}</td>
+        </tr>`).join('') || '<tr><td colspan="6" class="loading-msg">No POs found</td></tr>';
+      const panel = document.getElementById('net-vendor-panel');
+      panel.style.display = '';
+      panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    };
+    window.hideNetVendor = function() {
+      document.getElementById('net-vendor-panel').style.display = 'none';
+    };
     makeChart('chart-net','bar',{
       labels:netArr.map(e=>e[0]),
       datasets:[{data:netArr.map(e=>+(e[1]/1e3).toFixed(1)),backgroundColor:'#0D9488',borderRadius:4}]
-    },{indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}}}, [], netArr.length);
+    },{
+      indexAxis:'y',scales:{x:{grid:{color:'#F4F4F4'},ticks:{callback:v=>'$'+v+'K'}},y:{grid:{display:false},ticks:{autoSkip:false,callback:function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,14)+'…':l;}}}},
+      onClick:(evt, elements) => { if (elements.length) showNetVendor(netArr[elements[0].index][0]); }
+    }, [], netArr.length);
 
     const jvByFY={};
     jv.forEach(r=>{const f=r.FY||'?';jvByFY[f]=(jvByFY[f]||0)+num(r.Amount);});
