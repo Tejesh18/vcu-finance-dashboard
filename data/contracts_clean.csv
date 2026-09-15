@@ -1,4 +1,5 @@
 Department,Vendor,Product,Annual_Cost,Renewal_Date,Funding_Source,Status,Days_Until_Expiry
+InfoSec/EndPoint,AlxTel,JAMF PRO/Connect & Protect,77613.49,2027-09-13,123152,Active,363
 InfoSec/EndPoint,Assura,PCI Testing ,41412,2026-08-31,123152,Expired,-15
 InfoSec/EndPoint,DUO,DUO,72630,2027-04-01,123152,Active,198
 InfoSec/EndPoint,DUO,Estimated Annual average cost for Credit purchase for Texting ,5000,,123152,Unknown,
