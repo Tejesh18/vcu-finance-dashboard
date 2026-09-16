@@ -1066,55 +1066,63 @@ FY27,Technology Services,Central Services,a/o 8/31/26,IT/Univ Salary,Salaries,18
 FY27,Technology Services,Central Services,a/o 8/31/26,Software,Software & Maintenance,0,0,762.03,-762.03,2026-08-31,2,Aug
 FY27,Technology Services,Central Services,a/o 8/31/26,Tele Centrex,Telecomm & Network,1440,1440,74.95,1365.05,2026-08-31,2,Aug
 FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Supplies/FMD,Supplies & Printing,183150,183150,226.8,182923.2,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Office Supplies/Other,Bonus/OT/VSDP,0,0,16193.47,-16193.47,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Network and Data Supplies,Supplies & Printing,0,0,34292.5,-34292.5,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,IT Salaries/Univ Salaries,Salaries,2405847,2405847,271069.19,266224.48,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fringes,Fringes,838295,838295,103482.28,11682.581289999885,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fuel/Postage,Supplies & Printing,0,0,65.95,-65.95,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fleet Mgt/Parking,Other,7370,7370,1176,6194,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,23052,23052,529.09,22522.91,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Printing,Supplies & Printing,0,0,12.35,-12.35,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Operating Lease Equipment/Lease Bldg.,Equipment & Hardware,1500,1500,724.71,775.29,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Lease/Equipment,Equipment & Hardware,0,0,1766.66,-1766.66,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/Labor/Data Install,Recoveries & Revenue,-50000,-50000,-90,-49910,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/Internal,Recoveries & Revenue,-350000,-350000,-1783.44,-348216.56,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Network/Data Supplies,Supplies & Printing,1000000,1000000,29323.92,970676.08,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Data Installation,Other,0,0,-10955.46,10955.46,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Office Supplies/Other,Bonus/OT/VSDP,0,0,29398.71,-29398.71,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Network and Data Supplies,Supplies & Printing,0,0,36521.3,-36521.3,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,IT Salaries/Univ Salaries,Salaries,2405847,2405847,364980.47,197660.9299999997,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fringes,Fringes,838295,838295,139148.30000000002,-14173.867200000095,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fuel/Postage,Supplies & Printing,0,0,179.05,-179.05,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fleet Mgt/Parking,Other,7370,7370,5880,1490,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,23052,23052,1057.44,21994.56,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Printing,Supplies & Printing,0,0,36.94,-36.94,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Operating Lease Equipment/Lease Bldg.,Equipment & Hardware,1500,1500,1449.42,50.57999999999993,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Lease/Equipment,Equipment & Hardware,0,0,3533.32,-3533.32,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/Labor/Data Install,Recoveries & Revenue,-50000,-50000,-405,-49595,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/Internal,Recoveries & Revenue,-350000,-350000,-7049.9,-342950.1,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Network/Data Supplies,Supplies & Printing,1000000,1000000,111319.81,888680.19,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Data Installation,Other,0,0,-43306.55,43306.55,2026-08-31,2,Aug
 FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Other (VCUHS),Other,0,0,-2086.74,2086.74,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Tele Circuits,Telecomm & Network,0,0,185.3,-185.3,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Skilled Services,Contractual & Services,196195,196195,5482.92,190712.08,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Tele Circuits,Telecomm & Network,0,0,793.34,-793.34,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Tele Verizon,Telecomm & Network,136066,136066,31802.12,104263.88,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Skilled Services,Contractual & Services,196195,196195,10965.84,185229.16,2026-08-31,2,Aug
 FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Software Cloud Subscriptions,Software & Maintenance,0,0,425,-425,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Internal Serv. Charge,Recoveries & Revenue,0,0,-12733.08,12733.08,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Info Tech Salaries,Salaries,1986473,1986473,214990.11,296666.1200000001,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Internal Serv. Charge,Recoveries & Revenue,0,0,-27686.2,27686.2,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Network Components $10K and above,Telecomm & Network,0,0,202428.32,-202428.32,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Info Tech Salaries,Salaries,1986473,1986473,289054.33,246894.27000000002,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,University Staff Salaries,Salaries,233451,233451,-10531.32,243982.32,2026-08-31,2,Aug
 FY27,Network Services,Network & Infrastructure,a/o 8/31/26,On Call,Bonus/OT/VSDP,8095,8095,20,8075,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fringes,Fringes,875188,875188,81676.8,222757.11000999995,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Telecomm,Telecomm & Network,12813,12813,676.4300000000001,12136.57,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Leases/Printing,Supplies & Printing,2445,2445,110,2335,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Software/Cloud Subscriptions/637037,Software & Maintenance,0,0,39587,-39587,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/SLA Fees,Recoveries & Revenue,-126453,-126453,-16031,-110422,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/SAN Fees,Recoveries & Revenue,-40000,-40000,-28411,-11589,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Salaries,Salaries,574793,574793,63688.66,37124.68000000005,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fringes,Fringes,875188,875188,109744.47,204090.58720000007,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Express/Courier Services,Other,14540,14540,19.96,14520.04,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recovery/Internal charge,Recoveries & Revenue,0,0,-599190.64,599190.64,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Telecomm,Telecomm & Network,12813,12813,1352.27,11460.73,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Leases/Printing,Supplies & Printing,2445,2445,223.38,2221.62,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Software/Cloud Subscriptions/637037,Software & Maintenance,0,0,60189.74,-60189.74,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Software Maintenance/600207,Software & Maintenance,233998,233998,158858.27,75139.73000000001,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/SLA Fees,Recoveries & Revenue,-126453,-126453,-63896.33,-62556.67,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Recoveries/SAN Fees,Recoveries & Revenue,-40000,-40000,-842967.89,802967.89,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Salaries,Salaries,574793,574793,87427.5,20228.699999999953,2026-08-31,2,Aug
 FY27,Network Services,Network & Infrastructure,a/o 8/31/26,OT/VSDP/Bonuses,Bonus/OT/VSDP,3500,3500,5012.72,-1512.7200000000003,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Hourly Info Tech,Salaries,57000,57000,3030,53970,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Hourly Fringe,Salaries,3718,3718,228.7,3489.3,2026-08-31,2,Aug
-FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fringes,Fringes,203833,203833,26249.47,-5846.598419999995,2026-08-31,2,Aug
-FY27,Administrative Systems,Application Services,a/o 8/31/26,IT/Univ Salaries,Salaries,1469282,1469282,210861.84,-240943.71999999997,2026-08-31,2,Aug
-FY27,Administrative Systems,Application Services,a/o 8/31/26,Fringe,Fringes,601295,601295,81629.76000000001,-60588.58155999996,2026-08-31,2,Aug
-FY27,Administrative Systems,Application Services,a/o 8/31/26,Telecomm,Telecomm & Network,5280,5280,238,5042,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Hourly Info Tech,Salaries,57000,57000,4121.93,52878.07,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Hourly Fringe,Salaries,3718,3718,313.87,3404.13,2026-08-31,2,Aug
+FY27,Network Services,Network & Infrastructure,a/o 8/31/26,Fringes,Fringes,203833,203833,35288.57,-12237.511599999998,2026-08-31,2,Aug
+FY27,Administrative Systems,Application Services,a/o 8/31/26,IT/Univ Salaries,Salaries,1469282,1469282,284823.62,-292937.2200000002,2026-08-31,2,Aug
+FY27,Administrative Systems,Application Services,a/o 8/31/26,Fringe,Fringes,601295,601295,110217.38,-80674.47720000008,2026-08-31,2,Aug
+FY27,Administrative Systems,Application Services,a/o 8/31/26,Telecomm,Telecomm & Network,5280,5280,500.6,4779.4,2026-08-31,2,Aug
 FY27,Administrative Systems,Application Services,a/o 8/31/26,Software Cloud Subscriptions,Software & Maintenance,0,0,74326.02,-74326.02,2026-08-31,2,Aug
-FY27,Application Services,Application Services,a/o 8/31/26,Classified/IT/Univ. Salary,Salaries,1779195,1779195,198012.51,265739.02,2026-08-31,2,Aug
+FY27,Application Services,Application Services,a/o 8/31/26,Classified/IT/Univ. Salary,Salaries,1779195,1779195,266817.45,212304.94999999995,2026-08-31,2,Aug
 FY27,Application Services,Application Services,a/o 8/31/26,On Call,Bonus/OT/VSDP,9524,9524,124,9400,2026-08-31,2,Aug
-FY27,Application Services,Application Services,a/o 8/31/26,Fringes,Fringes,614883,614883,75487.03,30319.347109999973,2026-08-31,2,Aug
-FY27,Application Services,Application Services,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,13090,13090,346.9,12743.1,2026-08-31,2,Aug
+FY27,Application Services,Application Services,a/o 8/31/26,Fringes,Fringes,614883,614883,101613,10141.903799999971,2026-08-31,2,Aug
+FY27,Application Services,Application Services,a/o 8/31/26,Supplies,Supplies & Printing,17760,17760,387.98,17372.02,2026-08-31,2,Aug
+FY27,Application Services,Application Services,a/o 8/31/26,Telecomm/Wireless,Telecomm & Network,13090,13090,694,12396,2026-08-31,2,Aug
 FY27,Application Services,Application Services,a/o 8/31/26,Maintenance/Software,Software & Maintenance,253200,253200,23625,229575,2026-08-31,2,Aug
-FY27,Application Services,Application Services,a/o 8/31/26,Software Cloud Subscription,Software & Maintenance,0,0,76954.97,-76954.97,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,Info Tech Salaries,Salaries,-15253,-15253,92343.15,-752738.2000000001,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,University Salaries,Salaries,871089,871089,9568.62,794960.04,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,Hourly/OnCall,Salaries,0,0,118.97,-118.97,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,Fringe,Fringes,311339,311339,39414.76,-3504.584930000012,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,Internal Serv. Charge,Recoveries & Revenue,0,0,1522.5,-1522.5,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,Telecomm,Telecomm & Network,2000,2000,120,1880,2026-08-31,2,Aug
-FY27,Central Services,Central Services,a/o 8/31/26,Software /Maintenance,Software & Maintenance,454154,454154,6515.73,447638.27,2026-08-31,2,Aug
+FY27,Application Services,Application Services,a/o 8/31/26,Software Cloud Subscription,Software & Maintenance,0,0,95859.55,-95859.55,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Info Tech Salaries,Salaries,-15253,-15253,124224.35,-775901.35,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,University Salaries,Salaries,871089,871089,12875.45,792476.95,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Hourly/OnCall,Salaries,0,0,353.96,-353.96,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Fringe,Fringes,311339,311339,53001.58,-13398.732200000028,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Internal Serv. Charge,Recoveries & Revenue,0,0,2200.17,-2200.17,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Telecomm,Telecomm & Network,2000,2000,240,1760,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Travel/Training,Training & Travel,8000,8000,235,7765,2026-08-31,2,Aug
+FY27,Central Services,Central Services,a/o 8/31/26,Software /Maintenance,Software & Maintenance,454154,454154,8310.73,445843.27,2026-08-31,2,Aug
 FY27,Media Support Services,Academic Technology,a/o 8/31/26,IT/Univ. Salaries,Salaries,681931,681931,110522.83,8286.369999999995,2026-08-31,2,Aug
 FY27,Media Support Services,Academic Technology,a/o 8/31/26,Fringes,Fringes,238312,238312,42501.59,-22117.726600000024,2026-08-31,2,Aug
 FY27,Media Support Services,Academic Technology,a/o 8/31/26,Fuel/Printing,Supplies & Printing,0,0,9.21,-9.21,2026-08-31,2,Aug
