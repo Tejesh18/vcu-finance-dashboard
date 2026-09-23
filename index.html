@@ -1621,7 +1621,15 @@ async function loadData() {
     // fy27Budget/fy27Spent are already computed above, alongside b26.
     set('k-fy27', fmt(fy27Budget));
     set('m-fy27b', fmt(fy27Budget));
-    set('m-fy27s', fmt(fy27Spent));
+    // "Spent So Far" uses t26 (expenditures data), not fy27Spent (the
+    // budget document's own Expenses column) -- these two disagreed by a
+    // huge margin ($5.64M vs $3.45M) sitting right next to each other on
+    // the same page, same class of bug as the Budget mismatch above. The
+    // expenditures figure is the one already established as live and
+    // separately verified accurate, so it wins here; fy27Spent is no
+    // longer used for anything (only the per-department Expenses column
+    // in the table below still reads from the budget document directly).
+    set('m-fy27s', fmt(t26));
 
     const fy27Sorted = [...fy27].sort((a,b)=>num(b.Budget)-num(a.Budget)).slice(0,10);
     document.getElementById('fy27-table').innerHTML = fy27Sorted.map(r=>{
