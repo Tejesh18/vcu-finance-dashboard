@@ -623,9 +623,9 @@ html, body {
         <div class="metric-sub">Approved allocation</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label"><span class="fy-cur">FY27</span> Spent So Far</div>
+        <div class="metric-label"><span class="fy-cur">FY27</span> Commitments</div>
         <div class="metric-value" id="m-fy27s">—</div>
-        <div class="metric-sub">So far this fiscal year</div>
+        <div class="metric-sub">Obligated, not yet spent</div>
       </div>
     </div>
     <div class="charts-grid">
@@ -1444,7 +1444,9 @@ async function loadData() {
     // caught live before a demo. Computed here (moved up from where fy27's
     // other KPIs are set below) so both places share one number.
     const fy27Budget = fy27.reduce((s,r)=>s+num(r.Budget),0);
-    const fy27Spent = fy27.reduce((s,r)=>s+num(r.Expenses),0);
+    // Committed-but-not-yet-spent money from the same budget document --
+    // wasn't shown as its own figure anywhere before.
+    const fy27Commitments = fy27.reduce((s,r)=>s+num(r.Commitments),0);
     const b26 = fy27Budget;
     // Perm_Budget is known-unreliable at the source (flagged in the
     // project's own notes before today) — the % itself is an approximation,
@@ -1621,15 +1623,11 @@ async function loadData() {
     // fy27Budget/fy27Spent are already computed above, alongside b26.
     set('k-fy27', fmt(fy27Budget));
     set('m-fy27b', fmt(fy27Budget));
-    // "Spent So Far" uses t26 (expenditures data), not fy27Spent (the
-    // budget document's own Expenses column) -- these two disagreed by a
-    // huge margin ($5.64M vs $3.45M) sitting right next to each other on
-    // the same page, same class of bug as the Budget mismatch above. The
-    // expenditures figure is the one already established as live and
-    // separately verified accurate, so it wins here; fy27Spent is no
-    // longer used for anything (only the per-department Expenses column
-    // in the table below still reads from the budget document directly).
-    set('m-fy27s', fmt(t26));
+    // This card used to duplicate "FY27 Total Spend" (t26) under a
+    // different label -- same number shown twice on one page. Repurposed
+    // to show Commitments (money obligated but not yet spent) instead,
+    // which wasn't surfaced anywhere else.
+    set('m-fy27s', fmt(fy27Commitments));
 
     const fy27Sorted = [...fy27].sort((a,b)=>num(b.Budget)-num(a.Budget)).slice(0,10);
     document.getElementById('fy27-table').innerHTML = fy27Sorted.map(r=>{
