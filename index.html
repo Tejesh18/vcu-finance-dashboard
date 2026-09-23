@@ -1434,7 +1434,18 @@ async function loadData() {
 
     const t24=fyTotal(FY_PREV2), b24=fyBudget(FY_PREV2);
     const t25=fyTotal(FY_PREV1), b25=fyBudget(FY_PREV1);
-    const t26=fyTotal(FY_CUR), b26=fyBudget(FY_CUR);
+    const t26=fyTotal(FY_CUR);
+    // FY_CUR's budget comes from the dedicated budget-planning document
+    // (below), not summed Perm_Budget like FY_PREV2/FY_PREV1 use — Perm_Budget
+    // is the flagged-unreliable field, and using it for the current year
+    // specifically produced a real, visible mismatch: this chart showed
+    // $30.3M for "FY27 Budget" while the KPI card right next to it (sourced
+    // from the reliable budget document) said $31.5M for the same thing —
+    // caught live before a demo. Computed here (moved up from where fy27's
+    // other KPIs are set below) so both places share one number.
+    const fy27Budget = fy27.reduce((s,r)=>s+num(r.Budget),0);
+    const fy27Spent = fy27.reduce((s,r)=>s+num(r.Expenses),0);
+    const b26 = fy27Budget;
     // Perm_Budget is known-unreliable at the source (flagged in the
     // project's own notes before today) — the % itself is an approximation,
     // not a precise figure. We still show it live rather than a hardcoded
@@ -1461,8 +1472,10 @@ async function loadData() {
     makeChart('chart-bva', 'bar', {
       labels: [FY_PREV2, FY_PREV1, FY_CUR],
       datasets: [
-        // Budget bars are live (same Perm_Budget approximation caveat as
-        // above). Actual (spend) is live and separately verified accurate.
+        // FY_PREV2/FY_PREV1 budget bars use the same Perm_Budget
+        // approximation caveat as above; FY_CUR's uses the reliable
+        // budget-document figure (b26 = fy27Budget). Actual (spend) is
+        // live and separately verified accurate for all three years.
         { label:'Budget', data:[+(b24/1e6).toFixed(1),+(b25/1e6).toFixed(1),+(b26/1e6).toFixed(1)], backgroundColor:'#444444', borderRadius:4 },
         { label:'Actual', data:[+(t24/1e6).toFixed(1),+(t25/1e6).toFixed(1),+(t26/1e6).toFixed(1)], backgroundColor:'#C49A00', borderRadius:4 },
       ]
@@ -1472,8 +1485,9 @@ async function loadData() {
     // can't tell these hues apart), so every bar also gets its % printed
     // directly on it via barValuePlugin. Color here is a reinforcing cue,
     // not the only signal.
-    // Live, same Perm_Budget-reliability caveat as util26 above — treat as
-    // approximate, not precise.
+    // FY_PREV2/FY_PREV1 carry the same Perm_Budget-reliability caveat as
+    // util26 above; FY_CUR now divides by the reliable b26 (fy27Budget)
+    // instead, matching the KPI card's own FY_CUR utilization number.
     const utils = [b24?+(t24/b24*100).toFixed(1):0, b25?+(t25/b25*100).toFixed(1):0, b26?+(t26/b26*100).toFixed(1):0];
     // min:70 was hardcoded assuming utilization always sits in a 70-135%
     // band, true for FY24-26 (fully or mostly closed years) but not for a
@@ -1604,9 +1618,7 @@ async function loadData() {
     };
 
     // ── FY27 ─────────────────────────────────────────────────────────
-    const fy27Budget = fy27.reduce((s,r)=>s+num(r.Budget),0);
-    const fy27Spent = fy27.reduce((s,r)=>s+num(r.Expenses),0);
-
+    // fy27Budget/fy27Spent are already computed above, alongside b26.
     set('k-fy27', fmt(fy27Budget));
     set('m-fy27b', fmt(fy27Budget));
     set('m-fy27s', fmt(fy27Spent));
