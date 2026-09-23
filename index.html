@@ -775,16 +775,18 @@ html, body {
         <tbody id="status-detail-table"></tbody>
       </table>
     </div>
-    <div class="charts-grid">
-      <div class="chart-panel">
-        <div class="chart-panel-title">Active Contract Spend by Funding Source</div>
-        <div class="chart-area"><canvas id="chart-funding"></canvas></div>
-      </div>
-      <div class="chart-panel">
-        <div class="chart-panel-title">Active Contract Spend by Department</div>
-        <div class="chart-hint">Click a department to see all its contracts</div>
-        <div class="chart-area"><canvas id="chart-con-dept"></canvas></div>
-      </div>
+    <!-- Same mismatch as the other pairs fixed earlier: funding sources are
+         typically only 2-4 (short), departments run up to 8+ (tall) --
+         flagged as a lower-priority risk at the time and left paired; it
+         did in fact show up live, same as predicted. Stacked full-width now. -->
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Active Contract Spend by Funding Source</div>
+      <div class="chart-area"><canvas id="chart-funding"></canvas></div>
+    </div>
+    <div class="chart-panel" style="margin-bottom:20px">
+      <div class="chart-panel-title">Active Contract Spend by Department</div>
+      <div class="chart-hint">Click a department to see all its contracts</div>
+      <div class="chart-area"><canvas id="chart-con-dept"></canvas></div>
     </div>
     <div class="chart-panel" style="margin-bottom:20px">
       <div class="chart-panel-title">Contract Renewals by Month — Next 12 Months</div>
