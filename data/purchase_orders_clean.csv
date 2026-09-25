@@ -49,6 +49,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38017,Wed Jul 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218059994,P0344266,TSRC,91.12,91.12,0,,138017,620012,
 1-38017,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219197613,P0348923 ,Dell,70.49,70.49,0,,138017,620097,
 1-38017,Thu Aug 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219824595,P0351551,Apple (Standing PO),75000,8812.14,66187.86,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,
+1-38017,Tue Sep 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221448073,P0357757,Amazon,49.97,16.99,32.980000000000004,Fri Sep 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620012,
 1-38114,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220263716,P0325913,Dell,193.99,0,193.99,,WebCam Joel Eisner,,
 1-38114,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220264460,P0325913,Dell,193.99,0,193.99,,WebCam Andrew Karnolt,,
 1-38114,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220267930,P0352926,Daly,1918.04,0,1918.04,,Monitor/Mount Joel Eisner,,
