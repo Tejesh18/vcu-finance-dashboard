@@ -1,118 +1,118 @@
 Department,Vendor,Product,Annual_Cost,Renewal_Date,Funding_Source,Status,Days_Until_Expiry
-InfoSec/EndPoint,AlxTel,JAMF PRO/Connect & Protect,77613.49,2027-09-13,123152,Active,353
-InfoSec/EndPoint,Assura,PCI Testing ,41412,2026-08-31,123152,Expired,-25
-InfoSec/EndPoint,DUO,DUO,72630,2027-04-01,123152,Active,188
+InfoSec/EndPoint,AlxTel,JAMF PRO/Connect & Protect,77613.49,2027-09-13,123152,Active,352
+InfoSec/EndPoint,Assura,PCI Testing ,41412,2026-08-31,123152,Expired,-26
+InfoSec/EndPoint,DUO,DUO,72630,2027-04-01,123152,Active,187
 InfoSec/EndPoint,DUO,Estimated Annual average cost for Credit purchase for Texting ,5000,,123152,Unknown,
-InfoSec/EndPoint,CampusGuard,ASV Quarterly Scan,1155,2026-12-31,123152,Active,97
-InfoSec/EndPoint,Carahsoft,Bitbucket,7434.78,2024-09-05,123152,Expired,-750
-InfoSec/EndPoint,Carahsoft,Charts & Graphs for Bitbucket,967.74,2024-08-16,123152,Expired,-770
-InfoSec/EndPoint,Carahsoft,Snowflake Cloud Computing,6989.25,2024-09-30,123152,Expired,-725
-InfoSec/EndPoint,Carahsoft,Wiz,20672,2027-04-30,123152,Active,217
-InfoSec/EndPoint,Carahsoft,HorizonAI,237006,2029-07-29,123152,Active,1038
-InfoSec/EndPoint,Cas Severn,IBM Cloud Pak,845924.45,0228-06-30,771078,Expired,-656793
-InfoSec/EndPoint,Cas Severn,SASE VCU ZScaler,1071191.67,2028-09-28,123152,Active,734
-InfoSec/EndPoint,CDYNE,CDYNE,14000,2026-11-30,138102,Expiring Soon,66
-InfoSec/EndPoint,Eramba,SaaS Enterprise Solutions,14340.1,2028-06-01,123152,Active,615
-InfoSec/EndPoint,Fischer Identity,Fischer Identity (IAM),161148.62,2027-07-17,123152,Active,295
-InfoSec/EndPoint,IANS,Research & Advisory Svcs,135915,2027-08-31,123152,Active,340
+InfoSec/EndPoint,CampusGuard,ASV Quarterly Scan,1155,2026-12-31,123152,Active,96
+InfoSec/EndPoint,Carahsoft,Bitbucket,7434.78,2024-09-05,123152,Expired,-751
+InfoSec/EndPoint,Carahsoft,Charts & Graphs for Bitbucket,967.74,2024-08-16,123152,Expired,-771
+InfoSec/EndPoint,Carahsoft,Snowflake Cloud Computing,6989.25,2024-09-30,123152,Expired,-726
+InfoSec/EndPoint,Carahsoft,Wiz,20672,2027-04-30,123152,Active,216
+InfoSec/EndPoint,Carahsoft,HorizonAI,237006,2029-07-29,123152,Active,1037
+InfoSec/EndPoint,Cas Severn,IBM Cloud Pak,845924.45,0228-06-30,771078,Expired,-656794
+InfoSec/EndPoint,Cas Severn,SASE VCU ZScaler,1071191.67,2028-09-28,123152,Active,733
+InfoSec/EndPoint,CDYNE,CDYNE,14000,2026-11-30,138102,Expiring Soon,65
+InfoSec/EndPoint,Eramba,SaaS Enterprise Solutions,14340.1,2028-06-01,123152,Active,614
+InfoSec/EndPoint,Fischer Identity,Fischer Identity (IAM),161148.62,2027-07-17,123152,Active,294
+InfoSec/EndPoint,IANS,Research & Advisory Svcs,135915,2027-08-31,123152,Active,339
 InfoSec/EndPoint,Internet2+,InCommon Certificate Svc Subscriber Agreement,12684,,123152,Unknown,
-InfoSec/EndPoint,Magnet Forensic,Forensic Software,7225,2027-09-30,123152,Active,370
-InfoSec/EndPoint,Optiv,Rapid7 Renewal,34112,2027-02-22,123152,Active,150
+InfoSec/EndPoint,Magnet Forensic,Forensic Software,7225,2027-09-30,123152,Active,369
+InfoSec/EndPoint,Optiv,Rapid7 Renewal,34112,2027-02-22,123152,Active,149
 InfoSec/EndPoint,Optiv,KnocKnoc,41756,,123152,Unknown,
-InfoSec/EndPoint,SHI,Crowdstrike-Falcon Endpoint Protection,850248.01,2029-01-27,291833,Active,855
-InfoSec/EndPoint,SHI,PatchMyPC (SCCM),109560,2028-04-23,123152,Active,576
-InfoSec/EndPoint,Sycom,Citrix Cloud Solution,167461.65,2027-05-30,146405,Active,247
-InfoSec/EndPoint,Sycom,RedSpy365,16689.72,2026-09-30,123152,Expiring Soon,5
-InfoSec/EndPoint,Risk Based Security,CRA Renewal,9999,2025-03-12,123152,Expired,-562
+InfoSec/EndPoint,SHI,Crowdstrike-Falcon Endpoint Protection,850248.01,2029-01-27,291833,Active,854
+InfoSec/EndPoint,SHI,PatchMyPC (SCCM),109560,2028-04-23,123152,Active,575
+InfoSec/EndPoint,Sycom,Citrix Cloud Solution,167461.65,2027-05-30,146405,Active,246
+InfoSec/EndPoint,Sycom,RedSpy365,16689.72,2026-09-30,123152,Expiring Soon,4
+InfoSec/EndPoint,Risk Based Security,CRA Renewal,9999,2025-03-12,123152,Expired,-563
 InfoSec/EndPoint,SmartSheets,"Ryan, Shane, Dan, Mayura, & Jose",1800,,123152,Unknown,
-InfoSec/EndPoint,QSR International,Nvivo Renewal ,11130,2026-02-27,146405,Expired,-210
-InfoSec/EndPoint,SHI,PatchMyPC (SCCM),41580,2025-04-22,123152,Expired,-521
-InfoSec/EndPoint,MAXQDA,MAXQDA Network Licenses,1084,2024-09-01,70% 138007/30% 146405,Expired,-754
-InfoSec/EndPoint,SHI,JAMF PRO/Connect & Protect,67085.86,2026-09-13,123152,Expired,-12
-InfoSec/EndPoint,Stata Corp,STATA Network Licenses,1130,2026-10-24,146405,Expiring Soon,29
-InfoSec/EndPoint,Lumivero,Nvivo 3-Yr Agreeement,15781.23,2029-02-27,146405,Active,886
-InfoSec/EndPoint,TeachPrivacy,Privacy & Security Training,3999,2027-02-08,123152,Active,136
-InfoSec/EndPoint,Valente Sherman dba Visio Trust,Risk Assessment Tool,47538,2027-01-30,123152,Active,127
-Application Svcs,Accruent,EMS Move to Cloud,37981.4,2022-10-01,138114,Expired,-1455
-Application Svcs,Carahsoft,Confluence Cloud & JIRA,39064.02,2027-02-11,138114,Active,139
+InfoSec/EndPoint,QSR International,Nvivo Renewal ,11130,2026-02-27,146405,Expired,-211
+InfoSec/EndPoint,SHI,PatchMyPC (SCCM),41580,2025-04-22,123152,Expired,-522
+InfoSec/EndPoint,MAXQDA,MAXQDA Network Licenses,1084,2024-09-01,70% 138007/30% 146405,Expired,-755
+InfoSec/EndPoint,SHI,JAMF PRO/Connect & Protect,67085.86,2026-09-13,123152,Expired,-13
+InfoSec/EndPoint,Stata Corp,STATA Network Licenses,1130,2026-10-24,146405,Expiring Soon,28
+InfoSec/EndPoint,Lumivero,Nvivo 3-Yr Agreeement,15781.23,2029-02-27,146405,Active,885
+InfoSec/EndPoint,TeachPrivacy,Privacy & Security Training,3999,2027-02-08,123152,Active,135
+InfoSec/EndPoint,Valente Sherman dba Visio Trust,Risk Assessment Tool,47538,2027-01-30,123152,Active,126
+Application Svcs,Accruent,EMS Move to Cloud,37981.4,2022-10-01,138114,Expired,-1456
+Application Svcs,Carahsoft,Confluence Cloud & JIRA,39064.02,2027-02-11,138114,Active,138
 Application Svcs,Concept3D,Interactive Campus Maps,155100,,,Unknown,
 Application Svcs,Concept3D,Localist Events,76375,,138114,Unknown,
-Application Svcs,Contegix,Wiki Hosting Renewal,9883.32,2025-11-23,138114,Expired,-306
-Application Svcs,Contegix,Red Hat Licensing,1040,2026-01-31,138114,Expired,-237
-Application Svcs,Contegix,Application Server & System SSG5 Firewall,8613,2025-11-22,138114,Expired,-307
-Application Svcs,ESRI,ESRI Site License,9305.45,2026-06-30,138114,Expired,-87
-Application Svcs,SHI International,Modo Labs Renewal (3 Year Agreement),365213.59,2027-11-30,138114,Active,431
-Application Svcs,SHI,SiteImprove Web Goverance Software Renewal,76693.12,2027-08-12,138114,Active,321
-Application Svcs,SHI,WPEngine,13912,2027-03-26,138114,Active,182
-Application Svcs,SHI,Cludo Search Engine,59511.11,2026-10-15,138114,Expiring Soon,20
-Application Svcs,Splunk (formerly VictorOps),SMS Alerts,4966.44,2027-09-16,138114,Active,356
-Application Svcs,Squiz,Funnelback Search Engine Renewal,39375,2025-12-08,138114,Expired,-291
-Application Svcs,"TerminalFour, Inc.",Enterprise Remote Access Support,15814.9,2027-09-28,138114,Active,368
-Application Svcs,"TerminalFour, Inc.",Annual Cloud Hosting,62067.73,2024-11-01,138114,Expired,-693
-Application Svcs,"TerminalFour, Inc.",Funnelback Search Engine Renewal,32200,2023-10-04,138124,Expired,-1087
-Application Svcs,"TerminalFour, Inc.",TerminalFour PaaS,65464.07,2026-11-01,138114,Expiring Soon,37
-Application Svcs,Unicorn,Open Source Support,18480,2027-07-31,138114,Active,309
-Application Svcs,vCloudTech,Confluence Software Upgrade & Content Formatting,9810,2024-02-15,138114,Expired,-953
-Application Svcs,VA Tech,ESRI Site License,6631.01,2025-06-30,138114,Expired,-452
+Application Svcs,Contegix,Wiki Hosting Renewal,9883.32,2025-11-23,138114,Expired,-307
+Application Svcs,Contegix,Red Hat Licensing,1040,2026-01-31,138114,Expired,-238
+Application Svcs,Contegix,Application Server & System SSG5 Firewall,8613,2025-11-22,138114,Expired,-308
+Application Svcs,ESRI,ESRI Site License,9305.45,2026-06-30,138114,Expired,-88
+Application Svcs,SHI International,Modo Labs Renewal (3 Year Agreement),365213.59,2027-11-30,138114,Active,430
+Application Svcs,SHI,SiteImprove Web Goverance Software Renewal,76693.12,2027-08-12,138114,Active,320
+Application Svcs,SHI,WPEngine,13912,2027-03-26,138114,Active,181
+Application Svcs,SHI,Cludo Search Engine,59511.11,2026-10-15,138114,Expiring Soon,19
+Application Svcs,Splunk (formerly VictorOps),SMS Alerts,4966.44,2027-09-16,138114,Active,355
+Application Svcs,Squiz,Funnelback Search Engine Renewal,39375,2025-12-08,138114,Expired,-292
+Application Svcs,"TerminalFour, Inc.",Enterprise Remote Access Support,15814.9,2027-09-28,138114,Active,367
+Application Svcs,"TerminalFour, Inc.",Annual Cloud Hosting,62067.73,2024-11-01,138114,Expired,-694
+Application Svcs,"TerminalFour, Inc.",Funnelback Search Engine Renewal,32200,2023-10-04,138124,Expired,-1088
+Application Svcs,"TerminalFour, Inc.",TerminalFour PaaS,65464.07,2026-11-01,138114,Expiring Soon,36
+Application Svcs,Unicorn,Open Source Support,18480,2027-07-31,138114,Active,308
+Application Svcs,vCloudTech,Confluence Software Upgrade & Content Formatting,9810,2024-02-15,138114,Expired,-954
+Application Svcs,VA Tech,ESRI Site License,6631.01,2025-06-30,138114,Expired,-453
 TS Administration,Amplified IT,Google Domain Merge Project,30800,,138116,Unknown,
 TS Administration,Amplified CDWG,Google Workspace Storage,145800,,138116,Unknown,
-TS Administration,Amplified CDWG,Google Workspace Renewal,436995,2029-10-31,138116,Active,1132
-TS Administration,Beautiful.ai,Enterprise Agreement AI License,22500,2027-03-30,138116,Active,186
-TS Administration,CDW Amplified,Google Workspace Colab Pro Lic,999.84,2027-03-19,138116,Active,175
-TS Administration,Hyland,ImageNow Maintenance Renewal,235788.85,2027-04-30,138116,Active,217
-TS Administration,Intervision,Cisco Secure Email,87600,2027-05-31,138116,Active,248
-TS Administration,L-Soft,MIgration to Azure MassMail & ListServ,23500,2027-03-31,138116,Active,187
-TS Administration,SADA Systems,ChromeBox for Meeting Renewal,500,2023-06-16,138116,Expired,-1197
-TS Administration,SADA Systems,G Suite Enterprise Licenses (3 Year Agreeement),342621.466,2023-09-14,138116,Expired,-1107
-TS Administration,SalesForce,Tableau Renewal,19699.12,2026-05-27,138116,Expired,-121
-TS Administration,SalesForce,Tableau Renewal,748036.33,2029-05-27,138116,Active,975
-TS Administration,SHI International,Tableau Renewal,229621.6,2026-04-17,138116,Expired,-161
-TS Administration,SHI International,DMARC SaaS Platrom,5083.22,2027-02-07,138116,Active,135
-TS Administration,SHI International,Cold Fusion for Adobe ,12000,2026-06-02,138116,Expired,-115
-TS Administration,Sycom,IronPort (Cisco Secure Email),69900,2026-05-31,138116,Expired,-117
-TS Administration,Zix,Zix Encryption Services ,74730,2027-06-04,138116,Active,252
-TS Administration,Internet2,DocuSign,903900.97,2022-12-14,138124,Expired,-1381
-TS Administration,Internet2,Docusign CFR Part 11 Module,6500,2022-12-14,138124,Expired,-1381
-Technology Support Svcs,Alertus,Emergency Notification Suite,27727,2027-06-30,123151,Active,278
-Technology Support Svcs,Appointlet,Scheduling App,1049.25,2022-10-17,138011,Expired,-1439
-Technology Support Svcs,Appointlet,Scheduling App,144,2023-09-22,138011,Expired,-1099
-Technology Support Svcs,Audio Fidelity Communications,VISIX Support Renewal,36491.74,2023-08-15,123151,Expired,-1137
-Technology Support Svcs,Avante,IT Service Manager Solution,236250,2024-03-28,138014,Expired,-911
-Technology Support Svcs,Avante,RightAnswers,241500,2029-05-31,138014,Active,979
-Technology Support Svcs,Avante,Ivanti Neurons for ITSM Cloud Subscription,894750,2028-06-15,138014,Active,629
-Technology Support Svcs,AVI-SPL,Visix Support Renewal,18208.49,2023-08-14,123151,Expired,-1138
-Technology Support Svcs,Carahsoft Technology,Bomgar,27547.73,2025-07-31,138001,Expired,-421
-Technology Support Svcs,CDWG,Bomgar,5875.91,2026-07-31,138001,Expired,-56
-Technology Support Svcs,Gravic,OMR Renewal,650,2027-08-15,138011,Active,324
-Technology Support Svcs,Korbyt,Campus Wide Digital Signage,100800,2027-05-01,123151,Active,218
-Technology Support Svcs,Lorensberg,Connect2 Software,7284,2027-09-16,138011,Active,356
-Technology Support Svcs,Omnilert,e2Campus Renewal,75600,2027-06-30,123151,Active,278
-Technology Support Svcs,SHI International,Microsoft,729240.87,2027-06-30,138001,Active,278
-Technology Support Svcs,SHI International,StatusCast,6620.32,2025-07-07,138014,Expired,-445
-Technology Support Svcs,Splashtop,Remote Desktop Application for Desktop,16760,2027-07-20,138010,Active,298
-Technology Support Svcs,StatusPal.io,Hosted Status Page,3588,2027-03-31,138014,Active,187
-Academic Technologies,Articulate,Articulate 360 Licenses,25960,2022-10-23,138124,Expired,-1433
-Academic Technologies,ConnectWise LLC,RMM Essentials/ScreenConnect Access & Remote,22572,2028-10-01,123157,Active,737
-Academic Technologies,Creation Engine,SketchUp Pro,2000,2026-11-07,123157,Expiring Soon,43
-Academic Technologies,DLT Solutions,AutoCAD 4 Licenses,1768.16,2027-01-04,123118,Active,101
-Academic Technologies,SHI,Adobe Enterprise License,778398.25,2027-06-02,138131,Active,250
-Academic Technologies,DigitalEd,Mobius Continuous Learning ,82989.72,2027-05-31,138005,Active,248
-Academic Technologies,Instructure,Canvas (Multi-Year Agreement),1748723.78,2027-06-30,138005,Active,278
-Academic Technologies,Instructure,Canvas Intelligent Insights,62156.02,2027-06-30,,Active,278
-Academic Technologies,K16 Solutions,SaaS-Scaffold Archive,48000,2026-04-30,138005,Expired,-148
-Academic Technologies,Kaltura,Enterprise License Renewal Year 2,632656.26,2028-09-30,138005,Active,736
-Academic Technologies,LabStats,Labstats  Cloud Based Licenses,15252.56,2027-06-20,123157,Active,268
-Academic Technologies,Kivuto,Hosted Delivery Renewal FY'22,18500,2023-07-14,138131,Expired,-1169
-Academic Technologies,Software2 America,Apps License,7665,2021-11-30,123157,Expired,-1760
-Academic Technologies,Voice Thread,VoiceThread for Canvas,37428,2027-06-30,138005,Active,278
-Academic Technologies,ThunderCat,Zoom License/Meeting/Rooms/Sessions & Webinars,116608.48,2027-03-18,138013,Active,174
-Academic Technologies,TopHat,Student Reponse Enterprise License,644000,2028-06-30,138007,Active,644
-Academic Technologies,SHI,Adobe Enterprise License,2653784.4,2029-08-13,138131,Active,1053
-Academic Technologies,SHI,VCU All Apps Add-On,30000,2025-05-30,138131,Expired,-483
-Academic Technologies,Respondus,Enterprise License Renewal,51780,2027-07-31,138005,Active,309
-Academic Technologies,Faronics,DeepFreeze Renewal,6160,2025-07-01,123157,Expired,-451
-Academic Technologies,Turnitin,Plagarism Tool Software,72957.97,2026-11-17,138005,Expiring Soon,53
-Academic Technologies,VT,ESRI,9365.52,2027-06-30,123157,Active,278
+TS Administration,Amplified CDWG,Google Workspace Renewal,436995,2029-10-31,138116,Active,1131
+TS Administration,Beautiful.ai,Enterprise Agreement AI License,22500,2027-03-30,138116,Active,185
+TS Administration,CDW Amplified,Google Workspace Colab Pro Lic,999.84,2027-03-19,138116,Active,174
+TS Administration,Hyland,ImageNow Maintenance Renewal,235788.85,2027-04-30,138116,Active,216
+TS Administration,Intervision,Cisco Secure Email,87600,2027-05-31,138116,Active,247
+TS Administration,L-Soft,MIgration to Azure MassMail & ListServ,23500,2027-03-31,138116,Active,186
+TS Administration,SADA Systems,ChromeBox for Meeting Renewal,500,2023-06-16,138116,Expired,-1198
+TS Administration,SADA Systems,G Suite Enterprise Licenses (3 Year Agreeement),342621.466,2023-09-14,138116,Expired,-1108
+TS Administration,SalesForce,Tableau Renewal,19699.12,2026-05-27,138116,Expired,-122
+TS Administration,SalesForce,Tableau Renewal,748036.33,2029-05-27,138116,Active,974
+TS Administration,SHI International,Tableau Renewal,229621.6,2026-04-17,138116,Expired,-162
+TS Administration,SHI International,DMARC SaaS Platrom,5083.22,2027-02-07,138116,Active,134
+TS Administration,SHI International,Cold Fusion for Adobe ,12000,2026-06-02,138116,Expired,-116
+TS Administration,Sycom,IronPort (Cisco Secure Email),69900,2026-05-31,138116,Expired,-118
+TS Administration,Zix,Zix Encryption Services ,74730,2027-06-04,138116,Active,251
+TS Administration,Internet2,DocuSign,903900.97,2022-12-14,138124,Expired,-1382
+TS Administration,Internet2,Docusign CFR Part 11 Module,6500,2022-12-14,138124,Expired,-1382
+Technology Support Svcs,Alertus,Emergency Notification Suite,27727,2027-06-30,123151,Active,277
+Technology Support Svcs,Appointlet,Scheduling App,1049.25,2022-10-17,138011,Expired,-1440
+Technology Support Svcs,Appointlet,Scheduling App,144,2023-09-22,138011,Expired,-1100
+Technology Support Svcs,Audio Fidelity Communications,VISIX Support Renewal,36491.74,2023-08-15,123151,Expired,-1138
+Technology Support Svcs,Avante,IT Service Manager Solution,236250,2024-03-28,138014,Expired,-912
+Technology Support Svcs,Avante,RightAnswers,241500,2029-05-31,138014,Active,978
+Technology Support Svcs,Avante,Ivanti Neurons for ITSM Cloud Subscription,894750,2028-06-15,138014,Active,628
+Technology Support Svcs,AVI-SPL,Visix Support Renewal,18208.49,2023-08-14,123151,Expired,-1139
+Technology Support Svcs,Carahsoft Technology,Bomgar,27547.73,2025-07-31,138001,Expired,-422
+Technology Support Svcs,CDWG,Bomgar,5875.91,2026-07-31,138001,Expired,-57
+Technology Support Svcs,Gravic,OMR Renewal,650,2027-08-15,138011,Active,323
+Technology Support Svcs,Korbyt,Campus Wide Digital Signage,100800,2027-05-01,123151,Active,217
+Technology Support Svcs,Lorensberg,Connect2 Software,7284,2027-09-16,138011,Active,355
+Technology Support Svcs,Omnilert,e2Campus Renewal,75600,2027-06-30,123151,Active,277
+Technology Support Svcs,SHI International,Microsoft,729240.87,2027-06-30,138001,Active,277
+Technology Support Svcs,SHI International,StatusCast,6620.32,2025-07-07,138014,Expired,-446
+Technology Support Svcs,Splashtop,Remote Desktop Application for Desktop,16760,2027-07-20,138010,Active,297
+Technology Support Svcs,StatusPal.io,Hosted Status Page,3588,2027-03-31,138014,Active,186
+Academic Technologies,Articulate,Articulate 360 Licenses,25960,2022-10-23,138124,Expired,-1434
+Academic Technologies,ConnectWise LLC,RMM Essentials/ScreenConnect Access & Remote,22572,2028-10-01,123157,Active,736
+Academic Technologies,Creation Engine,SketchUp Pro,2000,2026-11-07,123157,Expiring Soon,42
+Academic Technologies,DLT Solutions,AutoCAD 4 Licenses,1768.16,2027-01-04,123118,Active,100
+Academic Technologies,SHI,Adobe Enterprise License,778398.25,2027-06-02,138131,Active,249
+Academic Technologies,DigitalEd,Mobius Continuous Learning ,82989.72,2027-05-31,138005,Active,247
+Academic Technologies,Instructure,Canvas (Multi-Year Agreement),1748723.78,2027-06-30,138005,Active,277
+Academic Technologies,Instructure,Canvas Intelligent Insights,62156.02,2027-06-30,,Active,277
+Academic Technologies,K16 Solutions,SaaS-Scaffold Archive,48000,2026-04-30,138005,Expired,-149
+Academic Technologies,Kaltura,Enterprise License Renewal Year 2,632656.26,2028-09-30,138005,Active,735
+Academic Technologies,LabStats,Labstats  Cloud Based Licenses,15252.56,2027-06-20,123157,Active,267
+Academic Technologies,Kivuto,Hosted Delivery Renewal FY'22,18500,2023-07-14,138131,Expired,-1170
+Academic Technologies,Software2 America,Apps License,7665,2021-11-30,123157,Expired,-1761
+Academic Technologies,Voice Thread,VoiceThread for Canvas,37428,2027-06-30,138005,Active,277
+Academic Technologies,ThunderCat,Zoom License/Meeting/Rooms/Sessions & Webinars,116608.48,2027-03-18,138013,Active,173
+Academic Technologies,TopHat,Student Reponse Enterprise License,644000,2028-06-30,138007,Active,643
+Academic Technologies,SHI,Adobe Enterprise License,2653784.4,2029-08-13,138131,Active,1052
+Academic Technologies,SHI,VCU All Apps Add-On,30000,2025-05-30,138131,Expired,-484
+Academic Technologies,Respondus,Enterprise License Renewal,51780,2027-07-31,138005,Active,308
+Academic Technologies,Faronics,DeepFreeze Renewal,6160,2025-07-01,123157,Expired,-452
+Academic Technologies,Turnitin,Plagarism Tool Software,72957.97,2026-11-17,138005,Expiring Soon,52
+Academic Technologies,VT,ESRI,9365.52,2027-06-30,123157,Active,277
 Academic Technologies,Connectwise,Remote sppt. app for managed classroom/lab,637.39,,,Unknown,
 Academic Technologies,Prey,Tracking & Management,2590,,,Unknown,
 Academic Technologies,Slack,Messaging/Communication-annual plan,109.93,,,Unknown,
@@ -121,91 +121,91 @@ Academic Technologies,WhenToWork,Schedulinng,110,,,Unknown,
 Academic Technologies,DLT Solutions,AutoCAD,1623.6,,,Unknown,
 Academic Technologies,GovConnection,MAC Enterprise 5 licenses,468.3,,,Unknown,
 Academic Technologies,ThunderCat,Zoom (P0163805),95213.22,,,Unknown,
-Network/UCC,AVT Technology,Server Hardware Maintenance,9255.52,2026-06-30,123102,Expired,-87
+Network/UCC,AVT Technology,Server Hardware Maintenance,9255.52,2026-06-30,123102,Expired,-88
 Network/UCC,Carahsoft,MARIADB Platform,32400,,123102,Unknown,
-Network/UCC,Cambridge Computer,VDI Storage,17141.32,2021-07-04,123102,Expired,-1909
-Network/UCC,Cambridge Computer,VMWare License Renewal,83746.23,2021-07-20,123102,Expired,-1893
-Network/UCC,CBT Nuggets,Training Library,20484,2027-12-06,123099,Active,437
-Network/UCC,CDWG,OpenGear Subscription Renewal,2859.14,2029-02-28,123099,Active,887
-Network/UCC,Daly Computers,UCC UPC Revitalization,33585.06,2021-10-22,123102,Expired,-1799
-Network/UCC,DLT Solutions,Red Hat Server,58544.85,2023-07-27,123102,Expired,-1156
-Network/UCC,DLT Solutions,TOAD for Oracle Maint Renewal,1400.7,2021-12-15,123102,Expired,-1745
-Network/UCC,CDWG,SolarWinds Renewal,251812.04,2026-12-13,123099,Expiring Soon,79
-Network/UCC,Emergent,RedHat Enterprise License,39587,2027-07-27,123102,Active,305
-Network/UCC,Emergent,RedHat Ansible Automation Platform,20602.74,2027-08-25,123102,Active,334
-Network/UCC,MobaXterm,Software License,686,2025-03-27,123102,Expired,-547
-Network/UCC,Dell,TOAD for Oracle for UCC,2862.93,2027-04-26,123102,Active,213
-Network/UCC,DLT Solutions,TOAD for Oracle Maint Renewal,1400.7,2020-12-15,123102,Expired,-2110
-Network/UCC,DLT Solutions,AWS Infrastructure,15000,2022-08-19,123102,Expired,-1498
-Network/UCC,DLT Solutions,TOAD License Renewal,286.86,2021-10-31,123102,Expired,-1790
-Network/UCC,DLT Solutions,Red Hat Learning Subscription,23453.22,2021-12-17,123102,Expired,-1743
-Network/UCC,GT Software,NetCOBOL Renewal,2376,2023-03-31,123102,Expired,-1274
-Network/UCC,IBM,Tivoili Storage Maintenance Renewal,76497.28,2023-06-30,123102,Expired,-1183
-Network/UCC,InCommon,Internet2/Common Certificate Level Service 2,12000,2026-12-31,123102,Active,97
-Network/UCC,Insight Public Sector,F5 Traffic Manager Renewal,28937.42,2021-07-29,123153,Expired,-1884
-Network/UCC,initMAX,Zabbix Gold Suppot,9477.5,2027-09-03,123102,Active,343
-Network/UCC,Internet2,Certificate Service Level for UCC,11250,2021-02-28,138124,Expired,-2035
-Network/UCC,Internet2,Network Participation Fees ,108662,2026-12-31,123153,Active,97
-Network/UCC,Intervision,SmartNet TrueUP,99503.56,2026-12-31,123153,Active,97
-Network/UCC,IP Datasystem,VDI Storage Renewal,16830.14,2023-07-04,123102,Expired,-1179
-Network/UCC,IP Datasystem,VmWare Renewal FY'25,450929.49,2027-07-31,123102,Active,309
+Network/UCC,Cambridge Computer,VDI Storage,17141.32,2021-07-04,123102,Expired,-1910
+Network/UCC,Cambridge Computer,VMWare License Renewal,83746.23,2021-07-20,123102,Expired,-1894
+Network/UCC,CBT Nuggets,Training Library,20484,2027-12-06,123099,Active,436
+Network/UCC,CDWG,OpenGear Subscription Renewal,2859.14,2029-02-28,123099,Active,886
+Network/UCC,Daly Computers,UCC UPC Revitalization,33585.06,2021-10-22,123102,Expired,-1800
+Network/UCC,DLT Solutions,Red Hat Server,58544.85,2023-07-27,123102,Expired,-1157
+Network/UCC,DLT Solutions,TOAD for Oracle Maint Renewal,1400.7,2021-12-15,123102,Expired,-1746
+Network/UCC,CDWG,SolarWinds Renewal,251812.04,2026-12-13,123099,Expiring Soon,78
+Network/UCC,Emergent,RedHat Enterprise License,39587,2027-07-27,123102,Active,304
+Network/UCC,Emergent,RedHat Ansible Automation Platform,20602.74,2027-08-25,123102,Active,333
+Network/UCC,MobaXterm,Software License,686,2025-03-27,123102,Expired,-548
+Network/UCC,Dell,TOAD for Oracle for UCC,2862.93,2027-04-26,123102,Active,212
+Network/UCC,DLT Solutions,TOAD for Oracle Maint Renewal,1400.7,2020-12-15,123102,Expired,-2111
+Network/UCC,DLT Solutions,AWS Infrastructure,15000,2022-08-19,123102,Expired,-1499
+Network/UCC,DLT Solutions,TOAD License Renewal,286.86,2021-10-31,123102,Expired,-1791
+Network/UCC,DLT Solutions,Red Hat Learning Subscription,23453.22,2021-12-17,123102,Expired,-1744
+Network/UCC,GT Software,NetCOBOL Renewal,2376,2023-03-31,123102,Expired,-1275
+Network/UCC,IBM,Tivoili Storage Maintenance Renewal,76497.28,2023-06-30,123102,Expired,-1184
+Network/UCC,InCommon,Internet2/Common Certificate Level Service 2,12000,2026-12-31,123102,Active,96
+Network/UCC,Insight Public Sector,F5 Traffic Manager Renewal,28937.42,2021-07-29,123153,Expired,-1885
+Network/UCC,initMAX,Zabbix Gold Suppot,9477.5,2027-09-03,123102,Active,342
+Network/UCC,Internet2,Certificate Service Level for UCC,11250,2021-02-28,138124,Expired,-2036
+Network/UCC,Internet2,Network Participation Fees ,108662,2026-12-31,123153,Active,96
+Network/UCC,Intervision,SmartNet TrueUP,99503.56,2026-12-31,123153,Active,96
+Network/UCC,IP Datasystem,VDI Storage Renewal,16830.14,2023-07-04,123102,Expired,-1180
+Network/UCC,IP Datasystem,VmWare Renewal FY'25,450929.49,2027-07-31,123102,Active,308
 Network/UCC,IP Datasystem,Superna 3 Yr Disaster Recovery Subscription,38636.04,,123102,Unknown,
-Network/UCC,Mythics,MySQL Enterprise License,29960,2026-08-18,123102,Expired,-38
-Network/UCC,Mythics,Oracle License Maintenance,1563277.78,2028-12-28,123102,Active,825
-Network/UCC,Mythics,Oracle Partitioning/Internet Application/ODSTEST,71949.86,2025-06-19,123102,Expired,-463
-Network/UCC,Mythics,MySQL Renewal,4000,2023-05-17,123102,Expired,-1227
-Network/UCC,Power Solutions,UPS Maintenance Contract UCC,8388.24,2022-12-14,123102,Expired,-1381
-Network/UCC,Power Solutions,Harris Hall UPS Maintenance Renewal,9965.52,2026-12-14,123102,Expiring Soon,80
-Network/UCC,Power Solutions,Cabell UPS Maintenance Renewal,5146.67,2026-12-02,123099,Expiring Soon,68
-Network/UCC,Richmond Express,Computer TapeTransporation Service,9805,2024-08-28,123102,Expired,-758
-Network/UCC,SHI International,Warranty Renewal ISPsilon (DR Recovery Storage),18066.59,2023-07-14,123102,Expired,-1169
-Network/UCC,Sun Management,Inflobox Renewal,157470,2027-06-20,123153,Active,268
-Network/UCC,Sycom,SmartNet TrueUP,504457.87,2026-06-30,38300/383101,Expired,-87
-Administrative Systems,CA Technologies,UNIX Maintenance,15610.6,2024-06-01,138104,Expired,-846
-Administrative Systems,CWG,CA Automic (UNIX) Maintenance ,19691.92,2026-06-01,138104,Expired,-116
-Administrative Systems,DLT Solutions,TOAD for Oracle (Admin System),33709.48,2027-05-31,138104,Active,248
-Administrative Systems,Ellucian,Banner Maintenance Renewal,121993,2027-06-30,138104,Active,278
-Administrative Systems,Ellucian,Banner Cloud Subscription,1401496,2027-06-30,138104,Active,278
-Administrative Systems,Ellucian,Banner Modernization,262250,2022-06-30,138104,Expired,-1548
-Administrative Systems,Ellucian,eInvoice Maintenance ,2000,2026-09-30,138104,Expiring Soon,5
-Administrative Systems,Evisions,FormFusin & IntelleCheck,40588,2028-01-31,138104,Active,493
-Administrative Systems,Robert Mark Technologies,CA Automic (UNIX) Maintenance ,22423.02,2026-05-26,138104,Expired,-122
-Administrative Systems,Runner Technologies,Clean Address Renewal,9734,2026-12-15,138104,Expiring Soon,81
-Administrative Systems,SAS,SAS Maintenance Renewal,131472,2025-06-30,138104,Expired,-452
-Administrative Systems,TouchNet,Payment Gateway Suite Renewal,187104,2027-06-30,138104,Active,278
-Administrative Systems,SAS,VA & EBI Platforms,183402,2027-06-30,138104,Active,278
-Administrative Systems,SAS,SAS/ACCESS Interface for SAS VIYA,4387.5,2022-12-14,138104,Expired,-1381
-Administrative Systems,SHI,TOAD for Oracle (Admin System),33553.84,2027-05-31,138104,Active,248
-Central Maintenance,Accruent,EMS Campus Maintenance,1126.38,2026-10-01,1-38124,Expiring Soon,6
-Central Maintenance,Articulate,Articulate Subscription Renewal,33030.9,2026-10-23,1-38124,Expiring Soon,28
-Central Maintenance,BeeKeeper USA,Customer Success Services,13368,2027-06-30,1-38124,Active,278
-Central Maintenance,Carahsoft,Smartsheet Renewal,127445,2024-12-19,1-38124,Expired,-645
-Central Maintenance,Carahsoft,10000 FT Autoprovision for Smartsheet,3735,2024-12-19,1-38124,Expired,-645
-Central Maintenance,Carahsoft,Docusign 3 Year Agreement ,903900.97,2028-12-15,1-38124,Active,812
-Central Maintenance,Carahsoft,Talend,34006.13,2024-09-15,1-38102,Expired,-740
-Central Maintenance,CloudForce,NebulaOne,215000,2027-06-29,1-38124,Active,277
-Central Maintenance,Cornerstone,Cornerstone OnDemand,929896.97,2030-06-30,1-38124,Active,1374
-Central Maintenance,DLT,Ghost Licenses,2990,2027-01-21,1-38124,Active,118
+Network/UCC,Mythics,MySQL Enterprise License,29960,2026-08-18,123102,Expired,-39
+Network/UCC,Mythics,Oracle License Maintenance,1563277.78,2028-12-28,123102,Active,824
+Network/UCC,Mythics,Oracle Partitioning/Internet Application/ODSTEST,71949.86,2025-06-19,123102,Expired,-464
+Network/UCC,Mythics,MySQL Renewal,4000,2023-05-17,123102,Expired,-1228
+Network/UCC,Power Solutions,UPS Maintenance Contract UCC,8388.24,2022-12-14,123102,Expired,-1382
+Network/UCC,Power Solutions,Harris Hall UPS Maintenance Renewal,9965.52,2026-12-14,123102,Expiring Soon,79
+Network/UCC,Power Solutions,Cabell UPS Maintenance Renewal,5146.67,2026-12-02,123099,Expiring Soon,67
+Network/UCC,Richmond Express,Computer TapeTransporation Service,9805,2024-08-28,123102,Expired,-759
+Network/UCC,SHI International,Warranty Renewal ISPsilon (DR Recovery Storage),18066.59,2023-07-14,123102,Expired,-1170
+Network/UCC,Sun Management,Inflobox Renewal,157470,2027-06-20,123153,Active,267
+Network/UCC,Sycom,SmartNet TrueUP,504457.87,2026-06-30,38300/383101,Expired,-88
+Administrative Systems,CA Technologies,UNIX Maintenance,15610.6,2024-06-01,138104,Expired,-847
+Administrative Systems,CWG,CA Automic (UNIX) Maintenance ,19691.92,2026-06-01,138104,Expired,-117
+Administrative Systems,DLT Solutions,TOAD for Oracle (Admin System),33709.48,2027-05-31,138104,Active,247
+Administrative Systems,Ellucian,Banner Maintenance Renewal,121993,2027-06-30,138104,Active,277
+Administrative Systems,Ellucian,Banner Cloud Subscription,1401496,2027-06-30,138104,Active,277
+Administrative Systems,Ellucian,Banner Modernization,262250,2022-06-30,138104,Expired,-1549
+Administrative Systems,Ellucian,eInvoice Maintenance ,2000,2026-09-30,138104,Expiring Soon,4
+Administrative Systems,Evisions,FormFusin & IntelleCheck,40588,2028-01-31,138104,Active,492
+Administrative Systems,Robert Mark Technologies,CA Automic (UNIX) Maintenance ,22423.02,2026-05-26,138104,Expired,-123
+Administrative Systems,Runner Technologies,Clean Address Renewal,9734,2026-12-15,138104,Expiring Soon,80
+Administrative Systems,SAS,SAS Maintenance Renewal,131472,2025-06-30,138104,Expired,-453
+Administrative Systems,TouchNet,Payment Gateway Suite Renewal,187104,2027-06-30,138104,Active,277
+Administrative Systems,SAS,VA & EBI Platforms,183402,2027-06-30,138104,Active,277
+Administrative Systems,SAS,SAS/ACCESS Interface for SAS VIYA,4387.5,2022-12-14,138104,Expired,-1382
+Administrative Systems,SHI,TOAD for Oracle (Admin System),33553.84,2027-05-31,138104,Active,247
+Central Maintenance,Accruent,EMS Campus Maintenance,1126.38,2026-10-01,1-38124,Expiring Soon,5
+Central Maintenance,Articulate,Articulate Subscription Renewal,33030.9,2026-10-23,1-38124,Expiring Soon,27
+Central Maintenance,BeeKeeper USA,Customer Success Services,13368,2027-06-30,1-38124,Active,277
+Central Maintenance,Carahsoft,Smartsheet Renewal,127445,2024-12-19,1-38124,Expired,-646
+Central Maintenance,Carahsoft,10000 FT Autoprovision for Smartsheet,3735,2024-12-19,1-38124,Expired,-646
+Central Maintenance,Carahsoft,Docusign 3 Year Agreement ,903900.97,2028-12-15,1-38124,Active,811
+Central Maintenance,Carahsoft,Talend,34006.13,2024-09-15,1-38102,Expired,-741
+Central Maintenance,CloudForce,NebulaOne,215000,2027-06-29,1-38124,Active,276
+Central Maintenance,Cornerstone,Cornerstone OnDemand,929896.97,2030-06-30,1-38124,Active,1373
+Central Maintenance,DLT,Ghost Licenses,2990,2027-01-21,1-38124,Active,117
 Central Maintenance,HelioCampus,Student LifeCycle 3 Yr Agreement,1123803,,1-38124,Unknown,
-Central Maintenance,IBM,SPSS Renewal,39721.6,2027-05-31,1-38124,Active,248
-Central Maintenance,Ivy.ai,Conversational AI Chatbots,10500,2025-11-30,1-46029,Expired,-299
-Central Maintenance,LabStats,LabStats Cloud Based Licenses Subscription,5880,2026-01-20,1-38124,Expired,-248
-Central Maintenance,LabStats,Addn'l 500 Cloud Based Licenses ,2128.77,2026-01-20,1-38124,Expired,-248
-Central Maintenance,LinkedIN,LinkedIN Learning Full Campus,425790,2027-10-18,1-38124,Active,388
-Central Maintenance,TimeClock Plus,TimeClock Plus Cloud Solution,202065.52,2027-08-25,1-38124,Active,334
-Central Maintenance,TimeClock Plus,Hardward Maintenance for TimeClocks,9060.53,2026-12-27,1-38124,Active,93
-Central Maintenance,Qualtrics,University Wide Cloud License,104737.5,2027-09-30,1-38124,Active,370
-Central Maintenance,QuestionPro,University Enterprise License,16000,2027-05-31,1-38124,Active,248
+Central Maintenance,IBM,SPSS Renewal,39721.6,2027-05-31,1-38124,Active,247
+Central Maintenance,Ivy.ai,Conversational AI Chatbots,10500,2025-11-30,1-46029,Expired,-300
+Central Maintenance,LabStats,LabStats Cloud Based Licenses Subscription,5880,2026-01-20,1-38124,Expired,-249
+Central Maintenance,LabStats,Addn'l 500 Cloud Based Licenses ,2128.77,2026-01-20,1-38124,Expired,-249
+Central Maintenance,LinkedIN,LinkedIN Learning Full Campus,425790,2027-10-18,1-38124,Active,387
+Central Maintenance,TimeClock Plus,TimeClock Plus Cloud Solution,202065.52,2027-08-25,1-38124,Active,333
+Central Maintenance,TimeClock Plus,Hardward Maintenance for TimeClocks,9060.53,2026-12-27,1-38124,Active,92
+Central Maintenance,Qualtrics,University Wide Cloud License,104737.5,2027-09-30,1-38124,Active,369
+Central Maintenance,QuestionPro,University Enterprise License,16000,2027-05-31,1-38124,Active,247
 Central Maintenance,Mazevo,Room Scheduling System,58796,,1-38124,Unknown,
-Central Maintenance,JMP,SAS JMP,2500,2025-04-28,1-38124,Expired,-515
-Central Maintenance,SHI,Tableau Renewal,64836.18,0223-04-17,1-38124,Expired,-658694
-Central Maintenance,SHI,Tableau for SEMSS Renewal,25266.63,2023-04-17,1-38124,Expired,-1257
+Central Maintenance,JMP,SAS JMP,2500,2025-04-28,1-38124,Expired,-516
+Central Maintenance,SHI,Tableau Renewal,64836.18,0223-04-17,1-38124,Expired,-658695
+Central Maintenance,SHI,Tableau for SEMSS Renewal,25266.63,2023-04-17,1-38124,Expired,-1258
 Central Maintenance,SHI,CoPilot for M365 & CoPilot Studio,3686.9,,1-38124,Unknown,
-Central Maintenance,SHI,Grammarly for Education,25420,2026-10-31,1-38124,Expiring Soon,36
-Central Maintenance,Smartsheet,Smartsheet Renewal,655160,2027-12-19,1-38124,Active,450
-Central Maintenance,Starnet,Fast-X Win Site License,1850,2027-02-28,1-38124,Active,156
-Central Maintenance,Statistical Solutions,nQuery Campus License,6692.57,2027-05-31,1-38124,Active,248
-Central Maintenance,Grafit,SigmaPlot Maintenance,1078,2026-11-30,1-38124,Expiring Soon,66
-Central Maintenance,Wiris,MathType,2772.8,2026-12-10,1-38124,Expiring Soon,76
-Central Maintenance,Incommon,Participation Service Level 1,12000,2024-12-31,1-38124,Expired,-633
-Central Maintenance,Wolfram,Site License (Mathematica),87413.66,2029-07-31,1-38124,Active,1040
+Central Maintenance,SHI,Grammarly for Education,25420,2026-10-31,1-38124,Expiring Soon,35
+Central Maintenance,Smartsheet,Smartsheet Renewal,655160,2027-12-19,1-38124,Active,449
+Central Maintenance,Starnet,Fast-X Win Site License,1850,2027-02-28,1-38124,Active,155
+Central Maintenance,Statistical Solutions,nQuery Campus License,6692.57,2027-05-31,1-38124,Active,247
+Central Maintenance,Grafit,SigmaPlot Maintenance,1078,2026-11-30,1-38124,Expiring Soon,65
+Central Maintenance,Wiris,MathType,2772.8,2026-12-10,1-38124,Expiring Soon,75
+Central Maintenance,Incommon,Participation Service Level 1,12000,2024-12-31,1-38124,Expired,-634
+Central Maintenance,Wolfram,Site License (Mathematica),87413.66,2029-07-31,1-38124,Active,1039
