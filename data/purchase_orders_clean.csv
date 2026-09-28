@@ -25,6 +25,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38001,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120707,P0344512 ,Mansfield Oil,500,53.81,446.19,,138011,620027,Fuel purchases 21277
 1-38001,Wed Jul 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218323628,P0345479,InterVision Systems LLC,3260.4,3260.4,0,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,Meraki Mounts
 1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,P0347780,InterVision Systems LLC,9528,0,9528,,138001,600187,VCU Cabell Trellis
+1-38103,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221480142,P0358796,InfoTech Research Group,77229.6,0,77229.6,,,,
 1-38109,Thu Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),189664159,P0238461,AERC,2000,511.6,1488.4,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138109,620012,Battery P/U & HD Destruction
 1-38010,Tue Jul 15 2025 00:00:00 GMT-0400 (Eastern Daylight Time),203940868,P0290880,Verizon,1689.64,1559.6100000000001,130.02999999999997,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138010,630002,Mifi Charges for 7/1/2025-6/30/2026
 1-38010,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218621350,P0346609,Verizon,1689.67,359.90999999999997,1329.7600000000002,Thu Sep 17 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138010,630002,Mifi Charges for 7/1/2026-6/30/2027
