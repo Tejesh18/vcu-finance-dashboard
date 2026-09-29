@@ -1,6 +1,6 @@
 Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance,Receiver_Date,Budget_Code,Account_Code,Comment
 1-23102,Mon Aug 04 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204764678,P0293872,DLT Solutions,6810.38,6210.37,600.0100000000002,Fri May 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,637037,AWS Infrastructure FY26
-1-23102,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219163443,P0349254,IP Datasystems,699234.32,0,699234.32,,123102,700017/600187,
+1-23102,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219163443,P0349254,IP Datasystems,699234.32,699234.32,0,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,700017/600187,
 1-23102,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219566119,P0350205,Facility Support,7224,7224,0,Mon Sep 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,620097,GPU Server for SMO
 1-23102,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220288747,P0355093,IP Datasystems,599190.64,0,599190.64,,123102,700017/600187,Virtual Computer DAR
 1-23102,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220692547,P0354730,initMax,9477.5,9477.5,0,Wed Sep 09 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,637037,
@@ -49,7 +49,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38017,Wed Apr 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,P0330184,Insight Global LLC,61880,22515.64,39364.36,Mon Jul 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,600187,Temp help
 1-38017,Wed Jul 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218059994,P0344266,TSRC,91.12,91.12,0,,138017,620012,
 1-38017,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219197613,P0348923 ,Dell,70.49,70.49,0,,138017,620097,
-1-38017,Thu Aug 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219824595,P0351551,Apple (Standing PO),75000,8812.14,66187.86,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,
+1-38017,Thu Aug 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219824595,P0351551,Apple (Standing PO),75000,9646.380000000001,65353.619999999995,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,
 1-38017,Tue Sep 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221448073,P0357757,Amazon,49.97,49.97,0,Mon Sep 28 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620012,
 1-38114,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220263716,P0325913,Dell,193.99,0,193.99,,WebCam Joel Eisner,,
 1-38114,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220264460,P0325913,Dell,193.99,0,193.99,,WebCam Andrew Karnolt,,
