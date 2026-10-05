@@ -19,6 +19,7 @@ InfoSec/EndPoint,Internet2+,InCommon Certificate Svc Subscriber Agreement,12684,
 InfoSec/EndPoint,Magnet Forensic,Forensic Software,7225,2027-09-30,123152,Active,360
 InfoSec/EndPoint,Optiv,Rapid7 Renewal,34112,2027-02-22,123152,Active,140
 InfoSec/EndPoint,Optiv,KnocKnoc,41756,,123152,Unknown,
+InfoSec/EndPoint,Rotas Security,PCI Testing ,41500,,123152,Unknown,
 InfoSec/EndPoint,SHI,Crowdstrike-Falcon Endpoint Protection,850248.01,2029-01-27,291833,Active,845
 InfoSec/EndPoint,SHI,PatchMyPC (SCCM),109560,2028-04-23,123152,Active,566
 InfoSec/EndPoint,Sycom,Citrix Cloud Solution,167461.65,2027-05-30,146405,Active,237
