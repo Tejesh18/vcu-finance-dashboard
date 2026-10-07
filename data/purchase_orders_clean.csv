@@ -10,7 +10,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-23151,Tue Aug 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219959353,P0351804,Alertus,2751.36,2751.36,0,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,620097,Spare Driver
 1-23151,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220713893,P0354842,Intervision,5214,5214,0,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,600080,AdHoc Troubleshooting for Alertus System
 1-23151,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220991821,P0355900,Omnilert,5250,5250,0,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,637037,To Pay Inv 26-57955 for Overages
-1-23151,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221489467,P0357961,Intervision,3174,3174,3174,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,600080,AdHoc Troubleshooting for Alertus System
+1-23151,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221489467,P0357961,Intervision,3174,3174,0,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123151,600080,AdHoc Troubleshooting for Alertus System
 1-23152,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204394662,P0292610,Sycom,40000,39924.16,75.83999999999651,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,637037,Managed Cloud FinOps (7/25/25-7/25/26)
 1-23152,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218848230,P0349225,SANS,19912,19912,0,Tue Aug 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,638057,
 1-23152,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218887361,P0347668,Universal Background,500,0,500,,123152,6001857,Background Checks for Interns
@@ -23,10 +23,10 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38001,Thu May 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),2158/32210,P0335924,Dell,9800,0,9800,,138001,720007,Bundle Laptops 
 1-38001,Tue May 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,,RamTech Purchase,43440,0,43440,,138001,720007,(30) MacBooks Airs-Stu Laptop Program
 1-38001,Mon Jun 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),216822099,P0339749,Dell,16076.9,16076.9,0,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,720007,(10) Intel Laptops for S Kennedy
-1-38001,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),216994329,P0340425,InterVision Systems LLC,22997.5,0,22997.5,,138001,620096,(10) Meraki Cameras for Housing Project
+1-38001,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),216994329,P0340425,InterVision Systems LLC,22997.5,22997.5,0,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,(10) Meraki Cameras for Housing Project
 1-38001,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120707,P0344512 ,Mansfield Oil,500,53.81,446.19,,138011,620027,Fuel purchases 21277
 1-38001,Wed Jul 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218323628,P0345479,InterVision Systems LLC,3260.4,3260.4,0,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,Meraki Mounts
-1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,P0347780,InterVision Systems LLC,9528,0,9528,,138001,600187,VCU Cabell Trellis
+1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,P0347780,InterVision Systems LLC,9528,9528,0,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,600187,VCU Cabell Trellis
 1-38103,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221480142,P0358796,InfoTech Research Group,77229.6,0,77229.6,,,,
 1-38109,Thu Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),189664159,P0238461,AERC,2000,736.6,1263.4,Wed Oct 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138109,620012,Battery P/U & HD Destruction
 1-38010,Tue Jul 15 2025 00:00:00 GMT-0400 (Eastern Daylight Time),203940868,P0290880,Verizon,1689.64,1559.6100000000001,130.02999999999997,Wed Jul 15 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138010,630002,Mifi Charges for 7/1/2025-6/30/2026
