@@ -1,5 +1,5 @@
 Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance,Receiver_Date,Budget_Code,Account_Code,Comment
-1-23102,Mon Aug 04 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204764678,P0293872,DLT Solutions,6810.38,6210.37,600.0100000000002,Fri May 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,637037,AWS Infrastructure FY26
+1-23102,Mon Aug 04 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204764678,P0293872,DLT Solutions,8810.380000000001,7288.25,1522.130000000001,Thu Oct 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,637037,AWS Infrastructure FY26
 1-23102,Wed Jul 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219163443,P0349254,IP Datasystems,699234.32,699234.32,0,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,700017/600187,
 1-23102,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219566119,P0350205,Facility Support,7224,7224,0,Mon Sep 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123102,620097,GPU Server for SMO
 1-23102,Tue Aug 25 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220288747,P0355093,IP Datasystems,599190.64,0,599190.64,,123102,700017/600187,Virtual Computer DAR
