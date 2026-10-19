@@ -24,7 +24,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38001,Tue May 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,,RamTech Purchase,43440,0,43440,,138001,720007,(30) MacBooks Airs-Stu Laptop Program
 1-38001,Mon Jun 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),216822099,P0339749,Dell,16076.9,16076.9,0,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,720007,(10) Intel Laptops for S Kennedy
 1-38001,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),216994329,P0340425,InterVision Systems LLC,22997.5,22997.5,0,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,(10) Meraki Cameras for Housing Project
-1-38001,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120707,P0344512 ,Mansfield Oil,500,53.81,446.19,,138011,620027,Fuel purchases 21277
+1-38001,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120707,P0344512 ,Mansfield Oil,500,105.92,394.08,,138011,620027,Fuel purchases 21277
 1-38001,Wed Jul 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218323628,P0345479,InterVision Systems LLC,3260.4,3260.4,0,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,Meraki Mounts
 1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,P0347780,InterVision Systems LLC,9528,9528,0,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,600187,VCU Cabell Trellis
 1-38103,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221480142,P0358796,InfoTech Research Group,77229.6,0,77229.6,,,,
