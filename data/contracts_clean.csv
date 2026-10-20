@@ -124,14 +124,9 @@ Academic Technologies,DLT Solutions,AutoCAD,1623.6,,,Unknown,
 Academic Technologies,GovConnection,MAC Enterprise 5 licenses,468.3,,,Unknown,
 Academic Technologies,ThunderCat,Zoom (P0163805),95213.22,,,Unknown,
 Network/UCC,AVT Technology,Server Hardware Maintenance,9255.52,2026-06-30,123102,Expired,-112
-Network/UCC,Carahsoft,MARIADB Platform,32400,,123102,Unknown,
-Network/UCC,Cambridge Computer,VDI Storage,17141.32,2021-07-04,123102,Expired,-1934
-Network/UCC,Cambridge Computer,VMWare License Renewal,83746.23,2021-07-20,123102,Expired,-1918
+Network/UCC,Carahsoft,MARIADB Platform,32400,2027-08-13,123102,Active,297
 Network/UCC,CBT Nuggets,Training Library,20484,2027-12-06,123099,Active,412
 Network/UCC,CDWG,OpenGear Subscription Renewal,2859.14,2029-02-28,123099,Active,862
-Network/UCC,Daly Computers,UCC UPC Revitalization,33585.06,2021-10-22,123102,Expired,-1824
-Network/UCC,DLT Solutions,Red Hat Server,58544.85,2023-07-27,123102,Expired,-1181
-Network/UCC,DLT Solutions,TOAD for Oracle Maint Renewal,1400.7,2021-12-15,123102,Expired,-1770
 Network/UCC,CDWG,SolarWinds Renewal,251812.04,2026-12-13,123099,Expiring Soon,54
 Network/UCC,Emergent,RedHat Enterprise License,39587,2027-07-27,123102,Active,280
 Network/UCC,Emergent,RedHat Ansible Automation Platform,20602.74,2027-08-25,123102,Active,309
@@ -165,7 +160,6 @@ Network/UCC,Sun Management,Inflobox Renewal,157470,2027-06-20,123153,Active,243
 Network/UCC,Sycom,SmartNet TrueUP,504457.87,2026-06-30,38300/383101,Expired,-112
 Administrative Systems,CA Technologies,UNIX Maintenance,15610.6,2024-06-01,138104,Expired,-871
 Administrative Systems,CWG,CA Automic (UNIX) Maintenance ,19691.92,2026-06-01,138104,Expired,-141
-Administrative Systems,DLT Solutions,TOAD for Oracle (Admin System),33709.48,2027-05-31,138104,Active,223
 Administrative Systems,Ellucian,Banner Maintenance Renewal,121993,2027-06-30,138104,Active,253
 Administrative Systems,Ellucian,Banner Cloud Subscription,1401496,2027-06-30,138104,Active,253
 Administrative Systems,Ellucian,Banner Modernization,262250,2022-06-30,138104,Expired,-1573
@@ -173,10 +167,8 @@ Administrative Systems,Ellucian,eInvoice Maintenance ,2000,2026-09-30,138104,Exp
 Administrative Systems,Evisions,FormFusin & IntelleCheck,40588,2028-01-31,138104,Active,468
 Administrative Systems,Robert Mark Technologies,CA Automic (UNIX) Maintenance ,22423.02,2026-05-26,138104,Expired,-147
 Administrative Systems,Runner Technologies,Clean Address Renewal,9734,2027-12-15,138104,Active,421
-Administrative Systems,SAS,SAS Maintenance Renewal,131472,2025-06-30,138104,Expired,-477
 Administrative Systems,TouchNet,Payment Gateway Suite Renewal,187104,2027-06-30,138104,Active,253
 Administrative Systems,SAS,VA & EBI Platforms,183402,2027-06-30,138104,Active,253
-Administrative Systems,SAS,SAS/ACCESS Interface for SAS VIYA,4387.5,2022-12-14,138104,Expired,-1406
 Administrative Systems,SHI,TOAD for Oracle (Admin System),33553.84,2027-05-31,138104,Active,223
 Central Maintenance,Accruent,EMS Campus Maintenance,1126.38,2026-10-01,1-38124,Expired,-19
 Central Maintenance,Articulate,Articulate Subscription Renewal,43700,2027-10-23,1-38124,Active,368
