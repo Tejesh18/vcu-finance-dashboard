@@ -35,26 +35,19 @@ InfoSec/EndPoint,Stata Corp,STATA Network Licenses,1190,2027-10-24,146405,Active
 InfoSec/EndPoint,Lumivero,Nvivo 3-Yr Agreeement,15781.23,2029-02-27,146405,Active,860
 InfoSec/EndPoint,TeachPrivacy,Privacy & Security Training,3999,2027-02-08,123152,Active,110
 InfoSec/EndPoint,Valente Sherman dba Visio Trust,Risk Assessment Tool,47538,2027-01-30,123152,Active,101
-Application Svcs,Accruent,EMS Move to Cloud,37981.4,2022-10-01,138114,Expired,-1481
 Application Svcs,Carahsoft,Confluence Cloud & JIRA,39064.02,2027-02-11,138114,Active,113
-Application Svcs,Concept3D,Interactive Campus Maps,155100,,,Unknown,
-Application Svcs,Concept3D,Localist Events,76375,,138114,Unknown,
-Application Svcs,Contegix,Wiki Hosting Renewal,9883.32,2025-11-23,138114,Expired,-332
-Application Svcs,Contegix,Red Hat Licensing,1040,2026-01-31,138114,Expired,-263
-Application Svcs,Contegix,Application Server & System SSG5 Firewall,8613,2025-11-22,138114,Expired,-333
+Application Svcs,Concept3D,Interactive Campus Maps,44424.27,2028-05-18,138114,Active,575
 Application Svcs,ESRI,ESRI Site License,9305.45,2026-06-30,138114,Expired,-113
 Application Svcs,SHI International,Modo Labs Renewal (3 Year Agreement),365213.59,2027-11-30,138114,Active,405
 Application Svcs,SHI,SiteImprove Web Goverance Software Renewal,76693.12,2027-08-12,138114,Active,295
 Application Svcs,SHI,WPEngine,13912,2027-03-26,138114,Active,156
 Application Svcs,SHI,Cludo Search Engine,66285.49,2027-10-15,138114,Active,359
 Application Svcs,Splunk (formerly VictorOps),SMS Alerts,4966.44,2027-09-16,138114,Active,330
-Application Svcs,Squiz,Funnelback Search Engine Renewal,39375,2025-12-08,138114,Expired,-317
 Application Svcs,"TerminalFour, Inc.",Enterprise Remote Access Support,15814.9,2027-09-28,138114,Active,342
 Application Svcs,"TerminalFour, Inc.",Annual Cloud Hosting,62067.73,2024-11-01,138114,Expired,-719
 Application Svcs,"TerminalFour, Inc.",Funnelback Search Engine Renewal,32200,2023-10-04,138124,Expired,-1113
 Application Svcs,"TerminalFour, Inc.",TerminalFour PaaS,65464.07,2026-11-01,138114,Expiring Soon,11
 Application Svcs,Unicorn,Open Source Support,18480,2027-07-31,138114,Active,283
-Application Svcs,vCloudTech,Confluence Software Upgrade & Content Formatting,9810,2024-02-15,138114,Expired,-979
 Application Svcs,VA Tech,ESRI Site License,6631.01,2025-06-30,138114,Expired,-478
 TS Administration,Amplified IT,Google Domain Merge Project,30800,,138116,Unknown,
 TS Administration,Amplified CDWG,Google Workspace Storage,145800,,138116,Unknown,
