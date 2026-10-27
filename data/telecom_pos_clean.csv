@@ -1,5 +1,5 @@
 FY,Department,Date,PR_Number,Vendor,Amount,Amount_Received,Ending_Balance,Receiver_Date,Budget_Code
-FY2027,Telecommunications,Mon May 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,CM R10 Upgrade,2098869.17,77747.32,2021121.8499999999,Mon Oct 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383100
+FY2027,Telecommunications,Mon May 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,CM R10 Upgrade,2098869.17,102626.30000000002,1996242.8699999999,Mon Oct 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383100
 FY2027,Telecommunications,Fri Dec 13 2024 00:00:00 GMT-0500 (Eastern Standard Time),,ConvergeOne,3589344,2357155.59,1232188.4100000001,Tue Dec 09 2025 00:00:00 GMT-0500 (Eastern Standard Time),383100
 FY2027,Telecommunications,Fri Jul 25 2025 00:00:00 GMT-0400 (Eastern Daylight Time),,RingCentral,131752,74881.92,56870.08,Thu Jun 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
 FY2027,Telecommunications,Thu Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),,RingCentral,240164.46999999997,42254.99999999999,197909.46999999997,Wed Sep 09 2026 00:00:00 GMT-0400 (Eastern Daylight Time),383000
@@ -66,7 +66,7 @@ FY2027,Telecommunications,Fri Sep 18 2026 00:00:00 GMT-0400 (Eastern Daylight Ti
 FY2027,Telecommunications,Fri Sep 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221316822,Telquest International,6228.37,6228.37,0,partial 9/22/26,
 FY2027,Telecommunications,Fri Sep 18 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221331357,Firefold,407,407,0,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
 FY2027,Telecommunications,Thu Oct 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221837777,Mid-South Telecom,1280,0,1280,,
-FY2027,Telecommunications,Fri Oct 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221914468,ConvergeOne,24083.14,0,24083.14,,
+FY2027,Telecommunications,Fri Oct 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221914468,ConvergeOne,24083.14,24083.14,0,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
 FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222649690,Telquest International,3524.5,0,3524.5,,
 FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222650909,Amazon,29,0,29,,
 FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222685472,CXtec,194.99,0,194.99,,
