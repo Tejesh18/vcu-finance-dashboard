@@ -49,10 +49,10 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38011,Wed Aug 12 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219771276,P0351135,4AllPromos,2138.53,0,2138.53,,138011,620012,Swag Order
 1-38011,Thu Sep 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time),213713039,P0354730,B&B Printing,80.1,80.1,0,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Business Cards
 1-38011,Mon Sep 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),225051247,P0359089,Halo Brand,585.59,585.59,0,Tue Oct 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Name Tags
-1-38011,Wed Sep 30 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221816734,P0359400,B&B Printing,56.005,0,56.005,,138011,620012,Business Cards-Tony Alexander
-1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222548210,P0362483,Amazon,989.98,630.77,359.21000000000004,Fri Oct 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Oct'26 Supply Order
-1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222548649,P0362628,B&H,12.74,0,12.74,,138011,620097,Oct'26 Supply Order
-1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222549091,P0362530,TSRC,409.58,62.39,347.19,Fri Oct 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Oct'26 Supply Order
+1-38011,Wed Sep 30 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221816734,P0359400,B&B Printing,56.005,56.01,0,Thu Oct 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Business Cards-Tony Alexander
+1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222548210,P0362483,Amazon,989.98,989.98,0,Fri Oct 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Oct'26 Supply Order
+1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222548649,P0362628,B&H,12.74,12.74,0,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620097,Oct'26 Supply Order
+1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222549091,P0362530,TSRC,409.58,409.58,0,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Oct'26 Supply Order
 1-38017,Wed Mar 26 2025 00:00:00 GMT-0400 (Eastern Daylight Time),199394709,P0273495,Apple (Standing PO),31873.24,28225.879999999997,3647.360000000004,Tue Jun 09 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,To Pay fixIT Invoices for Remainder for FY25
 1-38017,Mon Aug 04 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204766461,P0293924,Dell (Standing PO for OOW),18500,10203.58,8296.42,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,Blanket PO for OOW Parts
 1-38017,Wed Apr 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,P0330184,Insight Global LLC,61880,22515.64,39364.36,Mon Jul 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,600187,Temp help
@@ -67,3 +67,4 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38124,Mon Jul 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219041079,P0348259,DLT,9800,354.59,9445.41,Mon Jul 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,,
 1-38116,Thu Jul 09 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218370621,P0345653,CDW Amplified,4576.4,0,4576.4,,138116,637037,
 1-38116,Fri Aug 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220170499,P0352581,CDW Amplified,203.77,203.77,0,Tue Sep 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138116,637037,Addn'l Google Workspace Licenses
+1-38116,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222776190,,CDW Amplified,99.96,0,99.96,,138116,637037,Collab Pro+ COEngineering
