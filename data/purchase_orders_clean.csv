@@ -53,6 +53,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222548210,P0362483,Amazon,989.98,989.98,0,Fri Oct 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Oct'26 Supply Order
 1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222548649,P0362628,B&H,12.74,12.74,0,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620097,Oct'26 Supply Order
 1-38011,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222549091,P0362530,TSRC,409.58,409.58,0,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138011,620012,Oct'26 Supply Order
+1-38011,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222903090,P0364164,B&B Printing,56.05,0,56.05,,138011,600012,
 1-38017,Wed Mar 26 2025 00:00:00 GMT-0400 (Eastern Daylight Time),199394709,P0273495,Apple (Standing PO),31873.24,28225.879999999997,3647.360000000004,Tue Jun 09 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,To Pay fixIT Invoices for Remainder for FY25
 1-38017,Mon Aug 04 2025 00:00:00 GMT-0400 (Eastern Daylight Time),204766461,P0293924,Dell (Standing PO for OOW),18500,10203.58,8296.42,Mon Oct 19 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,620097,Blanket PO for OOW Parts
 1-38017,Wed Apr 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),,P0330184,Insight Global LLC,61880,22515.64,39364.36,Mon Jul 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138017,600187,Temp help
