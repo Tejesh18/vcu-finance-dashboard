@@ -15,10 +15,10 @@ FY2027,Telecommunications,Thu May 14 2026 00:00:00 GMT-0400 (Eastern Daylight Ti
 FY2027,Telecommunications,Thu Jun 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),CANCELLED,SHI,72.76,0,0,,383000
 FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218105303,Ramtel,619.28,619.28,0,,383000
 FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218120036,Mansfield Oil,3000,213.98,2786.02,,383000
-FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218111729,VITA ACCT 2206,20000,9653.37,10346.63,,383000
-FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218113330,VITA ACCT 2236,168000,43323.25,124676.75,,383000
-FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218114155,VITA ACCT 0236,144000,37568.39,106431.61,,383000
-FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218116211,VITA ACCT 0206,60000,14374.33,45625.67,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218111729,VITA ACCT 2206,20000,12897.25,7102.75,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218113330,VITA ACCT 2236,168000,57462.5,110537.5,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218114155,VITA ACCT 0236,144000,50326.78,93673.22,,383000
+FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218116211,VITA ACCT 0206,60000,19126.06,40873.94,,383000
 FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218117897,Verizon acct 1-47,600000,167920.93,432079.07,,383000
 FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218121221,Verizon acct 1-82,785000,259431.24,525568.76,,383000
 FY2027,Telecommunications,Thu Jul 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218124718,Verizon acct 1-94,100000,24208.61,75791.39,,383000
@@ -37,8 +37,8 @@ FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Ti
 FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218504713,Verizon Y2715748,25000,7891.09,17108.91,,383000
 FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218506671,Verizon 1-56,45000,6429.25,38570.75,,383000
 FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218508811,Verizon 1-53,20000,2827.68,17172.32,,
-FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218509551,Verizon SV851850,5000,1319.7,3680.3,,
-FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218509982,Verizon SV851849,9500,2333.2,7166.8,,
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218509551,Verizon SV851850,5000,1666.88,3333.12,,
+FY2027,Telecommunications,Mon Jul 13 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218509982,Verizon SV851849,9500,2926.59,6573.41,,
 FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218546598,Verizon SV851848,12000,1404.37,10595.630000000001,,
 FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218547180,Verizon 1-77,35000,18463.61,16536.39,,
 FY2027,Telecommunications,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218547821,Verizon 1-61,9500,2680.68,6819.32,,
@@ -69,7 +69,7 @@ FY2027,Telecommunications,Thu Oct 01 2026 00:00:00 GMT-0400 (Eastern Daylight Ti
 FY2027,Telecommunications,Fri Oct 02 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221914468,ConvergeOne,24083.14,24083.14,0,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
 FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222649690,Telquest International,3524.5,0,3524.5,,
 FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222650909,Amazon,29,0,29,,
-FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222685472,CXtec,194.99,0,194.99,,
+FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222685472,CXtec,194.99,194.99,0,Thu Oct 29 2026 00:00:00 GMT-0400 (Eastern Daylight Time),
 FY2027,Telecommunications,Wed Oct 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222684516,ConvergeOne,27293.5,0,27293.5,,
 FY2027,Telecommunications,Tue Oct 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222880114,Amazon,18.02,0,18.02,,
 FY2026,Telecommunications,Tue Jul 01 2025 00:00:00 GMT-0400 (Eastern Daylight Time),P0255172 ,PCR 2025-2026,136295.4,124937.45,11357.949999999997,,383000/600207
