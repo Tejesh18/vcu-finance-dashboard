@@ -28,6 +28,7 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-38001,Wed Jul 08 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218323628,P0345479,InterVision Systems LLC,3260.4,3260.4,0,Tue Jul 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,620096,Meraki Mounts
 1-38001,Wed Jul 22 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218913463,P0347780,InterVision Systems LLC,9528,9528,0,Fri Sep 11 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138001,600187,VCU Cabell Trellis
 1-38001,Fri Oct 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222769092,P0363578,SHI,787.5,0,787.5,,138001,637037,
+1-38001,Wed Nov 04 2026 00:00:00 GMT-0500 (Eastern Standard Time),223216137,,SHI,3096.53,0,3096.53,,138001,637037,
 1-38103,Wed Sep 23 2026 00:00:00 GMT-0400 (Eastern Daylight Time),221480142,P0358796,InfoTech Research Group,77229.6,0,77229.6,,,,
 1-38109,Thu Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time),189664159,P0238461,AERC,2000,736.6,1263.4,Wed Oct 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),138109,620012,Battery P/U & HD Destruction
 1-38109,Tue Oct 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),222614001,P0362803,Amazon,269.94,0,269.94,,138109,620012,Filters for TOC
