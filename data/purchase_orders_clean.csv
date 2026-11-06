@@ -18,6 +18,8 @@ Department,Date,PR_Number,PO_Number,Vendor,Amount,Amount_Received,Ending_Balance
 1-23152,Tue Aug 04 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219420348,P0349656,Dell,2157.74,2157.74,0,Fri Aug 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,720027,Laptop for InfoSec Intern
 1-23152,Fri Aug 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),219562756,P0350210,Dell,16750.31,16750.31,0,Fri Aug 21 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,720027/620097,Laptop for InfoSec Intern
 1-23152,Thu Aug 27 2026 00:00:00 GMT-0400 (Eastern Daylight Time),220387271,P0353389,Dell,758.98,758.98,0,Tue Sep 01 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123152,620097,Monitors for Zach Boyle
+1-23152,Fri Nov 06 2026 00:00:00 GMT-0500 (Eastern Standard Time),223336858,P0365919,SHI,658,0,658,,123152,620097,Docking Station for New Hire Travis Greene
+1-23152,Fri Nov 06 2026 00:00:00 GMT-0500 (Eastern Standard Time),,,RamTech,2444,0,2444,,123152,720027,
 1-23156,Tue Jul 14 2026 00:00:00 GMT-0400 (Eastern Daylight Time),218560938,P0346359,Dell,450,450,0,Mon Jul 20 2026 00:00:00 GMT-0400 (Eastern Daylight Time),123156,620097,SmartDocks for Tomekia & Felita
 1-38001,Thu Mar 26 2026 00:00:00 GMT-0400 (Eastern Daylight Time),214051182,P0330265,InterVision Systems LLC,10870.5,0,10870.5,,138001,620096,Trellis Lights Cabell
 1-38001,Thu May 07 2026 00:00:00 GMT-0400 (Eastern Daylight Time),2158/32210,P0335924,Dell,9800,0,9800,,138001,720007,Bundle Laptops 
